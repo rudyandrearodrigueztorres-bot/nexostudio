@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" fill="none" class="w-full h-auto">
+  <!-- Neon yellow swirl / dynamic backdrop -->
+  <path d="M100,240 C100,100 240,60 380,80 C510,100 540,260 490,380 C440,480 260,480 160,420 C90,370 100,300 100,240 Z" fill="#E6FF00" fill-opacity="0.9"/>
+  
+  <text x="300" y="160" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="110" fill="#12180F" letter-spacing="-4">404</text>
+  
+  <!-- Unplugged cord & stylized confused figures looking for connection -->
+  <path d="M140,300 C200,280 250,320 270,350" stroke="#12180F" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <rect x="260" y="335" width="28" height="30" rx="6" fill="#12180F"/>
+  <line x1="288" y1="343" x2="305" y2="343" stroke="#F0605A" stroke-width="4" stroke-linecap="round"/>
+  <line x1="288" y1="357" x2="305" y2="357" stroke="#F0605A" stroke-width="4" stroke-linecap="round"/>
+
+  <rect x="330" y="335" width="28" height="30" rx="6" fill="#12180F"/>
+  <path d="M358,350 C380,350 420,380 460,340" stroke="#12180F" stroke-width="6" stroke-linecap="round" fill="none"/>
+
+  <!-- Confused character head looking down -->
+  <circle cx="300" cy="240" r="32" fill="#D9D4C7"/>
+  <path d="M275,235 C275,205 325,205 330,235 Z" fill="#12180F"/>
+  <ellipse cx="290" cy="240" rx="3" ry="5" fill="#12180F"/>
+  <ellipse cx="310" cy="240" rx="3" ry="5" fill="#12180F"/>
+  <path d="M295,255 Q300,250 305,255" stroke="#12180F" stroke-width="2" fill="none"/>
+</svg>

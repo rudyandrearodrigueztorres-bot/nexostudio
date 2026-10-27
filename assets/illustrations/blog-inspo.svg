@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" fill="none" class="w-full h-auto">
+  <!-- Neon yellow swirl / dynamic backdrop -->
+  <path d="M110,340 C80,180 180,80 320,60 C450,40 540,160 510,300 C480,420 360,470 230,450 C140,430 120,390 110,340 Z" fill="#E6FF00" fill-opacity="0.9"/>
+  
+  <!-- Lightbulb / Idea emblem in top center -->
+  <g transform="translate(270, 70)">
+    <path d="M30,0 C13.4,0 0,13.4 0,30 C0,41 6,50 14,56 L14,70 L46,70 L46,56 C54,50 60,41 60,30 C60,13.4 46.6,0 30,0 Z" fill="#FFFFFF" stroke="#12180F" stroke-width="3"/>
+    <line x1="20" y1="78" x2="40" y2="78" stroke="#12180F" stroke-width="4" stroke-linecap="round"/>
+    <!-- Light rays -->
+    <line x1="30" y1="-15" x2="30" y2="-5" stroke="#12180F" stroke-width="3" stroke-linecap="round"/>
+    <line x1="-5" y1="10" x2="5" y2="16" stroke="#12180F" stroke-width="3" stroke-linecap="round"/>
+    <line x1="65" y1="10" x2="55" y2="16" stroke="#12180F" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Big Stylized Figure Reading / Reflecting -->
+  <!-- Legs & Boots -->
+  <path d="M180,390 L210,460 C215,475 255,475 265,455 L250,380 Z" fill="#F08AE0"/>
+  <path d="M290,370 L340,450 C355,470 395,460 390,435 L330,360 Z" fill="#12180F"/>
+  <ellipse cx="240" cy="465" rx="35" ry="16" fill="#12180F"/>
+  <ellipse cx="375" cy="450" rx="35" ry="16" fill="#12180F"/>
+
+  <!-- Torso & Oversized Shirt in Emerald Green -->
+  <path d="M170,250 C160,340 230,380 300,360 C360,340 360,250 300,230 C230,210 180,210 170,250 Z" fill="#3FD05A"/>
+
+  <!-- Giant open editorial journal / book in hands -->
+  <g transform="translate(180, 240)">
+    <path d="M0,20 C30,10 70,10 110,25 L110,95 C70,80 30,80 0,90 Z" fill="#FFFFFF" stroke="#12180F" stroke-width="3"/>
+    <path d="M220,20 C190,10 150,10 110,25 L110,95 C150,80 190,80 220,90 Z" fill="#F3F1ED" stroke="#12180F" stroke-width="3"/>
+    <line x1="20" y1="40" x2="90" y2="40" stroke="#12180F" stroke-width="2"/>
+    <line x1="20" y1="55" x2="80" y2="55" stroke="#6E6B5E" stroke-width="2"/>
+    <line x1="20" y1="70" x2="95" y2="70" stroke="#6E6B5E" stroke-width="2"/>
+    <line x1="130" y1="40" x2="200" y2="40" stroke="#12180F" stroke-width="2"/>
+    <line x1="130" y1="55" x2="190" y2="55" stroke="#6E6B5E" stroke-width="2"/>
+  </g>
+
+  <!-- Big stylized hands holding book -->
+  <ellipse cx="185" cy="300" rx="18" ry="14" fill="#D9D4C7" stroke="#12180F" stroke-width="2"/>
+  <ellipse cx="395" cy="300" rx="18" ry="14" fill="#D9D4C7" stroke="#12180F" stroke-width="2"/>
+
+  <!-- Head with thinking expression -->
+  <circle cx="270" cy="175" r="32" fill="#D9D4C7"/>
+  <path d="M245,165 C245,135 295,135 300,165 C285,160 260,160 250,170 Z" fill="#12180F"/>
+  <path d="M275,175 L283,175" stroke="#12180F" stroke-width="3" stroke-linecap="round"/>
+</svg>

@@ -1,187 +1,248 @@
-<div class="flex flex-col w-full">
-  <!-- CABECERA MARKETING -->
-  <section class="px-margin-mobile lg:px-margin pb-space-md flex flex-col gap-space-md pt-space-xl desktop-container">
-    <div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-ink-black text-tertiary-fixed self-start shadow-[3px_3px_0px_#12180F]">
-      <span class="w-2.5 h-2.5 rounded-full bg-accent-pink animate-pulse"></span>
-      <span class="font-label-sm text-label-sm uppercase tracking-wider font-bold">ESTRATEGIA DIGITAL // CRECIMIENTO &amp; CONVERSIÓN</span>
-    </div>
+<div class="flex flex-col w-full bg-nexo-beige overflow-hidden">
+  
+  <!-- =========================================================================
+       1. CABECERA BEIGE CON PICO AMARILLO NEÓN E ILUSTRACIÓN DE MARKETING
+       ========================================================================= -->
+  <section class="relative px-4 sm:px-8 pt-8 pb-14 overflow-hidden border-b border-nexo-dark/10">
+    
+    <!-- Pico amarillo neón en la esquina superior derecha -->
+    <div class="absolute -right-12 top-0 w-80 lg:w-96 h-80 lg:h-96 bg-nexo-neon corner-peak-tr opacity-90 pointer-events-none"></div>
 
-    <div class="flex flex-col gap-space-xs max-w-3xl">
-      <h1 class="font-headline-lg-mobile lg:font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-ink-black tracking-tight font-bold leading-tight">
-        Marketing Digital sin Ruido: Crecimiento y Tracción Real
-      </h1>
-      <p class="font-body-lg text-body-lg text-secondary leading-relaxed">
-        Estrategia de captación y analítica de conversión dirigida por <strong class="text-ink-black font-semibold">Andrea Rodríguez</strong>. Rechazamos los trucos efímeros y las métricas de vanidad para construir sistemas de adquisición predecibles, éticos y alineados con tu identidad de marca.
-      </p>
-    </div>
-
-    <!-- 4 Pilares de Crecimiento -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-space-sm mt-space-xs">
-      <div class="bg-surface-bone p-space-md rounded-DEFAULT shadow-[2px_2px_0px_#12180F] flex flex-col justify-between">
-        <div class="flex items-center justify-between text-ink-black mb-space-xs">
-          <span class="font-label-sm text-label-sm uppercase font-bold text-secondary">AUTORIDAD</span>
-          <span class="material-symbols-outlined text-[20px]">search</span>
+    <div class="desktop-container relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      
+      <div class="lg:col-span-7 flex flex-col gap-5">
+        <div class="self-start">
+          <span class="tag-pill px-3.5 py-1 text-xs uppercase tracking-wider">
+            SERVICIO 03 // ESTRATEGIA &amp; CRECIMIENTO
+          </span>
         </div>
-        <span class="font-headline-sm text-headline-sm text-ink-black font-bold">SEO Técnico</span>
-        <span class="font-body-sm text-[12px] text-secondary mt-1">Indexación semántica y contenido que posiciona</span>
+
+        <h1 class="font-headline text-[clamp(38px,5.5vw,72px)] text-nexo-dark font-extrabold leading-[0.95] tracking-tight">
+          Marketing <span class="bg-nexo-dark text-nexo-neon px-3 py-0.5 rounded-[20px] inline-block">Digital</span> sin ruido
+        </h1>
+
+        <p class="font-body text-base sm:text-lg text-nexo-body leading-relaxed max-w-xl">
+          Estrategia de captación y optimización de conversión. Prescindimos de trucos pasajeros y métricas de vanidad: creamos sistemas de adquisición claros, honestos y alineados con tu negocio.
+        </p>
+
+        <div class="flex items-center gap-3 pt-2">
+          <a href="#contacto" class="btn-nexo-primary px-7 py-3 text-sm">
+            <span>Cotiza tu estrategia</span>
+            <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+          </a>
+          <a href="#websites" class="btn-nexo-secondary px-6 py-3 text-sm">
+            <span>Ver proyectos</span>
+          </a>
+        </div>
       </div>
 
-      <div class="bg-surface-bone p-space-md rounded-DEFAULT shadow-[2px_2px_0px_#12180F] flex flex-col justify-between">
-        <div class="flex items-center justify-between text-ink-black mb-space-xs">
-          <span class="font-label-sm text-label-sm uppercase font-bold text-secondary">CAPTACIÓN</span>
-          <span class="material-symbols-outlined text-[20px]">campaign</span>
-        </div>
-        <span class="font-headline-sm text-headline-sm text-ink-black font-bold">Paid Media</span>
-        <span class="font-body-sm text-[12px] text-secondary mt-1">Campañas dirigidas a clientes de alto valor</span>
+      <!-- Ilustración original de Marketing SVG -->
+      <div class="lg:col-span-5 flex justify-center lg:justify-end">
+        <img src="assets/illustrations/marketing.svg" alt="Ilustración Marketing" class="w-full max-w-[380px] h-auto object-contain drop-shadow-sm">
       </div>
 
-      <div class="bg-surface-bone p-space-md rounded-DEFAULT shadow-[2px_2px_0px_#12180F] flex flex-col justify-between">
-        <div class="flex items-center justify-between text-ink-black mb-space-xs">
-          <span class="font-label-sm text-label-sm uppercase font-bold text-secondary">FUNNELS</span>
-          <span class="material-symbols-outlined text-[20px]">filter_alt</span>
-        </div>
-        <span class="font-headline-sm text-headline-sm text-ink-black font-bold">Conversión</span>
-        <span class="font-body-sm text-[12px] text-secondary mt-1">Eliminación de fricción en la toma de decisión</span>
-      </div>
-
-      <div class="bg-surface-bone p-space-md rounded-DEFAULT shadow-[2px_2px_0px_#12180F] flex flex-col justify-between">
-        <div class="flex items-center justify-between text-ink-black mb-space-xs">
-          <span class="font-label-sm text-label-sm uppercase font-bold text-secondary">RELACIÓN</span>
-          <span class="material-symbols-outlined text-[20px]">mail</span>
-        </div>
-        <span class="font-headline-sm text-headline-sm text-ink-black font-bold">Email de Valor</span>
-        <span class="font-body-sm text-[12px] text-secondary mt-1">Fidelización sin mensajes agresivos</span>
-      </div>
     </div>
   </section>
 
-  <!-- SERVICIOS DE MARKETING DIGITAL -->
-  <section class="px-margin-mobile lg:px-margin py-space-lg desktop-container">
-    <div class="flex flex-col gap-1 mb-space-md">
-      <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">ÁREAS DE ACCIÓN</span>
-      <h2 class="font-headline-sm lg:font-headline-md text-headline-sm lg:text-headline-md text-ink-black font-bold tracking-tight">
+  <!-- =========================================================================
+       2. LOS 4 PILARES DEL SISTEMA (TARJETAS 24PX)
+       ========================================================================= -->
+  <section class="py-12 px-4 sm:px-8 desktop-container">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      
+      <div class="bg-nexo-white p-6 rounded-[24px] border border-nexo-dark/10 card-nexo flex flex-col justify-between">
+        <div class="flex items-center justify-between text-nexo-dark mb-4">
+          <span class="text-xs uppercase font-bold text-nexo-gray">01 / AUTORIDAD</span>
+          <span class="w-8 h-8 rounded-full bg-nexo-bone flex items-center justify-center text-nexo-dark">
+            <span class="material-symbols-outlined text-[18px]">search</span>
+          </span>
+        </div>
+        <div>
+          <span class="font-headline text-xl text-nexo-dark font-bold block">SEO Técnico</span>
+          <span class="font-body text-xs text-nexo-gray mt-1 block">Estructura limpia para que Google entienda tu valor.</span>
+        </div>
+      </div>
+
+      <div class="bg-nexo-white p-6 rounded-[24px] border border-nexo-dark/10 card-nexo flex flex-col justify-between">
+        <div class="flex items-center justify-between text-nexo-dark mb-4">
+          <span class="text-xs uppercase font-bold text-nexo-gray">02 / VISIBILIDAD</span>
+          <span class="w-8 h-8 rounded-full bg-nexo-bone flex items-center justify-center text-nexo-dark">
+            <span class="material-symbols-outlined text-[18px]">campaign</span>
+          </span>
+        </div>
+        <div>
+          <span class="font-headline text-xl text-nexo-dark font-bold block">Paid Media</span>
+          <span class="font-body text-xs text-nexo-gray mt-1 block">Campañas de anuncios segmentadas con precisión.</span>
+        </div>
+      </div>
+
+      <div class="bg-nexo-white p-6 rounded-[24px] border border-nexo-dark/10 card-nexo flex flex-col justify-between">
+        <div class="flex items-center justify-between text-nexo-dark mb-4">
+          <span class="text-xs uppercase font-bold text-nexo-gray">03 / CONVERSIÓN</span>
+          <span class="w-8 h-8 rounded-full bg-nexo-bone flex items-center justify-center text-nexo-dark">
+            <span class="material-symbols-outlined text-[18px]">filter_alt</span>
+          </span>
+        </div>
+        <div>
+          <span class="font-headline text-xl text-nexo-dark font-bold block">CRO &amp; Funnels</span>
+          <span class="font-body text-xs text-nexo-gray mt-1 block">Eliminamos fricción para convertir visitas en consultas.</span>
+        </div>
+      </div>
+
+      <div class="bg-nexo-white p-6 rounded-[24px] border border-nexo-dark/10 card-nexo flex flex-col justify-between">
+        <div class="flex items-center justify-between text-nexo-dark mb-4">
+          <span class="text-xs uppercase font-bold text-nexo-gray">04 / RELACIÓN</span>
+          <span class="w-8 h-8 rounded-full bg-nexo-bone flex items-center justify-center text-nexo-dark">
+            <span class="material-symbols-outlined text-[18px]">chat</span>
+          </span>
+        </div>
+        <div>
+          <span class="font-headline text-xl text-nexo-dark font-bold block">WhatsApp Flow</span>
+          <span class="font-body text-xs text-nexo-gray mt-1 block">Conexión directa e inmediata con tus clientes.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. SERVICIOS DETALLADOS (GRILLA BENTO EN TARJETAS BLANCAS 24PX)
+       ========================================================================= -->
+  <section class="px-4 sm:px-8 py-8 desktop-container flex flex-col gap-8">
+    <div class="flex flex-col gap-1">
+      <span class="text-xs uppercase tracking-widest text-nexo-gray font-bold">ÁREAS DE ACCIÓN</span>
+      <h2 class="font-headline text-3xl sm:text-4xl text-nexo-dark font-bold tracking-tight">
         Estrategias Diseñadas para Convertir
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
       <!-- Card 1 -->
-      <div class="bg-surface-bone rounded-lg p-space-lg shadow-[3px_3px_0px_#12180F] flex flex-col justify-between gap-space-sm">
-        <div class="flex flex-col gap-space-xs">
-          <div class="w-10 h-10 rounded-full bg-ink-black text-accent-pink flex items-center justify-center shadow-[2px_2px_0px_#12180F]">
-            <span class="material-symbols-outlined text-[20px]">hub</span>
+      <div class="bg-nexo-white rounded-[24px] p-7 sm:p-8 border border-nexo-dark/10 card-nexo flex flex-col justify-between gap-6">
+        <div class="flex flex-col gap-3">
+          <div class="w-10 h-10 rounded-full bg-nexo-dark text-nexo-neon flex items-center justify-center font-headline font-bold text-sm">
+            01
           </div>
-          <h3 class="font-headline-sm text-headline-sm text-ink-black font-bold">Estrategia Omnicanal &amp; Brand Growth</h3>
-          <p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+          <h3 class="font-headline text-2xl text-nexo-dark font-bold">Estrategia Omnicanal &amp; Coherencia</h3>
+          <p class="font-body text-sm text-nexo-body leading-relaxed">
             Conectamos los puntos de contacto de tu negocio: desde tu identidad gráfica y redes hasta tu sitio web corporativo, para que el cliente perciba solidez, confianza y profesionalismo en cada etapa.
           </p>
         </div>
-        <div class="pt-space-xs flex items-center justify-between border-t border-ink-black/10 text-secondary font-label-sm text-[12px]">
-          <span>Enfoque: Coherencia visual y mensaje unificado</span>
-          <a href="#contacto" class="text-ink-black font-bold hover:underline">Cotizar &rarr;</a>
+        <div class="pt-4 border-t border-nexo-dark/10 flex items-center justify-between text-xs">
+          <span class="text-nexo-gray font-medium">Enfoque: Coherencia visual total</span>
+          <a href="#contacto" class="btn-nexo-primary px-4 py-1.5 text-xs">Cotizar</a>
         </div>
       </div>
 
       <!-- Card 2 -->
-      <div class="bg-surface-bone rounded-lg p-space-lg shadow-[3px_3px_0px_#12180F] flex flex-col justify-between gap-space-sm">
-        <div class="flex flex-col gap-space-xs">
-          <div class="w-10 h-10 rounded-full bg-ink-black text-tertiary-fixed flex items-center justify-center shadow-[2px_2px_0px_#12180F]">
-            <span class="material-symbols-outlined text-[20px]">travel_explore</span>
+      <div class="bg-nexo-white rounded-[24px] p-7 sm:p-8 border border-nexo-dark/10 card-nexo flex flex-col justify-between gap-6">
+        <div class="flex flex-col gap-3">
+          <div class="w-10 h-10 rounded-full bg-nexo-dark text-nexo-neon flex items-center justify-center font-headline font-bold text-sm">
+            02
           </div>
-          <h3 class="font-headline-sm text-headline-sm text-ink-black font-bold">Auditoría &amp; SEO para Buscadores</h3>
-          <p class="font-body-sm text-body-sm text-secondary leading-relaxed">
-            Mejora de arquitectura web, velocidad de carga y contenidos semánticos orientados a resolver dudas reales de tus clientes, logrando posiciones destacadas en Google de forma natural y duradera.
+          <h3 class="font-headline text-2xl text-nexo-dark font-bold">SEO Local &amp; Posicionamiento en Google</h3>
+          <p class="font-body text-sm text-nexo-body leading-relaxed">
+            Optimización de arquitectura web, velocidad de carga y contenidos semánticos orientados a resolver dudas reales de tus clientes, logrando visibilidad destacada en tu zona geográfica.
           </p>
         </div>
-        <div class="pt-space-xs flex items-center justify-between border-t border-ink-black/10 text-secondary font-label-sm text-[12px]">
-          <span>Enfoque: Crecimiento orgánico sostenible</span>
-          <a href="#contacto" class="text-ink-black font-bold hover:underline">Cotizar &rarr;</a>
+        <div class="pt-4 border-t border-nexo-dark/10 flex items-center justify-between text-xs">
+          <span class="text-nexo-gray font-medium">Enfoque: Tracción orgánica sostenible</span>
+          <a href="#contacto" class="btn-nexo-primary px-4 py-1.5 text-xs">Cotizar</a>
         </div>
       </div>
 
       <!-- Card 3 -->
-      <div class="bg-surface-bone rounded-lg p-space-lg shadow-[3px_3px_0px_#12180F] flex flex-col justify-between gap-space-sm">
-        <div class="flex flex-col gap-space-xs">
-          <div class="w-10 h-10 rounded-full bg-ink-black text-accent-blue flex items-center justify-center shadow-[2px_2px_0px_#12180F]">
-            <span class="material-symbols-outlined text-[20px]">ads_click</span>
+      <div class="bg-nexo-white rounded-[24px] p-7 sm:p-8 border border-nexo-dark/10 card-nexo flex flex-col justify-between gap-6">
+        <div class="flex flex-col gap-3">
+          <div class="w-10 h-10 rounded-full bg-nexo-dark text-nexo-neon flex items-center justify-center font-headline font-bold text-sm">
+            03
           </div>
-          <h3 class="font-headline-sm text-headline-sm text-ink-black font-bold">Campañas de Paid Media de Precisión</h3>
-          <p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+          <h3 class="font-headline text-2xl text-nexo-dark font-bold">Campañas de Paid Media con Criterio</h3>
+          <p class="font-body text-sm text-nexo-body leading-relaxed">
             Configuración, diseño de creatividades con estilo editorial y optimización continua en plataformas de anuncios (Meta y Google Ads). Cero gasto superfluo: medimos cada euro invertido.
           </p>
         </div>
-        <div class="pt-space-xs flex items-center justify-between border-t border-ink-black/10 text-secondary font-label-sm text-[12px]">
-          <span>Enfoque: Captación rentable de prospectos</span>
-          <a href="#contacto" class="text-ink-black font-bold hover:underline">Cotizar &rarr;</a>
+        <div class="pt-4 border-t border-nexo-dark/10 flex items-center justify-between text-xs">
+          <span class="text-nexo-gray font-medium">Enfoque: Captación rentable de prospectos</span>
+          <a href="#contacto" class="btn-nexo-primary px-4 py-1.5 text-xs">Cotizar</a>
         </div>
       </div>
 
       <!-- Card 4 -->
-      <div class="bg-surface-bone rounded-lg p-space-lg shadow-[3px_3px_0px_#12180F] flex flex-col justify-between gap-space-sm">
-        <div class="flex flex-col gap-space-xs">
-          <div class="w-10 h-10 rounded-full bg-ink-black text-accent-green flex items-center justify-center shadow-[2px_2px_0px_#12180F]">
-            <span class="material-symbols-outlined text-[20px]">analytics</span>
+      <div class="bg-nexo-white rounded-[24px] p-7 sm:p-8 border border-nexo-dark/10 card-nexo flex flex-col justify-between gap-6">
+        <div class="flex flex-col gap-3">
+          <div class="w-10 h-10 rounded-full bg-nexo-dark text-nexo-neon flex items-center justify-center font-headline font-bold text-sm">
+            04
           </div>
-          <h3 class="font-headline-sm text-headline-sm text-ink-black font-bold">Optimización de Tasa de Conversión (CRO)</h3>
-          <p class="font-body-sm text-body-sm text-secondary leading-relaxed">
-            Analizamos el comportamiento de navegación de los usuarios en tu sitio web para identificar cuellos de botella, simplificar formularios y maximizar el porcentaje de solicitudes de presupuesto.
+          <h3 class="font-headline text-2xl text-nexo-dark font-bold">Optimización de Conversión (CRO)</h3>
+          <p class="font-body text-sm text-nexo-body leading-relaxed">
+            Analizamos el flujo de navegación de los usuarios para identificar cuellos de botella, simplificar formularios e implementar botones directos a WhatsApp para disparar las cotizaciones.
           </p>
         </div>
-        <div class="pt-space-xs flex items-center justify-between border-t border-ink-black/10 text-secondary font-label-sm text-[12px]">
-          <span>Enfoque: Más clientes con el mismo tráfico</span>
-          <a href="#contacto" class="text-ink-black font-bold hover:underline">Cotizar &rarr;</a>
+        <div class="pt-4 border-t border-nexo-dark/10 flex items-center justify-between text-xs">
+          <span class="text-nexo-gray font-medium">Enfoque: Más clientes con el mismo tráfico</span>
+          <a href="#contacto" class="btn-nexo-primary px-4 py-1.5 text-xs">Cotizar</a>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- METODOLOGÍA DE 4 PASOS -->
-  <section class="px-margin-mobile lg:px-margin py-space-lg desktop-container">
-    <div class="bg-surface-bone rounded-lg p-space-lg lg:p-space-xl shadow-[4px_4px_0px_#12180F] flex flex-col gap-space-md">
+  <!-- =========================================================================
+       4. METODOLOGÍA DE 4 PASOS EN TARJETA HUESO 24PX
+       ========================================================================= -->
+  <section class="px-4 sm:px-8 py-10 desktop-container">
+    <div class="bg-nexo-bone rounded-[24px] p-8 sm:p-12 border border-nexo-dark/10 flex flex-col gap-8">
       <div class="flex flex-col gap-1">
-        <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">MÉTODO DE TRABAJO</span>
-        <h3 class="font-headline-sm text-headline-sm text-ink-black font-bold">Cómo Ejecutamos tu Estrategia de Crecimiento</h3>
+        <span class="text-xs uppercase tracking-widest text-nexo-gray font-bold">MÉTODO DE TRABAJO</span>
+        <h3 class="font-headline text-2xl sm:text-3xl text-nexo-dark font-bold">Cómo Ejecutamos tu Estrategia</h3>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-space-sm">
-        <div class="bg-surface-taupe/40 p-space-md rounded-DEFAULT flex flex-col gap-2">
-          <span class="w-7 h-7 rounded bg-ink-black text-tertiary-fixed font-headline-sm text-label-sm font-bold flex items-center justify-center">01</span>
-          <h4 class="font-headline-sm text-body-lg text-ink-black font-bold">Diagnóstico</h4>
-          <p class="font-body-sm text-[13px] text-secondary">Auditamos tu web actual, canales de captación y propuesta de valor frente a tu sector.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        
+        <div class="bg-nexo-white p-5 rounded-[18px] border border-nexo-dark/10 flex flex-col gap-2">
+          <span class="w-7 h-7 rounded-full bg-nexo-dark text-nexo-neon font-headline text-xs font-bold flex items-center justify-center">01</span>
+          <h4 class="font-headline text-base font-bold text-nexo-dark">Diagnóstico</h4>
+          <p class="font-body text-xs text-nexo-body">Auditamos tu web actual, canales de captación y propuesta de valor frente a tu sector.</p>
         </div>
 
-        <div class="bg-surface-taupe/40 p-space-md rounded-DEFAULT flex flex-col gap-2">
-          <span class="w-7 h-7 rounded bg-ink-black text-accent-blue font-headline-sm text-label-sm font-bold flex items-center justify-center">02</span>
-          <h4 class="font-headline-sm text-body-lg text-ink-black font-bold">Plan Táctico</h4>
-          <p class="font-body-sm text-body-sm text-secondary">Definimos los canales prioritarios, mensajes clave y las mejoras estructurales del embudo.</p>
+        <div class="bg-nexo-white p-5 rounded-[18px] border border-nexo-dark/10 flex flex-col gap-2">
+          <span class="w-7 h-7 rounded-full bg-nexo-dark text-nexo-neon font-headline text-xs font-bold flex items-center justify-center">02</span>
+          <h4 class="font-headline text-base font-bold text-nexo-dark">Plan Táctico</h4>
+          <p class="font-body text-xs text-nexo-body">Definimos canales prioritarios, mensajes clave y las mejoras estructurales del embudo.</p>
         </div>
 
-        <div class="bg-surface-taupe/40 p-space-md rounded-DEFAULT flex flex-col gap-2">
-          <span class="w-7 h-7 rounded bg-ink-black text-accent-pink font-headline-sm text-label-sm font-bold flex items-center justify-center">03</span>
-          <h4 class="font-headline-sm text-body-lg text-ink-black font-bold">Despliegue</h4>
-          <p class="font-body-sm text-[13px] text-secondary">Lanzamos las campañas, optimizamos landing pages y configuramos analítica rigurosa.</p>
+        <div class="bg-nexo-white p-5 rounded-[18px] border border-nexo-dark/10 flex flex-col gap-2">
+          <span class="w-7 h-7 rounded-full bg-nexo-dark text-nexo-neon font-headline text-xs font-bold flex items-center justify-center">03</span>
+          <h4 class="font-headline text-base font-bold text-nexo-dark">Implementación</h4>
+          <p class="font-body text-xs text-nexo-body">Ajustamos la web, activamos mediciones y publicamos las campañas sin cabos sueltos.</p>
         </div>
 
-        <div class="bg-surface-taupe/40 p-space-md rounded-DEFAULT flex flex-col gap-2">
-          <span class="w-7 h-7 rounded bg-ink-black text-tertiary-fixed font-headline-sm text-label-sm font-bold flex items-center justify-center">04</span>
-          <h4 class="font-headline-sm text-body-lg text-ink-black font-bold">Escala Real</h4>
-          <p class="font-body-sm text-[13px] text-secondary">Evaluamos métricas de negocio reales (coste por lead y ventas) e iteramos mes a mes.</p>
+        <div class="bg-nexo-white p-5 rounded-[18px] border border-nexo-dark/10 flex flex-col gap-2">
+          <span class="w-7 h-7 rounded-full bg-nexo-dark text-nexo-neon font-headline text-xs font-bold flex items-center justify-center">04</span>
+          <h4 class="font-headline text-base font-bold text-nexo-dark">Optimización</h4>
+          <p class="font-body text-xs text-nexo-body">Revisión periódica de resultados reales y refinamiento constante para maximizar el retorno.</p>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- BANNER FINAL COTIZA -->
-  <section class="px-margin-mobile lg:px-margin py-space-xl desktop-container">
-    <div class="bg-ink-black text-surface-bone rounded-lg p-space-lg lg:p-space-xl shadow-[4px_4px_0px_#12180F] flex flex-col sm:flex-row items-center justify-between gap-space-md">
+  <!-- =========================================================================
+       5. BANNER FINAL COTIZA
+       ========================================================================= -->
+  <section class="px-4 sm:px-8 pb-16 desktop-container">
+    <div class="bg-nexo-dark text-nexo-bone rounded-[24px] p-8 sm:p-12 flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="flex flex-col gap-1 text-center sm:text-left">
-        <span class="font-label-sm text-label-sm text-tertiary-fixed uppercase font-bold tracking-widest">CRECE CON TU MARCA</span>
-        <h3 class="font-headline-sm text-headline-sm text-surface-bone font-bold">Diseñemos una estrategia de captación que funcione para tu negocio</h3>
+        <span class="text-xs uppercase font-bold text-nexo-neon tracking-widest">ESTRATEGIA &amp; MARKETING</span>
+        <h3 class="font-headline text-2xl sm:text-3xl text-nexo-white font-bold leading-tight">Impulsa la captación de tu negocio</h3>
       </div>
-      <a href="#contacto" class="min-h-[44px] px-space-xl py-space-sm rounded-full bg-tertiary-fixed text-ink-black font-label-md text-label-md uppercase font-bold tracking-wider flex items-center gap-2 shadow-[2px_2px_0px_#F3F1ED] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all whitespace-nowrap">
-        <span>Cotizar Marketing</span>
+      <a href="#contacto" class="px-8 py-3.5 rounded-full bg-nexo-neon text-nexo-dark font-semibold text-sm uppercase tracking-wider hover:bg-white transition-all whitespace-nowrap flex items-center gap-2">
+        <span>Cotiza tu Proyecto</span>
         <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
       </a>
     </div>
   </section>
+
 </div>

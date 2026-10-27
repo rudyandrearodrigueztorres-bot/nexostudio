@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" fill="none" class="w-full h-auto">
+  <!-- Neon yellow swirl / dynamic backdrop -->
+  <path d="M120,400 C60,280 100,120 220,70 C340,20 480,80 510,200 C540,320 440,450 310,460 C200,470 150,440 120,400 Z" fill="#E6FF00" fill-opacity="0.9"/>
+  
+  <!-- Interlocking geometric design tokens in background -->
+  <circle cx="420" cy="150" r="65" fill="#F08AE0" stroke="#12180F" stroke-width="3"/>
+  <rect x="330" y="240" width="130" height="130" rx="24" fill="#6AAEFF" stroke="#12180F" stroke-width="3" transform="rotate(15 330 240)"/>
+  <polygon points="180,60 250,60 215,130" fill="#F0605A" stroke="#12180F" stroke-width="3"/>
+
+  <!-- Main Designer Figure: Volumetric body, intertwined pose -->
+  <!-- Legs & Boots -->
+  <path d="M200,370 L180,450 C170,475 220,480 250,460 L240,390 Z" fill="#12180F"/>
+  <path d="M280,360 L320,440 C340,465 385,455 375,430 L320,370 Z" fill="#3FD05A"/>
+  <ellipse cx="210" cy="465" rx="35" ry="16" fill="#12180F"/>
+  <ellipse cx="365" cy="450" rx="35" ry="16" fill="#12180F"/>
+
+  <!-- Torso & Vibrant coral/rose shape -->
+  <path d="M180,240 C160,330 240,380 310,350 C360,320 350,230 290,210 C230,190 190,200 180,240 Z" fill="#F0605A"/>
+
+  <!-- Giant hands holding oversized pencil and color swatch -->
+  <!-- Left arm & big hand holding stylus/pencil -->
+  <path d="M200,230 C130,220 100,280 130,330 L160,320 C140,290 150,260 210,250 Z" fill="#D9D4C7"/>
+  <!-- Oversized pencil -->
+  <g transform="translate(90, 200) rotate(40)">
+    <rect x="0" y="0" width="32" height="140" rx="6" fill="#12180F"/>
+    <polygon points="0,140 32,140 16,180" fill="#E6FF00" stroke="#12180F" stroke-width="2"/>
+    <polygon points="10,165 22,165 16,180" fill="#12180F"/>
+  </g>
+
+  <!-- Right arm holding color palette swatch -->
+  <path d="M310,240 C370,220 430,260 410,320 L380,310 C390,270 360,250 300,260 Z" fill="#D9D4C7"/>
+  <!-- Swatch fans -->
+  <g transform="translate(390, 280)">
+    <rect x="-15" y="-50" width="30" height="70" rx="8" fill="#3FD05A" stroke="#12180F" stroke-width="2" transform="rotate(-30)"/>
+    <rect x="-15" y="-50" width="30" height="70" rx="8" fill="#E6FF00" stroke="#12180F" stroke-width="2" transform="rotate(-5)"/>
+    <rect x="-15" y="-50" width="30" height="70" rx="8" fill="#F08AE0" stroke="#12180F" stroke-width="2" transform="rotate(20)"/>
+    <circle cx="0" cy="15" r="8" fill="#12180F"/>
+  </g>
+
+  <!-- Head & Face -->
+  <circle cx="260" cy="150" r="34" fill="#D9D4C7"/>
+  <!-- Modern blunt haircut -->
+  <path d="M230,150 C225,115 285,110 295,140 C280,135 250,135 235,150 Z" fill="#12180F"/>
+  <!-- Fine face lines -->
+  <path d="M265,150 L273,150" stroke="#12180F" stroke-width="3" stroke-linecap="round"/>
+  <path d="M263,143 L273,142" stroke="#12180F" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="245" cy="158" r="12" fill="none" stroke="#12180F" stroke-width="2.5"/>
+  <circle cx="275" cy="158" r="12" fill="none" stroke="#12180F" stroke-width="2.5"/>
+  <line x1="257" y1="158" x2="263" y2="158" stroke="#12180F" stroke-width="2.5"/>
+
+  <!-- Badge pill -->
+  <g transform="translate(440, 60)">
+    <rect width="110" height="36" rx="18" fill="#FFFFFF" stroke="#12180F" stroke-width="2"/>
+    <text x="55" y="23" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="12" fill="#12180F">BRANDING</text>
+  </g>
+</svg>

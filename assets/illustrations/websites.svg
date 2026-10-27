@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" fill="none" class="w-full h-auto">
+  <!-- Neon yellow swirl / dynamic backdrop -->
+  <path d="M80,380 C120,440 260,460 380,410 C500,360 540,240 480,140 C420,40 280,30 180,90 C80,150 40,320 80,380 Z" fill="#E6FF00" fill-opacity="0.9"/>
+  <path d="M200,60 L280,20 L340,110 L260,150 Z" fill="#12180F" fill-opacity="0.06"/>
+  
+  <!-- Browser window frame in clean white/black -->
+  <g transform="translate(180, 80)">
+    <rect width="360" height="240" rx="16" fill="#FFFFFF" stroke="#12180F" stroke-width="4" filter="drop-shadow(0 12px 24px rgba(18,24,15,0.08))"/>
+    <rect width="360" height="36" rx="16" fill="#F3F1ED" stroke="#12180F" stroke-width="4"/>
+    <circle cx="24" cy="18" r="5" fill="#F0605A"/>
+    <circle cx="42" cy="18" r="5" fill="#E6FF00" stroke="#12180F" stroke-width="1.5"/>
+    <circle cx="60" cy="18" r="5" fill="#3FD05A"/>
+    <rect x="90" y="10" width="180" height="16" rx="8" fill="#FFFFFF" stroke="#12180F" stroke-width="1.5"/>
+    <!-- Content mock in browser -->
+    <rect x="30" y="60" width="120" height="14" rx="4" fill="#12180F"/>
+    <rect x="30" y="84" width="180" height="8" rx="3" fill="#6E6B5E" fill-opacity="0.6"/>
+    <rect x="30" y="98" width="150" height="8" rx="3" fill="#6E6B5E" fill-opacity="0.4"/>
+    <rect x="30" y="120" width="80" height="28" rx="14" fill="#E6FF00" stroke="#12180F" stroke-width="2"/>
+    <!-- Graph / grid visual -->
+    <rect x="230" y="60" width="100" height="140" rx="12" fill="#6AAEFF" fill-opacity="0.2" stroke="#6AAEFF" stroke-width="2"/>
+    <path d="M245,160 L270,120 L295,140 L315,90" stroke="#12180F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="315" cy="90" r="5" fill="#3FD05A"/>
+  </g>
+
+  <!-- Stylized Figure 1 (Left - Developer / Builder in Green & Black) -->
+  <!-- Legs & Large chunky boots -->
+  <path d="M120,380 L140,290 L180,310 L160,400 Z" fill="#3FD05A"/>
+  <path d="M70,390 L100,300 L140,310 L110,410 Z" fill="#229E39"/>
+  <path d="M50,400 C40,430 70,450 120,445 C135,445 140,425 120,410 Z" fill="#12180F"/>
+  <path d="M130,410 C120,440 150,455 190,445 C205,440 200,420 180,410 Z" fill="#12180F"/>
+  
+  <!-- Torso & Oversized Sweater in Black & Coral -->
+  <path d="M100,220 C100,190 180,180 220,220 C240,270 210,310 140,300 C110,290 100,260 100,220 Z" fill="#12180F"/>
+  
+  <!-- Interconnecting Arm reaching to phone / browser -->
+  <path d="M180,210 C240,190 280,240 310,260 L290,290 C260,260 220,240 170,240 Z" fill="#F08AE0"/>
+  <ellipse cx="315" cy="270" rx="16" ry="12" fill="#D9D4C7" stroke="#12180F" stroke-width="2"/>
+  
+  <!-- Stylized Head & Minimal face -->
+  <circle cx="140" cy="150" r="32" fill="#D9D4C7"/>
+  <!-- Hair in sleek black geometric block -->
+  <path d="M115,145 C115,115 165,110 175,140 C165,140 145,130 130,140 Z" fill="#12180F"/>
+  <!-- Minimal facial lines -->
+  <path d="M145,150 L152,150" stroke="#12180F" stroke-width="3" stroke-linecap="round"/>
+  <path d="M143,143 L153,142" stroke="#12180F" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Figure 2 (Right - Connected figure holding mobile) -->
+  <!-- Mobile phone device in hand -->
+  <g transform="translate(380, 240) rotate(-10)">
+    <rect width="110" height="190" rx="20" fill="#12180F" stroke="#E6FF00" stroke-width="3"/>
+    <rect x="8" y="16" width="94" height="158" rx="12" fill="#F3F1ED"/>
+    <rect x="20" y="35" width="70" height="12" rx="6" fill="#12180F"/>
+    <rect x="20" y="55" width="50" height="8" rx="4" fill="#3FD05A"/>
+    <rect x="20" y="75" width="70" height="50" rx="8" fill="#F08AE0" fill-opacity="0.3"/>
+    <circle cx="55" cy="150" r="8" fill="#E6FF00" stroke="#12180F" stroke-width="2"/>
+  </g>
+  <!-- Hand gripping phone -->
+  <ellipse cx="375" cy="330" rx="22" ry="16" fill="#C5BFB0" stroke="#12180F" stroke-width="2"/>
+  <path d="M380,310 C395,310 400,330 385,340" stroke="#12180F" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Arm connecting Figure 2 to Figure 1 -->
+  <path d="M370,340 C350,380 270,390 220,360 L230,330 C270,350 330,345 350,320 Z" fill="#6AAEFF"/>
+  
+  <!-- Floating interactive badges / sparks -->
+  <g transform="translate(60, 180)">
+    <rect width="90" height="32" rx="16" fill="#FFFFFF" stroke="#12180F" stroke-width="2"/>
+    <text x="45" y="21" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="12" fill="#12180F">&lt;/&gt; FAST</text>
+  </g>
+  <polygon points="480,80 495,115 530,120 505,145 510,180 480,160 450,180 455,145 430,120 465,115" fill="#E6FF00" stroke="#12180F" stroke-width="2" transform="scale(0.5) translate(460, 40)"/>
+</svg>

@@ -1,468 +1,530 @@
-<div class="flex flex-col w-full">
-  <!-- 1. HERO SECTION -->
-  <section class="px-margin-mobile lg:px-margin pb-space-xl flex flex-col gap-space-lg pt-space-xl desktop-container">
-    <!-- Status Pill Badge -->
-    <div class="inline-flex items-center gap-2 self-start px-space-md py-space-xs rounded-full bg-surface-bone shadow-[3px_3px_0px_#12180F]">
-      <span class="w-2.5 h-2.5 rounded-full bg-accent-green animate-pulse"></span>
-      <span class="font-label-sm text-label-sm uppercase tracking-wider text-ink-black font-bold">Estudio Creativo &amp; Digital</span>
+<div class="flex flex-col w-full bg-nexo-beige overflow-hidden">
+
+  <!-- =========================================================================
+       1. HERO SECTION CON PICOS AMARILLO NEÓN GIGANTES Y FIGURA RECORTADA
+       ========================================================================= -->
+  <section class="relative w-full min-h-[82vh] lg:min-h-[88vh] px-4 sm:px-8 pt-8 pb-16 flex items-center overflow-hidden">
+    
+    <!-- Picos y Zigzags Gigantes en Amarillo Neón (#E6FF00) sangrando por los bordes -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+      <!-- Pico de fondo masivo -->
+      <div class="absolute right-[-10%] top-[-5%] w-[85%] lg:w-[68%] h-[115%] bg-nexo-neon zigzag-hero opacity-95 transition-transform duration-700"></div>
+      <!-- Pico complementario angular sangrando por la derecha -->
+      <div class="absolute -right-24 bottom-0 w-80 h-96 bg-nexo-neon/60 corner-peak-br"></div>
     </div>
 
-    <!-- Editorial High-Impact Headline -->
-    <div class="flex flex-col gap-space-xs max-w-3xl">
-      <h1 class="font-headline-lg-mobile lg:font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-ink-black tracking-tight leading-[1.08] font-bold">
-        Donde el diseño, la web y el marketing se <mark class="bg-tertiary-fixed text-ink-black px-2 py-0.5 rounded font-bold inline-block shadow-[2px_2px_0px_#12180F]">conectan</mark>.
-      </h1>
-      <p class="font-body-lg text-body-lg text-secondary mt-space-sm leading-relaxed">
-        Fundado por <strong class="text-ink-black font-semibold">Andrea Rodríguez</strong> y <strong class="text-ink-black font-semibold">Miguel Gómez</strong>. Creamos identidades visuales que trascienden, sitios web de alto rendimiento y estrategias digitales que escalan marcas con rigor técnico y audacia visual.
-      </p>
-    </div>
-
-    <!-- Dual Tactical CTAs -->
-    <div class="flex flex-col sm:flex-row gap-space-sm w-full max-w-xl">
-      <a class="min-h-[48px] w-full px-space-lg py-space-sm rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-2 shadow-[3px_3px_0px_#12180F] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[5px_5px_0px_#12180F] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all" href="#websites">
-        <span>Explorar Sitios Web</span>
-        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-      </a>
-      <a class="min-h-[48px] w-full px-space-lg py-space-sm rounded-full bg-surface-bone text-ink-black font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-2 shadow-[3px_3px_0px_#12180F] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[5px_5px_0px_#12180F] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all" href="#contacto">
-        <span>Cotiza tu Proyecto</span>
-        <span class="material-symbols-outlined text-[18px]">north_east</span>
-      </a>
-    </div>
-
-    <!-- Interactive Graphic Capabilities Banner -->
-    <div class="w-full bg-ink-black rounded-lg p-space-md lg:p-space-lg shadow-[4px_4px_0px_#12180F] flex flex-col gap-space-md relative overflow-hidden mt-space-sm">
-      <div class="flex items-center justify-between pb-space-xs border-b border-surface-bone/15">
-        <div class="flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed animate-pulse"></span>
-          <span class="font-label-sm text-label-sm text-surface-bone uppercase tracking-widest font-bold">NEXO CORE // 2026</span>
-        </div>
-        <span class="font-label-sm text-label-sm text-tertiary-fixed uppercase font-bold tracking-widest">DISCIPLINA INTEGRADA</span>
-      </div>
-
-      <!-- 3-Pillar Creative Capabilities Breakdown -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-2.5">
-        <!-- Pillar 01 -->
-        <a href="#websites" class="bg-surface-bone/10 hover:bg-surface-bone/20 transition-all rounded p-space-md flex flex-col justify-between gap-space-sm group no-underline">
-          <div class="flex items-center justify-between">
-            <span class="w-8 h-8 rounded bg-accent-blue text-ink-black font-headline-sm text-label-md font-bold flex items-center justify-center shrink-0">01</span>
-            <span class="font-label-sm text-[11px] text-accent-blue border border-accent-blue/30 px-2 py-0.5 rounded uppercase group-hover:bg-accent-blue group-hover:text-ink-black transition-colors">Frontend Craft</span>
-          </div>
-          <div>
-            <span class="font-headline-sm text-headline-sm text-surface-bone font-bold block leading-tight group-hover:text-accent-blue transition-colors">Desarrollo Web High-End</span>
-            <span class="font-body-sm text-body-sm text-surface-variant block mt-1">Sitios interactivos a medida, responsive y conexión por WhatsApp.</span>
-          </div>
-        </a>
-
-        <!-- Pillar 02 -->
-        <a href="#diseno-grafico" class="bg-surface-bone/10 hover:bg-surface-bone/20 transition-all rounded p-space-md flex flex-col justify-between gap-space-sm group no-underline">
-          <div class="flex items-center justify-between">
-            <span class="w-8 h-8 rounded bg-tertiary-fixed text-ink-black font-headline-sm text-label-md font-bold flex items-center justify-center shrink-0">02</span>
-            <span class="font-label-sm text-[11px] text-tertiary-fixed border border-tertiary-fixed/30 px-2 py-0.5 rounded uppercase group-hover:bg-tertiary-fixed group-hover:text-ink-black transition-colors">Diseño 360°</span>
-          </div>
-          <div>
-            <span class="font-headline-sm text-headline-sm text-surface-bone font-bold block leading-tight group-hover:text-tertiary-fixed transition-colors">Identidad &amp; Branding</span>
-            <span class="font-body-sm text-body-sm text-surface-variant block mt-1">Packaging, logotipos y publicaciones editoriales con carácter auténtico.</span>
-          </div>
-        </a>
-
-        <!-- Pillar 03 -->
-        <a href="#marketing" class="bg-surface-bone/10 hover:bg-surface-bone/20 transition-all rounded p-space-md flex flex-col justify-between gap-space-sm group no-underline">
-          <div class="flex items-center justify-between">
-            <span class="w-8 h-8 rounded bg-accent-pink text-ink-black font-headline-sm text-label-md font-bold flex items-center justify-center shrink-0">03</span>
-            <span class="font-label-sm text-[11px] text-accent-pink border border-accent-pink/30 px-2 py-0.5 rounded uppercase group-hover:bg-accent-pink group-hover:text-ink-black transition-colors">Crecimiento</span>
-          </div>
-          <div>
-            <span class="font-headline-sm text-headline-sm text-surface-bone font-bold block leading-tight group-hover:text-accent-pink transition-colors">Marketing &amp; Tracción</span>
-            <span class="font-body-sm text-body-sm text-surface-variant block mt-1">Estrategias de captación orgánica, funnels de conversión y SEO técnico.</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2. INFINITE HORIZONTAL TICKER ("ÚLTIMO PROYECTO") -->
-  <section class="w-full bg-ink-black py-space-sm overflow-hidden select-none shadow-[2px_2px_0px_#12180F]">
-    <div class="flex whitespace-nowrap" style="animation: marquee 18s linear infinite;">
-      <span class="font-label-md text-label-md tracking-wider text-tertiary-fixed uppercase font-bold flex items-center gap-4">
-        <span>ÚLTIMO PROYECTO</span>
-        <span class="material-symbols-outlined text-[16px]">stars</span>
-        <span>TECH GAMER MADRID</span>
-        <span class="material-symbols-outlined text-[16px]">stars</span>
-        <span>DUMORE CHOCOLATE</span>
-        <span class="material-symbols-outlined text-[16px]">stars</span>
-        <span>ANDREA RODRÍGUEZ | DISEÑO WEB</span>
-        <span class="material-symbols-outlined text-[16px]">stars</span>
-        <span>ÚLTIMO PROYECTO</span>
-        <span class="material-symbols-outlined text-[16px]">stars</span>
-      </span>
-      <span class="font-label-md text-label-md tracking-wider text-tertiary-fixed uppercase font-bold flex items-center gap-4 ml-4">
-        <span>ÚLTIMO PROYECTO</span>
-        <span class="material-symbols-outlined text-[16px]">stars</span>
-        <span>TECH GAMER MADRID</span>
-        <span class="material-symbols-outlined text-[16px]">stars</span>
-        <span>DUMORE CHOCOLATE</span>
-        <span class="material-symbols-outlined text-[16px]">stars</span>
-        <span>ANDREA RODRÍGUEZ | DISEÑO WEB</span>
-        <span class="material-symbols-outlined text-[16px]">stars</span>
-        <span>ÚLTIMO PROYECTO</span>
-        <span class="material-symbols-outlined text-[16px]">stars</span>
-      </span>
-    </div>
-  </section>
-
-  <!-- 3. TAGS REALES (Enlace a Websites con filtros) -->
-  <section class="py-space-md flex flex-col gap-space-xs desktop-container">
-    <div class="px-margin-mobile lg:px-margin flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <span class="material-symbols-outlined text-ink-black text-[18px]">local_fire_department</span>
-        <span class="font-label-sm text-label-sm uppercase tracking-widest text-ink-black font-bold">Explorar Proyectos por Tags</span>
-      </div>
-      <a href="#websites" class="font-label-sm text-label-sm text-secondary hover:text-ink-black uppercase font-semibold">Ver Todo (3)</a>
-    </div>
-    <div class="flex items-center gap-2 overflow-x-auto px-margin-mobile lg:px-margin py-space-xs no-scrollbar" id="home-tag-carousel">
-      <a href="#websites" class="shrink-0 min-h-[36px] px-space-md rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md font-bold shadow-[2px_2px_0px_#12180F] flex items-center justify-center">Todos</a>
-      <a href="#websites?filter=cat:Negocios locales" class="shrink-0 min-h-[36px] px-space-md rounded-full bg-surface-bone text-ink-black font-label-md text-label-md shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed transition-colors flex items-center justify-center">Negocios locales</a>
-      <a href="#websites?filter=cat:Portafolio personal" class="shrink-0 min-h-[36px] px-space-md rounded-full bg-surface-bone text-ink-black font-label-md text-label-md shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed transition-colors flex items-center justify-center">Portafolio personal</a>
-      <a href="#websites?filter=tag:Servicios técnicos" class="shrink-0 min-h-[36px] px-space-md rounded-full bg-surface-bone text-ink-black font-label-md text-label-md shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed transition-colors flex items-center justify-center">Servicios técnicos</a>
-      <a href="#websites?filter=tag:Tecnología" class="shrink-0 min-h-[36px] px-space-md rounded-full bg-surface-bone text-ink-black font-label-md text-label-md shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed transition-colors flex items-center justify-center">Tecnología</a>
-      <a href="#websites?filter=tag:WhatsApp" class="shrink-0 min-h-[36px] px-space-md rounded-full bg-surface-bone text-ink-black font-label-md text-label-md shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed transition-colors flex items-center justify-center">WhatsApp</a>
-      <a href="#websites?filter=tag:Pastelería" class="shrink-0 min-h-[36px] px-space-md rounded-full bg-surface-bone text-ink-black font-label-md text-label-md shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed transition-colors flex items-center justify-center">Pastelería</a>
-      <a href="#websites?filter=tag:E-commerce" class="shrink-0 min-h-[36px] px-space-md rounded-full bg-surface-bone text-ink-black font-label-md text-label-md shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed transition-colors flex items-center justify-center">E-commerce</a>
-      <a href="#websites?filter=tag:Editorial" class="shrink-0 min-h-[36px] px-space-md rounded-full bg-surface-bone text-ink-black font-label-md text-label-md shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed transition-colors flex items-center justify-center">Editorial</a>
-      <a href="#websites?filter=tag:Brutalista" class="shrink-0 min-h-[36px] px-space-md rounded-full bg-surface-bone text-ink-black font-label-md text-label-md shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed transition-colors flex items-center justify-center">Brutalista</a>
-    </div>
-  </section>
-
-  <!-- 4. ÚLTIMO PROYECTO (1: TECH GAMER MADRID) -->
-  <section class="px-margin-mobile lg:px-margin py-space-md flex flex-col gap-space-sm desktop-container">
-    <div class="bg-surface-bone rounded-lg p-space-md lg:p-space-xl shadow-[4px_4px_0px_#12180F] border border-ink-black/15 flex flex-col lg:flex-row gap-space-lg relative overflow-hidden">
-      <!-- Image side -->
-      <a href="#websites/tech-gamer-madrid" class="relative w-full lg:w-1/2 aspect-[16/10] rounded-lg overflow-hidden bg-ink-black shadow-[2px_2px_0px_#12180F] block group no-underline shrink-0">
-        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="assets/websites/tech_gamer_hero.jpg" alt="Tech Gamer Madrid - Reparación de Ordenadores">
-        <div class="absolute top-3 left-3 bg-ink-black text-tertiary-fixed font-label-sm text-label-sm uppercase font-bold px-3 py-1 rounded-full shadow-[2px_2px_0px_#12180F]">
-          Último Proyecto
-        </div>
-      </a>
-
-      <!-- Details side -->
-      <div class="w-full lg:w-1/2 flex flex-col justify-between gap-space-md">
-        <div class="flex flex-col gap-space-xs">
-          <div class="flex items-center justify-between">
-            <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Negocios locales · Madrid</span>
-            <span class="font-label-sm text-label-sm bg-tertiary-fixed text-ink-black px-2.5 py-0.5 rounded-full font-bold uppercase">En vivo</span>
-          </div>
-          <h2 class="font-headline-sm lg:font-headline-md text-headline-sm lg:text-headline-md text-ink-black font-bold tracking-tight mt-1">
-            TECH GAMER MADRID
-          </h2>
-          <span class="font-label-md text-label-md text-ink-black font-semibold">
-            Reparación y montaje de PCs a domicilio en Carabanchel y Madrid
-          </span>
-          <p class="font-body-md text-body-md text-secondary leading-relaxed mt-1">
-            Web para un servicio técnico especializado en montaje de PCs gaming, limpieza, cambio de pasta térmica, diagnóstico y reparación de ordenadores a domicilio. Incluye calculadora interactiva de presupuestos y pedidos directos por WhatsApp.
-          </p>
-          <div class="flex flex-wrap gap-1.5 pt-space-xs">
-            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-[11px] font-semibold">Servicios técnicos</span>
-            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-[11px] font-semibold">Tecnología</span>
-            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-[11px] font-semibold">Oscuro</span>
-            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-[11px] font-semibold">Interactivo</span>
-            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-[11px] font-semibold">WhatsApp</span>
-          </div>
-        </div>
-
-        <div class="pt-space-xs flex flex-wrap gap-space-sm">
-          <a href="#websites/tech-gamer-madrid" class="min-h-[44px] px-space-lg py-space-sm rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase tracking-wider font-bold flex items-center justify-center gap-2 shadow-[3px_3px_0px_#12180F] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all">
-            <span>Ver Ficha &amp; Demo</span>
-            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-          </a>
-          <a href="https://reparacion-de-ordenadores.vercel.app/" target="_blank" rel="noopener noreferrer" class="min-h-[44px] px-space-lg py-space-sm rounded-full bg-surface-variant text-ink-black font-label-md text-label-md uppercase font-bold tracking-wider flex items-center justify-center gap-2 shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed transition-colors">
-            <span>Abrir Web en Vivo</span>
-            <span class="material-symbols-outlined text-[18px]">open_in_new</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. PROYECTOS DESTACADOS: LOS 3 PROYECTOS REALES EN ESTE ORDEN EXACTO -->
-  <section class="px-margin-mobile lg:px-margin py-space-lg flex flex-col gap-space-lg desktop-container">
-    <div class="flex items-center justify-between">
-      <div class="flex flex-col">
-        <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Portafolio Web</span>
-        <h3 class="font-headline-sm lg:font-headline-md text-headline-sm lg:text-headline-md text-ink-black font-bold tracking-tight">Proyectos Destacados</h3>
-      </div>
-      <a class="font-label-sm text-label-sm text-ink-black underline uppercase font-bold hover:text-secondary" href="#websites">Ver los 3 Proyectos</a>
-    </div>
-
-    <!-- 3 columnas en desktop, 2 en tablet y 1 en móvil -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+    <div class="desktop-container w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
       
-      <!-- PROYECTO 1: TECH GAMER MADRID -->
-      <article class="group bg-surface-bone rounded-lg overflow-hidden shadow-[4px_4px_0px_#12180F] border border-ink-black/10 flex flex-col justify-between hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
-        <div>
-          <a href="#websites/tech-gamer-madrid" class="relative block w-full aspect-[16/10] bg-ink-black overflow-hidden no-underline">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="assets/websites/tech_gamer_hero.jpg" alt="Tech Gamer Madrid">
-            <div class="absolute top-2.5 left-2.5 bg-ink-black text-tertiary-fixed px-3 py-1 rounded-full font-label-sm text-[11px] uppercase font-bold shadow-[2px_2px_0px_#12180F]">
-              01 / Negocios locales
-            </div>
-            <!-- Hover overlay con flecha amarilla -->
-            <div class="absolute inset-0 bg-ink-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <span class="px-space-md py-2 rounded-full bg-tertiary-fixed text-ink-black font-label-md text-label-md font-bold uppercase flex items-center gap-1.5 shadow-[3px_3px_0px_#12180F]">
-                <span>Ver proyecto</span>
-                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-              </span>
-            </div>
-          </a>
-          <div class="p-space-md flex flex-col gap-space-xs">
-            <span class="font-label-sm text-[11px] uppercase font-bold text-secondary">
-              Reparación y montaje de PCs a domicilio · Madrid
+      <!-- Lado Izquierdo: Titular, Badge y CTAs -->
+      <div class="lg:col-span-7 flex flex-col gap-6 pt-4 lg:pt-0">
+        
+        <!-- Badge píldora amarillo neón -->
+        <div class="self-start">
+          <a href="#websites/tech-gamer-madrid" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-nexo-white border border-nexo-dark/15 shadow-sm hover:border-nexo-dark transition-all group">
+            <span class="px-2.5 py-0.5 rounded-full bg-nexo-neon text-nexo-dark font-headline text-xs font-bold uppercase tracking-wider">NUEVO</span>
+            <span class="text-xs sm:text-sm font-semibold text-nexo-dark group-hover:underline flex items-center gap-1">
+              Descubre nuestro último proyecto
+              <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </span>
-            <h4 class="font-headline-sm text-headline-sm text-ink-black font-bold leading-tight mt-0.5">
-              <a href="#websites/tech-gamer-madrid" class="text-ink-black hover:underline">TECH GAMER MADRID</a>
-            </h4>
-            <p class="font-body-sm text-body-sm text-secondary line-clamp-3 mt-1 leading-relaxed">
-              Web para un servicio técnico especializado en montaje de PCs gaming, limpieza, cambio de pasta térmica, diagnóstico y reparación a domicilio.
-            </p>
-            <div class="flex flex-wrap gap-1 pt-space-xs mt-auto">
-              <span class="px-2 py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-[11px]">Tecnología</span>
-              <span class="px-2 py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-[11px]">WhatsApp</span>
-              <span class="px-2 py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-[11px]">Oscuro</span>
-            </div>
-          </div>
-        </div>
-        <div class="p-space-md pt-0 border-t border-ink-black/5 mt-space-xs">
-          <a href="#websites/tech-gamer-madrid" class="w-full min-h-[44px] px-space-md py-space-xs rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase font-bold flex items-center justify-between shadow-[2px_2px_0px_#12180F] group-hover:bg-tertiary-fixed group-hover:text-ink-black transition-colors no-underline">
-            <span>Ver Ficha &amp; Demo</span>
-            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
           </a>
         </div>
-      </article>
 
-      <!-- PROYECTO 2: DUMORE CHOCOLATE -->
-      <article class="group bg-surface-bone rounded-lg overflow-hidden shadow-[4px_4px_0px_#12180F] border border-ink-black/10 flex flex-col justify-between hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
-        <div>
-          <a href="#websites/dumore-chocolate" class="relative block w-full aspect-[16/10] bg-ink-black overflow-hidden no-underline">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="assets/websites/dumore_screen.png" alt="Dumore Chocolate">
-            <div class="absolute top-2.5 left-2.5 bg-ink-black text-tertiary-fixed px-3 py-1 rounded-full font-label-sm text-[11px] uppercase font-bold shadow-[2px_2px_0px_#12180F]">
-              02 / Negocios locales
-            </div>
-            <!-- Hover overlay con flecha amarilla -->
-            <div class="absolute inset-0 bg-ink-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <span class="px-space-md py-2 rounded-full bg-tertiary-fixed text-ink-black font-label-md text-label-md font-bold uppercase flex items-center gap-1.5 shadow-[3px_3px_0px_#12180F]">
-                <span>Ver proyecto</span>
-                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-              </span>
-            </div>
-          </a>
-          <div class="p-space-md flex flex-col gap-space-xs">
-            <span class="font-label-sm text-[11px] uppercase font-bold text-secondary">
-              Repostería y regalos · Bogotá, Colombia
-            </span>
-            <h4 class="font-headline-sm text-headline-sm text-ink-black font-bold leading-tight mt-0.5">
-              <a href="#websites/dumore-chocolate" class="text-ink-black hover:underline">DUMORE CHOCOLATE</a>
-            </h4>
-            <p class="font-body-sm text-body-sm text-secondary line-clamp-3 mt-1 leading-relaxed">
-              Web de alta repostería con catálogo de productos (fresas con chocolate, chocobombas, mini donas), personalización de pedidos y venta por WhatsApp.
-            </p>
-            <div class="flex flex-wrap gap-1 pt-space-xs mt-auto">
-              <span class="px-2 py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-[11px]">Pastelería</span>
-              <span class="px-2 py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-[11px]">E-commerce</span>
-              <span class="px-2 py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-[11px]">Elegante</span>
-            </div>
-          </div>
-        </div>
-        <div class="p-space-md pt-0 border-t border-ink-black/5 mt-space-xs">
-          <a href="#websites/dumore-chocolate" class="w-full min-h-[44px] px-space-md py-space-xs rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase font-bold flex items-center justify-between shadow-[2px_2px_0px_#12180F] group-hover:bg-tertiary-fixed group-hover:text-ink-black transition-colors no-underline">
-            <span>Ver Ficha &amp; Demo</span>
-            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-          </a>
-        </div>
-      </article>
+        <!-- Titular de 3 líneas: Bricolage Grotesque 800, minúsculas con mayúscula inicial, tracking -0.035em, leading 0.95 -->
+        <h1 class="font-headline text-[clamp(44px,7vw,92px)] tracking-[-0.035em] leading-[0.95] text-nexo-dark font-extrabold">
+          Diseña tu marca,<br>
+          conecta con tus clientes,<br>
+          destaca.
+        </h1>
 
-      <!-- PROYECTO 3: ANDREA RODRIGUEZ | DISEÑO WEB -->
-      <article class="group bg-surface-bone rounded-lg overflow-hidden shadow-[4px_4px_0px_#12180F] border border-ink-black/10 flex flex-col justify-between hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform">
-        <div>
-          <a href="#websites/andrea-rodriguez-diseno-web" class="relative block w-full aspect-[16/10] bg-ink-black overflow-hidden no-underline">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="assets/websites/andrea_business.png" alt="Andrea Rodríguez Diseño Web">
-            <div class="absolute top-2.5 left-2.5 bg-ink-black text-tertiary-fixed px-3 py-1 rounded-full font-label-sm text-[11px] uppercase font-bold shadow-[2px_2px_0px_#12180F]">
-              03 / Portafolio personal
-            </div>
-            <!-- Hover overlay con flecha amarilla -->
-            <div class="absolute inset-0 bg-ink-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-              <span class="px-space-md py-2 rounded-full bg-tertiary-fixed text-ink-black font-label-md text-label-md font-bold uppercase flex items-center gap-1.5 shadow-[3px_3px_0px_#12180F]">
-                <span>Ver proyecto</span>
-                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-              </span>
-            </div>
+        <!-- Subtítulo: Inter regular, 18-22px, leading 1.4, #3B4034 -->
+        <p class="font-body text-lg sm:text-[21px] text-nexo-body leading-[1.4] max-w-xl">
+          NEXO STUDIO es un centro de diseño gráfico, web y marketing digital que une todo lo que tu negocio necesita para verse bien y llegar más lejos.
+        </p>
+
+        <!-- Botones píldora de marca -->
+        <div class="flex flex-wrap items-center gap-3.5 pt-2">
+          <a href="#contacto" class="btn-nexo-primary px-8 py-3.5 text-base shadow-sm">
+            <span>Cotiza tu proyecto</span>
+            <span class="material-symbols-outlined text-[18px] ml-1.5">arrow_forward</span>
           </a>
-          <div class="p-space-md flex flex-col gap-space-xs">
-            <span class="font-label-sm text-[11px] uppercase font-bold text-secondary">
-              Servicios de diseño web · Negocios y celebraciones
-            </span>
-            <h4 class="font-headline-sm text-headline-sm text-ink-black font-bold leading-tight mt-0.5">
-              <a href="#websites/andrea-rodriguez-diseno-web" class="text-ink-black hover:underline">ANDREA RODRIGUEZ | DISEÑO WEB</a>
-            </h4>
-            <p class="font-body-sm text-body-sm text-secondary line-clamp-3 mt-1 leading-relaxed">
-              Web personal con identidad editorial/brutalista: webs para negocios locales y webs de invitación para bodas y 15 años, con demos interactivas.
-            </p>
-            <div class="flex flex-wrap gap-1 pt-space-xs mt-auto">
-              <span class="px-2 py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-[11px]">Editorial</span>
-              <span class="px-2 py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-[11px]">Brutalista</span>
-              <span class="px-2 py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-[11px]">Interactivo</span>
+          <a href="#websites" class="btn-nexo-secondary px-8 py-3.5 text-base">
+            <span>Ver proyectos</span>
+          </a>
+        </div>
+
+        <!-- Micro datos reales de confianza -->
+        <div class="flex items-center gap-6 pt-3 text-xs sm:text-sm font-medium text-nexo-body/80">
+          <div class="flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-nexo-green"></span>
+            <span>Atención directa por Andrea &amp; Miguel</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-nexo-dark"></span>
+            <span>Soluciones 100% personalizadas</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Lado Derecho: Sujeto recortado rompiendo la forma amarillo neón (contrapicado editorial) -->
+      <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-end min-h-[380px] sm:min-h-[460px] lg:min-h-[560px]">
+        <div class="relative w-full max-w-[440px] flex items-end justify-center">
+          <!-- Figura editorial en contrapicado rompiendo el pico neón -->
+          <img src="assets/brand/hero_cutout.png" 
+               alt="Dirección de arte NEXO STUDIO" 
+               class="relative z-20 w-auto max-h-[500px] lg:max-h-[620px] object-contain drop-shadow-[0_24px_36px_rgba(18,24,15,0.18)] hover:scale-[1.01] transition-transform duration-500">
+          
+          <!-- Elemento flotante interactivo sobre la figura -->
+          <div class="absolute -left-4 bottom-12 z-30 bg-nexo-white p-3.5 rounded-[20px] border border-nexo-dark/15 shadow-[0_12px_24px_rgba(18,24,15,0.12)] flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-nexo-neon flex items-center justify-center text-nexo-dark font-headline font-bold text-sm">
+              X
+            </div>
+            <div class="flex flex-col">
+              <span class="text-xs font-bold text-nexo-dark uppercase tracking-wider">DISEÑO INTEGRAL</span>
+              <span class="text-[11px] text-nexo-body/75">Web · Gráfico · Marketing</span>
             </div>
           </div>
         </div>
-        <div class="p-space-md pt-0 border-t border-ink-black/5 mt-space-xs">
-          <a href="#websites/andrea-rodriguez-diseno-web" class="w-full min-h-[44px] px-space-md py-space-xs rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase font-bold flex items-center justify-between shadow-[2px_2px_0px_#12180F] group-hover:bg-tertiary-fixed group-hover:text-ink-black transition-colors no-underline">
-            <span>Ver Ficha &amp; Demo</span>
-            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-          </a>
-        </div>
-      </article>
+      </div>
 
     </div>
   </section>
 
-  <!-- 6. SERVICIOS DEL ESTUDIO (Websites, Diseño Gráfico, Marketing) -->
-  <section class="px-margin-mobile lg:px-margin py-space-lg flex flex-col gap-space-lg desktop-container">
-    <div class="flex flex-col gap-1">
-      <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Capacidades</span>
-      <h3 class="font-headline-sm lg:font-headline-md text-headline-sm lg:text-headline-md text-ink-black font-bold tracking-tight">Soluciones Integradas</h3>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
-      <!-- Service 1: Websites -->
-      <div class="bg-surface-bone rounded-lg p-space-lg shadow-[3px_3px_0px_#12180F] flex flex-col justify-between gap-space-md border border-ink-black/10">
-        <div class="flex flex-col gap-space-sm">
-          <div class="w-12 h-12 rounded-full bg-ink-black text-tertiary-fixed flex items-center justify-center shadow-[2px_2px_0px_#12180F]">
-            <span class="material-symbols-outlined text-[24px]">terminal</span>
-          </div>
-          <h4 class="font-headline-sm text-headline-sm text-ink-black font-bold">Websites &amp; Plataformas</h4>
-          <p class="font-body-sm text-body-sm text-secondary">
-            Sitios web corporativos, landing pages de alta conversión y tiendas e-commerce construidas con arquitectura limpia, velocidad extrema y responsive total.
-          </p>
-        </div>
-        <a href="#websites" class="font-label-md text-label-md uppercase font-bold text-ink-black flex items-center gap-1 hover:text-secondary">
-          <span>Explorar Websites</span>
-          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+  <!-- =========================================================================
+       2. FRANJA BLANCO HUESO (#F3F1ED) CON MARQUEE DE PROYECTOS REALES
+       ========================================================================= -->
+  <section class="w-full bg-nexo-bone py-5 border-y border-nexo-dark/10 overflow-hidden select-none">
+    <div class="animate-marquee items-center gap-10 whitespace-nowrap">
+      
+      <!-- Grupo 1 de logos/nombres de proyectos reales -->
+      <div class="flex items-center gap-12 font-headline text-lg sm:text-xl font-bold tracking-tight text-nexo-dark/80 uppercase">
+        <a href="#websites/tech-gamer-madrid" class="hover:text-nexo-dark flex items-center gap-2 transition-colors">
+          <span class="w-2.5 h-2.5 rounded-full bg-nexo-dark"></span>
+          <span>TECH GAMER MADRID</span>
+        </a>
+        <a href="#websites/dumore-chocolate" class="hover:text-nexo-dark flex items-center gap-2 transition-colors">
+          <span class="w-2.5 h-2.5 rounded-full bg-nexo-neon"></span>
+          <span>DUMORE CHOCOLATE</span>
+        </a>
+        <a href="#websites/andrea-rodriguez-diseno-web" class="hover:text-nexo-dark flex items-center gap-2 transition-colors">
+          <span class="w-2.5 h-2.5 rounded-full bg-nexo-coral"></span>
+          <span>ANDREA RODRÍGUEZ · DISEÑO WEB</span>
+        </a>
+        <a href="#diseno-grafico" class="hover:text-nexo-dark flex items-center gap-2 transition-colors">
+          <span class="w-2.5 h-2.5 rounded-full bg-nexo-green"></span>
+          <span>BODEGAS VORTEX</span>
+        </a>
+        <a href="#diseno-grafico" class="hover:text-nexo-dark flex items-center gap-2 transition-colors">
+          <span class="w-2.5 h-2.5 rounded-full bg-nexo-pink"></span>
+          <span>ASTREO JOYERÍA</span>
+        </a>
+        <a href="#diseno-grafico" class="hover:text-nexo-dark flex items-center gap-2 transition-colors">
+          <span class="w-2.5 h-2.5 rounded-full bg-nexo-blue"></span>
+          <span>PULSO REVISTA CULTURAL</span>
         </a>
       </div>
 
-      <!-- Service 2: Diseño Gráfico -->
-      <div class="bg-surface-bone rounded-lg p-space-lg shadow-[3px_3px_0px_#12180F] flex flex-col justify-between gap-space-md border border-ink-black/10">
-        <div class="flex flex-col gap-space-sm">
-          <div class="w-12 h-12 rounded-full bg-ink-black text-accent-green flex items-center justify-center shadow-[2px_2px_0px_#12180F]">
-            <span class="material-symbols-outlined text-[24px]">palette</span>
-          </div>
-          <h4 class="font-headline-sm text-headline-sm text-ink-black font-bold">Diseño Gráfico &amp; Branding</h4>
-          <p class="font-body-sm text-body-sm text-secondary">
-            Sistemas visuales completos, packaging para productos físicos, logotipos memorables y diseño editorial concebido con rigor tipográfico.
-          </p>
-        </div>
-        <a href="#diseno-grafico" class="font-label-md text-label-md uppercase font-bold text-ink-black flex items-center gap-1 hover:text-secondary">
-          <span>Explorar Diseño Gráfico</span>
-          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      <!-- Grupo 2 repetido para loop continuo -->
+      <div class="flex items-center gap-12 font-headline text-lg sm:text-xl font-bold tracking-tight text-nexo-dark/80 uppercase">
+        <a href="#websites/tech-gamer-madrid" class="hover:text-nexo-dark flex items-center gap-2 transition-colors">
+          <span class="w-2.5 h-2.5 rounded-full bg-nexo-dark"></span>
+          <span>TECH GAMER MADRID</span>
+        </a>
+        <a href="#websites/dumore-chocolate" class="hover:text-nexo-dark flex items-center gap-2 transition-colors">
+          <span class="w-2.5 h-2.5 rounded-full bg-nexo-neon"></span>
+          <span>DUMORE CHOCOLATE</span>
+        </a>
+        <a href="#websites/andrea-rodriguez-diseno-web" class="hover:text-nexo-dark flex items-center gap-2 transition-colors">
+          <span class="w-2.5 h-2.5 rounded-full bg-nexo-coral"></span>
+          <span>ANDREA RODRÍGUEZ · DISEÑO WEB</span>
+        </a>
+        <a href="#diseno-grafico" class="hover:text-nexo-dark flex items-center gap-2 transition-colors">
+          <span class="w-2.5 h-2.5 rounded-full bg-nexo-green"></span>
+          <span>BODEGAS VORTEX</span>
+        </a>
+        <a href="#diseno-grafico" class="hover:text-nexo-dark flex items-center gap-2 transition-colors">
+          <span class="w-2.5 h-2.5 rounded-full bg-nexo-pink"></span>
+          <span>ASTREO JOYERÍA</span>
+        </a>
+        <a href="#diseno-grafico" class="hover:text-nexo-dark flex items-center gap-2 transition-colors">
+          <span class="w-2.5 h-2.5 rounded-full bg-nexo-blue"></span>
+          <span>PULSO REVISTA CULTURAL</span>
         </a>
       </div>
 
-      <!-- Service 3: Marketing -->
-      <div class="bg-surface-bone rounded-lg p-space-lg shadow-[3px_3px_0px_#12180F] flex flex-col justify-between gap-space-md border border-ink-black/10">
-        <div class="flex flex-col gap-space-sm">
-          <div class="w-12 h-12 rounded-full bg-ink-black text-accent-pink flex items-center justify-center shadow-[2px_2px_0px_#12180F]">
-            <span class="material-symbols-outlined text-[24px]">trending_up</span>
-          </div>
-          <h4 class="font-headline-sm text-headline-sm text-ink-black font-bold">Marketing &amp; Crecimiento</h4>
-          <p class="font-body-sm text-body-sm text-secondary">
-            Estrategias de captación orgánica, posicionamiento SEO técnico, campañas de paid media bien segmentadas y funnels de conversión transparentes.
-          </p>
-        </div>
-        <a href="#marketing" class="font-label-md text-label-md uppercase font-bold text-ink-black flex items-center gap-1 hover:text-secondary">
-          <span>Explorar Marketing</span>
-          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-        </a>
-      </div>
     </div>
   </section>
 
-  <!-- 7. CREADORES BANNER -->
-  <section class="px-margin-mobile lg:px-margin py-space-md desktop-container">
-    <div class="bg-surface-bone rounded-lg p-space-lg shadow-[4px_4px_0px_#12180F] flex flex-col md:flex-row items-center justify-between gap-space-md border border-ink-black/10">
-      <div class="flex flex-col gap-1 text-center md:text-left">
-        <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Equipo Creador</span>
-        <h3 class="font-headline-sm text-headline-sm text-ink-black font-bold">Andrea Rodríguez &amp; Miguel Gómez</h3>
-        <p class="font-body-sm text-body-sm text-secondary max-w-xl">
-          Atención personalizada sin intermediarios. Un estudio independiente fundado sobre el compromiso de artesanía digital y honestidad profesional.
-        </p>
-      </div>
-      <a href="#creadores" class="min-h-[44px] px-space-lg py-space-sm rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-2 shadow-[2px_2px_0px_#12180F] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all whitespace-nowrap">
-        <span>Conocer Creadores</span>
-        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- 8. BLOG HIGHLIGHT -->
-  <section class="px-margin-mobile lg:px-margin py-space-lg flex flex-col gap-space-lg desktop-container">
-    <div class="flex items-center justify-between">
-      <div class="flex flex-col">
-        <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">Journal Editorial</span>
-        <h3 class="font-headline-sm lg:font-headline-md text-headline-sm lg:text-headline-md text-ink-black font-bold tracking-tight">Pensamiento &amp; Artículos</h3>
-      </div>
-      <a class="font-label-sm text-label-sm text-ink-black underline uppercase font-bold hover:text-secondary" href="#blog">Ver Todos</a>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
-      <!-- Article 1 -->
-      <a href="#blog/arquitectura-frontend-y-rendimiento-web" class="bg-surface-bone rounded-lg p-space-md shadow-[3px_3px_0px_#12180F] border border-ink-black/10 flex flex-col gap-space-sm hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform no-underline">
-        <div class="flex items-center justify-between text-secondary">
-          <span class="font-label-sm text-[11px] uppercase font-bold text-ink-black bg-surface-variant px-2 py-0.5 rounded">Diseño Web</span>
-          <span class="font-label-sm text-label-sm">Andrea Rodríguez</span>
-        </div>
-        <h4 class="font-headline-sm text-headline-sm text-ink-black font-bold leading-tight">
-          Arquitectura frontend y rendimiento web: la velocidad como pilar de la experiencia
-        </h4>
-        <p class="font-body-sm text-body-sm text-secondary line-clamp-2">
-          Por qué una dirección de arte sobresaliente fracasa si la web tarda más de dos segundos en responder, y cómo conciliar diseño con 60fps.
-        </p>
-        <span class="font-label-sm text-label-sm text-ink-black font-bold uppercase flex items-center gap-1 mt-auto pt-2">
-          <span>Leer artículo</span>
-          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-        </span>
-      </a>
-
-      <!-- Article 2 -->
-      <a href="#blog/sistemas-de-identidad-visual-vivos" class="bg-surface-bone rounded-lg p-space-md shadow-[3px_3px_0px_#12180F] border border-ink-black/10 flex flex-col gap-space-sm hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform no-underline">
-        <div class="flex items-center justify-between text-secondary">
-          <span class="font-label-sm text-[11px] uppercase font-bold text-tertiary-container bg-tertiary-fixed px-2 py-0.5 rounded">Diseño Gráfico</span>
-          <span class="font-label-sm text-label-sm">Miguel Gómez</span>
-        </div>
-        <h4 class="font-headline-sm text-headline-sm text-ink-black font-bold leading-tight">
-          Sistemas de identidad visual vivos: cómo trascender el manual estático de marca
-        </h4>
-        <p class="font-body-sm text-body-sm text-secondary line-clamp-2">
-          Por qué los manuales de marca en PDF de 100 páginas han quedado obsoletos y cómo construir sistemas modulares capaces de responder con agilidad.
-        </p>
-        <span class="font-label-sm text-label-sm text-ink-black font-bold uppercase flex items-center gap-1 mt-auto pt-2">
-          <span>Leer artículo</span>
-          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-        </span>
-      </a>
-    </div>
-  </section>
-
-  <!-- 9. FINAL CALL TO ACTION (Cotiza -> #contacto) -->
-  <section class="px-margin-mobile lg:px-margin py-space-xl desktop-container">
-    <div class="bg-ink-black text-surface-bone rounded-lg p-space-lg lg:p-space-2xl shadow-[5px_5px_0px_#12180F] flex flex-col items-center text-center gap-space-md relative overflow-hidden">
-      <span class="font-label-sm text-label-sm text-tertiary-fixed uppercase tracking-widest font-bold">HABLEMOS DE TU PROYECTO</span>
-      <h2 class="font-headline-lg-mobile lg:font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-surface-bone font-bold max-w-2xl leading-tight">
-        ¿Listo para conectar diseño, tecnología y resultados reales?
+  <!-- =========================================================================
+       3. SECCIÓN "IMPULSA TU NEGOCIO" & TARJETAS BENTO CON ILUSTRACIONES SVG
+       ========================================================================= -->
+  <section class="px-4 sm:px-8 py-20 desktop-container flex flex-col gap-12">
+    
+    <!-- Título con "Impulsa" en Amarillo Neón sobre cápsula oscura para contraste impecable (>48px) -->
+    <div class="text-center flex flex-col items-center gap-3">
+      <h2 class="font-headline text-[clamp(44px,6vw,68px)] tracking-[-0.035em] leading-[0.95] text-nexo-dark">
+        <span class="bg-nexo-dark text-nexo-neon px-3.5 py-1 rounded-[20px] inline-block mr-1">Impulsa</span> tu negocio
       </h2>
-      <p class="font-body-md text-body-md text-surface-variant max-w-lg">
-        Escríbenos directamente. Analizaremos las necesidades de tu marca y te presentaremos una propuesta a medida sin intermediarios ni rodeos.
+      <p class="font-body text-base sm:text-lg text-nexo-body max-w-xl">
+        Tres disciplinas conectadas bajo una misma dirección de arte y visión estratégica.
       </p>
-      <a href="#contacto" class="min-h-[48px] px-space-xl py-space-sm rounded-full bg-tertiary-fixed text-ink-black font-label-md text-label-md uppercase font-bold tracking-wider flex items-center gap-2 shadow-[3px_3px_0px_#F3F1ED] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all mt-space-sm">
-        <span>Cotiza tu Proyecto</span>
-        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+    </div>
+
+    <!-- Grilla Bento con radio 24px: una tarjeta ancha y una estrecha por fila -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      
+      <!-- Fila 1 - Tarjeta Ancha (7 cols): WEBSITES ("Webs que trabajan por ti") -->
+      <a href="#websites" class="lg:col-span-7 bg-nexo-white rounded-[24px] p-7 sm:p-9 border border-nexo-dark/10 card-nexo flex flex-col justify-between group no-underline min-h-[420px] overflow-hidden relative">
+        <!-- Top: Etiqueta pequeña arriba a la izquierda -->
+        <div class="flex items-center justify-between z-10">
+          <span class="tag-pill px-3 py-1 text-xs uppercase tracking-wider">Websites</span>
+          <span class="w-9 h-9 rounded-full bg-nexo-bone flex items-center justify-center text-nexo-dark group-hover:bg-nexo-neon transition-colors">
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </span>
+        </div>
+
+        <!-- Center: Ilustración SVG propia con remolinos neón -->
+        <div class="my-6 flex justify-center items-center z-10">
+          <img src="assets/illustrations/websites.svg" alt="Ilustración Websites" class="w-full max-w-[340px] h-auto object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <!-- Bottom: Título grande en negrita abajo a la izquierda y descripción breve en gris -->
+        <div class="flex flex-col gap-1.5 z-10">
+          <h3 class="font-headline text-2xl sm:text-3xl text-nexo-dark font-bold leading-tight group-hover:text-nexo-dark">
+            Webs que trabajan por ti
+          </h3>
+          <p class="font-body text-sm text-nexo-gray leading-relaxed">
+            Páginas web a medida, rápidas y adaptadas a todos los dispositivos, con conexión directa a WhatsApp para captar clientes sin fricción.
+          </p>
+        </div>
       </a>
+
+      <!-- Fila 1 - Tarjeta Estrecha (5 cols): DISEÑO GRÁFICO ("Una marca que se reconoce") -->
+      <a href="#diseno-grafico" class="lg:col-span-5 bg-nexo-white rounded-[24px] p-7 sm:p-9 border border-nexo-dark/10 card-nexo flex flex-col justify-between group no-underline min-h-[420px] overflow-hidden relative">
+        <!-- Top: Etiqueta arriba a la izquierda -->
+        <div class="flex items-center justify-between z-10">
+          <span class="tag-pill px-3 py-1 text-xs uppercase tracking-wider">Diseño Gráfico</span>
+          <span class="w-9 h-9 rounded-full bg-nexo-bone flex items-center justify-center text-nexo-dark group-hover:bg-nexo-neon transition-colors">
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </span>
+        </div>
+
+        <!-- Center: Ilustración SVG propia -->
+        <div class="my-6 flex justify-center items-center z-10">
+          <img src="assets/illustrations/diseno.svg" alt="Ilustración Diseño Gráfico" class="w-full max-w-[270px] h-auto object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <!-- Bottom: Título grande y descripción -->
+        <div class="flex flex-col gap-1.5 z-10">
+          <h3 class="font-headline text-2xl sm:text-3xl text-nexo-dark font-bold leading-tight">
+            Una marca que se reconoce
+          </h3>
+          <p class="font-body text-sm text-nexo-gray leading-relaxed">
+            Identidades visuales memorables, diseño editorial de impacto y packaging cuidado al milímetro para destacar frente a tu competencia.
+          </p>
+        </div>
+      </a>
+
+      <!-- Fila 2 - Tarjeta Estrecha (5 cols): MARKETING ("Llega a quien te necesita") -->
+      <a href="#marketing" class="lg:col-span-5 bg-nexo-white rounded-[24px] p-7 sm:p-9 border border-nexo-dark/10 card-nexo flex flex-col justify-between group no-underline min-h-[420px] overflow-hidden relative">
+        <div class="flex items-center justify-between z-10">
+          <span class="tag-pill px-3 py-1 text-xs uppercase tracking-wider">Marketing</span>
+          <span class="w-9 h-9 rounded-full bg-nexo-bone flex items-center justify-center text-nexo-dark group-hover:bg-nexo-neon transition-colors">
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </span>
+        </div>
+
+        <div class="my-6 flex justify-center items-center z-10">
+          <img src="assets/illustrations/marketing.svg" alt="Ilustración Marketing" class="w-full max-w-[270px] h-auto object-contain group-hover:scale-105 transition-transform duration-300">
+        </div>
+
+        <div class="flex flex-col gap-1.5 z-10">
+          <h3 class="font-headline text-2xl sm:text-3xl text-nexo-dark font-bold leading-tight">
+            Llega a quien te necesita
+          </h3>
+          <p class="font-body text-sm text-nexo-gray leading-relaxed">
+            Posicionamiento en Google (SEO local), captación orgánica y estrategias digitales sin fórmulas vacías.
+          </p>
+        </div>
+      </a>
+
+      <!-- Fila 2 - Tarjeta Ancha (7 cols): ÚLTIMO PROYECTO DESTACADO BENTO (Tech Gamer Madrid) -->
+      <div class="lg:col-span-7 bg-nexo-bone rounded-[24px] p-7 sm:p-9 border border-nexo-dark/10 card-nexo flex flex-col justify-between relative overflow-hidden">
+        
+        <div class="flex items-center justify-between z-10">
+          <span class="px-3.5 py-1 rounded-full bg-nexo-dark text-nexo-neon text-xs font-bold uppercase tracking-wider">Último Proyecto Real</span>
+          <a href="#websites/tech-gamer-madrid" class="text-xs font-bold text-nexo-dark hover:underline flex items-center gap-1">
+            <span>Ver ficha</span>
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center my-4 z-10">
+          <a href="#websites/tech-gamer-madrid" class="sm:col-span-6 rounded-2xl overflow-hidden aspect-[16/10] bg-nexo-dark group block">
+            <img src="assets/websites/tech_gamer_hero.jpg" alt="Tech Gamer Madrid" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          </a>
+          <div class="sm:col-span-6 flex flex-col gap-2">
+            <span class="text-xs uppercase font-bold text-nexo-gray">Carabanchel &amp; Madrid · Negocios locales</span>
+            <h4 class="font-headline text-2xl text-nexo-dark font-bold leading-tight">Tech Gamer Madrid</h4>
+            <p class="text-xs sm:text-sm text-nexo-body leading-relaxed">
+              Calculadora interactiva de presupuestos y pedidos automáticos por WhatsApp para reparación de ordenadores a domicilio.
+            </p>
+            <div class="pt-2">
+              <a href="#websites/tech-gamer-madrid" class="btn-nexo-primary px-5 py-2 text-xs">
+                <span>Explorar demo interactiva</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tags del proyecto -->
+        <div class="flex flex-wrap gap-1.5 z-10 border-t border-nexo-dark/10 pt-3">
+          <span class="tag-pill px-2.5 py-0.5 text-xs">Servicios técnicos</span>
+          <span class="tag-pill px-2.5 py-0.5 text-xs">Tecnología</span>
+          <span class="tag-pill px-2.5 py-0.5 text-xs">WhatsApp</span>
+        </div>
+      </div>
+
     </div>
   </section>
+
+  <!-- =========================================================================
+       4. PROYECTOS DESTACADOS: LOS 3 PROYECTOS REALES EN TARJETAS BLANCAS 24PX
+       ========================================================================= -->
+  <section class="px-4 sm:px-8 py-16 desktop-container flex flex-col gap-10">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div class="flex flex-col gap-2">
+        <span class="text-xs uppercase font-bold tracking-widest text-nexo-gray">Portafolio Web</span>
+        <h3 class="font-headline text-3xl sm:text-5xl text-nexo-dark font-bold tracking-tight">Proyectos Destacados</h3>
+      </div>
+      <a href="#websites" class="btn-nexo-secondary px-6 py-2.5 text-sm self-start sm:self-auto">
+        <span>Ver los 3 proyectos</span>
+        <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+      </a>
+    </div>
+
+    <!-- 3 columnas con radio 24px, etiqueta arriba izquierda y título abajo -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Proyecto 1: Tech Gamer Madrid -->
+      <article class="bg-nexo-white rounded-[24px] p-6 border border-nexo-dark/10 card-nexo flex flex-col justify-between group">
+        <div>
+          <!-- Imagen de captura con etiqueta arriba a la izquierda -->
+          <div class="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-nexo-dark mb-4">
+            <img src="assets/websites/tech_gamer_hero.jpg" alt="Tech Gamer Madrid" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute top-3 left-3">
+              <span class="px-3 py-1 rounded-full bg-nexo-dark text-nexo-neon text-[11px] font-bold uppercase tracking-wider shadow-sm">
+                Negocios locales
+              </span>
+            </div>
+          </div>
+          <!-- Info del proyecto -->
+          <span class="text-xs font-semibold text-nexo-gray uppercase tracking-wider block">Madrid · Servicio Técnico</span>
+          <h4 class="font-headline text-2xl text-nexo-dark font-bold mt-1">Tech Gamer Madrid</h4>
+          <p class="text-sm text-nexo-gray mt-2 leading-relaxed">
+            Reparación y montaje de PCs a domicilio con presupuestador interactivo y checkout por WhatsApp.
+          </p>
+        </div>
+        <div class="pt-5 mt-4 border-t border-nexo-dark/10 flex items-center justify-between">
+          <a href="#websites/tech-gamer-madrid" class="text-xs font-bold text-nexo-dark hover:underline flex items-center gap-1">
+            <span>Ver Ficha &amp; Demo</span>
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </a>
+          <span class="px-2 py-0.5 rounded-full bg-nexo-bone text-nexo-dark text-[11px] font-semibold border border-nexo-dark/10">En vivo</span>
+        </div>
+      </article>
+
+      <!-- Proyecto 2: Dumore Chocolate -->
+      <article class="bg-nexo-white rounded-[24px] p-6 border border-nexo-dark/10 card-nexo flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-nexo-dark mb-4">
+            <img src="assets/websites/dumore_screen.png" alt="Dumore Chocolate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute top-3 left-3">
+              <span class="px-3 py-1 rounded-full bg-nexo-dark text-nexo-neon text-[11px] font-bold uppercase tracking-wider shadow-sm">
+                Negocios locales
+              </span>
+            </div>
+          </div>
+          <span class="text-xs font-semibold text-nexo-gray uppercase tracking-wider block">Bogotá · Repostería</span>
+          <h4 class="font-headline text-2xl text-nexo-dark font-bold mt-1">Dumore Chocolate</h4>
+          <p class="text-sm text-nexo-gray mt-2 leading-relaxed">
+            Catálogo digital de repostería artesanal, personalización de pedidos y venta directa por WhatsApp.
+          </p>
+        </div>
+        <div class="pt-5 mt-4 border-t border-nexo-dark/10 flex items-center justify-between">
+          <a href="#websites/dumore-chocolate" class="text-xs font-bold text-nexo-dark hover:underline flex items-center gap-1">
+            <span>Ver Ficha &amp; Demo</span>
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </a>
+          <span class="px-2 py-0.5 rounded-full bg-nexo-bone text-nexo-dark text-[11px] font-semibold border border-nexo-dark/10">En vivo</span>
+        </div>
+      </article>
+
+      <!-- Proyecto 3: Andrea Rodríguez Diseño Web -->
+      <article class="bg-nexo-white rounded-[24px] p-6 border border-nexo-dark/10 card-nexo flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-nexo-dark mb-4">
+            <img src="assets/websites/andrea_business.png" alt="Andrea Rodríguez Diseño Web" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute top-3 left-3">
+              <span class="px-3 py-1 rounded-full bg-nexo-dark text-nexo-neon text-[11px] font-bold uppercase tracking-wider shadow-sm">
+                Portafolio personal
+              </span>
+            </div>
+          </div>
+          <span class="text-xs font-semibold text-nexo-gray uppercase tracking-wider block">Personal · Consultoría</span>
+          <h4 class="font-headline text-2xl text-nexo-dark font-bold mt-1">Andrea Rodríguez</h4>
+          <p class="text-sm text-nexo-gray mt-2 leading-relaxed">
+            Web con estética editorial/brutalista para consultoría de diseño web y sitios de eventos con demos en vivo.
+          </p>
+        </div>
+        <div class="pt-5 mt-4 border-t border-nexo-dark/10 flex items-center justify-between">
+          <a href="#websites/andrea-rodriguez-diseno-web" class="text-xs font-bold text-nexo-dark hover:underline flex items-center gap-1">
+            <span>Ver Ficha &amp; Demo</span>
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </a>
+          <span class="px-2 py-0.5 rounded-full bg-nexo-bone text-nexo-dark text-[11px] font-semibold border border-nexo-dark/10">En vivo</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. CREADORES CON RETRATOS SOBRE PICOS AMARILLOS NEÓN
+       ========================================================================= -->
+  <section class="px-4 sm:px-8 py-16 desktop-container">
+    <div class="bg-nexo-bone rounded-[24px] p-8 sm:p-12 border border-nexo-dark/10 relative overflow-hidden">
+      
+      <!-- Pico amarillo neón de fondo en la tarjeta -->
+      <div class="absolute -right-16 -top-16 w-80 h-80 bg-nexo-neon corner-peak-tr opacity-80 pointer-events-none"></div>
+
+      <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+        
+        <div class="flex flex-col gap-3 max-w-xl text-center lg:text-left">
+          <span class="tag-pill px-3 py-1 text-xs uppercase tracking-wider self-center lg:self-start">Equipo Creador</span>
+          <h3 class="font-headline text-3xl sm:text-4xl text-nexo-dark font-bold leading-tight">
+            Andrea Rodríguez &amp; Miguel Gómez
+          </h3>
+          <p class="font-body text-base text-nexo-body leading-relaxed">
+            Trato directo, sin ejecutivos de cuentas ni filtros innecesarios. Diseñamos, programamos y optimizamos cada pieza con rigor visual y honestidad profesional.
+          </p>
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-2">
+            <span class="tag-pill px-3 py-1 text-xs">Dirección de Arte</span>
+            <span class="tag-pill px-3 py-1 text-xs">Desarrollo Web</span>
+            <span class="tag-pill px-3 py-1 text-xs">Branding &amp; Packaging</span>
+            <span class="tag-pill px-3 py-1 text-xs">SEO &amp; Conversión</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <a href="#creadores" class="btn-nexo-primary px-7 py-3 text-sm">
+            <span>Conocer a los creadores</span>
+            <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. ARTÍCULOS DESTACADOS DEL BLOG (TARJETAS BLANCAS 24PX)
+       ========================================================================= -->
+  <section class="px-4 sm:px-8 py-16 desktop-container flex flex-col gap-10">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div class="flex flex-col gap-2">
+        <span class="text-xs uppercase font-bold tracking-widest text-nexo-gray">Pensamiento &amp; Criterio</span>
+        <h3 class="font-headline text-3xl sm:text-5xl text-nexo-dark font-bold tracking-tight">Artículos del Blog</h3>
+      </div>
+      <a href="#blog" class="btn-nexo-secondary px-6 py-2.5 text-sm self-start sm:self-auto">
+        <span>Ver los 7 artículos</span>
+        <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Artículo 1 -->
+      <a href="#blog/arquitectura-frontend-y-rendimiento-web" class="bg-nexo-white rounded-[24px] p-7 sm:p-8 border border-nexo-dark/10 card-nexo flex flex-col justify-between group no-underline">
+        <div class="flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <span class="tag-pill px-3 py-1 text-xs uppercase">Web &amp; Rendimiento</span>
+            <span class="text-xs text-nexo-gray font-medium">Por Andrea Rodríguez</span>
+          </div>
+          <h4 class="font-headline text-2xl text-nexo-dark font-bold leading-tight group-hover:text-nexo-dark">
+            Arquitectura frontend y rendimiento web: la velocidad como pilar de la experiencia
+          </h4>
+          <p class="font-body text-sm text-nexo-gray leading-relaxed">
+            Por qué una dirección de arte sobresaliente fracasa si la web tarda más de dos segundos en responder, y cómo optimizar cada milisegundo.
+          </p>
+        </div>
+        <div class="pt-5 mt-4 border-t border-nexo-dark/10 flex items-center justify-between text-xs font-bold text-nexo-dark">
+          <span class="group-hover:underline flex items-center gap-1">
+            Leer artículo completo
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </span>
+          <span class="text-nexo-gray font-normal">7 min de lectura</span>
+        </div>
+      </a>
+
+      <!-- Artículo 2 -->
+      <a href="#blog/sistemas-de-identidad-visual-vivos" class="bg-nexo-white rounded-[24px] p-7 sm:p-8 border border-nexo-dark/10 card-nexo flex flex-col justify-between group no-underline">
+        <div class="flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <span class="tag-pill px-3 py-1 text-xs uppercase">Branding &amp; Identidad</span>
+            <span class="text-xs text-nexo-gray font-medium">Por Miguel Gómez</span>
+          </div>
+          <h4 class="font-headline text-2xl text-nexo-dark font-bold leading-tight group-hover:text-nexo-dark">
+            Sistemas de identidad visual vivos: cómo trascender el manual estático de marca
+          </h4>
+          <p class="font-body text-sm text-nexo-gray leading-relaxed">
+            Por qué los manuales de 100 páginas en PDF quedan obsoletos rápidamente y cómo diseñar identidades modulares preparadas para el entorno digital.
+          </p>
+        </div>
+        <div class="pt-5 mt-4 border-t border-nexo-dark/10 flex items-center justify-between text-xs font-bold text-nexo-dark">
+          <span class="group-hover:underline flex items-center gap-1">
+            Leer artículo completo
+            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </span>
+          <span class="text-nexo-gray font-normal">6 min de lectura</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. CTA FINAL "HABLEMOS" CON TARJETA OSCURA Y BOTÓN NEÓN
+       ========================================================================= -->
+  <section class="px-4 sm:px-8 py-16 desktop-container">
+    <div class="bg-nexo-dark text-nexo-bone rounded-[24px] p-8 sm:p-14 text-center flex flex-col items-center gap-6 relative overflow-hidden shadow-sm">
+      
+      <!-- Detalle decorativo angular neón -->
+      <div class="absolute -left-12 -bottom-12 w-48 h-48 bg-nexo-neon/20 corner-peak-br pointer-events-none"></div>
+
+      <span class="px-3.5 py-1 rounded-full bg-nexo-neon text-nexo-dark text-xs font-headline font-bold uppercase tracking-wider">
+        EMPIEZA TU PROYECTO
+      </span>
+      
+      <h2 class="font-headline text-3xl sm:text-5xl text-nexo-white font-bold max-w-2xl leading-[0.98] tracking-tight">
+        Conecta tu marca con una presencia web y visual que convierta.
+      </h2>
+
+      <p class="font-body text-base text-nexo-bone/70 max-w-lg leading-relaxed">
+        Escríbenos directamente y te daremos respuesta en menos de 24 horas. Sin intermediarios, sin presupuestos genéricos.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+        <a href="#contacto" class="px-8 py-3.5 rounded-full bg-nexo-neon text-nexo-dark font-semibold text-sm uppercase tracking-wider hover:bg-white transition-all flex items-center gap-2">
+          <span>Cotiza tu proyecto</span>
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+        <a href="#websites" class="px-8 py-3.5 rounded-full border border-nexo-bone/30 text-nexo-bone font-semibold text-sm hover:border-nexo-neon hover:text-nexo-neon transition-all">
+          <span>Ver proyectos</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
 </div>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" fill="none" class="w-full h-auto">
+  <!-- Neon yellow swirl / dynamic backdrop -->
+  <path d="M100,240 C120,100 240,60 360,90 C490,120 520,280 470,390 C420,470 260,470 160,420 C80,380 90,310 100,240 Z" fill="#E6FF00" fill-opacity="0.9"/>
+  
+  <!-- Two stylized giant hands connecting cables / phone devices -->
+  <!-- Left arm & big stylized hand in warm cream & black sleeve -->
+  <path d="M40,340 C100,320 160,290 220,270 L240,310 C180,330 120,370 60,390 Z" fill="#12180F"/>
+  <!-- Hand 1 -->
+  <path d="M220,270 C250,250 280,260 290,290 C295,310 270,330 240,320 Z" fill="#D9D4C7" stroke="#12180F" stroke-width="3"/>
+  <ellipse cx="270" cy="275" rx="20" ry="12" fill="#F0605A" stroke="#12180F" stroke-width="2" transform="rotate(-15 270 275)"/>
+
+  <!-- Right arm & hand connecting to the center -->
+  <path d="M560,180 C490,200 420,220 360,250 L345,210 C410,180 470,160 540,140 Z" fill="#3FD05A"/>
+  <!-- Hand 2 -->
+  <path d="M360,250 C330,265 305,250 300,220 C295,200 320,190 350,200 Z" fill="#D9D4C7" stroke="#12180F" stroke-width="3"/>
+  <ellipse cx="320" cy="230" rx="20" ry="12" fill="#6AAEFF" stroke="#12180F" stroke-width="2" transform="rotate(15 320 230)"/>
+
+  <!-- Central Nexus spark / glowing connection node -->
+  <circle cx="300" cy="250" r="28" fill="#FFFFFF" stroke="#12180F" stroke-width="4"/>
+  <polygon points="300,225 308,242 325,250 308,258 300,275 292,258 275,250 292,242" fill="#E6FF00" stroke="#12180F" stroke-width="2"/>
+
+  <!-- Chat message capsules floating -->
+  <g transform="translate(130, 100)">
+    <rect width="150" height="52" rx="26" fill="#FFFFFF" stroke="#12180F" stroke-width="3"/>
+    <circle cx="30" cy="26" r="12" fill="#3FD05A"/>
+    <text x="85" y="32" font-family="sans-serif" font-weight="800" font-size="14" fill="#12180F">¡Hablemos!</text>
+  </g>
+
+  <g transform="translate(340, 360)">
+    <rect width="170" height="52" rx="26" fill="#FFFFFF" stroke="#12180F" stroke-width="3"/>
+    <circle cx="32" cy="26" r="12" fill="#F08AE0"/>
+    <text x="95" y="32" font-family="sans-serif" font-weight="800" font-size="13" fill="#12180F">Respuesta rápida</text>
+  </g>
+</svg>

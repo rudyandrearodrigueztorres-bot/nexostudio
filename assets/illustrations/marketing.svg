@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" fill="none" class="w-full h-auto">
+  <!-- Neon yellow swirl / dynamic backdrop -->
+  <path d="M90,260 C70,120 220,50 350,70 C480,90 530,220 500,340 C470,440 330,480 200,440 C110,410 100,340 90,260 Z" fill="#E6FF00" fill-opacity="0.9"/>
+  
+  <!-- Soundwaves / Speech bubbles in background -->
+  <rect x="360" y="80" width="140" height="60" rx="24" fill="#FFFFFF" stroke="#12180F" stroke-width="3"/>
+  <text x="430" y="116" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="14" fill="#12180F">+CONVERSIÓN</text>
+  <polygon points="410,140 430,160 440,140" fill="#FFFFFF" stroke="#12180F" stroke-width="2"/>
+
+  <rect x="100" y="100" width="110" height="44" rx="22" fill="#3FD05A" stroke="#12180F" stroke-width="2"/>
+  <text x="155" y="128" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="12" fill="#12180F">SEO LOCAL</text>
+
+  <!-- Big Figures: 2 Figures in synergy (Nexo pose) -->
+  <!-- Figure 1 with Megaphone -->
+  <path d="M160,370 L190,460 L240,450 L200,360 Z" fill="#6AAEFF"/>
+  <ellipse cx="210" cy="465" rx="35" ry="16" fill="#12180F"/>
+  
+  <!-- Torso & Oversized jacket in Black -->
+  <path d="M150,220 C150,180 240,170 270,230 C290,280 260,340 200,340 C160,340 150,270 150,220 Z" fill="#12180F"/>
+  
+  <!-- Massive Megaphone held by Figure -->
+  <g transform="translate(250, 180) rotate(-15)">
+    <polygon points="40,20 180,70 180,-30 40,0" fill="#F0605A" stroke="#12180F" stroke-width="3"/>
+    <ellipse cx="180" cy="20" rx="16" ry="50" fill="#E6FF00" stroke="#12180F" stroke-width="3"/>
+    <rect x="0" y="0" width="40" height="20" rx="6" fill="#12180F"/>
+    <path d="M20,20 L15,55 L35,55 L30,20 Z" fill="#12180F" stroke="#12180F" stroke-width="2"/>
+    <!-- Sparkles blasting out -->
+    <path d="M210,10 L260,0 M220,30 L270,40 M210,50 L250,70" stroke="#12180F" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Hands gripping megaphone handle -->
+  <ellipse cx="265" cy="225" rx="18" ry="14" fill="#D9D4C7" stroke="#12180F" stroke-width="2"/>
+
+  <!-- Head & Hair -->
+  <circle cx="190" cy="150" r="32" fill="#D9D4C7"/>
+  <path d="M165,145 C165,115 215,110 225,145 C210,140 180,140 170,150 Z" fill="#F08AE0"/>
+  <path d="M195,150 L203,150" stroke="#12180F" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Interconnected Figure 2 (Audience / Partner listening and waving) -->
+  <path d="M380,340 L350,440 L400,450 L420,350 Z" fill="#12180F"/>
+  <ellipse cx="370" cy="450" rx="35" ry="16" fill="#12180F"/>
+  <path d="M350,250 C370,220 440,230 440,290 C430,350 370,360 340,320 Z" fill="#3FD05A"/>
+  <!-- Arm reaching out in nexo connection -->
+  <path d="M350,270 C310,270 280,290 250,310 L260,335 C290,315 320,300 360,300 Z" fill="#D9D4C7" stroke="#12180F" stroke-width="2"/>
+  <!-- Head 2 -->
+  <circle cx="410" cy="190" r="28" fill="#D9D4C7"/>
+  <path d="M390,185 C390,160 435,160 440,185 Z" fill="#12180F"/>
+  <path d="M405,190 L412,190" stroke="#12180F" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

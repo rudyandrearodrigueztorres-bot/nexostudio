@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="16" fill="#E6FF00"/>
+  <!-- Stylized X with angular cuts and nexus node center -->
+  <path d="M16 16 L25 16 L32 26 L39 16 L48 16 L37 32 L48 48 L39 48 L32 38 L25 48 L16 48 L27 32 Z" fill="#12180F"/>
+  <circle cx="32" cy="32" r="3.5" fill="#E6FF00" stroke="#12180F" stroke-width="1.5"/>
+</svg>

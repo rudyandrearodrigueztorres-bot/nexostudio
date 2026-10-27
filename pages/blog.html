@@ -1,215 +1,219 @@
-<div class="flex flex-col w-full" id="blog-app-container">
+<div class="flex flex-col w-full bg-nexo-beige overflow-hidden" id="blog-app-container">
 
   <!-- ========================================== -->
   <!-- VISTA 1: CATÁLOGO Y BUSCADOR DEL BLOG     -->
   <!-- ========================================== -->
   <div id="blog-catalog-view" class="flex flex-col w-full">
-    <!-- Cabecera del Blog -->
-    <section class="px-margin-mobile lg:px-margin pb-space-md flex flex-col gap-space-md pt-space-xl desktop-container">
-      <div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-ink-black text-tertiary-fixed self-start shadow-[3px_3px_0px_#12180F]">
-        <span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed animate-pulse"></span>
-        <span class="font-label-sm text-label-sm uppercase tracking-wider font-bold">JOURNAL // PENSAMIENTO EDITORIAL &amp; TÉCNICO</span>
-      </div>
+    
+    <!-- Hero beige con pico amarillo neón en esquina e ilustración -->
+    <section class="relative px-4 sm:px-8 pt-8 pb-14 overflow-hidden border-b border-nexo-dark/10">
+      
+      <!-- Pico amarillo neón en esquina -->
+      <div class="absolute -right-12 top-0 w-80 lg:w-96 h-80 lg:h-96 bg-nexo-neon corner-peak-tr opacity-90 pointer-events-none"></div>
 
-      <div class="flex flex-col gap-space-xs max-w-3xl">
-        <h1 class="font-headline-lg-mobile lg:font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-ink-black tracking-tight font-bold leading-tight">
-          Ensayos sobre Diseño, Código y Dirección de Marca
-        </h1>
-        <p class="font-body-lg text-body-lg text-secondary leading-relaxed">
-          Artículos originales y rigurosos escritos directamente por <strong class="text-ink-black font-semibold">Andrea Rodríguez</strong> y <strong class="text-ink-black font-semibold">Miguel Gómez</strong>. Reflexiones nacidas de la práctica diaria en nuestro estudio, sin clichés ni recetas mágicas.
-        </p>
-      </div>
+      <div class="desktop-container relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-7 flex flex-col gap-5">
+          <div class="self-start">
+            <span class="tag-pill px-3.5 py-1 text-xs uppercase tracking-wider">
+              JOURNAL // PENSAMIENTO EDITORIAL
+            </span>
+          </div>
 
-      <!-- Buscador en tiempo real -->
-      <div class="w-full max-w-2xl mt-space-sm relative">
-        <div class="relative flex items-center">
-          <span class="material-symbols-outlined absolute left-4 text-secondary text-[22px]">search</span>
-          <input
-            type="text"
-            id="blog-search-input"
-            placeholder="Buscar por título, temática, autor o palabra clave..."
-            class="w-full min-h-[48px] pl-12 pr-4 rounded-full bg-surface-bone text-ink-black placeholder:text-secondary font-body-sm text-body-sm shadow-[3px_3px_0px_#12180F] border border-ink-black/20 focus:outline-none focus:border-ink-black focus:ring-2 focus:ring-tertiary-fixed transition-all"
-            oninput="handleBlogSearch(this.value)"
-          >
-          <button id="blog-clear-search" onclick="clearBlogSearch()" class="hidden absolute right-4 text-secondary hover:text-ink-black">
-            <span class="material-symbols-outlined text-[20px]">close</span>
-          </button>
+          <h1 class="font-headline text-[clamp(38px,5.5vw,72px)] text-nexo-dark font-extrabold leading-[0.95] tracking-tight">
+            Ensayos sobre <span class="bg-nexo-dark text-nexo-neon px-3 py-0.5 rounded-[20px] inline-block">Diseño</span> y Código
+          </h1>
+
+          <p class="font-body text-base sm:text-lg text-nexo-body leading-relaxed max-w-xl">
+            Artículos originales y rigurosos escritos directamente por <strong class="text-nexo-dark font-semibold">Andrea Rodríguez</strong> y <strong class="text-nexo-dark font-semibold">Miguel Gómez</strong>. Reflexiones nacidas de la práctica diaria en nuestro estudio, sin clichés ni recetas mágicas.
+          </p>
+
+          <!-- Buscador en tiempo real -->
+          <div class="w-full max-w-lg relative pt-2">
+            <div class="relative flex items-center">
+              <span class="material-symbols-outlined absolute left-4 text-nexo-gray text-[22px]">search</span>
+              <input
+                type="text"
+                id="blog-search-input"
+                placeholder="Buscar por tema, palabra clave o autor..."
+                class="w-full min-h-[48px] pl-12 pr-10 rounded-full bg-nexo-white text-nexo-dark placeholder:text-nexo-gray text-xs sm:text-sm border border-nexo-dark/15 shadow-sm focus:outline-none focus:border-nexo-dark transition-all"
+                oninput="handleBlogSearch(this.value)"
+              >
+              <button id="blog-clear-search" onclick="clearBlogSearch()" class="hidden absolute right-4 text-nexo-gray hover:text-nexo-dark" aria-label="Limpiar búsqueda">
+                <span class="material-symbols-outlined text-[18px]">close</span>
+              </button>
+            </div>
+          </div>
         </div>
+
+        <!-- Ilustración original de Blog / Inspiración SVG -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end">
+          <img src="assets/illustrations/blog-inspo.svg" alt="Ilustración Blog" class="w-full max-w-[380px] h-auto object-contain drop-shadow-sm">
+        </div>
+
       </div>
     </section>
 
     <!-- Filtros de Categorías -->
-    <section class="py-space-sm px-margin-mobile lg:px-margin desktop-container">
+    <section class="py-6 px-4 sm:px-8 desktop-container">
       <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1" id="blog-category-filters">
-        <button class="blog-cat-btn shrink-0 px-space-md py-space-xs rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md font-bold uppercase transition-all shadow-[2px_2px_0px_#12180F]" data-category="all" onclick="filterBlogCategory('all')">
+        <button class="blog-cat-btn shrink-0 tag-pill px-4 py-1.5 uppercase active" data-category="all" onclick="filterBlogCategory('all')">
           Todos los Artículos
         </button>
-        <button class="blog-cat-btn shrink-0 px-space-md py-space-xs rounded-full bg-surface-bone text-ink-black font-label-md text-label-md font-medium uppercase transition-all shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed" data-category="Diseño Gráfico" onclick="filterBlogCategory('Diseño Gráfico')">
+        <button class="blog-cat-btn shrink-0 tag-pill px-4 py-1.5 uppercase" data-category="Diseño Gráfico" onclick="filterBlogCategory('Diseño Gráfico')">
           Diseño Gráfico
         </button>
-        <button class="blog-cat-btn shrink-0 px-space-md py-space-xs rounded-full bg-surface-bone text-ink-black font-label-md text-label-md font-medium uppercase transition-all shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed" data-category="Diseño Web" onclick="filterBlogCategory('Diseño Web')">
+        <button class="blog-cat-btn shrink-0 tag-pill px-4 py-1.5 uppercase" data-category="Diseño Web" onclick="filterBlogCategory('Diseño Web')">
           Diseño Web
         </button>
-        <button class="blog-cat-btn shrink-0 px-space-md py-space-xs rounded-full bg-surface-bone text-ink-black font-label-md text-label-md font-medium uppercase transition-all shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed" data-category="Marketing Digital" onclick="filterBlogCategory('Marketing Digital')">
+        <button class="blog-cat-btn shrink-0 tag-pill px-4 py-1.5 uppercase" data-category="Marketing Digital" onclick="filterBlogCategory('Marketing Digital')">
           Marketing Digital
         </button>
-        <button class="blog-cat-btn shrink-0 px-space-md py-space-xs rounded-full bg-surface-bone text-ink-black font-label-md text-label-md font-medium uppercase transition-all shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed" data-category="Inspiración" onclick="filterBlogCategory('Inspiración')">
+        <button class="blog-cat-btn shrink-0 tag-pill px-4 py-1.5 uppercase" data-category="Inspiración" onclick="filterBlogCategory('Inspiración')">
           Inspiración
         </button>
       </div>
     </section>
 
-    <!-- Grid de Artículos -->
-    <section class="px-margin-mobile lg:px-margin py-space-md desktop-container">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg" id="blog-posts-grid">
-        <!-- Rendered dynamically by renderBlogGrid() from window.NEXO_BLOG_POSTS -->
+    <!-- Grid Bento de Artículos (Tarjetas blancas 24px con categoría arriba izq y título grande abajo) -->
+    <section class="px-4 sm:px-8 pb-16 desktop-container">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="blog-posts-grid">
+        <!-- Generado dinámicamente -->
       </div>
 
-      <!-- Estado vacío cuando no hay resultados de búsqueda -->
-      <div id="blog-empty-state" class="hidden flex-col items-center justify-center p-space-2xl text-center gap-space-sm bg-surface-bone rounded-lg shadow-[3px_3px_0px_#12180F] my-space-lg">
-        <span class="material-symbols-outlined text-[48px] text-secondary">search_off</span>
-        <h3 class="font-headline-sm text-headline-sm text-ink-black font-bold">No se encontraron artículos</h3>
-        <p class="font-body-sm text-body-sm text-secondary">Prueba buscando con otros términos o limpia el filtro.</p>
-        <button onclick="clearBlogSearch()" class="mt-2 min-h-[40px] px-space-md py-1 rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase font-bold">
+      <!-- Estado vacío -->
+      <div id="blog-empty-state" class="hidden flex-col items-center justify-center p-12 text-center gap-3 bg-nexo-white rounded-[24px] border border-nexo-dark/10 my-8">
+        <span class="material-symbols-outlined text-[48px] text-nexo-gray">search_off</span>
+        <h3 class="font-headline text-xl text-nexo-dark font-bold">No se encontraron artículos</h3>
+        <p class="font-body text-xs text-nexo-body">Prueba con otros términos de búsqueda o restablece los filtros.</p>
+        <button onclick="clearBlogSearch()" class="btn-nexo-primary px-5 py-2 text-xs mt-2">
           Restablecer Búsqueda
         </button>
       </div>
     </section>
+
   </div>
 
   <!-- ========================================== -->
   <!-- VISTA 2: LECTURA COMPLETA DEL ARTÍCULO     -->
   <!-- ========================================== -->
   <div id="blog-article-view" class="hidden flex-col w-full pb-16">
+    
     <!-- Breadcrumb & Back -->
-    <div class="px-margin-mobile lg:px-margin pt-space-lg desktop-container">
+    <div class="px-4 sm:px-8 pt-6 desktop-container">
       <div class="flex items-center justify-between">
-        <a href="#blog" class="inline-flex items-center gap-1.5 font-label-sm text-label-sm uppercase font-bold text-ink-black hover:text-secondary py-2">
+        <a href="#blog" class="inline-flex items-center gap-1.5 text-xs font-bold uppercase text-nexo-dark hover:underline py-2">
           <span class="material-symbols-outlined text-[18px]">arrow_back</span>
-          <span>Volver a todos los artículos</span>
+          <span>Volver al listado de artículos</span>
         </a>
-        <span class="font-label-sm text-label-sm text-secondary uppercase" id="art-read-time">7 min de lectura</span>
+        <span class="tag-pill px-3 py-1 text-xs uppercase" id="art-read-time">7 min de lectura</span>
       </div>
     </div>
 
     <!-- Article Header -->
-    <header class="px-margin-mobile lg:px-margin py-space-md flex flex-col gap-space-sm desktop-container max-w-4xl">
+    <header class="px-4 sm:px-8 py-6 flex flex-col gap-3 desktop-container max-w-4xl">
       <div class="flex items-center gap-2">
-        <span class="px-3 py-1 rounded-full bg-ink-black text-tertiary-fixed font-label-sm text-label-sm uppercase font-bold shadow-[2px_2px_0px_#12180F]" id="art-category">
+        <span class="px-3 py-1 rounded-full bg-nexo-dark text-nexo-neon text-xs font-bold uppercase tracking-wider" id="art-category">
           Categoría
         </span>
-        <span class="font-label-sm text-label-sm text-secondary uppercase" id="art-date">Fecha</span>
+        <span class="text-xs font-semibold text-nexo-gray uppercase" id="art-date">Fecha</span>
       </div>
 
-      <h1 class="font-headline-lg-mobile lg:font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-ink-black font-bold tracking-tight leading-tight mt-1" id="art-title">
+      <h1 class="font-headline text-3xl sm:text-5xl text-nexo-dark font-bold tracking-tight leading-tight mt-1" id="art-title">
         Título del Artículo
       </h1>
 
-      <!-- Author Bar -->
-      <div class="flex items-center gap-space-sm pt-space-xs">
-        <img id="art-author-avatar" src="" alt="" class="w-12 h-12 rounded-full object-cover shadow-[2px_2px_0px_#12180F] border border-ink-black">
+      <div class="flex items-center gap-3 pt-2">
+        <img id="art-author-avatar" src="" alt="" class="w-11 h-11 rounded-full object-cover border-2 border-nexo-dark">
         <div class="flex flex-col">
-          <span class="font-headline-sm text-body-lg text-ink-black font-bold leading-tight" id="art-author-name">Nombre Autor</span>
-          <span class="font-label-sm text-[12px] text-secondary uppercase" id="art-author-role">Rol en NEXO STUDIO</span>
+          <span class="font-headline text-sm font-bold text-nexo-dark leading-tight" id="art-author-name">Nombre Autor</span>
+          <span class="text-[11px] font-semibold text-nexo-gray uppercase" id="art-author-role">Rol en NEXO STUDIO</span>
         </div>
       </div>
     </header>
 
     <!-- Cover Image Full -->
-    <div class="px-margin-mobile lg:px-margin py-space-sm desktop-container max-w-4xl">
-      <div class="w-full aspect-[16/9] rounded-lg overflow-hidden bg-ink-black shadow-[4px_4px_0px_#12180F]">
+    <div class="px-4 sm:px-8 py-2 desktop-container max-w-4xl">
+      <div class="w-full aspect-[16/9] rounded-[24px] overflow-hidden bg-nexo-dark border border-nexo-dark/15 shadow-sm">
         <img id="art-cover-img" src="" alt="" class="w-full h-full object-cover">
       </div>
     </div>
 
     <!-- Main Content Layout (Desktop 2-columns: Sidebar TOC + Body) -->
-    <div class="px-margin-mobile lg:px-margin py-space-lg desktop-container max-w-4xl">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
-        <!-- Sticky Sidebar with Table of Contents (Desktop) -->
-        <aside class="hidden lg:flex lg:col-span-4 flex-col gap-space-md sticky top-36 self-start">
-          <div class="bg-surface-bone p-space-md rounded-lg shadow-[3px_3px_0px_#12180F] border border-ink-black/10 flex flex-col gap-space-sm">
-            <span class="font-label-sm text-label-sm uppercase font-bold text-ink-black flex items-center gap-1.5 pb-2 border-b border-ink-black/10">
+    <div class="px-4 sm:px-8 py-8 desktop-container max-w-4xl">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Sticky Sidebar with Table of Contents -->
+        <aside class="hidden lg:flex lg:col-span-4 flex-col gap-4 sticky top-36 self-start">
+          <div class="bg-nexo-white p-6 rounded-[24px] border border-nexo-dark/10 shadow-sm flex flex-col gap-3">
+            <span class="text-xs uppercase font-bold text-nexo-dark flex items-center gap-1.5 pb-2 border-b border-nexo-dark/10">
               <span class="material-symbols-outlined text-[16px]">menu_book</span>
               <span>Índice del Artículo</span>
             </span>
-            <nav id="art-toc-list" class="flex flex-col gap-2 font-body-sm text-[13px] text-secondary">
+            <nav id="art-toc-list" class="flex flex-col gap-2 font-body text-xs text-nexo-gray">
               <!-- Rendered by JS -->
             </nav>
           </div>
 
-          <!-- Quick Share / Actions -->
-          <div class="p-space-sm rounded-lg bg-surface-taupe/60 flex items-center justify-between">
-            <span class="font-label-sm text-[11px] uppercase font-bold text-ink-black">Compartir:</span>
-            <div class="flex gap-2">
-              <button onclick="navigator.clipboard.writeText(window.location.href); alert('Enlace copiado al portapapeles');" class="px-2.5 py-1 rounded-full bg-surface-bone text-ink-black font-label-sm text-[11px] font-bold shadow-[1px_1px_0px_#12180F] hover:bg-tertiary-fixed">
-                Copiar Link
-              </button>
-            </div>
+          <div class="p-4 rounded-[20px] bg-nexo-bone border border-nexo-dark/10 flex items-center justify-between">
+            <span class="text-xs uppercase font-bold text-nexo-dark">Compartir:</span>
+            <button onclick="navigator.clipboard.writeText(window.location.href); alert('Enlace copiado al portapapeles');" class="btn-nexo-secondary px-3 py-1 text-xs">
+              Copiar Link
+            </button>
           </div>
         </aside>
 
         <!-- Main Body Content (>600 words) -->
-        <article class="lg:col-span-8 flex flex-col gap-4 font-body-md text-body-md text-on-surface-variant leading-relaxed" id="art-body-content">
+        <article class="lg:col-span-8 flex flex-col gap-5 font-body text-base text-nexo-body leading-relaxed bg-nexo-white p-8 sm:p-10 rounded-[24px] border border-nexo-dark/10 shadow-sm" id="art-body-content">
           <!-- Populated by JS -->
         </article>
       </div>
 
       <!-- Author Box Card -->
-      <div class="mt-space-2xl bg-surface-bone rounded-lg p-space-lg shadow-[3px_3px_0px_#12180F] border border-ink-black/10 flex flex-col sm:flex-row items-center gap-space-md">
-        <img id="art-box-avatar" src="" alt="" class="w-20 h-20 rounded-full object-cover shadow-[2px_2px_0px_#12180F] border border-ink-black shrink-0">
+      <div class="mt-12 bg-nexo-bone rounded-[24px] p-6 sm:p-8 border border-nexo-dark/10 flex flex-col sm:flex-row items-center gap-5">
+        <img id="art-box-avatar" src="" alt="" class="w-16 h-16 rounded-full object-cover border-2 border-nexo-dark shrink-0">
         <div class="flex flex-col gap-1 text-center sm:text-left">
-          <span class="font-label-sm text-label-sm text-secondary uppercase font-bold">Escrito por</span>
-          <h3 class="font-headline-sm text-headline-sm text-ink-black font-bold" id="art-box-name">Autor</h3>
-          <p class="font-body-sm text-body-sm text-secondary" id="art-box-bio">Biografía del autor</p>
-          <a href="#contacto" class="text-ink-black font-label-sm text-[12px] uppercase font-bold underline mt-1 hover:text-secondary">
-            Hablar con el autor sobre un proyecto &rarr;
-          </a>
+          <span class="text-xs uppercase font-bold text-nexo-gray">Sobre el autor</span>
+          <h3 class="font-headline text-lg text-nexo-dark font-bold" id="art-box-name">Autor</h3>
+          <p class="font-body text-xs sm:text-sm text-nexo-body leading-relaxed" id="art-box-bio">Bio</p>
         </div>
       </div>
 
-      <!-- Artículos Relacionados -->
-      <div class="mt-space-2xl flex flex-col gap-space-md">
-        <div class="flex items-center justify-between border-b border-ink-black/10 pb-2">
-          <h3 class="font-headline-sm text-headline-sm text-ink-black font-bold">Artículos Relacionados</h3>
-          <a href="#blog" class="font-label-sm text-label-sm uppercase font-bold text-ink-black hover:text-secondary">Ver Todos</a>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md" id="art-related-container">
-          <!-- Populated by JS -->
-        </div>
-      </div>
-
-      <!-- CTA In-Article hacia Contacto -->
-      <div class="mt-space-2xl bg-ink-black text-surface-bone rounded-lg p-space-lg lg:p-space-xl shadow-[4px_4px_0px_#12180F] flex flex-col sm:flex-row items-center justify-between gap-space-md">
-        <div class="flex flex-col gap-1 text-center sm:text-left">
-          <span class="font-label-sm text-label-sm text-tertiary-fixed uppercase font-bold tracking-widest">¿TIENES UN PROYECTO?</span>
-          <h4 class="font-headline-sm text-headline-sm text-surface-bone font-bold">Apliquemos estos principios a tu marca</h4>
-        </div>
-        <a href="#contacto" class="min-h-[44px] px-space-xl py-space-sm rounded-full bg-tertiary-fixed text-ink-black font-label-md text-label-md uppercase font-bold tracking-wider flex items-center gap-2 shadow-[2px_2px_0px_#F3F1ED] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all whitespace-nowrap">
+      <!-- CTA Final de Artículo -->
+      <div class="mt-8 bg-nexo-dark text-nexo-bone rounded-[24px] p-8 text-center flex flex-col items-center gap-4">
+        <span class="text-xs uppercase font-bold text-nexo-neon tracking-widest">¿TE HA RESULTADO ÚTIL?</span>
+        <h3 class="font-headline text-2xl text-nexo-white font-bold">Impulsa tu proyecto con NEXO STUDIO</h3>
+        <p class="font-body text-xs sm:text-sm text-nexo-bone/70 max-w-md">
+          Escríbenos directamente para analizar tu presencia digital y construir una solución a medida.
+        </p>
+        <a href="#contacto" class="px-7 py-3 rounded-full bg-nexo-neon text-nexo-dark font-semibold text-xs uppercase tracking-wider hover:bg-white transition-all flex items-center gap-2 mt-2">
           <span>Cotiza tu Proyecto</span>
-          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
         </a>
       </div>
+
     </div>
   </div>
 
 </div>
 
 <script>
-  let currentActiveCategory = 'all';
-  let currentSearchQuery = '';
+  let activeBlogCategory = 'all';
+  let blogSearchQuery = '';
 
   function initBlog() {
-    // Check if hash has a sub-route e.g. #blog/slug
-    const hash = window.location.hash.replace('#', '');
-    if (hash.startsWith('blog/') && hash.length > 5) {
-      const slug = hash.replace('blog/', '').split('?')[0];
-      showArticleView(slug);
+    const rawHash = window.location.hash.replace('#', '');
+    const [pathPart] = rawHash.split('?');
+    const segments = pathPart.split('/');
+
+    if (segments[0] === 'blog' && segments[1] && segments[1].length > 0) {
+      showArticleView(segments[1]);
     } else {
-      showCatalogView();
+      showBlogCatalog();
     }
   }
 
-  function showCatalogView() {
+  function showBlogCatalog() {
     const catalogView = document.getElementById('blog-catalog-view');
     const articleView = document.getElementById('blog-article-view');
     if (catalogView) catalogView.style.display = 'flex';
@@ -218,76 +222,37 @@
     renderBlogGrid();
   }
 
-  function showArticleView(slug) {
-    if (!window.NEXO_BLOG_POSTS) return;
-    const post = window.NEXO_BLOG_POSTS.find(p => p.slug === slug);
-    if (!post) {
-      showCatalogView();
-      return;
+  function filterBlogCategory(cat) {
+    activeBlogCategory = cat;
+    document.querySelectorAll('.blog-cat-btn').forEach(btn => {
+      const bCat = btn.getAttribute('data-category');
+      if (bCat === cat) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    renderBlogGrid();
+  }
+
+  function handleBlogSearch(query) {
+    blogSearchQuery = query.toLowerCase().trim();
+    const clearBtn = document.getElementById('blog-clear-search');
+    if (clearBtn) {
+      if (blogSearchQuery.length > 0) clearBtn.classList.remove('hidden');
+      else clearBtn.classList.add('hidden');
     }
+    renderBlogGrid();
+  }
 
-    const catalogView = document.getElementById('blog-catalog-view');
-    const articleView = document.getElementById('blog-article-view');
-    if (catalogView) catalogView.style.display = 'none';
-    if (articleView) articleView.style.display = 'flex';
-
-    // Populate article fields
-    document.getElementById('art-title').textContent = post.title;
-    document.getElementById('art-category').textContent = post.category;
-    document.getElementById('art-date').textContent = post.date;
-    document.getElementById('art-read-time').textContent = post.readTime;
-    document.getElementById('art-author-name').textContent = post.author;
-    document.getElementById('art-author-role').textContent = post.authorRole;
-    document.getElementById('art-author-avatar').src = post.authorAvatar;
-    document.getElementById('art-author-avatar').alt = post.author;
-    document.getElementById('art-cover-img').src = post.coverImage;
-    document.getElementById('art-cover-img').alt = post.coverAlt;
-
-    // Body content
-    document.getElementById('art-body-content').innerHTML = post.contentHtml;
-
-    // Table of contents
-    const tocList = document.getElementById('art-toc-list');
-    tocList.innerHTML = '';
-    post.toc.forEach(item => {
-      const a = document.createElement('a');
-      a.href = '#' + item.id;
-      a.className = 'hover:text-ink-black py-1 transition-colors leading-snug';
-      a.textContent = item.title;
-      a.onclick = (e) => {
-        e.preventDefault();
-        const el = document.getElementById(item.id);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      };
-      tocList.appendChild(a);
-    });
-
-    // Author box
-    document.getElementById('art-box-name').textContent = post.author;
-    document.getElementById('art-box-bio').textContent = post.authorBio;
-    document.getElementById('art-box-avatar').src = post.authorAvatar;
-    document.getElementById('art-box-avatar').alt = post.author;
-
-    // Related posts
-    const relatedContainer = document.getElementById('art-related-container');
-    relatedContainer.innerHTML = '';
-    const relatedPosts = window.NEXO_BLOG_POSTS.filter(p => post.relatedSlugs && post.relatedSlugs.includes(p.slug));
-    relatedPosts.forEach(rel => {
-      const card = document.createElement('a');
-      card.href = '#blog/' + rel.slug;
-      card.className = 'bg-surface-bone rounded-lg p-space-md shadow-[3px_3px_0px_#12180F] flex flex-col gap-2 hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform no-underline';
-      card.innerHTML = `
-        <span class="font-label-sm text-[11px] uppercase font-bold text-tertiary-container bg-tertiary-fixed px-2 py-0.5 rounded self-start">\${rel.category}</span>
-        <h4 class="font-headline-sm text-body-lg text-ink-black font-bold leading-tight line-clamp-2">\${rel.title}</h4>
-        <span class="font-label-sm text-label-sm text-secondary mt-auto pt-2">\${rel.author} · \${rel.readTime}</span>
-      `;
-      relatedContainer.appendChild(card);
-    });
-
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  function clearBlogSearch() {
+    const input = document.getElementById('blog-search-input');
+    if (input) input.value = '';
+    blogSearchQuery = '';
+    const clearBtn = document.getElementById('blog-clear-search');
+    if (clearBtn) clearBtn.classList.add('hidden');
+    renderBlogGrid();
   }
 
   function renderBlogGrid() {
@@ -298,99 +263,148 @@
     grid.innerHTML = '';
 
     const filtered = window.NEXO_BLOG_POSTS.filter(post => {
-      const matchCategory = currentActiveCategory === 'all' || post.category.toLowerCase() === currentActiveCategory.toLowerCase();
-      const matchSearch = currentSearchQuery === '' ||
-        post.title.toLowerCase().includes(currentSearchQuery.toLowerCase()) ||
-        post.excerpt.toLowerCase().includes(currentSearchQuery.toLowerCase()) ||
-        post.author.toLowerCase().includes(currentSearchQuery.toLowerCase());
-      return matchCategory && matchSearch;
+      const matchesCat = (activeBlogCategory === 'all') || (post.category.toLowerCase() === activeBlogCategory.toLowerCase());
+      const matchesSearch = !blogSearchQuery || 
+        post.title.toLowerCase().includes(blogSearchQuery) || 
+        post.excerpt.toLowerCase().includes(blogSearchQuery) || 
+        post.author.name.toLowerCase().includes(blogSearchQuery) ||
+        post.tags.some(t => t.toLowerCase().includes(blogSearchQuery));
+      return matchesCat && matchesSearch;
     });
 
     if (filtered.length === 0) {
-      grid.style.display = 'none';
       if (emptyState) emptyState.classList.remove('hidden');
+      return;
+    } else {
+      if (emptyState) emptyState.classList.add('hidden');
+    }
+
+    filtered.forEach((post, index) => {
+      const card = document.createElement('article');
+      card.className = 'group bg-nexo-white rounded-[24px] p-6 border border-nexo-dark/10 card-nexo flex flex-col justify-between';
+      
+      const tagsHtml = post.tags.map(t => 
+        `<span class="tag-pill px-2.5 py-0.5 text-[11px]">${t}</span>`
+      ).join('');
+
+      card.innerHTML = `
+        <div>
+          <!-- Imagen con etiqueta arriba a la izquierda -->
+          <a href="#blog/${post.slug}" class="relative block w-full aspect-[16/10] bg-nexo-dark rounded-[18px] overflow-hidden no-underline mb-4">
+            <img src="${post.coverImage}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute top-3 left-3 bg-nexo-dark text-nexo-neon px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-sm">
+              ${post.category}
+            </div>
+            <div class="absolute inset-0 bg-nexo-dark/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="btn-nexo-primary px-4 py-2 text-xs">
+                <span>Leer artículo</span>
+                <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+              </span>
+            </div>
+          </a>
+
+          <!-- Info abajo a la izquierda -->
+          <div class="flex flex-col gap-1.5">
+            <div class="flex items-center justify-between text-xs text-nexo-gray font-medium">
+              <span>${post.author.name}</span>
+              <span>${post.readTime}</span>
+            </div>
+
+            <h3 class="font-headline text-xl text-nexo-dark font-bold leading-tight mt-1">
+              <a href="#blog/${post.slug}" class="text-nexo-dark hover:underline">${post.title}</a>
+            </h3>
+
+            <p class="font-body text-xs sm:text-sm text-nexo-gray line-clamp-3 mt-1 leading-relaxed">
+              ${post.excerpt}
+            </p>
+
+            <div class="flex flex-wrap gap-1.5 pt-2 mt-auto">
+              ${tagsHtml}
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-5 mt-4 border-t border-nexo-dark/10 flex items-center justify-between text-xs font-bold text-nexo-dark">
+          <a href="#blog/${post.slug}" class="hover:underline flex items-center gap-1">
+            <span>Leer ensayo completo</span>
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </a>
+          <span class="text-nexo-gray font-normal">${post.date}</span>
+        </div>
+      `;
+
+      grid.appendChild(card);
+    });
+
+    // Inyectar ilustración Bento vacía si hay espacio
+    if (filtered.length >= 3) {
+      const bentoSlot = document.createElement('div');
+      bentoSlot.className = 'bg-nexo-bone rounded-[24px] p-6 border border-nexo-dark/10 flex flex-col items-center justify-center text-center gap-3';
+      bentoSlot.innerHTML = `
+        <img src="assets/illustrations/blog-inspo.svg" alt="Inspiración" class="w-40 h-auto object-contain">
+        <span class="font-headline text-base text-nexo-dark font-bold">Investigación &amp; Criterio</span>
+        <p class="text-xs text-nexo-gray max-w-xs">Ensayos editoriales concebidos desde la práctica real en estudio.</p>
+      `;
+      grid.appendChild(bentoSlot);
+    }
+  }
+
+  function showArticleView(slug) {
+    if (!window.NEXO_BLOG_POSTS) return;
+    const post = window.NEXO_BLOG_POSTS.find(p => p.slug === slug);
+    if (!post) {
+      showBlogCatalog();
       return;
     }
 
-    grid.style.display = 'grid';
-    if (emptyState) emptyState.classList.add('hidden');
+    const catalogView = document.getElementById('blog-catalog-view');
+    const articleView = document.getElementById('blog-article-view');
+    if (catalogView) catalogView.style.display = 'none';
+    if (articleView) articleView.style.display = 'flex';
 
-    filtered.forEach(post => {
-      const article = document.createElement('article');
-      article.className = 'bg-surface-bone rounded-lg overflow-hidden shadow-[4px_4px_0px_#12180F] border border-ink-black/10 flex flex-col justify-between hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform';
-      article.innerHTML = `
-        <div>
-          <div class="relative w-full aspect-[16/10] bg-ink-black overflow-hidden">
-            <img src="\${post.coverImage}" alt="\${post.coverAlt}" class="w-full h-full object-cover">
-            <div class="absolute top-2 left-2 bg-ink-black text-tertiary-fixed px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase font-bold shadow-[2px_2px_0px_#12180F]">
-              \${post.category}
-            </div>
-            <div class="absolute bottom-2 right-2 bg-ink-black/80 backdrop-blur-sm text-surface-bone px-2 py-0.5 rounded font-label-sm text-[11px]">
-              \${post.readTime}
-            </div>
-          </div>
-          <div class="p-space-md flex flex-col gap-space-xs">
-            <div class="flex items-center justify-between text-secondary font-label-sm text-[12px]">
-              <span>\${post.date}</span>
-              <span class="font-bold text-ink-black">\${post.author}</span>
-            </div>
-            <h3 class="font-headline-sm text-headline-sm text-ink-black font-bold leading-tight mt-1">
-              <a href="#blog/\${post.slug}" class="hover:underline text-ink-black">\${post.title}</a>
-            </h3>
-            <p class="font-body-sm text-body-sm text-secondary line-clamp-3 mt-1">
-              \${post.excerpt}
-            </p>
-          </div>
-        </div>
-        <div class="p-space-md pt-0">
-          <a href="#blog/\${post.slug}" class="w-full min-h-[44px] px-space-md py-space-xs rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase font-bold flex items-center justify-between shadow-[2px_2px_0px_#12180F] hover:bg-ink-black/90 transition-colors no-underline">
-            <span>Leer Artículo</span>
-            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-          </a>
-        </div>
-      `;
-      grid.appendChild(article);
+    document.getElementById('art-read-time').textContent = post.readTime;
+    document.getElementById('art-category').textContent = post.category;
+    document.getElementById('art-date').textContent = post.date;
+    document.getElementById('art-title').textContent = post.title;
+
+    const authorAvatar = document.getElementById('art-author-avatar');
+    authorAvatar.src = post.author.avatar;
+    authorAvatar.alt = post.author.name;
+    document.getElementById('art-author-name').textContent = post.author.name;
+    document.getElementById('art-author-role').textContent = post.author.role;
+
+    const coverImg = document.getElementById('art-cover-img');
+    coverImg.src = post.coverImage;
+    coverImg.alt = post.title;
+
+    const bodyContent = document.getElementById('art-body-content');
+    bodyContent.innerHTML = post.contentHtml;
+
+    const tocList = document.getElementById('art-toc-list');
+    tocList.innerHTML = '';
+    const headings = bodyContent.querySelectorAll('h2, h3');
+    headings.forEach((h, i) => {
+      const id = 'heading-' + i;
+      h.id = id;
+      const a = document.createElement('a');
+      a.href = '#' + id;
+      a.className = 'hover:text-nexo-dark transition-colors py-0.5 ' + (h.tagName === 'H3' ? 'pl-3 text-[11px]' : 'font-semibold');
+      a.textContent = h.textContent;
+      a.onclick = (e) => {
+        e.preventDefault();
+        h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      };
+      tocList.appendChild(a);
     });
+
+    const boxAvatar = document.getElementById('art-box-avatar');
+    boxAvatar.src = post.author.avatar;
+    boxAvatar.alt = post.author.name;
+    document.getElementById('art-box-name').textContent = post.author.name + ' · ' + post.author.role;
+    document.getElementById('art-box-bio').textContent = post.author.bio;
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  function filterBlogCategory(cat) {
-    currentActiveCategory = cat;
-    const btns = document.querySelectorAll('.blog-cat-btn');
-    btns.forEach(btn => {
-      const bCat = btn.getAttribute('data-category');
-      if (bCat.toLowerCase() === cat.toLowerCase()) {
-        btn.classList.remove('bg-surface-bone', 'text-ink-black', 'font-medium');
-        btn.classList.add('bg-ink-black', 'text-tertiary-fixed', 'font-bold');
-      } else {
-        btn.classList.remove('bg-ink-black', 'text-tertiary-fixed', 'font-bold');
-        btn.classList.add('bg-surface-bone', 'text-ink-black', 'font-medium');
-      }
-    });
-    renderBlogGrid();
-  }
-
-  function handleBlogSearch(query) {
-    currentSearchQuery = query.trim();
-    const clearBtn = document.getElementById('blog-clear-search');
-    if (clearBtn) {
-      if (currentSearchQuery.length > 0) {
-        clearBtn.classList.remove('hidden');
-      } else {
-        clearBtn.classList.add('hidden');
-      }
-    }
-    renderBlogGrid();
-  }
-
-  function clearBlogSearch() {
-    const input = document.getElementById('blog-search-input');
-    if (input) input.value = '';
-    currentSearchQuery = '';
-    const clearBtn = document.getElementById('blog-clear-search');
-    if (clearBtn) clearBtn.classList.add('hidden');
-    renderBlogGrid();
-  }
-
-  // Initialize
   initBlog();
 </script>

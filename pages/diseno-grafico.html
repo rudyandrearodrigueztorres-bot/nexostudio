@@ -1,258 +1,266 @@
-<div class="flex flex-col w-full">
-  <!-- 01. CABECERA EDITORIAL DE DISEÑO GRÁFICO -->
-  <section class="px-margin-mobile lg:px-margin pb-space-md flex flex-col gap-space-md pt-space-xl desktop-container">
-    <div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-ink-black text-tertiary-fixed self-start shadow-[3px_3px_0px_#12180F]">
-      <span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed animate-pulse"></span>
-      <span class="font-label-sm text-label-sm uppercase tracking-wider font-bold">PORTAFOLIO // DISEÑO GRÁFICO &amp; IDENTIDAD</span>
-    </div>
+<div class="flex flex-col w-full bg-nexo-beige overflow-hidden">
+  
+  <!-- =========================================================================
+       1. CABECERA BEIGE CON PICO AMARILLO NEÓN E ILUSTRACIÓN DE SU SERVICIO
+       ========================================================================= -->
+  <section class="relative px-4 sm:px-8 pt-8 pb-14 overflow-hidden border-b border-nexo-dark/10">
+    
+    <!-- Pico amarillo neón en la esquina superior derecha -->
+    <div class="absolute -right-12 top-0 w-80 lg:w-96 h-80 lg:h-96 bg-nexo-neon corner-peak-tr opacity-90 pointer-events-none"></div>
 
-    <div class="flex flex-col gap-space-xs max-w-3xl">
-      <h1 class="font-headline-lg-mobile lg:font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-ink-black tracking-tight font-bold leading-tight">
-        Identidad Visual, Packaging &amp; Diseño Editorial
-      </h1>
-      <p class="font-body-lg text-body-lg text-secondary leading-relaxed">
-        Colección de trabajos reales desarrollados en el estudio. Cada proyecto responde a un análisis conceptual exhaustivo, cuidando la materialidad, la precisión tipográfica y la autenticidad del relato de marca.
-      </p>
-    </div>
+    <div class="desktop-container relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      
+      <div class="lg:col-span-7 flex flex-col gap-5">
+        <div class="self-start">
+          <span class="tag-pill px-3.5 py-1 text-xs uppercase tracking-wider">
+            SERVICIO 02 // IDENTIDAD &amp; BRANDING
+          </span>
+        </div>
 
-    <!-- Real studio disciplines banner (no fake awards) -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm mt-space-xs">
-      <div class="bg-surface-bone p-space-md rounded-DEFAULT shadow-[2px_2px_0px_#12180F] flex flex-col justify-between">
-        <span class="font-label-sm text-label-sm uppercase text-secondary font-bold">DISCIPLINA</span>
-        <span class="font-headline-sm text-headline-sm text-ink-black font-bold mt-1">Branding</span>
-        <span class="font-body-sm text-[12px] text-secondary mt-0.5">Identidad &amp; Logotipos</span>
+        <h1 class="font-headline text-[clamp(38px,5.5vw,72px)] text-nexo-dark font-extrabold leading-[0.95] tracking-tight">
+          Identidad <span class="bg-nexo-dark text-nexo-neon px-3 py-0.5 rounded-[20px] inline-block">Visual</span> &amp; Packaging
+        </h1>
+
+        <p class="font-body text-base sm:text-lg text-nexo-body leading-relaxed max-w-xl">
+          Colección de proyectos reales desarrollados en el estudio. Cada pieza responde a un análisis conceptual minucioso, cuidando la materialidad, el ritmo tipográfico y el carácter visual de la marca.
+        </p>
+
+        <div class="flex items-center gap-3 pt-2">
+          <a href="#contacto" class="btn-nexo-primary px-7 py-3 text-sm">
+            <span>Cotiza tu identidad</span>
+            <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+          </a>
+          <div class="bg-nexo-white px-4 py-2 rounded-full border border-nexo-dark/10 text-xs font-bold text-nexo-dark shadow-sm">
+            3 casos de estudio reales
+          </div>
+        </div>
       </div>
-      <div class="bg-surface-bone p-space-md rounded-DEFAULT shadow-[2px_2px_0px_#12180F] flex flex-col justify-between">
-        <span class="font-label-sm text-label-sm uppercase text-secondary font-bold">DISCIPLINA</span>
-        <span class="font-headline-sm text-headline-sm text-ink-black font-bold mt-1">Packaging</span>
-        <span class="font-body-sm text-[12px] text-secondary mt-0.5">Etiquetado de alta gama</span>
+
+      <!-- Ilustración original de Diseño Gráfico SVG -->
+      <div class="lg:col-span-5 flex justify-center lg:justify-end">
+        <img src="assets/illustrations/diseno.svg" alt="Ilustración Diseño Gráfico" class="w-full max-w-[380px] h-auto object-contain drop-shadow-sm">
       </div>
-      <div class="bg-surface-bone p-space-md rounded-DEFAULT shadow-[2px_2px_0px_#12180F] flex flex-col justify-between">
-        <span class="font-label-sm text-label-sm uppercase text-secondary font-bold">DISCIPLINA</span>
-        <span class="font-headline-sm text-headline-sm text-ink-black font-bold mt-1">Editorial</span>
-        <span class="font-body-sm text-[12px] text-secondary mt-0.5">Revistas &amp; Trípticos</span>
-      </div>
-      <div class="bg-surface-bone p-space-md rounded-DEFAULT shadow-[2px_2px_0px_#12180F] flex flex-col justify-between">
-        <span class="font-label-sm text-label-sm uppercase text-secondary font-bold">EJECUCIÓN</span>
-        <span class="font-headline-sm text-headline-sm text-ink-black font-bold mt-1">Artesanía</span>
-        <span class="font-body-sm text-[12px] text-secondary mt-0.5">Atención al milímetro</span>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       2. FILTROS TÁCTILES POR TAG REAL
+       ========================================================================= -->
+  <section class="py-6 px-4 sm:px-8 desktop-container">
+    <div class="flex flex-col gap-2">
+      <span class="text-xs uppercase font-bold tracking-widest text-nexo-gray">Filtrar por disciplina y etiqueta:</span>
+      <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1" id="portfolio-filter-container">
+        <button class="portfolio-filter-btn shrink-0 tag-pill px-4 py-1.5 uppercase active" data-tag="all">
+          Todos los Trabajos
+        </button>
+        <button class="portfolio-filter-btn shrink-0 tag-pill px-4 py-1.5 uppercase" data-tag="Branding">
+          Branding
+        </button>
+        <button class="portfolio-filter-btn shrink-0 tag-pill px-4 py-1.5 uppercase" data-tag="Packaging">
+          Packaging
+        </button>
+        <button class="portfolio-filter-btn shrink-0 tag-pill px-4 py-1.5 uppercase" data-tag="Editorial">
+          Editorial
+        </button>
+        <button class="portfolio-filter-btn shrink-0 tag-pill px-4 py-1.5 uppercase" data-tag="Ilustración">
+          Ilustración
+        </button>
+        <button class="portfolio-filter-btn shrink-0 tag-pill px-4 py-1.5 uppercase" data-tag="Logotipo">
+          Logotipos
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- 02. FILTROS TÁCTILES POR TAG REAL -->
-  <section class="py-space-sm px-margin-mobile lg:px-margin desktop-container">
-    <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1" id="portfolio-filter-container">
-      <button class="portfolio-filter-btn shrink-0 px-space-md py-space-xs rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md font-bold uppercase transition-all shadow-[2px_2px_0px_#12180F]" data-tag="all">
-        Todos los Proyectos
-      </button>
-      <button class="portfolio-filter-btn shrink-0 px-space-md py-space-xs rounded-full bg-surface-bone text-ink-black font-label-md text-label-md font-medium uppercase transition-all shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed" data-tag="Branding">
-        Branding
-      </button>
-      <button class="portfolio-filter-btn shrink-0 px-space-md py-space-xs rounded-full bg-surface-bone text-ink-black font-label-md text-label-md font-medium uppercase transition-all shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed" data-tag="Packaging">
-        Packaging
-      </button>
-      <button class="portfolio-filter-btn shrink-0 px-space-md py-space-xs rounded-full bg-surface-bone text-ink-black font-label-md text-label-md font-medium uppercase transition-all shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed" data-tag="Editorial">
-        Editorial
-      </button>
-      <button class="portfolio-filter-btn shrink-0 px-space-md py-space-xs rounded-full bg-surface-bone text-ink-black font-label-md text-label-md font-medium uppercase transition-all shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed" data-tag="Ilustración">
-        Ilustración
-      </button>
-      <button class="portfolio-filter-btn shrink-0 px-space-md py-space-xs rounded-full bg-surface-bone text-ink-black font-label-md text-label-md font-medium uppercase transition-all shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed" data-tag="Logotipo">
-        Logotipos
-      </button>
-    </div>
-  </section>
-
-  <!-- 03. GRID DE PROYECTOS REALES (Astreo, Vortex, Pulso) -->
-  <section class="px-margin-mobile lg:px-margin py-space-md flex flex-col gap-space-lg desktop-container" id="graphic-projects-grid">
-    <!-- Projects will be rendered dynamically by JS from window.NEXO_GRAPHIC_PROJECTS, with fallback static HTML -->
-
-    <!-- Card 1: VORTEX -->
-    <article class="project-item bg-surface-bone rounded-lg overflow-hidden shadow-[4px_4px_0px_#12180F] flex flex-col lg:flex-row gap-space-md p-space-md lg:p-space-lg transition-transform" data-tags="Packaging Branding Editorial">
-      <div class="relative w-full lg:w-1/2 aspect-[16/10] bg-ink-black rounded-lg overflow-hidden shadow-[2px_2px_0px_#12180F] shrink-0">
-        <img src="assets/portfolio/vortex-packaging-botellas.jpg" alt="VORTEX Luxury Vineyards" class="w-full h-full object-cover">
-        <div class="absolute top-2 left-2 bg-ink-black text-tertiary-fixed px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase font-bold">
+  <!-- =========================================================================
+       3. GRILLA DE PROYECTOS REALES EN TARJETAS BLANCAS DE 24PX
+       ========================================================================= -->
+  <section class="px-4 sm:px-8 pb-16 flex flex-col gap-8 desktop-container" id="graphic-projects-grid">
+    
+    <!-- Card 1: VORTEX BODEGAS & VIÑEDOS -->
+    <article class="project-item bg-nexo-white rounded-[24px] p-6 sm:p-8 border border-nexo-dark/10 card-nexo flex flex-col lg:flex-row gap-8" data-tags="Packaging Branding Editorial">
+      <div class="relative w-full lg:w-1/2 aspect-[16/10] bg-nexo-dark rounded-[18px] overflow-hidden shrink-0">
+        <img src="assets/portfolio/vortex-packaging-botellas.jpg" alt="VORTEX Luxury Vineyards" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+        <div class="absolute top-3 left-3 bg-nexo-dark text-nexo-neon px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-sm">
           Packaging &amp; Vinos
         </div>
       </div>
-      <div class="w-full lg:w-1/2 flex flex-col justify-between gap-space-sm">
-        <div class="flex flex-col gap-space-xs">
-          <div class="flex items-center justify-between text-secondary">
-            <span class="font-label-sm text-label-sm uppercase font-bold text-ink-black">Cliente: VORTEX Bodegas &amp; Viñedos</span>
-            <span class="font-label-sm text-label-sm">Colección 2026</span>
+      <div class="w-full lg:w-1/2 flex flex-col justify-between gap-4">
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center justify-between text-xs text-nexo-gray font-semibold">
+            <span class="uppercase">VORTEX Bodegas &amp; Viñedos</span>
+            <span>La Rioja, España</span>
           </div>
-          <h2 class="font-headline-sm lg:font-headline-md text-headline-sm lg:text-headline-md text-ink-black font-bold leading-tight">
+          <h2 class="font-headline text-2xl sm:text-3xl text-nexo-dark font-bold leading-tight">
             VORTEX Bodegas &amp; Viñedos
           </h2>
-          <p class="font-body-sm text-body-sm text-secondary leading-relaxed">
-            Gama de tres botellas exclusivas (Céfiro blanco, Magma tinto y Aura rosado) y folleto tríptico con filosofía de mínima intervención en La Rioja, España.
+          <p class="font-body text-sm text-nexo-body leading-relaxed">
+            Gama de tres botellas de alta gama (Céfiro blanco, Magma tinto y Aura rosado) y folleto tríptico explicativo con filosofía de mínima intervención y estética contemporánea.
           </p>
-          <div class="flex flex-wrap gap-1.5 pt-space-xs">
-            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold">Packaging</span>
-            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold">Branding</span>
-            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold">Editorial</span>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            <span class="tag-pill px-3 py-0.5 text-xs">Packaging</span>
+            <span class="tag-pill px-3 py-0.5 text-xs">Branding</span>
+            <span class="tag-pill px-3 py-0.5 text-xs">Editorial</span>
           </div>
         </div>
-        <div class="pt-space-xs flex flex-wrap gap-space-sm">
-          <button onclick="openProjectModal('vortex-bodegas')" class="min-h-[44px] px-space-lg py-space-xs rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase font-bold flex items-center gap-2 shadow-[2px_2px_0px_#12180F] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all">
+        <div class="pt-4 border-t border-nexo-dark/10 flex flex-wrap items-center gap-3">
+          <button onclick="openProjectModal('vortex-bodegas')" class="btn-nexo-primary px-6 py-2.5 text-xs">
             <span>Ver Ficha y Detalles</span>
-            <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+            <span class="material-symbols-outlined text-[16px] ml-1">open_in_new</span>
           </button>
-          <a href="#contacto" class="min-h-[44px] px-space-lg py-space-xs rounded-full bg-surface-variant text-ink-black font-label-md text-label-md uppercase font-bold flex items-center justify-center hover:bg-tertiary-fixed transition-colors">
-            <span>Cotizar</span>
+          <a href="#contacto" class="btn-nexo-secondary px-6 py-2.5 text-xs">
+            <span>Cotizar packaging</span>
           </a>
         </div>
       </div>
     </article>
 
-    <!-- Card 2: ASTREO -->
-    <article class="project-item bg-surface-bone rounded-lg overflow-hidden shadow-[4px_4px_0px_#12180F] flex flex-col lg:flex-row gap-space-md p-space-md lg:p-space-lg transition-transform" data-tags="Branding Identidad Visual Logotipo">
-      <div class="relative w-full lg:w-1/2 aspect-[16/10] bg-surface-variant rounded-lg overflow-hidden shadow-[2px_2px_0px_#12180F] shrink-0 flex items-center justify-center p-space-md">
-        <img src="assets/portfolio/astreo-branding-logo.jpg" alt="Astreo Asociación de Montaña y Naturaleza" class="w-full h-full object-contain">
-        <div class="absolute top-2 left-2 bg-ink-black text-tertiary-fixed px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase font-bold">
+    <!-- Card 2: ASTREO MONTAÑA Y NATURALEZA -->
+    <article class="project-item bg-nexo-white rounded-[24px] p-6 sm:p-8 border border-nexo-dark/10 card-nexo flex flex-col lg:flex-row gap-8" data-tags="Branding Identidad Visual Logotipo">
+      <div class="relative w-full lg:w-1/2 aspect-[16/10] bg-nexo-bone rounded-[18px] overflow-hidden shrink-0 flex items-center justify-center p-6">
+        <img src="assets/portfolio/astreo-branding-logo.jpg" alt="Astreo Asociación de Montaña y Naturaleza" class="w-full h-full object-contain hover:scale-105 transition-transform duration-300">
+        <div class="absolute top-3 left-3 bg-nexo-dark text-nexo-neon px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-sm">
           Branding &amp; Símbolo
         </div>
       </div>
-      <div class="w-full lg:w-1/2 flex flex-col justify-between gap-space-sm">
-        <div class="flex flex-col gap-space-xs">
-          <div class="flex items-center justify-between text-secondary">
-            <span class="font-label-sm text-label-sm uppercase font-bold text-ink-black">Cliente: Astreo</span>
-            <span class="font-label-sm text-label-sm">Asociación de Montaña</span>
+      <div class="w-full lg:w-1/2 flex flex-col justify-between gap-4">
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center justify-between text-xs text-nexo-gray font-semibold">
+            <span class="uppercase">Astreo</span>
+            <span>Asociación de Montaña</span>
           </div>
-          <h2 class="font-headline-sm lg:font-headline-md text-headline-sm lg:text-headline-md text-ink-black font-bold leading-tight">
+          <h2 class="font-headline text-2xl sm:text-3xl text-nexo-dark font-bold leading-tight">
             ASTREO — Montaña y Naturaleza
           </h2>
-          <p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+          <p class="font-body text-sm text-nexo-body leading-relaxed">
             Identidad visual institucional en marco hexagonal con siluetas de montaña, sol naciente y manada de lobos. Paleta cromática oficial azul #336699 y naranja #ff9900.
           </p>
-          <div class="flex flex-wrap gap-1.5 pt-space-xs">
-            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold">Branding</span>
-            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold">Identidad Visual</span>
-            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold">Logotipo</span>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            <span class="tag-pill px-3 py-0.5 text-xs">Branding</span>
+            <span class="tag-pill px-3 py-0.5 text-xs">Identidad Visual</span>
+            <span class="tag-pill px-3 py-0.5 text-xs">Logotipo</span>
           </div>
         </div>
-        <div class="pt-space-xs flex flex-wrap gap-space-sm">
-          <button onclick="openProjectModal('astreo-asociacion')" class="min-h-[44px] px-space-lg py-space-xs rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase font-bold flex items-center gap-2 shadow-[2px_2px_0px_#12180F] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all">
+        <div class="pt-4 border-t border-nexo-dark/10 flex flex-wrap items-center gap-3">
+          <button onclick="openProjectModal('astreo-asociacion')" class="btn-nexo-primary px-6 py-2.5 text-xs">
             <span>Ver Ficha y Detalles</span>
-            <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+            <span class="material-symbols-outlined text-[16px] ml-1">open_in_new</span>
           </button>
-          <a href="#contacto" class="min-h-[44px] px-space-lg py-space-xs rounded-full bg-surface-variant text-ink-black font-label-md text-label-md uppercase font-bold flex items-center justify-center hover:bg-tertiary-fixed transition-colors">
-            <span>Cotizar</span>
+          <a href="#contacto" class="btn-nexo-secondary px-6 py-2.5 text-xs">
+            <span>Cotizar identidad</span>
           </a>
         </div>
       </div>
     </article>
 
-    <!-- Card 3: PULSO -->
-    <article class="project-item bg-surface-bone rounded-lg overflow-hidden shadow-[4px_4px_0px_#12180F] flex flex-col lg:flex-row gap-space-md p-space-md lg:p-space-lg transition-transform" data-tags="Editorial Ilustración Sostenibilidad">
-      <div class="relative w-full lg:w-1/2 aspect-[16/10] bg-surface-variant rounded-lg overflow-hidden shadow-[2px_2px_0px_#12180F] shrink-0 flex items-center justify-center">
-        <img src="assets/portfolio/pulso-revista-editorial.jpg" alt="Revista PULSO Ciudad, Diseño y Sostenibilidad" class="h-full object-contain">
-        <div class="absolute top-2 left-2 bg-ink-black text-accent-green px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase font-bold">
+    <!-- Card 3: REVISTA PULSO -->
+    <article class="project-item bg-nexo-white rounded-[24px] p-6 sm:p-8 border border-nexo-dark/10 card-nexo flex flex-col lg:flex-row gap-8" data-tags="Editorial Ilustración Sostenibilidad">
+      <div class="relative w-full lg:w-1/2 aspect-[16/10] bg-nexo-bone rounded-[18px] overflow-hidden shrink-0 flex items-center justify-center p-4">
+        <img src="assets/portfolio/pulso-revista-editorial.jpg" alt="Revista PULSO Ciudad, Diseño y Sostenibilidad" class="h-full object-contain hover:scale-105 transition-transform duration-300">
+        <div class="absolute top-3 left-3 bg-nexo-dark text-nexo-neon px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-sm">
           Diseño Editorial
         </div>
       </div>
-      <div class="w-full lg:w-1/2 flex flex-col justify-between gap-space-sm">
-        <div class="flex flex-col gap-space-xs">
-          <div class="flex items-center justify-between text-secondary">
-            <span class="font-label-sm text-label-sm uppercase font-bold text-ink-black">Publicación: Revista PULSO</span>
-            <span class="font-label-sm text-label-sm">1ª Época, Nº 01 (2026)</span>
+      <div class="w-full lg:w-1/2 flex flex-col justify-between gap-4">
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center justify-between text-xs text-nexo-gray font-semibold">
+            <span class="uppercase">Revista PULSO</span>
+            <span>1ª Época, Nº 01</span>
           </div>
-          <h2 class="font-headline-sm lg:font-headline-md text-headline-sm lg:text-headline-md text-ink-black font-bold leading-tight">
-            PULSO — Ciudad, Diseño y Sostenibilidad
+          <h2 class="font-headline text-2xl sm:text-3xl text-nexo-dark font-bold leading-tight">
+            Revista PULSO — Ciudad, Diseño y Futuro
           </h2>
-          <p class="font-body-sm text-body-sm text-secondary leading-relaxed">
-            Portada editorial e ilustración vectorial sobre movilidad urbana sostenible: peatones, ciclismo y micromovilidad en diálogo con la ciudad verde.
+          <p class="font-body text-sm text-nexo-body leading-relaxed">
+            Publicación monográfica que explora el cruce entre diseño contemporáneo, regeneración urbana y sostenibilidad, con maqueta tipográfica rigurosa y acabado mate.
           </p>
-          <div class="flex flex-wrap gap-1.5 pt-space-xs">
-            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold">Editorial</span>
-            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold">Ilustración</span>
-            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold">Sostenibilidad</span>
+          <div class="flex flex-wrap gap-1.5 pt-2">
+            <span class="tag-pill px-3 py-0.5 text-xs">Editorial</span>
+            <span class="tag-pill px-3 py-0.5 text-xs">Revista</span>
+            <span class="tag-pill px-3 py-0.5 text-xs">Tipografía</span>
           </div>
         </div>
-        <div class="pt-space-xs flex flex-wrap gap-space-sm">
-          <button onclick="openProjectModal('pulso-revista')" class="min-h-[44px] px-space-lg py-space-xs rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase font-bold flex items-center gap-2 shadow-[2px_2px_0px_#12180F] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all">
+        <div class="pt-4 border-t border-nexo-dark/10 flex flex-wrap items-center gap-3">
+          <button onclick="openProjectModal('pulso-revista')" class="btn-nexo-primary px-6 py-2.5 text-xs">
             <span>Ver Ficha y Detalles</span>
-            <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+            <span class="material-symbols-outlined text-[16px] ml-1">open_in_new</span>
           </button>
-          <a href="#contacto" class="min-h-[44px] px-space-lg py-space-xs rounded-full bg-surface-variant text-ink-black font-label-md text-label-md uppercase font-bold flex items-center justify-center hover:bg-tertiary-fixed transition-colors">
-            <span>Cotizar</span>
+          <a href="#contacto" class="btn-nexo-secondary px-6 py-2.5 text-xs">
+            <span>Cotizar editorial</span>
           </a>
         </div>
       </div>
     </article>
+
   </section>
 
-  <!-- 04. MODAL INTERACTIVO DE DETALLE DE PROYECTO -->
-  <div id="project-detail-modal" class="hidden fixed inset-0 z-[100] bg-ink-black/80 backdrop-blur-md flex items-center justify-center p-margin-mobile lg:p-margin overflow-y-auto">
-    <div class="bg-surface-bone w-full max-w-4xl max-h-[90vh] rounded-lg shadow-[5px_5px_0px_#12180F] border border-ink-black flex flex-col overflow-hidden my-auto" onclick="event.stopPropagation()">
+  <!-- =========================================================================
+       4. MODAL DETALLE DE PROYECTO RESTYLED EN TARJETA 24PX
+       ========================================================================= -->
+  <div id="project-detail-modal" class="hidden fixed inset-0 z-[70] bg-nexo-dark/80 backdrop-blur-sm p-4 sm:p-6 flex items-center justify-center overflow-y-auto">
+    <div class="bg-nexo-white rounded-[24px] w-full max-w-4xl max-h-[92vh] flex flex-col border border-nexo-dark/20 shadow-2xl overflow-hidden relative">
+      
       <!-- Modal Header -->
-      <div class="p-space-md lg:p-space-lg bg-surface-taupe border-b border-ink-black/15 flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <span class="w-3 h-3 rounded-full bg-tertiary-fixed animate-pulse"></span>
-          <span class="font-label-sm text-label-sm text-ink-black uppercase tracking-widest font-bold" id="modal-project-badge">FICHA TÉCNICA</span>
-        </div>
-        <button onclick="closeProjectModal()" class="w-10 h-10 min-h-[44px] min-w-[44px] rounded-full bg-ink-black text-tertiary-fixed flex items-center justify-center hover:bg-ink-black/80 transition-colors shadow-[2px_2px_0px_#12180F]" aria-label="Cerrar modal">
-          <span class="material-symbols-outlined text-[24px]">close</span>
+      <div class="px-6 sm:px-8 py-5 bg-nexo-bone border-b border-nexo-dark/10 flex items-center justify-between">
+        <span class="px-3 py-1 rounded-full bg-nexo-dark text-nexo-neon text-xs font-bold uppercase tracking-wider" id="modal-project-badge">
+          CATEGORÍA
+        </span>
+        <button onclick="closeProjectModal()" class="w-9 h-9 rounded-full bg-nexo-white flex items-center justify-center text-nexo-dark hover:bg-nexo-neon transition-colors" aria-label="Cerrar modal">
+          <span class="material-symbols-outlined text-[20px]">close</span>
         </button>
       </div>
 
       <!-- Modal Body -->
-      <div class="p-space-md lg:p-space-xl overflow-y-auto flex flex-col gap-space-lg">
-        <!-- Title & Subtitle -->
+      <div class="p-6 sm:p-8 overflow-y-auto flex flex-col gap-6">
         <div class="flex flex-col gap-1">
-          <span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider" id="modal-project-client">Cliente</span>
-          <h2 class="font-headline-sm lg:font-headline-md text-headline-sm lg:text-headline-md text-ink-black font-bold tracking-tight" id="modal-project-title">Título del Proyecto</h2>
-          <p class="font-body-md text-body-md text-secondary leading-relaxed mt-1" id="modal-project-desc">Descripción detallada</p>
+          <span class="text-xs uppercase font-bold text-nexo-gray" id="modal-project-client">Cliente</span>
+          <h2 class="font-headline text-2xl sm:text-3xl text-nexo-dark font-bold tracking-tight" id="modal-project-title">Título del Proyecto</h2>
+          <p class="font-body text-sm text-nexo-body leading-relaxed mt-1" id="modal-project-desc">Descripción detallada</p>
           <div class="flex flex-wrap gap-1.5 pt-2" id="modal-project-tags"></div>
         </div>
 
-        <!-- Images Gallery -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md" id="modal-images-container">
-          <!-- Primary Image -->
-          <div class="rounded-lg overflow-hidden bg-ink-black shadow-[2px_2px_0px_#12180F] flex items-center justify-center">
-            <img id="modal-primary-img" src="" alt="" class="w-full max-h-[380px] object-contain">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="modal-images-container">
+          <div class="rounded-[18px] overflow-hidden bg-nexo-dark flex items-center justify-center p-2">
+            <img id="modal-primary-img" src="" alt="" class="w-full max-h-[360px] object-contain">
           </div>
-          <!-- Secondary Image (if exists) -->
-          <div id="modal-secondary-img-wrapper" class="rounded-lg overflow-hidden bg-ink-black shadow-[2px_2px_0px_#12180F] flex items-center justify-center">
-            <img id="modal-secondary-img" src="" alt="" class="w-full max-h-[380px] object-contain">
+          <div id="modal-secondary-img-wrapper" class="rounded-[18px] overflow-hidden bg-nexo-bone flex items-center justify-center p-2 border border-nexo-dark/10">
+            <img id="modal-secondary-img" src="" alt="" class="w-full max-h-[360px] object-contain">
           </div>
         </div>
 
-        <!-- Details List -->
-        <div class="flex flex-col gap-space-sm" id="modal-details-list">
-          <!-- Populated by JS -->
-        </div>
+        <div class="flex flex-col gap-3" id="modal-details-list"></div>
 
-        <!-- Modal CTA Footer -->
-        <div class="pt-space-md border-t border-ink-black/15 flex flex-col sm:flex-row items-center justify-between gap-space-sm">
-          <span class="font-body-sm text-body-sm text-secondary">¿Tienes un proyecto similar en mente?</span>
-          <a href="#contacto" onclick="closeProjectModal()" class="min-h-[44px] px-space-xl py-space-xs rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase font-bold tracking-wider flex items-center gap-2 shadow-[2px_2px_0px_#12180F] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all">
+        <div class="pt-5 border-t border-nexo-dark/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span class="text-xs text-nexo-gray">¿Tienes un proyecto de branding o packaging?</span>
+          <a href="#contacto" onclick="closeProjectModal()" class="btn-nexo-primary px-7 py-3 text-xs">
             <span>Iniciar Cotización</span>
-            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
           </a>
         </div>
       </div>
+
     </div>
   </div>
 
-  <!-- 05. BANNER FINAL COTIZA -->
-  <section class="px-margin-mobile lg:px-margin py-space-xl desktop-container">
-    <div class="bg-ink-black text-surface-bone rounded-lg p-space-lg lg:p-space-xl shadow-[4px_4px_0px_#12180F] flex flex-col sm:flex-row items-center justify-between gap-space-md">
+  <!-- =========================================================================
+       5. BANNER FINAL COTIZA
+       ========================================================================= -->
+  <section class="px-4 sm:px-8 pb-16 desktop-container">
+    <div class="bg-nexo-dark text-nexo-bone rounded-[24px] p-8 sm:p-12 flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="flex flex-col gap-1 text-center sm:text-left">
-        <span class="font-label-sm text-label-sm text-tertiary-fixed uppercase font-bold tracking-widest">NUEVOS PROYECTOS DE DISEÑO</span>
-        <h3 class="font-headline-sm text-headline-sm text-surface-bone font-bold">Creemos una identidad con carácter para tu marca</h3>
+        <span class="text-xs uppercase font-bold text-nexo-neon tracking-widest">NUEVOS PROYECTOS DE DISEÑO</span>
+        <h3 class="font-headline text-2xl sm:text-3xl text-nexo-white font-bold leading-tight">Creemos una identidad con carácter para tu marca</h3>
       </div>
-      <a href="#contacto" class="min-h-[44px] px-space-xl py-space-sm rounded-full bg-tertiary-fixed text-ink-black font-label-md text-label-md uppercase font-bold tracking-wider flex items-center gap-2 shadow-[2px_2px_0px_#F3F1ED] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all whitespace-nowrap">
+      <a href="#contacto" class="px-8 py-3.5 rounded-full bg-nexo-neon text-nexo-dark font-semibold text-sm uppercase tracking-wider hover:bg-white transition-all whitespace-nowrap flex items-center gap-2">
         <span>Cotiza tu Proyecto</span>
         <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
       </a>
     </div>
   </section>
+
 </div>
 
 <script>
-  // Filter Functionality
   function initPortfolioFilters() {
     const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
     const projectItems = document.querySelectorAll('.project-item');
@@ -264,7 +272,6 @@
       });
     });
 
-    // Check URL parameters for tag or project
     const hash = window.location.hash;
     if (hash.includes('?')) {
       const queryStr = hash.split('?')[1];
@@ -288,11 +295,9 @@
     filterBtns.forEach(btn => {
       const btnTag = btn.getAttribute('data-tag');
       if (btnTag.toLowerCase() === tag.toLowerCase() || (tag === 'all' && btnTag === 'all')) {
-        btn.classList.remove('bg-surface-bone', 'text-ink-black', 'font-medium');
-        btn.classList.add('bg-ink-black', 'text-tertiary-fixed', 'font-bold');
+        btn.classList.add('active');
       } else {
-        btn.classList.remove('bg-ink-black', 'text-tertiary-fixed', 'font-bold');
-        btn.classList.add('bg-surface-bone', 'text-ink-black', 'font-medium');
+        btn.classList.remove('active');
       }
     });
 
@@ -306,7 +311,6 @@
     });
   }
 
-  // Modal Functionality
   function openProjectModal(projectId) {
     if (!window.NEXO_GRAPHIC_PROJECTS) return;
     const project = window.NEXO_GRAPHIC_PROJECTS.find(p => p.id === projectId);
@@ -317,17 +321,15 @@
     document.getElementById('modal-project-title').textContent = project.name + ' — ' + project.subtitle;
     document.getElementById('modal-project-desc').textContent = project.description;
 
-    // Tags
     const tagsContainer = document.getElementById('modal-project-tags');
     tagsContainer.innerHTML = '';
     project.tags.forEach(t => {
       const span = document.createElement('span');
-      span.className = 'px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold';
+      span.className = 'tag-pill px-3 py-0.5 text-xs';
       span.textContent = t;
       tagsContainer.appendChild(span);
     });
 
-    // Images
     const primaryImg = document.getElementById('modal-primary-img');
     primaryImg.src = project.coverImage;
     primaryImg.alt = project.name;
@@ -342,15 +344,14 @@
       secondaryWrapper.style.display = 'none';
     }
 
-    // Details List
     const detailsContainer = document.getElementById('modal-details-list');
     detailsContainer.innerHTML = '';
     project.details.forEach(d => {
       const box = document.createElement('div');
-      box.className = 'bg-surface-taupe/60 p-space-md rounded-DEFAULT flex flex-col gap-1';
+      box.className = 'bg-nexo-bone p-4 rounded-[16px] border border-nexo-dark/10 flex flex-col gap-1';
       box.innerHTML = `
-        <span class="font-label-sm text-label-sm uppercase font-bold text-ink-black">\${d.title}</span>
-        <div class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">\${d.content}</div>
+        <span class="text-xs uppercase font-bold text-nexo-dark">${d.title}</span>
+        <div class="font-body text-xs sm:text-sm text-nexo-body leading-relaxed">${d.content}</div>
       `;
       detailsContainer.appendChild(box);
     });
@@ -366,13 +367,11 @@
     document.body.style.overflow = '';
   }
 
-  // Close on backdrop click
   document.getElementById('project-detail-modal')?.addEventListener('click', (e) => {
     if (e.target.id === 'project-detail-modal') {
       closeProjectModal();
     }
   });
 
-  // Run on load
   initPortfolioFilters();
 </script>

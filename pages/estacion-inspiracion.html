@@ -1,158 +1,196 @@
-<div class="flex flex-col w-full">
-  <!-- CABECERA ESTACIÓN DE INSPIRACIÓN -->
-  <section class="px-margin-mobile lg:px-margin pb-space-md flex flex-col gap-space-md pt-space-xl desktop-container">
-    <div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-ink-black text-tertiary-fixed self-start shadow-[3px_3px_0px_#12180F]">
-      <span class="w-2.5 h-2.5 rounded-full bg-accent-green animate-pulse"></span>
-      <span class="font-label-sm text-label-sm uppercase tracking-wider font-bold">RECURSOS &amp; REFERENCIAS // NEXO STUDIO</span>
-    </div>
+<div class="flex flex-col w-full bg-nexo-beige overflow-hidden">
+  
+  <!-- =========================================================================
+       1. CABECERA BEIGE CON PICO AMARILLO NEÓN
+       ========================================================================= -->
+  <section class="relative px-4 sm:px-8 pt-8 pb-14 overflow-hidden border-b border-nexo-dark/10">
+    
+    <!-- Pico amarillo neón en esquina -->
+    <div class="absolute -right-12 top-0 w-80 lg:w-96 h-80 lg:h-96 bg-nexo-neon corner-peak-tr opacity-90 pointer-events-none"></div>
 
-    <div class="flex flex-col gap-space-xs max-w-3xl">
-      <h1 class="font-headline-lg-mobile lg:font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-ink-black tracking-tight font-bold leading-tight">
-        Estación de Inspiración &amp; Curaduría Visual
-      </h1>
-      <p class="font-body-lg text-body-lg text-secondary leading-relaxed">
-        El laboratorio de referencias que alimenta los proyectos del estudio. Muestrarios cromáticos reales, tensiones tipográficas, texturas materiales y principios de diseño que guían nuestro trabajo.
-      </p>
+    <div class="desktop-container relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-7 flex flex-col gap-5">
+        <div class="self-start">
+          <span class="tag-pill px-3.5 py-1 text-xs uppercase tracking-wider">
+            LABORATORIO VISUAL // RECURSOS &amp; CURADURÍA
+          </span>
+        </div>
+
+        <h1 class="font-headline text-[clamp(38px,5.5vw,72px)] text-nexo-dark font-extrabold leading-[0.95] tracking-tight">
+          Estación de <span class="bg-nexo-dark text-nexo-neon px-3 py-0.5 rounded-[20px] inline-block">Inspiración</span> y Marca
+        </h1>
+
+        <p class="font-body text-base sm:text-lg text-nexo-body leading-relaxed max-w-xl">
+          El compendio de referencias, sistemas cromáticos, tensiones tipográficas y dirección de arte que define el estándar de NEXO STUDIO.
+        </p>
+
+        <div class="flex items-center gap-3 pt-2">
+          <a href="#contacto" class="btn-nexo-primary px-7 py-3 text-sm">
+            <span>Cotizar un proyecto así</span>
+            <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 flex justify-center lg:justify-end">
+        <img src="assets/illustrations/blog-inspo.svg" alt="Ilustración Inspiración" class="w-full max-w-[360px] h-auto object-contain drop-shadow-sm">
+      </div>
     </div>
   </section>
 
-  <!-- SECCIÓN 1: PALETAS CROMÁTICAS REALES -->
-  <section class="px-margin-mobile lg:px-margin py-space-md desktop-container">
-    <div class="flex flex-col gap-1 mb-space-sm">
-      <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">SISTEMAS DE COLOR</span>
-      <h2 class="font-headline-sm lg:font-headline-md text-headline-sm lg:text-headline-md text-ink-black font-bold tracking-tight">
-        Paletas Tácticas &amp; Códigos Oficiales
+  <!-- =========================================================================
+       2. PALETAS CROMÁTICAS DEL NUEVO SISTEMA DE MARCA (BENTO 24PX)
+       ========================================================================= -->
+  <section class="px-4 sm:px-8 py-16 desktop-container flex flex-col gap-10">
+    <div class="flex flex-col gap-1">
+      <span class="text-xs uppercase tracking-widest text-nexo-gray font-bold">SISTEMA CROMÁTICO OFICIAL</span>
+      <h2 class="font-headline text-3xl sm:text-4xl text-nexo-dark font-bold tracking-tight">
+        Tokens de Color del Rebranding
       </h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
-      <!-- Paleta 1: ASTREO -->
-      <div class="bg-surface-bone rounded-lg p-space-lg shadow-[4px_4px_0px_#12180F] flex flex-col gap-space-md border border-ink-black/10">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      
+      <!-- Card 1: Paleta Principal NEXO (7 cols) -->
+      <div class="md:col-span-7 bg-nexo-white rounded-[24px] p-7 sm:p-8 border border-nexo-dark/10 card-nexo flex flex-col justify-between gap-6">
         <div class="flex items-center justify-between">
-          <span class="font-label-sm text-label-sm uppercase font-bold text-ink-black">Astreo — Montaña y Naturaleza</span>
-          <span class="font-label-sm text-[11px] bg-tertiary-fixed text-ink-black px-2 py-0.5 rounded font-bold uppercase">Identidad Oficial</span>
+          <span class="text-xs font-bold uppercase text-nexo-dark">Paleta Base de Marca</span>
+          <span class="px-2.5 py-0.5 rounded-full bg-nexo-neon text-nexo-dark text-[11px] font-bold uppercase">Oficial</span>
         </div>
-        <p class="font-body-sm text-body-sm text-secondary">
-          Combinación de alta visibilidad para señalética de montaña, indumentaria y plataformas digitales asociativas.
+        <p class="font-body text-xs sm:text-sm text-nexo-gray leading-relaxed">
+          Armonía entre beige topo (#CFC8B8) y blanco hueso (#F3F1ED), anclada por el negro verdoso (#12180F) y dinamizada por picos amarillo neón (#E6FF00).
         </p>
-        <div class="grid grid-cols-2 gap-space-sm">
-          <div class="h-28 rounded-lg flex flex-col justify-between p-3 text-white shadow-[2px_2px_0px_#12180F]" style="background-color: #336699;">
-            <span class="font-label-sm text-[11px] uppercase tracking-wider font-bold">Azul Profundo</span>
-            <span class="font-headline-sm text-body-lg font-bold font-mono">#336699</span>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="h-24 rounded-[16px] p-3 flex flex-col justify-between text-nexo-dark shadow-sm border border-nexo-dark/15" style="background-color: #CFC8B8;">
+            <span class="text-[10px] uppercase font-bold">Beige Topo</span>
+            <span class="text-xs font-mono font-bold">#CFC8B8</span>
           </div>
-          <div class="h-28 rounded-lg flex flex-col justify-between p-3 text-ink-black shadow-[2px_2px_0px_#12180F]" style="background-color: #ff9900;">
-            <span class="font-label-sm text-[11px] uppercase tracking-wider font-bold">Naranja Solar</span>
-            <span class="font-headline-sm text-body-lg font-bold font-mono">#ff9900</span>
+          <div class="h-24 rounded-[16px] p-3 flex flex-col justify-between text-nexo-dark shadow-sm border border-nexo-dark/15" style="background-color: #A39F90;">
+            <span class="text-[10px] uppercase font-bold">Taupe Oscuro</span>
+            <span class="text-xs font-mono font-bold">#A39F90</span>
+          </div>
+          <div class="h-24 rounded-[16px] p-3 flex flex-col justify-between text-nexo-dark shadow-sm border border-nexo-dark/15" style="background-color: #F3F1ED;">
+            <span class="text-[10px] uppercase font-bold">Blanco Hueso</span>
+            <span class="text-xs font-mono font-bold">#F3F1ED</span>
+          </div>
+          <div class="h-24 rounded-[16px] p-3 flex flex-col justify-between text-nexo-dark shadow-sm border border-nexo-dark/15" style="background-color: #E6FF00;">
+            <span class="text-[10px] uppercase font-bold">Amarillo Neón</span>
+            <span class="text-xs font-mono font-bold">#E6FF00</span>
           </div>
         </div>
-        <a href="#diseno-grafico?project=astreo-asociacion" class="font-label-sm text-label-sm text-ink-black uppercase font-bold underline hover:text-secondary">
-          Ver aplicación en el logotipo de Astreo &rarr;
-        </a>
       </div>
 
-      <!-- Paleta 2: NEXO STUDIO Tactical Editorial -->
-      <div class="bg-surface-bone rounded-lg p-space-lg shadow-[4px_4px_0px_#12180F] flex flex-col gap-space-md border border-ink-black/10">
+      <!-- Card 2: Paleta de Ilustración (5 cols) -->
+      <div class="md:col-span-5 bg-nexo-white rounded-[24px] p-7 sm:p-8 border border-nexo-dark/10 card-nexo flex flex-col justify-between gap-6">
         <div class="flex items-center justify-between">
-          <span class="font-label-sm text-label-sm uppercase font-bold text-ink-black">NEXO Studio Tactical Baseline</span>
-          <span class="font-label-sm text-[11px] bg-ink-black text-tertiary-fixed px-2 py-0.5 rounded font-bold uppercase">Design System</span>
+          <span class="text-xs font-bold uppercase text-nexo-dark">Paleta de Ilustración</span>
+          <span class="px-2.5 py-0.5 rounded-full bg-nexo-bone text-nexo-dark text-[11px] font-semibold border border-nexo-dark/10">Vivos</span>
         </div>
-        <p class="font-body-sm text-body-sm text-secondary">
-          Lienzo neutro en hueso y taupe contraposto a negro tinta táctico y señalización en amarillo eléctrico.
+        <p class="font-body text-xs sm:text-sm text-nexo-gray leading-relaxed">
+          Tonos vivos editoriales usados en las piezas SVG exclusivas para dotar de calidez y dinamismo a las figuras entrelazadas.
         </p>
-        <div class="grid grid-cols-4 gap-2">
-          <div class="h-28 rounded-lg flex flex-col justify-between p-2 text-surface-bone shadow-[2px_2px_0px_#12180F]" style="background-color: #12180F;">
-            <span class="font-label-sm text-[9px] uppercase font-bold">Tinta</span>
-            <span class="font-label-sm text-[10px] font-mono">#12180F</span>
+
+        <div class="grid grid-cols-5 gap-2">
+          <div class="h-20 rounded-[14px] flex items-end p-2 text-white font-mono text-[9px] font-bold shadow-sm" style="background-color: #3FD05A;">
+            #3FD05A
           </div>
-          <div class="h-28 rounded-lg flex flex-col justify-between p-2 text-ink-black shadow-[2px_2px_0px_#12180F]" style="background-color: #CFC8B8;">
-            <span class="font-label-sm text-[9px] uppercase font-bold">Taupe</span>
-            <span class="font-label-sm text-[10px] font-mono">#CFC8B8</span>
+          <div class="h-20 rounded-[14px] flex items-end p-2 text-nexo-dark font-mono text-[9px] font-bold shadow-sm" style="background-color: #F08AE0;">
+            #F08AE0
           </div>
-          <div class="h-28 rounded-lg flex flex-col justify-between p-2 text-ink-black shadow-[2px_2px_0px_#12180F]" style="background-color: #F3F1ED;">
-            <span class="font-label-sm text-[9px] uppercase font-bold">Hueso</span>
-            <span class="font-label-sm text-[10px] font-mono">#F3F1ED</span>
+          <div class="h-20 rounded-[14px] flex items-end p-2 text-nexo-dark font-mono text-[9px] font-bold shadow-sm" style="background-color: #6AAEFF;">
+            #6AAEFF
           </div>
-          <div class="h-28 rounded-lg flex flex-col justify-between p-2 text-ink-black shadow-[2px_2px_0px_#12180F]" style="background-color: #E6FF00;">
-            <span class="font-label-sm text-[9px] uppercase font-bold">Signal</span>
-            <span class="font-label-sm text-[10px] font-mono">#E6FF00</span>
+          <div class="h-20 rounded-[14px] flex items-end p-2 text-white font-mono text-[9px] font-bold shadow-sm" style="background-color: #F0605A;">
+            #F0605A
+          </div>
+          <div class="h-20 rounded-[14px] flex items-end p-2 text-white font-mono text-[9px] font-bold shadow-sm" style="background-color: #6E6B5E;">
+            #6E6B5E
           </div>
         </div>
-        <a href="#blog/psicologia-del-color-y-contraste-tactico" class="font-label-sm text-label-sm text-ink-black uppercase font-bold underline hover:text-secondary">
-          Leer ensayo sobre contraste táctico &rarr;
-        </a>
       </div>
+
     </div>
   </section>
 
-  <!-- SECCIÓN 2: TIPOGRAFÍA & JERARQUÍAS -->
-  <section class="px-margin-mobile lg:px-margin py-space-lg desktop-container">
-    <div class="bg-surface-bone rounded-lg p-space-lg lg:p-space-xl shadow-[4px_4px_0px_#12180F] flex flex-col gap-space-md border border-ink-black/10">
+  <!-- =========================================================================
+       3. TIPOGRAFÍA Y TENSIÓN FORMAL (TARJETA BLANCO HUESO 24PX)
+       ========================================================================= -->
+  <section class="px-4 sm:px-8 py-8 desktop-container">
+    <div class="bg-nexo-bone rounded-[24px] p-8 sm:p-12 border border-nexo-dark/10 flex flex-col gap-8">
+      
       <div class="flex flex-col gap-1">
-        <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold">SISTEMA TIPOGRÁFICO</span>
-        <h3 class="font-headline-sm lg:font-headline-md text-headline-sm lg:text-headline-md text-ink-black font-bold tracking-tight">
-          Tensión entre Técnica y Legibilidad
+        <span class="text-xs uppercase tracking-widest text-nexo-gray font-bold">SISTEMA TIPOGRÁFICO</span>
+        <h3 class="font-headline text-2xl sm:text-3xl text-nexo-dark font-bold">
+          Grotesca Ultra Bold &amp; Legibilidad Contemporánea
         </h3>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg mt-space-xs">
-        <div class="p-space-md rounded-lg bg-surface-taupe/40 flex flex-col gap-2">
-          <span class="font-label-sm text-[11px] uppercase tracking-wider font-bold text-ink-black">Space Grotesk (Titulares &amp; Microcopy)</span>
-          <p class="font-headline-lg text-headline-lg font-bold text-ink-black leading-none tracking-tight">
-            Aa Bb Cc 0123
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-[20px] bg-nexo-white border border-nexo-dark/10 flex flex-col gap-3">
+          <span class="tag-pill px-3 py-1 text-xs uppercase self-start">Bricolage Grotesque 800 (Titulares)</span>
+          <p class="font-headline text-4xl sm:text-5xl font-extrabold text-nexo-dark leading-[0.95] tracking-[-0.035em]">
+            Diseña, conecta, destaca.
           </p>
-          <p class="font-body-sm text-body-sm text-secondary mt-1">
-            Personalidad geométrica con referencias de ingeniería de los años 70. Aporta tensión arquitectónica a cabeceras y etiquetas.
+          <p class="font-body text-xs text-nexo-gray leading-relaxed mt-2">
+            Minúsculas con mayúscula inicial, tracking muy cerrado (-0.035em) e interlineado ultra compacto (0.95). Aporta contundencia visual editorial.
           </p>
         </div>
 
-        <div class="p-space-md rounded-lg bg-surface-taupe/40 flex flex-col gap-2">
-          <span class="font-label-sm text-[11px] uppercase tracking-wider font-bold text-ink-black">Inter (Texto Corrido &amp; Lectura)</span>
-          <p class="font-body-lg text-body-lg font-medium text-ink-black leading-snug">
-            Diseñada minuciosamente para pantallas digitales de alta y baja densidad. Máximo confort de lectura sin distracciones.
+        <div class="p-6 rounded-[20px] bg-nexo-white border border-nexo-dark/10 flex flex-col gap-3">
+          <span class="tag-pill px-3 py-1 text-xs uppercase self-start">Inter / DM Sans (Cuerpo de Texto)</span>
+          <p class="font-body text-base text-nexo-body leading-[1.4]">
+            Tipografía optimizada con precisión para pantallas. Confort absoluto de lectura en artículos largos y descripciones técnicas de producto.
           </p>
-          <p class="font-body-sm text-body-sm text-secondary mt-1">
-            Utilizada en todos los artículos extensos de nuestro journal y cuerpos de texto de proyectos.
+          <p class="font-body text-xs text-nexo-gray leading-relaxed mt-2">
+            Color de párrafo #3B4034 calibrado sobre fondo beige y blanco hueso para máxima legibilidad sin fatiga visual.
           </p>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- SECCIÓN 3: MATERIALIDAD & PACKAGING VORTEX -->
-  <section class="px-margin-mobile lg:px-margin py-space-md desktop-container">
-    <div class="bg-ink-black text-surface-bone rounded-lg p-space-lg lg:p-space-xl shadow-[4px_4px_0px_#12180F] flex flex-col lg:flex-row items-center gap-space-lg">
-      <div class="w-full lg:w-1/2 aspect-[16/10] rounded-lg overflow-hidden bg-surface-bone shadow-[3px_3px_0px_#CFC8B8]">
+  <!-- =========================================================================
+       4. MATERIALIDAD & PACKAGING VORTEX (TARJETA OSCURA 24PX)
+       ========================================================================= -->
+  <section class="px-4 sm:px-8 py-10 desktop-container">
+    <div class="bg-nexo-dark text-nexo-bone rounded-[24px] p-8 sm:p-12 flex flex-col lg:flex-row items-center gap-8">
+      <div class="w-full lg:w-1/2 aspect-[16/10] rounded-[18px] overflow-hidden bg-nexo-bone shadow-sm shrink-0">
         <img src="assets/portfolio/vortex-folleto-triptico.jpg" alt="Tríptico editorial de VORTEX Luxury Vineyards" class="w-full h-full object-cover">
       </div>
-      <div class="w-full lg:w-1/2 flex flex-col gap-space-sm text-left">
-        <span class="font-label-sm text-label-sm text-tertiary-fixed uppercase font-bold tracking-widest">ESTUDIO DE MATERIALIDAD</span>
-        <h3 class="font-headline-sm lg:font-headline-md text-headline-sm lg:text-headline-md text-surface-bone font-bold leading-tight">
+      <div class="w-full lg:w-1/2 flex flex-col gap-4 text-left">
+        <span class="text-xs uppercase font-bold text-nexo-neon tracking-widest">ESTUDIO DE MATERIALIDAD</span>
+        <h3 class="font-headline text-2xl sm:text-4xl text-nexo-white font-bold leading-tight">
           La Expresión Táctil del Vino
         </h3>
-        <p class="font-body-sm text-body-sm text-surface-variant leading-relaxed">
-          «Nacidos en la convergencia del viento, la piedra y la altitud, en VORTEX entendemos el vino como una fuerza elemental de la naturaleza.» La combinación de fotografía al atardecer sobre viñedos riojanos con papeles porosos y tipografía serif aporta un diálogo memorable entre clasicismo y síntesis moderna.
+        <p class="font-body text-sm text-nexo-bone/70 leading-relaxed">
+          «Nacidos en la convergencia del viento, la piedra y la altitud, en VORTEX entendemos el vino como una fuerza elemental de la naturaleza.» La combinación de papeles porosos, acabados mate y tipografía serif establece un diálogo perdurable entre clasicismo y modernidad.
         </p>
-        <div class="pt-space-xs flex flex-wrap gap-space-sm">
-          <a href="#diseno-grafico?project=vortex-bodegas" class="min-h-[44px] px-space-lg py-space-xs rounded-full bg-tertiary-fixed text-ink-black font-label-md text-label-md uppercase font-bold flex items-center gap-1 shadow-[2px_2px_0px_#CFC8B8]">
-            <span>Ver Proyecto en Detalle</span>
-            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        <div class="pt-2">
+          <a href="#diseno-grafico" class="btn-nexo-primary px-6 py-2.5 text-xs">
+            <span>Ver caso de estudio Vortex</span>
+            <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BANNER FINAL COTIZA -->
-  <section class="px-margin-mobile lg:px-margin py-space-xl desktop-container">
-    <div class="bg-surface-bone text-ink-black rounded-lg p-space-lg lg:p-space-xl shadow-[4px_4px_0px_#12180F] border border-ink-black/10 flex flex-col sm:flex-row items-center justify-between gap-space-md">
+  <!-- =========================================================================
+       5. BANNER FINAL COTIZA
+       ========================================================================= -->
+  <section class="px-4 sm:px-8 pb-16 desktop-container">
+    <div class="bg-nexo-white text-nexo-dark rounded-[24px] p-8 sm:p-12 border border-nexo-dark/15 flex flex-col sm:flex-row items-center justify-between gap-6 card-nexo">
       <div class="flex flex-col gap-1 text-center sm:text-left">
-        <span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-widest">TRANSFORMA TU MARCA</span>
-        <h3 class="font-headline-sm text-headline-sm text-ink-black font-bold">Lleva estas referencias a la realidad de tu negocio</h3>
+        <span class="text-xs uppercase font-bold text-nexo-gray tracking-widest">APLICA ESTE CRITERIO</span>
+        <h3 class="font-headline text-2xl sm:text-3xl text-nexo-dark font-bold leading-tight">Diseñemos juntos la marca de tu negocio</h3>
       </div>
-      <a href="#contacto" class="min-h-[44px] px-space-xl py-space-sm rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase font-bold tracking-wider flex items-center gap-2 shadow-[2px_2px_0px_#12180F] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all whitespace-nowrap">
-        <span>Cotizar Proyecto</span>
-        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      <a href="#contacto" class="btn-nexo-primary px-8 py-3.5 text-sm uppercase tracking-wider">
+        <span>Cotiza tu Proyecto</span>
+        <span class="material-symbols-outlined text-[18px] ml-1">arrow_forward</span>
       </a>
     </div>
   </section>
+
 </div>

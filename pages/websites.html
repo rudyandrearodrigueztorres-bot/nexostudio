@@ -1,59 +1,77 @@
-<div class="flex flex-col w-full" id="websites-app-container">
+<div class="flex flex-col w-full bg-nexo-beige overflow-hidden" id="websites-app-container">
 
   <!-- ========================================== -->
-  <!-- VISTA 1: GRILLA DE PROYECTOS WEBSITES      -->
+  <!-- VISTA 1: CATÁLOGO DE WEBSITES             -->
   <!-- ========================================== -->
   <div id="websites-catalog-view" class="flex flex-col w-full">
-    <!-- Cabecera Websites -->
-    <section class="px-margin-mobile lg:px-margin pb-space-md flex flex-col gap-space-md pt-space-xl desktop-container">
-      <div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-ink-black text-tertiary-fixed self-start shadow-[3px_3px_0px_#12180F]">
-        <span class="w-2.5 h-2.5 rounded-full bg-accent-blue animate-pulse"></span>
-        <span class="font-label-sm text-label-sm uppercase tracking-wider font-bold">DESARROLLO DIGITAL // WEBSITES EN VIVO</span>
-      </div>
+    
+    <!-- Hero beige con pico amarillo neón en esquina e ilustración de su servicio -->
+    <section class="relative px-4 sm:px-8 pt-8 pb-14 overflow-hidden border-b border-nexo-dark/10">
+      
+      <!-- Pico amarillo neón en la esquina superior derecha -->
+      <div class="absolute -right-12 top-0 w-80 lg:w-96 h-80 lg:h-96 bg-nexo-neon corner-peak-tr opacity-90 pointer-events-none"></div>
 
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
-        <div class="flex flex-col gap-space-xs max-w-2xl">
-          <h1 class="font-headline-lg-mobile lg:font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-ink-black tracking-tight font-bold leading-tight">
-            Proyectos Realizados
+      <div class="desktop-container relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-7 flex flex-col gap-5">
+          <div class="self-start">
+            <span class="tag-pill px-3.5 py-1 text-xs uppercase tracking-wider">
+              SERVICIO 01 // FRONTEND &amp; PLATAFORMAS
+            </span>
+          </div>
+
+          <h1 class="font-headline text-[clamp(38px,5.5vw,72px)] text-nexo-dark font-extrabold leading-[0.95] tracking-tight">
+            Sitios <span class="bg-nexo-dark text-nexo-neon px-3 py-0.5 rounded-[20px] inline-block">Web</span> que trabajan por ti
           </h1>
-          <p class="font-body-lg text-body-lg text-secondary leading-relaxed">
-            Sitios web y plataformas desarrolladas con código a medida, alto rendimiento y conexión directa a WhatsApp para maximizar las conversiones de tu negocio.
+
+          <p class="font-body text-base sm:text-lg text-nexo-body leading-relaxed max-w-xl">
+            Diseñamos y programamos sitios web a medida con arquitectura rápida, estética editorial o contemporánea y conversión directa a WhatsApp. Sin plantillas genéricas.
           </p>
+
+          <div class="flex items-center gap-3 pt-2">
+            <a href="#contacto" class="btn-nexo-primary px-7 py-3 text-sm">
+              <span>Cotiza tu web</span>
+              <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+            </a>
+            <div class="bg-nexo-white px-4 py-2 rounded-full border border-nexo-dark/10 text-xs font-bold text-nexo-dark shadow-sm" id="websites-count-badge">
+              3 proyectos reales
+            </div>
+          </div>
         </div>
 
-        <!-- Contador dinámico de proyectos -->
-        <div class="bg-surface-bone px-space-md py-2 rounded-full border border-ink-black/20 shadow-[2px_2px_0px_#12180F] self-start md:self-auto flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-ink-black"></span>
-          <span class="font-label-md text-label-md uppercase font-bold text-ink-black" id="websites-count-badge">3 proyectos</span>
+        <!-- Ilustración propia Websites SVG -->
+        <div class="lg:col-span-5 flex justify-center lg:justify-end">
+          <img src="assets/illustrations/websites.svg" alt="Ilustración Websites" class="w-full max-w-[380px] h-auto object-contain drop-shadow-sm">
         </div>
+
       </div>
     </section>
 
-    <!-- Filtros: Solo categorías y tags reales -->
-    <section class="py-space-sm px-margin-mobile lg:px-margin desktop-container">
-      <div class="flex flex-col gap-space-xs">
-        <span class="font-label-sm text-[11px] uppercase tracking-widest text-secondary font-bold">Filtrar por categoría y tags:</span>
+    <!-- Barra de Filtros (Píldoras blanco hueso con borde negro 1.5px, activa en amarillo neón) -->
+    <section class="py-6 px-4 sm:px-8 desktop-container">
+      <div class="flex flex-col gap-2">
+        <span class="text-xs uppercase font-bold tracking-widest text-nexo-gray">Filtrar por categoría y tags:</span>
         <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1" id="websites-filters-container">
-          <!-- Rendered dynamically by JS from window.NEXO_WEBSITE_PROJECTS -->
+          <!-- Renderizado dinámico -->
         </div>
       </div>
     </section>
 
-    <!-- Grilla de Tarjetas: 3 columnas desktop, 2 tablet, 1 móvil -->
-    <section class="px-margin-mobile lg:px-margin py-space-md desktop-container">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg" id="websites-grid">
-        <!-- Generado dinámicamente desde window.NEXO_WEBSITE_PROJECTS -->
+    <!-- Grilla de Tarjetas: 3 columnas, radio 24px, categoría arriba izq y título abajo -->
+    <section class="px-4 sm:px-8 pb-16 desktop-container">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="websites-grid">
+        <!-- Renderizado dinámico -->
       </div>
     </section>
 
     <!-- Banner Final Cotiza -->
-    <section class="px-margin-mobile lg:px-margin py-space-xl desktop-container">
-      <div class="bg-ink-black text-surface-bone rounded-lg p-space-lg lg:p-space-xl shadow-[4px_4px_0px_#12180F] flex flex-col sm:flex-row items-center justify-between gap-space-md">
+    <section class="px-4 sm:px-8 pb-16 desktop-container">
+      <div class="bg-nexo-dark text-nexo-bone rounded-[24px] p-8 sm:p-12 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div class="flex flex-col gap-1 text-center sm:text-left">
-          <span class="font-label-sm text-label-sm text-tertiary-fixed uppercase font-bold tracking-widest">¿QUIERES UNA WEB ASÍ?</span>
-          <h3 class="font-headline-sm text-headline-sm text-surface-bone font-bold">Construyamos la web perfecta para tu negocio</h3>
+          <span class="text-xs uppercase font-bold text-nexo-neon tracking-widest">¿BUSCAS UNA WEB PARA TU NEGOCIO?</span>
+          <h3 class="font-headline text-2xl sm:text-3xl text-nexo-white font-bold leading-tight">Lleva tu marca al siguiente nivel con Andrea Rodríguez</h3>
         </div>
-        <a href="#contacto" class="min-h-[44px] px-space-xl py-space-sm rounded-full bg-tertiary-fixed text-ink-black font-label-md text-label-md uppercase font-bold tracking-wider flex items-center gap-2 shadow-[2px_2px_0px_#F3F1ED] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all whitespace-nowrap">
+        <a href="#contacto" class="px-8 py-3.5 rounded-full bg-nexo-neon text-nexo-dark font-semibold text-sm uppercase tracking-wider hover:bg-white transition-all whitespace-nowrap flex items-center gap-2">
           <span>Cotiza tu Web</span>
           <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
         </a>
@@ -65,195 +83,183 @@
   <!-- VISTA 2: FICHA DETALLADA DEL PROYECTO     -->
   <!-- ========================================== -->
   <div id="websites-detail-view" class="hidden flex-col w-full pb-16">
+    
     <!-- Barra superior de navegación y retorno -->
-    <div class="px-margin-mobile lg:px-margin pt-space-lg desktop-container">
+    <div class="px-4 sm:px-8 pt-6 desktop-container">
       <div class="flex items-center justify-between">
-        <a href="#websites" class="inline-flex items-center gap-1.5 font-label-sm text-label-sm uppercase font-bold text-ink-black hover:text-secondary py-2">
+        <a href="#websites" class="inline-flex items-center gap-1.5 text-xs font-bold uppercase text-nexo-dark hover:underline py-2">
           <span class="material-symbols-outlined text-[18px]">arrow_back</span>
-          <span>Volver a todos los proyectos</span>
+          <span>Volver al catálogo de proyectos</span>
         </a>
-        <span class="font-label-sm text-label-sm text-secondary uppercase font-semibold" id="web-detail-category-top">Categoría</span>
+        <span class="tag-pill px-3 py-1 text-xs uppercase" id="web-detail-category-top">Categoría</span>
       </div>
     </div>
 
     <!-- Cabecera de la Ficha -->
-    <header class="px-margin-mobile lg:px-margin py-space-md flex flex-col gap-space-sm desktop-container max-w-5xl">
+    <header class="px-4 sm:px-8 py-6 flex flex-col gap-3 desktop-container max-w-5xl">
       <div class="flex flex-wrap items-center gap-2">
-        <span class="px-3 py-1 rounded-full bg-ink-black text-tertiary-fixed font-label-sm text-label-sm uppercase font-bold shadow-[2px_2px_0px_#12180F]" id="web-detail-badge">
+        <span class="px-3 py-1 rounded-full bg-nexo-dark text-nexo-neon text-xs font-bold uppercase tracking-wider" id="web-detail-badge">
           Categoría
         </span>
-        <span class="font-label-sm text-label-sm text-secondary uppercase" id="web-detail-businesstype">
+        <span class="text-xs font-semibold text-nexo-gray uppercase" id="web-detail-businesstype">
           Tipo de negocio
         </span>
       </div>
 
-      <h1 class="font-headline-lg-mobile lg:font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-ink-black font-bold tracking-tight leading-tight mt-1" id="web-detail-title">
+      <h1 class="font-headline text-3xl sm:text-5xl text-nexo-dark font-bold tracking-tight leading-tight mt-1" id="web-detail-title">
         Nombre del Proyecto
       </h1>
 
-      <p class="font-body-lg text-body-lg text-secondary leading-relaxed max-w-3xl" id="web-detail-desc">
+      <p class="font-body text-base sm:text-lg text-nexo-body leading-relaxed max-w-3xl" id="web-detail-desc">
         Descripción detallada del sitio web.
       </p>
 
-      <!-- Botón negro Ver Sitio en Vivo -->
-      <div class="pt-space-xs flex flex-wrap items-center gap-space-sm">
-        <a id="web-detail-live-btn" href="#" target="_blank" rel="noopener noreferrer" class="min-h-[48px] px-space-xl py-space-sm rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase font-bold flex items-center justify-center gap-2 shadow-[3px_3px_0px_#12180F] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[5px_5px_0px_#12180F] active:translate-x-[2px] active:translate-y-[2px] transition-all">
+      <div class="pt-2 flex flex-wrap items-center gap-3">
+        <a id="web-detail-live-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-nexo-primary px-7 py-3 text-sm">
           <span>Ver sitio en vivo</span>
-          <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+          <span class="material-symbols-outlined text-[18px] ml-1.5">open_in_new</span>
         </a>
-        <a href="#contacto" class="min-h-[48px] px-space-lg py-space-sm rounded-full bg-surface-bone text-ink-black font-label-md text-label-md uppercase font-bold flex items-center justify-center gap-2 shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed transition-colors">
+        <a href="#contacto" class="btn-nexo-secondary px-7 py-3 text-sm">
           <span>Cotizar proyecto similar</span>
         </a>
       </div>
     </header>
 
-    <!-- Captura Grande del Hero -->
-    <div class="px-margin-mobile lg:px-margin py-space-sm desktop-container max-w-5xl">
-      <div class="w-full rounded-lg overflow-hidden bg-ink-black shadow-[4px_4px_0px_#12180F] border border-ink-black/20">
+    <!-- Captura Grande en Tarjeta 24px -->
+    <div class="px-4 sm:px-8 py-4 desktop-container max-w-5xl">
+      <div class="w-full rounded-[24px] overflow-hidden bg-nexo-dark border border-nexo-dark/15 shadow-sm">
         <img id="web-detail-cover" src="" alt="" class="w-full h-auto max-h-[580px] object-cover">
       </div>
     </div>
 
     <!-- Contenido: Qué incluye + Tags -->
-    <div class="px-margin-mobile lg:px-margin py-space-lg desktop-container max-w-5xl">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg">
-        <!-- Lista Qué Incluye (8 cols) -->
-        <div class="md:col-span-8 bg-surface-bone rounded-lg p-space-lg shadow-[3px_3px_0px_#12180F] border border-ink-black/10 flex flex-col gap-space-md">
-          <div class="flex items-center gap-2 pb-2 border-b border-ink-black/10">
-            <span class="material-symbols-outlined text-ink-black text-[22px]">checklist</span>
-            <h3 class="font-headline-sm text-headline-sm text-ink-black font-bold">Qué incluye esta web</h3>
+    <div class="px-4 sm:px-8 py-6 desktop-container max-w-5xl">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        
+        <!-- Qué Incluye (8 cols) -->
+        <div class="md:col-span-8 bg-nexo-white rounded-[24px] p-7 sm:p-8 border border-nexo-dark/10 flex flex-col gap-4 shadow-sm">
+          <div class="flex items-center gap-2 pb-3 border-b border-nexo-dark/10">
+            <span class="material-symbols-outlined text-nexo-dark text-[22px]">checklist</span>
+            <h3 class="font-headline text-xl text-nexo-dark font-bold">Qué incluye esta web</h3>
           </div>
-          <ul class="flex flex-col gap-2.5 font-body-md text-body-md text-on-surface-variant" id="web-detail-includes">
+          <ul class="flex flex-col gap-3 font-body text-sm text-nexo-body" id="web-detail-includes">
             <!-- Populated by JS -->
           </ul>
         </div>
 
         <!-- Tags y Ficha Resumen (4 cols) -->
-        <div class="md:col-span-4 flex flex-col gap-space-md">
-          <div class="bg-surface-bone rounded-lg p-space-md shadow-[3px_3px_0px_#12180F] border border-ink-black/10 flex flex-col gap-space-sm">
-            <span class="font-label-sm text-label-sm uppercase font-bold text-ink-black">Tags del Proyecto</span>
+        <div class="md:col-span-4 flex flex-col gap-6">
+          <div class="bg-nexo-white rounded-[24px] p-6 border border-nexo-dark/10 flex flex-col gap-3 shadow-sm">
+            <span class="text-xs uppercase font-bold text-nexo-dark">Tags del Proyecto</span>
             <div class="flex flex-wrap gap-1.5" id="web-detail-tags">
               <!-- Populated by JS -->
             </div>
           </div>
 
-          <div class="bg-surface-taupe/50 rounded-lg p-space-md border border-ink-black/10 flex flex-col gap-2">
-            <span class="font-label-sm text-[11px] uppercase font-bold text-secondary">Acceso Rápido</span>
-            <a id="web-detail-url-link" href="#" target="_blank" rel="noopener noreferrer" class="font-body-sm text-[13px] font-mono text-ink-black hover:underline break-all">
+          <div class="bg-nexo-bone rounded-[24px] p-6 border border-nexo-dark/10 flex flex-col gap-2">
+            <span class="text-xs uppercase font-bold text-nexo-gray">Enlace Oficial</span>
+            <a id="web-detail-url-link" href="#" target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-nexo-dark hover:underline break-all">
               https://...
             </a>
           </div>
         </div>
+
       </div>
     </div>
 
     <!-- Vista previa interactiva en iframe con selector Escritorio / Móvil -->
-    <div class="px-margin-mobile lg:px-margin py-space-md desktop-container max-w-5xl">
-      <div class="bg-surface-bone rounded-lg p-space-md lg:p-space-lg shadow-[4px_4px_0px_#12180F] border border-ink-black/15 flex flex-col gap-space-md">
-        <!-- Barra de control del visor interactivo -->
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pb-space-sm border-b border-ink-black/10">
+    <div class="px-4 sm:px-8 py-4 desktop-container max-w-5xl">
+      <div class="bg-nexo-white rounded-[24px] p-6 sm:p-8 border border-nexo-dark/15 flex flex-col gap-4 shadow-sm">
+        
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 pb-3 border-b border-nexo-dark/10">
           <div class="flex items-center gap-2">
-            <span class="w-3 h-3 rounded-full bg-accent-green"></span>
-            <span class="font-label-md text-label-md font-bold text-ink-black uppercase tracking-wider">
+            <span class="w-2.5 h-2.5 rounded-full bg-nexo-green"></span>
+            <span class="font-headline text-sm font-bold text-nexo-dark uppercase tracking-wider">
               Vista Previa Interactiva en Vivo
             </span>
           </div>
 
-          <!-- Selector Escritorio / Móvil -->
-          <div class="flex items-center gap-1 bg-surface-taupe/60 p-1 rounded-full border border-ink-black/15">
-            <button id="preview-mode-desktop" onclick="setPreviewMode('desktop')" class="px-3.5 py-1 rounded-full font-label-sm text-label-sm uppercase font-bold transition-all bg-ink-black text-tertiary-fixed shadow-[1px_1px_0px_#12180F] flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-[16px]">desktop_windows</span>
-              <span>Escritorio</span>
-            </button>
-            <button id="preview-mode-mobile" onclick="setPreviewMode('mobile')" class="px-3.5 py-1 rounded-full font-label-sm text-label-sm uppercase font-semibold text-ink-black hover:bg-surface-bone transition-all flex items-center gap-1.5">
-              <span class="material-symbols-outlined text-[16px]">smartphone</span>
-              <span>Móvil</span>
-            </button>
+          <div class="flex items-center gap-2">
+            <div class="flex items-center bg-nexo-bone p-1 rounded-full border border-nexo-dark/10">
+              <button id="preview-mode-desktop" onclick="setPreviewMode('desktop')" class="px-3.5 py-1 rounded-full text-xs uppercase font-bold transition-all bg-nexo-dark text-nexo-neon flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">desktop_windows</span>
+                <span>Desktop</span>
+              </button>
+              <button id="preview-mode-mobile" onclick="setPreviewMode('mobile')" class="px-3.5 py-1 rounded-full text-xs uppercase font-semibold text-nexo-dark hover:bg-white transition-all flex items-center gap-1">
+                <span class="material-symbols-outlined text-[16px]">smartphone</span>
+                <span>Móvil</span>
+              </button>
+            </div>
+
+            <a id="iframe-external-link" href="#" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-nexo-bone flex items-center justify-center text-nexo-dark hover:bg-nexo-neon transition-colors" title="Abrir en pestaña nueva">
+              <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+            </a>
           </div>
         </div>
 
-        <!-- Marco del iframe con simulación de navegador -->
-        <div class="w-full flex justify-center py-2 bg-surface-taupe/30 rounded-lg overflow-hidden border border-ink-black/10">
-          <div id="iframe-viewport-container" class="w-full transition-all duration-300 flex flex-col items-center">
-            <!-- Barra superior simulada -->
-            <div class="w-full max-w-full bg-ink-black text-surface-bone px-3 py-1.5 rounded-t-lg flex items-center justify-between font-mono text-[11px] shadow-[1px_1px_0px_#12180F]">
-              <div class="flex items-center gap-1.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-accent-coral inline-block"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed inline-block"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-accent-green inline-block"></span>
-              </div>
-              <span id="iframe-url-display" class="truncate max-w-[260px] sm:max-w-md text-secondary-fixed-dim">https://...</span>
-              <a id="iframe-external-link" href="#" target="_blank" rel="noopener noreferrer" class="text-tertiary-fixed hover:underline flex items-center gap-0.5">
-                <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+        <div class="w-full flex justify-center bg-nexo-bone p-3 sm:p-6 rounded-[20px] overflow-hidden">
+          <div id="iframe-viewport-container" class="w-full transition-all duration-300 relative rounded-xl overflow-hidden shadow-sm border border-nexo-dark/15" style="max-width: 100%; height: 600px;">
+            <iframe 
+              id="web-detail-iframe" 
+              src="" 
+              class="w-full h-full border-0 bg-white"
+              title="Demo en vivo"
+              loading="lazy"
+              onerror="handleIframeError()"
+            ></iframe>
+
+            <div id="iframe-fallback-overlay" class="hidden absolute inset-0 bg-nexo-bone flex-col items-center justify-center p-6 text-center gap-3">
+              <span class="material-symbols-outlined text-[48px] text-nexo-dark">language</span>
+              <h4 class="font-headline text-xl text-nexo-dark font-bold">Vista previa protegida</h4>
+              <p class="text-xs text-nexo-body max-w-md">
+                El sitio web requiere abrirse directamente en una pestaña para visualizar todas sus funcionalidades interactivas.
+              </p>
+              <a id="iframe-fallback-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-nexo-primary px-6 py-2.5 text-xs">
+                <span>Abrir web en vivo</span>
+                <span class="material-symbols-outlined text-[16px] ml-1">open_in_new</span>
               </a>
             </div>
-
-            <!-- Iframe Container -->
-            <div class="w-full relative bg-white rounded-b-lg overflow-hidden border-2 border-t-0 border-ink-black shadow-[3px_3px_0px_#12180F]" style="height: 640px;">
-              <iframe
-                id="web-detail-iframe"
-                src=""
-                class="w-full h-full border-0"
-                loading="lazy"
-                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-                title="Vista previa del proyecto"
-                onerror="handleIframeError()"
-              ></iframe>
-
-              <!-- Fallback overlay si el iframe falla o se bloquea -->
-              <div id="iframe-fallback-overlay" class="hidden absolute inset-0 bg-surface-bone flex-col items-center justify-center p-6 text-center gap-3">
-                <span class="material-symbols-outlined text-[48px] text-ink-black">language</span>
-                <h4 class="font-headline-sm text-headline-sm text-ink-black font-bold">Vista previa protegida</h4>
-                <p class="font-body-sm text-body-sm text-secondary max-w-md">
-                  El sitio web requiere abrirse directamente en una nueva pestaña para visualizar todas sus funcionalidades interactivas.
-                </p>
-                <a id="iframe-fallback-btn" href="#" target="_blank" rel="noopener noreferrer" class="min-h-[44px] px-space-lg py-space-xs rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase font-bold flex items-center gap-2 shadow-[2px_2px_0px_#12180F]">
-                  <span>Abrir web en vivo</span>
-                  <span class="material-symbols-outlined text-[18px]">open_in_new</span>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
+
       </div>
     </div>
 
     <!-- Navegación Proyecto Anterior / Siguiente -->
-    <div class="px-margin-mobile lg:px-margin py-space-md desktop-container max-w-5xl">
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
-        <!-- Anterior -->
-        <a id="web-detail-prev-link" href="#" class="bg-surface-bone p-space-md rounded-lg shadow-[3px_3px_0px_#12180F] border border-ink-black/10 flex items-center gap-space-sm hover:translate-x-[-2px] transition-transform no-underline">
-          <span class="material-symbols-outlined text-ink-black text-[24px]">arrow_back</span>
+    <div class="px-4 sm:px-8 py-6 desktop-container max-w-5xl">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <a id="web-detail-prev-link" href="#" class="bg-nexo-white p-5 rounded-[20px] border border-nexo-dark/10 flex items-center gap-3 card-nexo no-underline">
+          <span class="material-symbols-outlined text-nexo-dark text-[22px]">arrow_back</span>
           <div class="flex flex-col">
-            <span class="font-label-sm text-[11px] uppercase font-bold text-secondary">Proyecto Anterior</span>
-            <span class="font-headline-sm text-body-md font-bold text-ink-black" id="web-detail-prev-title">Anterior</span>
+            <span class="text-[11px] uppercase font-bold text-nexo-gray">Proyecto Anterior</span>
+            <span class="font-headline text-base font-bold text-nexo-dark" id="web-detail-prev-title">Anterior</span>
           </div>
         </a>
 
-        <!-- Siguiente -->
-        <a id="web-detail-next-link" href="#" class="bg-surface-bone p-space-md rounded-lg shadow-[3px_3px_0px_#12180F] border border-ink-black/10 flex items-center justify-between hover:translate-x-[2px] transition-transform no-underline text-right">
+        <a id="web-detail-next-link" href="#" class="bg-nexo-white p-5 rounded-[20px] border border-nexo-dark/10 flex items-center justify-between card-nexo no-underline text-right">
           <div class="flex flex-col">
-            <span class="font-label-sm text-[11px] uppercase font-bold text-secondary">Proyecto Siguiente</span>
-            <span class="font-headline-sm text-body-md font-bold text-ink-black" id="web-detail-next-title">Siguiente</span>
+            <span class="text-[11px] uppercase font-bold text-nexo-gray">Proyecto Siguiente</span>
+            <span class="font-headline text-base font-bold text-nexo-dark" id="web-detail-next-title">Siguiente</span>
           </div>
-          <span class="material-symbols-outlined text-ink-black text-[24px]">arrow_forward</span>
+          <span class="material-symbols-outlined text-nexo-dark text-[22px]">arrow_forward</span>
         </a>
       </div>
     </div>
 
     <!-- CTA Final hacia Contacto -->
-    <div class="px-margin-mobile lg:px-margin py-space-lg desktop-container max-w-5xl">
-      <div class="bg-ink-black text-surface-bone rounded-lg p-space-lg lg:p-space-xl shadow-[4px_4px_0px_#12180F] flex flex-col sm:flex-row items-center justify-between gap-space-md">
+    <div class="px-4 sm:px-8 py-6 desktop-container max-w-5xl">
+      <div class="bg-nexo-dark text-nexo-bone rounded-[24px] p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6">
         <div class="flex flex-col gap-1 text-center sm:text-left">
-          <span class="font-label-sm text-label-sm text-tertiary-fixed uppercase font-bold tracking-widest">¿TE GUSTA ESTE PROYECTO?</span>
-          <h3 class="font-headline-sm text-headline-sm text-surface-bone font-bold">Cotiza tu web con Andrea Rodríguez</h3>
+          <span class="text-xs uppercase font-bold text-nexo-neon tracking-widest">¿TE GUSTA ESTE PROYECTO?</span>
+          <h3 class="font-headline text-2xl text-nexo-white font-bold">Cotiza tu web con Andrea Rodríguez</h3>
         </div>
-        <a href="#contacto" class="min-h-[44px] px-space-xl py-space-sm rounded-full bg-tertiary-fixed text-ink-black font-label-md text-label-md uppercase font-bold tracking-wider flex items-center gap-2 shadow-[2px_2px_0px_#F3F1ED] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all whitespace-nowrap">
+        <a href="#contacto" class="px-7 py-3 rounded-full bg-nexo-neon text-nexo-dark font-semibold text-sm uppercase tracking-wider hover:bg-white transition-all whitespace-nowrap flex items-center gap-2">
           <span>Cotiza tu web</span>
           <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
         </a>
       </div>
     </div>
+
   </div>
 
 </div>
@@ -266,7 +272,6 @@
     const [pathPart, queryPart] = rawHash.split('?');
     const segments = pathPart.split('/');
 
-    // Check if subroute e.g. websites/tech-gamer-madrid
     if (segments[0] === 'websites' && segments[1] && segments[1].length > 0) {
       showWebsiteDetail(segments[1]);
     } else {
@@ -288,7 +293,6 @@
     const container = document.getElementById('websites-filters-container');
     if (!container || !window.NEXO_WEBSITE_PROJECTS) return;
 
-    // Collect distinct real categories and tags
     const categories = ['Negocios locales', 'Portafolio personal'];
     const allTags = new Set();
     window.NEXO_WEBSITE_PROJECTS.forEach(p => {
@@ -296,24 +300,24 @@
     });
 
     container.innerHTML = `
-      <button class="web-filter-btn shrink-0 px-space-md py-space-xs rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md font-bold uppercase transition-all shadow-[2px_2px_0px_#12180F]" data-filter="all" onclick="setWebsiteFilter('all')">
+      <button class="web-filter-btn shrink-0 tag-pill px-4 py-1.5 uppercase transition-all ${activeWebFilter === 'all' ? 'active' : ''}" data-filter="all" onclick="setWebsiteFilter('all')">
         Todos
       </button>
     `;
 
-    // Add category buttons
     categories.forEach(cat => {
+      const isActive = activeWebFilter === `cat:${cat}`;
       container.innerHTML += `
-        <button class="web-filter-btn shrink-0 px-space-md py-space-xs rounded-full bg-surface-bone text-ink-black font-label-md text-label-md font-medium uppercase transition-all shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed" data-filter="cat:${cat}" onclick="setWebsiteFilter('cat:${cat}')">
+        <button class="web-filter-btn shrink-0 tag-pill px-4 py-1.5 uppercase transition-all ${isActive ? 'active' : ''}" data-filter="cat:${cat}" onclick="setWebsiteFilter('cat:${cat}')">
           ${cat}
         </button>
       `;
     });
 
-    // Add tag buttons
     allTags.forEach(tag => {
+      const isActive = activeWebFilter === `tag:${tag}`;
       container.innerHTML += `
-        <button class="web-filter-btn shrink-0 px-space-md py-space-xs rounded-full bg-surface-bone text-ink-black font-label-md text-label-md font-medium uppercase transition-all shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed" data-filter="tag:${tag}" onclick="setWebsiteFilter('tag:${tag}')">
+        <button class="web-filter-btn shrink-0 tag-pill px-4 py-1.5 uppercase transition-all ${isActive ? 'active' : ''}" data-filter="tag:${tag}" onclick="setWebsiteFilter('tag:${tag}')">
           #${tag}
         </button>
       `;
@@ -325,11 +329,9 @@
     document.querySelectorAll('.web-filter-btn').forEach(btn => {
       const bFilter = btn.getAttribute('data-filter');
       if (bFilter === filter) {
-        btn.classList.remove('bg-surface-bone', 'text-ink-black', 'font-medium');
-        btn.classList.add('bg-ink-black', 'text-tertiary-fixed', 'font-bold');
+        btn.classList.add('active');
       } else {
-        btn.classList.remove('bg-ink-black', 'text-tertiary-fixed', 'font-bold');
-        btn.classList.add('bg-surface-bone', 'text-ink-black', 'font-medium');
+        btn.classList.remove('active');
       }
     });
 
@@ -362,57 +364,52 @@
 
     filtered.forEach(project => {
       const card = document.createElement('article');
-      card.className = 'group bg-surface-bone rounded-lg overflow-hidden shadow-[4px_4px_0px_#12180F] border border-ink-black/10 flex flex-col justify-between hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform';
+      card.className = 'group bg-nexo-white rounded-[24px] p-6 border border-nexo-dark/10 card-nexo flex flex-col justify-between';
       
       const tagsHtml = project.tags.map(t => 
-        `<span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-[11px] font-semibold">${t}</span>`
+        `<span class="tag-pill px-2.5 py-0.5 text-[11px]">${t}</span>`
       ).join('');
 
       card.innerHTML = `
         <div>
-          <!-- Captura con hover interactivo -->
-          <a href="#websites/${project.slug}" class="relative block w-full aspect-[16/10] bg-ink-black overflow-hidden no-underline">
+          <!-- Captura con etiqueta arriba izquierda -->
+          <a href="#websites/${project.slug}" class="relative block w-full aspect-[16/10] bg-nexo-dark rounded-2xl overflow-hidden no-underline mb-4">
             <img src="${project.coverImage}" alt="${project.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-            
-            <div class="absolute top-2.5 left-2.5 bg-ink-black text-tertiary-fixed px-3 py-1 rounded-full font-label-sm text-[11px] uppercase font-bold shadow-[2px_2px_0px_#12180F]">
+            <div class="absolute top-3 left-3 bg-nexo-dark text-nexo-neon px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider shadow-sm">
               ${project.category}
             </div>
-
-            <!-- Hover overlay con flecha amarilla y texto Ver proyecto -->
-            <div class="absolute inset-0 bg-ink-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
-              <span class="px-space-md py-2 rounded-full bg-tertiary-fixed text-ink-black font-label-md text-label-md font-bold uppercase flex items-center gap-1.5 shadow-[3px_3px_0px_#12180F]">
+            <div class="absolute inset-0 bg-nexo-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="btn-nexo-primary px-4 py-2 text-xs">
                 <span>Ver proyecto</span>
-                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
               </span>
             </div>
           </a>
 
-          <!-- Información del proyecto -->
-          <div class="p-space-md flex flex-col gap-space-xs">
-            <span class="font-label-sm text-[11px] uppercase tracking-wider text-secondary font-bold">
+          <!-- Info abajo -->
+          <div class="flex flex-col gap-1.5">
+            <span class="text-xs uppercase font-semibold text-nexo-gray">
               ${project.businessType}
             </span>
 
-            <h3 class="font-headline-sm text-headline-sm text-ink-black font-bold leading-tight mt-0.5">
-              <a href="#websites/${project.slug}" class="text-ink-black hover:underline">${project.name}</a>
+            <h3 class="font-headline text-2xl text-nexo-dark font-bold leading-tight">
+              <a href="#websites/${project.slug}" class="text-nexo-dark hover:underline">${project.name}</a>
             </h3>
 
-            <p class="font-body-sm text-body-sm text-secondary line-clamp-3 mt-1 leading-relaxed">
+            <p class="font-body text-xs sm:text-sm text-nexo-gray line-clamp-3 mt-1 leading-relaxed">
               ${project.description}
             </p>
 
-            <!-- Chips de tags -->
-            <div class="flex flex-wrap gap-1.5 pt-space-xs mt-auto">
+            <div class="flex flex-wrap gap-1.5 pt-2 mt-auto">
               ${tagsHtml}
             </div>
           </div>
         </div>
 
-        <!-- Footer de la tarjeta con acción rápida -->
-        <div class="p-space-md pt-0 border-t border-ink-black/5 mt-space-xs">
-          <a href="#websites/${project.slug}" class="w-full min-h-[44px] px-space-md py-space-xs rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase font-bold flex items-center justify-between shadow-[2px_2px_0px_#12180F] group-hover:bg-tertiary-fixed group-hover:text-ink-black transition-colors no-underline">
+        <div class="pt-5 mt-4 border-t border-nexo-dark/10">
+          <a href="#websites/${project.slug}" class="btn-nexo-primary w-full py-2.5 text-xs">
             <span>Ver Ficha &amp; Demo</span>
-            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+            <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
           </a>
         </div>
       `;
@@ -438,66 +435,56 @@
     if (catalogView) catalogView.style.display = 'none';
     if (detailView) detailView.style.display = 'flex';
 
-    // Populate header & text
     document.getElementById('web-detail-category-top').textContent = project.category;
     document.getElementById('web-detail-badge').textContent = project.category;
     document.getElementById('web-detail-businesstype').textContent = project.businessType;
     document.getElementById('web-detail-title').textContent = project.name;
     document.getElementById('web-detail-desc').textContent = project.description;
 
-    // Cover image
     const cover = document.getElementById('web-detail-cover');
     cover.src = project.coverImage;
     cover.alt = project.name;
 
-    // Live link button
     const liveBtn = document.getElementById('web-detail-live-btn');
     liveBtn.href = project.url;
 
-    // What includes list
     const includesList = document.getElementById('web-detail-includes');
     includesList.innerHTML = '';
     project.includes.forEach(inc => {
       const li = document.createElement('li');
       li.className = 'flex items-start gap-2.5';
       li.innerHTML = `
-        <span class="material-symbols-outlined text-accent-green text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+        <span class="material-symbols-outlined text-nexo-green text-[20px] shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
         <span class="leading-relaxed">${inc}</span>
       `;
       includesList.appendChild(li);
     });
 
-    // Tags list
     const tagsContainer = document.getElementById('web-detail-tags');
     tagsContainer.innerHTML = '';
     project.tags.forEach(t => {
       const span = document.createElement('span');
-      span.className = 'px-2.5 py-1 rounded-full bg-surface-variant text-ink-black font-label-sm text-[11px] font-bold';
+      span.className = 'tag-pill px-3 py-1 text-xs';
       span.textContent = t;
       tagsContainer.appendChild(span);
     });
 
-    // URL preview link
     const urlLink = document.getElementById('web-detail-url-link');
     urlLink.href = project.url;
     urlLink.textContent = project.url;
 
-    // Iframe and Fallback
     const iframe = document.getElementById('web-detail-iframe');
     const fallback = document.getElementById('iframe-fallback-overlay');
     const fallbackBtn = document.getElementById('iframe-fallback-btn');
-    const urlDisplay = document.getElementById('iframe-url-display');
     const extLink = document.getElementById('iframe-external-link');
 
     if (iframe) {
       iframe.src = project.url;
       fallback.classList.add('hidden');
     }
-    if (urlDisplay) urlDisplay.textContent = project.url;
     if (extLink) extLink.href = project.url;
     if (fallbackBtn) fallbackBtn.href = project.url;
 
-    // Prev / Next links
     const prevLink = document.getElementById('web-detail-prev-link');
     const prevTitle = document.getElementById('web-detail-prev-title');
     prevLink.href = '#websites/' + prevProject.slug;
@@ -508,10 +495,7 @@
     nextLink.href = '#websites/' + nextProject.slug;
     nextTitle.textContent = nextProject.name;
 
-    // Reset preview mode to desktop
     setPreviewMode('desktop');
-
-    // Scroll top
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -524,12 +508,12 @@
 
     if (mode === 'mobile') {
       container.style.maxWidth = '375px';
-      btnMobile.className = 'px-3.5 py-1 rounded-full font-label-sm text-label-sm uppercase font-bold transition-all bg-ink-black text-tertiary-fixed shadow-[1px_1px_0px_#12180F] flex items-center gap-1.5';
-      btnDesktop.className = 'px-3.5 py-1 rounded-full font-label-sm text-label-sm uppercase font-semibold text-ink-black hover:bg-surface-bone transition-all flex items-center gap-1.5';
+      btnMobile.className = 'px-3.5 py-1 rounded-full text-xs uppercase font-bold transition-all bg-nexo-dark text-nexo-neon flex items-center gap-1';
+      btnDesktop.className = 'px-3.5 py-1 rounded-full text-xs uppercase font-semibold text-nexo-dark hover:bg-white transition-all flex items-center gap-1';
     } else {
       container.style.maxWidth = '100%';
-      btnDesktop.className = 'px-3.5 py-1 rounded-full font-label-sm text-label-sm uppercase font-bold transition-all bg-ink-black text-tertiary-fixed shadow-[1px_1px_0px_#12180F] flex items-center gap-1.5';
-      btnMobile.className = 'px-3.5 py-1 rounded-full font-label-sm text-label-sm uppercase font-semibold text-ink-black hover:bg-surface-bone transition-all flex items-center gap-1.5';
+      btnDesktop.className = 'px-3.5 py-1 rounded-full text-xs uppercase font-bold transition-all bg-nexo-dark text-nexo-neon flex items-center gap-1';
+      btnMobile.className = 'px-3.5 py-1 rounded-full text-xs uppercase font-semibold text-nexo-dark hover:bg-white transition-all flex items-center gap-1';
     }
   }
 
@@ -538,6 +522,5 @@
     if (fallback) fallback.classList.remove('hidden');
   }
 
-  // Run on load
   initWebsites();
 </script>
