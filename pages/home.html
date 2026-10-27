@@ -1,97 +1,359 @@
 <div class="flex flex-col w-full bg-nexo-beige overflow-hidden">
 
   <!-- =========================================================================
-       1. HERO SECTION CON PICOS AMARILLO NEÓN GIGANTES Y FIGURA RECORTADA
+       2. CÁPSULA DE ESTADO (Bajo el navbar)
        ========================================================================= -->
-  <section class="relative w-full min-h-[82vh] lg:min-h-[88vh] px-4 sm:px-8 pt-8 pb-16 flex items-center overflow-hidden">
+  <div class="w-full flex justify-center pt-6 pb-2 px-4 z-10 relative">
+    <a href="#contacto" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-nexo-white border border-nexo-dark/15 shadow-sm text-xs font-semibold text-nexo-dark hover:border-nexo-dark transition-all group">
+      <span class="w-2 h-2 rounded-full bg-nexo-neon animate-pulse shrink-0"></span>
+      <span>Disponibles para nuevos proyectos</span>
+      <span class="material-symbols-outlined text-[14px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+    </a>
+  </div>
+
+  <!-- =========================================================================
+       3. HERO: ABANICO DE PROYECTOS TIPO POLAROID + TITULAR DE IMPACTO
+       ========================================================================= -->
+  <section class="relative w-full pt-4 pb-16 px-4 sm:px-8 overflow-hidden">
     
-    <!-- Picos y Zigzags Gigantes en Amarillo Neón (#E6FF00) sangrando por los bordes -->
-    <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
-      <!-- Pico de fondo masivo -->
-      <div class="absolute right-[-10%] top-[-5%] w-[85%] lg:w-[68%] h-[115%] bg-nexo-neon zigzag-hero opacity-95 transition-transform duration-700"></div>
-      <!-- Pico complementario angular sangrando por la derecha -->
-      <div class="absolute -right-24 bottom-0 w-80 h-96 bg-nexo-neon/60 corner-peak-br"></div>
+    <!-- Forma sutil de pico amarillo neón detrás del abanico central -->
+    <div class="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden z-0">
+      <div class="w-[520px] lg:w-[680px] h-[480px] lg:h-[580px] bg-nexo-neon/60 zigzag-hero opacity-80 blur-[1px]"></div>
     </div>
 
-    <div class="desktop-container w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+    <!-- Contenedor del Abanico Interactivo -->
+    <div class="desktop-container relative z-10 flex flex-col items-center">
       
-      <!-- Lado Izquierdo: Titular, Badge y CTAs -->
-      <div class="lg:col-span-7 flex flex-col gap-6 pt-4 lg:pt-0">
-        
-        <!-- Badge píldora amarillo neón -->
-        <div class="self-start">
-          <a href="#websites/tech-gamer-madrid" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-nexo-white border border-nexo-dark/15 shadow-sm hover:border-nexo-dark transition-all group">
-            <span class="px-2.5 py-0.5 rounded-full bg-nexo-neon text-nexo-dark font-headline text-xs font-bold uppercase tracking-wider">NUEVO</span>
-            <span class="text-xs sm:text-sm font-semibold text-nexo-dark group-hover:underline flex items-center gap-1">
-              Descubre nuestro último proyecto
-              <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-            </span>
-          </a>
-        </div>
-
-        <!-- Titular de 3 líneas: Bricolage Grotesque 800, minúsculas con mayúscula inicial, tracking -0.035em, leading 0.95 -->
-        <h1 class="font-headline text-[clamp(44px,7vw,92px)] tracking-[-0.035em] leading-[0.95] text-nexo-dark font-extrabold">
-          Diseña tu marca,<br>
-          conecta con tus clientes,<br>
-          destaca.
-        </h1>
-
-        <!-- Subtítulo: Inter regular, 18-22px, leading 1.4, #3B4034 -->
-        <p class="font-body text-lg sm:text-[21px] text-nexo-body leading-[1.4] max-w-xl">
-          NEXO STUDIO es un centro de diseño gráfico, web y marketing digital que une todo lo que tu negocio necesita para verse bien y llegar más lejos.
-        </p>
-
-        <!-- Botones píldora de marca -->
-        <div class="flex flex-wrap items-center gap-3.5 pt-2">
-          <a href="#contacto" class="btn-nexo-primary px-8 py-3.5 text-base shadow-sm">
-            <span>Cotiza tu proyecto</span>
-            <span class="material-symbols-outlined text-[18px] ml-1.5">arrow_forward</span>
-          </a>
-          <a href="#websites" class="btn-nexo-secondary px-8 py-3.5 text-base">
-            <span>Ver proyectos</span>
-          </a>
-        </div>
-
-        <!-- Micro datos reales de confianza -->
-        <div class="flex items-center gap-6 pt-3 text-xs sm:text-sm font-medium text-nexo-body/80">
-          <div class="flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-nexo-green"></span>
-            <span>Atención directa por Andrea &amp; Miguel</span>
-          </div>
-          <div class="flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-nexo-dark"></span>
-            <span>Soluciones 100% personalizadas</span>
-          </div>
-        </div>
-
+      <!-- Controles de navegación accesibles para el abanico (Desktop & Tablet) -->
+      <div class="w-full max-w-4xl flex items-center justify-between mb-2 px-4 z-30">
+        <button id="fan-prev-btn" onclick="rotateFan(-1)" aria-label="Proyecto anterior en el abanico" class="w-10 h-10 rounded-full bg-nexo-white border border-nexo-dark/15 shadow-sm flex items-center justify-center text-nexo-dark hover:bg-nexo-neon transition-all focus:outline-none focus:ring-2 focus:ring-nexo-dark">
+          <span class="material-symbols-outlined text-[20px]">chevron_left</span>
+        </button>
+        <span class="text-[11px] uppercase tracking-widest font-bold text-nexo-dark/60 select-none">
+          DESLIZA O USA LAS FLECHAS
+        </span>
+        <button id="fan-next-btn" onclick="rotateFan(1)" aria-label="Proyecto siguiente en el abanico" class="w-10 h-10 rounded-full bg-nexo-white border border-nexo-dark/15 shadow-sm flex items-center justify-center text-nexo-dark hover:bg-nexo-neon transition-all focus:outline-none focus:ring-2 focus:ring-nexo-dark">
+          <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+        </button>
       </div>
 
-      <!-- Lado Derecho: Sujeto recortado rompiendo la forma amarillo neón (contrapicado editorial) -->
-      <div class="lg:col-span-5 relative flex justify-center lg:justify-end items-end min-h-[380px] sm:min-h-[460px] lg:min-h-[560px]">
-        <div class="relative w-full max-w-[440px] flex items-end justify-center">
-          <!-- Figura editorial en contrapicado rompiendo el pico neón -->
-          <img src="assets/brand/hero_cutout.png" 
-               alt="Dirección de arte NEXO STUDIO" 
-               class="relative z-20 w-auto max-h-[500px] lg:max-h-[620px] object-contain drop-shadow-[0_24px_36px_rgba(18,24,15,0.18)] hover:scale-[1.01] transition-transform duration-500">
-          
-          <!-- Elemento flotante interactivo sobre la figura -->
-          <div class="absolute -left-4 bottom-12 z-30 bg-nexo-white p-3.5 rounded-[20px] border border-nexo-dark/15 shadow-[0_12px_24px_rgba(18,24,15,0.12)] flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-nexo-neon flex items-center justify-center text-nexo-dark font-headline font-bold text-sm">
-              X
-            </div>
-            <div class="flex flex-col">
-              <span class="text-xs font-bold text-nexo-dark uppercase tracking-wider">DISEÑO INTEGRAL</span>
-              <span class="text-[11px] text-nexo-body/75">Web · Gráfico · Marketing</span>
-            </div>
-          </div>
+      <!-- Stage del Abanico: Contenedor de cartas con solapamiento y corte en bordes -->
+      <div class="relative w-full max-w-5xl h-[390px] sm:h-[430px] lg:h-[470px] flex items-center justify-center overflow-visible select-none my-2" id="fan-stage-container">
+        <!-- Renderizado dinámico de las 6 tarjetas en abanico por JavaScript -->
+        <div id="fan-cards-wrapper" class="relative w-full h-full flex items-center justify-center">
+          <!-- Populated by JS initFanHero() -->
         </div>
+      </div>
+
+      <!-- Debajo del abanico: Texto y Titular en 2 líneas -->
+      <div class="text-center flex flex-col items-center gap-2 mt-4 sm:mt-8 max-w-3xl z-20">
+        <span class="text-xs sm:text-sm font-semibold text-nexo-gray uppercase tracking-widest">
+          Bienvenido a NEXO STUDIO
+        </span>
+        <h1 class="font-headline text-[clamp(40px,6.8vw,86px)] text-nexo-dark font-extrabold leading-[0.95] tracking-[-0.035em]">
+          Mira lo que<br>
+          hemos <span class="bg-nexo-neon text-nexo-dark px-3 sm:px-4 py-0.5 rounded-xl inline-block shadow-sm">creado</span>
+        </h1>
       </div>
 
     </div>
   </section>
 
   <!-- =========================================================================
-       2. FRANJA BLANCO HUESO (#F3F1ED) CON MARQUEE DE PROYECTOS REALES
+       4. EXPLORA POR CATEGORÍA (CUADRÍCULA 2 COLUMNAS × 3 FILAS)
+       ========================================================================= -->
+  <section class="px-4 sm:px-8 py-14 desktop-container">
+    <div class="flex flex-col items-center gap-6 max-w-4xl mx-auto">
+      
+      <!-- Etiqueta centrada -->
+      <span class="text-xs uppercase font-bold tracking-widest text-nexo-gray">
+        Explora por categoría
+      </span>
+
+      <!-- Cuadrícula 2 cols × 3 filas -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 w-full" id="category-grid">
+        
+        <!-- Fila 1: Websites (Activa por defecto) -->
+        <a href="#websites" class="cat-card group flex items-center justify-between p-5 sm:p-6 rounded-[20px] bg-nexo-neon text-nexo-dark border border-nexo-dark transition-all duration-200 no-underline relative shadow-sm" data-cat="websites">
+          <div class="flex flex-col">
+            <span class="font-headline text-xl sm:text-[22px] font-bold tracking-tight">Websites</span>
+            <span class="text-xs text-nexo-dark/70 font-medium">Plataformas y tiendas e-commerce</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold font-mono px-2.5 py-1 rounded-full bg-nexo-dark text-nexo-neon" id="cat-count-websites">3</span>
+            <div class="w-8 h-8 rounded-lg bg-nexo-white flex items-center justify-center text-nexo-dark shadow-sm">
+              <span class="material-symbols-outlined text-[18px]">north_east</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Fila 2: Diseño gráfico -->
+        <a href="#diseno-grafico" class="cat-card group flex items-center justify-between p-5 sm:p-6 rounded-[20px] bg-nexo-bone text-nexo-dark border border-nexo-dark/15 hover:bg-nexo-neon hover:border-nexo-dark transition-all duration-200 no-underline relative" data-cat="diseno-grafico">
+          <div class="flex flex-col">
+            <span class="font-headline text-xl sm:text-[22px] font-bold tracking-tight">Diseño gráfico</span>
+            <span class="text-xs text-nexo-gray group-hover:text-nexo-dark/70 font-medium">Identidad visual y packaging</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold font-mono px-2.5 py-1 rounded-full bg-nexo-dark text-nexo-bone group-hover:bg-nexo-dark group-hover:text-nexo-neon" id="cat-count-diseno">3</span>
+            <div class="w-8 h-8 rounded-lg bg-nexo-white flex items-center justify-center text-nexo-dark shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="material-symbols-outlined text-[18px]">north_east</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Fila 3: Marketing -->
+        <a href="#marketing" class="cat-card group flex items-center justify-between p-5 sm:p-6 rounded-[20px] bg-nexo-bone text-nexo-dark border border-nexo-dark/15 hover:bg-nexo-neon hover:border-nexo-dark transition-all duration-200 no-underline relative" data-cat="marketing">
+          <div class="flex flex-col">
+            <span class="font-headline text-xl sm:text-[22px] font-bold tracking-tight">Marketing</span>
+            <span class="text-xs text-nexo-gray group-hover:text-nexo-dark/70 font-medium">SEO local y campañas de conversión</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold font-mono px-2.5 py-1 rounded-full bg-nexo-dark text-nexo-bone group-hover:bg-nexo-dark group-hover:text-nexo-neon" id="cat-count-marketing">4</span>
+            <div class="w-8 h-8 rounded-lg bg-nexo-white flex items-center justify-center text-nexo-dark shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="material-symbols-outlined text-[18px]">north_east</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Fila 4: Negocios locales (Filtro en Websites) -->
+        <a href="#websites?filter=cat:Negocios locales" class="cat-card group flex items-center justify-between p-5 sm:p-6 rounded-[20px] bg-nexo-bone text-nexo-dark border border-nexo-dark/15 hover:bg-nexo-neon hover:border-nexo-dark transition-all duration-200 no-underline relative" data-cat="locales">
+          <div class="flex flex-col">
+            <span class="font-headline text-xl sm:text-[22px] font-bold tracking-tight">Negocios locales</span>
+            <span class="text-xs text-nexo-gray group-hover:text-nexo-dark/70 font-medium">Servicios técnicos y gastronomía</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold font-mono px-2.5 py-1 rounded-full bg-nexo-dark text-nexo-bone group-hover:bg-nexo-dark group-hover:text-nexo-neon" id="cat-count-locales">2</span>
+            <div class="w-8 h-8 rounded-lg bg-nexo-white flex items-center justify-center text-nexo-dark shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="material-symbols-outlined text-[18px]">north_east</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Fila 5: Portafolio personal (Filtro en Websites) -->
+        <a href="#websites?filter=cat:Portafolio personal" class="cat-card group flex items-center justify-between p-5 sm:p-6 rounded-[20px] bg-nexo-bone text-nexo-dark border border-nexo-dark/15 hover:bg-nexo-neon hover:border-nexo-dark transition-all duration-200 no-underline relative" data-cat="personal">
+          <div class="flex flex-col">
+            <span class="font-headline text-xl sm:text-[22px] font-bold tracking-tight">Portafolio personal</span>
+            <span class="text-xs text-nexo-gray group-hover:text-nexo-dark/70 font-medium">Consultoría creativa e invitaciones</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold font-mono px-2.5 py-1 rounded-full bg-nexo-dark text-nexo-bone group-hover:bg-nexo-dark group-hover:text-nexo-neon" id="cat-count-personal">1</span>
+            <div class="w-8 h-8 rounded-lg bg-nexo-white flex items-center justify-center text-nexo-dark shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="material-symbols-outlined text-[18px]">north_east</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Fila 6: Blog -->
+        <a href="#blog" class="cat-card group flex items-center justify-between p-5 sm:p-6 rounded-[20px] bg-nexo-bone text-nexo-dark border border-nexo-dark/15 hover:bg-nexo-neon hover:border-nexo-dark transition-all duration-200 no-underline relative" data-cat="blog">
+          <div class="flex flex-col">
+            <span class="font-headline text-xl sm:text-[22px] font-bold tracking-tight">Blog</span>
+            <span class="text-xs text-nexo-gray group-hover:text-nexo-dark/70 font-medium">Ensayos técnicos y criterios de marca</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold font-mono px-2.5 py-1 rounded-full bg-nexo-dark text-nexo-bone group-hover:bg-nexo-dark group-hover:text-nexo-neon" id="cat-count-blog">7</span>
+            <div class="w-8 h-8 rounded-lg bg-nexo-white flex items-center justify-center text-nexo-dark shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+              <span class="material-symbols-outlined text-[18px]">north_east</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. PROYECTOS DESTACADOS (2 HORIZONTALES ARRIBA + 4 VERTICALES ABAJO)
+       ========================================================================= -->
+  <section class="px-4 sm:px-8 py-16 desktop-container flex flex-col gap-10">
+    
+    <!-- Cabecera de la sección -->
+    <div class="flex items-center justify-between">
+      <h2 class="font-headline text-3xl sm:text-5xl text-nexo-dark font-bold tracking-tight">
+        Proyectos destacados
+      </h2>
+      <a href="#websites" class="px-4 py-2 rounded-lg border border-nexo-dark text-xs font-bold uppercase tracking-wider text-nexo-dark hover:bg-nexo-dark hover:text-nexo-neon transition-all flex items-center gap-1.5 shadow-sm">
+        <span>Ver todos</span>
+        <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+      </a>
+    </div>
+
+    <!-- FILA SUPERIOR: 2 TARJETAS HORIZONTALES GRANDES -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      
+      <!-- Horizontal 1: Tech Gamer Madrid -->
+      <article class="bg-nexo-white rounded-[24px] p-6 sm:p-7 border border-nexo-dark/10 card-nexo flex flex-col sm:flex-row gap-6 group">
+        <div class="relative w-full sm:w-1/2 aspect-square rounded-[18px] overflow-hidden bg-nexo-dark shrink-0">
+          <img src="assets/websites/tech_gamer_hero.jpg" alt="Tech Gamer Madrid" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <span class="absolute top-3 left-3 bg-nexo-white/95 backdrop-blur-sm text-nexo-dark font-bold text-[11px] px-2.5 py-1 rounded-md shadow-sm uppercase tracking-wider">
+            Websites
+          </span>
+          <div class="absolute bottom-3 right-3 w-8 h-8 rounded-lg bg-nexo-white flex items-center justify-center text-nexo-dark shadow-md group-hover:bg-nexo-neon transition-colors">
+            <span class="material-symbols-outlined text-[18px]">north_east</span>
+          </div>
+        </div>
+        <div class="w-full sm:w-1/2 flex flex-col justify-between gap-3">
+          <div class="flex flex-col gap-1.5">
+            <span class="text-xs font-medium text-nexo-gray uppercase tracking-wider">
+              Negocios locales • Servicio técnico
+            </span>
+            <h3 class="font-headline text-xl sm:text-2xl text-nexo-dark font-bold leading-tight">
+              <a href="#websites/tech-gamer-madrid" class="text-nexo-dark hover:underline">Tech Gamer Madrid: reparación y montaje de PCs a domicilio</a>
+            </h3>
+            <p class="font-body text-xs sm:text-sm text-nexo-body line-clamp-3 mt-1 leading-relaxed">
+              Web para servicio técnico en Carabanchel y Madrid. Calculadora de presupuesto y pedidos por WhatsApp.
+            </p>
+          </div>
+          <div class="pt-2">
+            <a href="#websites/tech-gamer-madrid" class="btn-nexo-primary px-5 py-2 text-xs">
+              <span>Ver ficha del proyecto</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Horizontal 2: DUMORE Chocolate -->
+      <article class="bg-nexo-white rounded-[24px] p-6 sm:p-7 border border-nexo-dark/10 card-nexo flex flex-col sm:flex-row gap-6 group">
+        <div class="relative w-full sm:w-1/2 aspect-square rounded-[18px] overflow-hidden bg-nexo-dark shrink-0">
+          <img src="assets/websites/dumore_screen.png" alt="DUMORE Chocolate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <span class="absolute top-3 left-3 bg-nexo-white/95 backdrop-blur-sm text-nexo-dark font-bold text-[11px] px-2.5 py-1 rounded-md shadow-sm uppercase tracking-wider">
+            Websites
+          </span>
+          <div class="absolute bottom-3 right-3 w-8 h-8 rounded-lg bg-nexo-white flex items-center justify-center text-nexo-dark shadow-md group-hover:bg-nexo-neon transition-colors">
+            <span class="material-symbols-outlined text-[18px]">north_east</span>
+          </div>
+        </div>
+        <div class="w-full sm:w-1/2 flex flex-col justify-between gap-3">
+          <div class="flex flex-col gap-1.5">
+            <span class="text-xs font-medium text-nexo-gray uppercase tracking-wider">
+              Negocios locales • Repostería
+            </span>
+            <h3 class="font-headline text-xl sm:text-2xl text-nexo-dark font-bold leading-tight">
+              <a href="#websites/dumore-chocolate" class="text-nexo-dark hover:underline">DUMORE Chocolate: fresas con chocolate y regalos personalizados</a>
+            </h3>
+            <p class="font-body text-xs sm:text-sm text-nexo-body line-clamp-3 mt-1 leading-relaxed">
+              Catálogo de repostería de autor en Bogotá, personalización de pedidos en tiempo real y checkout por WhatsApp.
+            </p>
+          </div>
+          <div class="pt-2">
+            <a href="#websites/dumore-chocolate" class="btn-nexo-primary px-5 py-2 text-xs">
+              <span>Ver ficha del proyecto</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- FILA INFERIOR: 4 TARJETAS VERTICALES -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Vertical 1: Andrea Rodríguez | Diseño Web -->
+      <article class="bg-nexo-white rounded-[24px] p-5 border border-nexo-dark/10 card-nexo flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full aspect-[4/3] rounded-[16px] overflow-hidden bg-nexo-dark mb-3.5">
+            <img src="assets/websites/andrea_business.png" alt="Andrea Rodríguez Diseño Web" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <span class="absolute top-2.5 left-2.5 bg-nexo-white/95 backdrop-blur-sm text-nexo-dark font-bold text-[11px] px-2 py-0.5 rounded shadow-sm uppercase">
+              Websites
+            </span>
+            <div class="absolute bottom-2.5 right-2.5 w-7 h-7 rounded-md bg-nexo-white flex items-center justify-center text-nexo-dark shadow group-hover:bg-nexo-neon transition-colors">
+              <span class="material-symbols-outlined text-[16px]">north_east</span>
+            </div>
+          </div>
+          <span class="text-[11px] uppercase font-medium text-nexo-gray block">Portafolio personal • Diseño web</span>
+          <h4 class="font-headline text-base font-bold text-nexo-dark mt-1 line-clamp-2 leading-tight">
+            <a href="#websites/andrea-rodriguez-diseno-web" class="hover:underline">Portafolio de diseño web para negocios y celebraciones</a>
+          </h4>
+        </div>
+        <div class="pt-4 mt-3 border-t border-nexo-dark/10">
+          <a href="#websites/andrea-rodriguez-diseno-web" class="text-xs font-bold text-nexo-dark hover:underline flex items-center gap-1">
+            <span>Ver proyecto</span>
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Vertical 2: VORTEX Bodegas & Viñedos -->
+      <article class="bg-nexo-white rounded-[24px] p-5 border border-nexo-dark/10 card-nexo flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full aspect-[4/3] rounded-[16px] overflow-hidden bg-nexo-dark mb-3.5">
+            <img src="assets/portfolio/vortex-packaging-botellas.jpg" alt="VORTEX Bodegas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <span class="absolute top-2.5 left-2.5 bg-nexo-white/95 backdrop-blur-sm text-nexo-dark font-bold text-[11px] px-2 py-0.5 rounded shadow-sm uppercase">
+              Diseño gráfico
+            </span>
+            <div class="absolute bottom-2.5 right-2.5 w-7 h-7 rounded-md bg-nexo-white flex items-center justify-center text-nexo-dark shadow group-hover:bg-nexo-neon transition-colors">
+              <span class="material-symbols-outlined text-[16px]">north_east</span>
+            </div>
+          </div>
+          <span class="text-[11px] uppercase font-medium text-nexo-gray block">Packaging &amp; Vinos • La Rioja</span>
+          <h4 class="font-headline text-base font-bold text-nexo-dark mt-1 line-clamp-2 leading-tight">
+            <a href="#diseno-grafico" class="hover:underline">VORTEX Bodegas &amp; Viñedos: gama de vinos y tríptico</a>
+          </h4>
+        </div>
+        <div class="pt-4 mt-3 border-t border-nexo-dark/10">
+          <a href="#diseno-grafico" class="text-xs font-bold text-nexo-dark hover:underline flex items-center gap-1">
+            <span>Ver proyecto</span>
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Vertical 3: ASTREO -->
+      <article class="bg-nexo-white rounded-[24px] p-5 border border-nexo-dark/10 card-nexo flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full aspect-[4/3] rounded-[16px] overflow-hidden bg-nexo-bone mb-3.5 p-3 flex items-center justify-center">
+            <img src="assets/portfolio/astreo-branding-logo.jpg" alt="Astreo" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
+            <span class="absolute top-2.5 left-2.5 bg-nexo-white/95 backdrop-blur-sm text-nexo-dark font-bold text-[11px] px-2 py-0.5 rounded shadow-sm uppercase">
+              Diseño gráfico
+            </span>
+            <div class="absolute bottom-2.5 right-2.5 w-7 h-7 rounded-md bg-nexo-white flex items-center justify-center text-nexo-dark shadow group-hover:bg-nexo-neon transition-colors">
+              <span class="material-symbols-outlined text-[16px]">north_east</span>
+            </div>
+          </div>
+          <span class="text-[11px] uppercase font-medium text-nexo-gray block">Identidad &amp; Logotipo • Asociación</span>
+          <h4 class="font-headline text-base font-bold text-nexo-dark mt-1 line-clamp-2 leading-tight">
+            <a href="#diseno-grafico" class="hover:underline">ASTREO: símbolo hexagonal y manual de identidad</a>
+          </h4>
+        </div>
+        <div class="pt-4 mt-3 border-t border-nexo-dark/10">
+          <a href="#diseno-grafico" class="text-xs font-bold text-nexo-dark hover:underline flex items-center gap-1">
+            <span>Ver proyecto</span>
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Vertical 4: Revista PULSO -->
+      <article class="bg-nexo-white rounded-[24px] p-5 border border-nexo-dark/10 card-nexo flex flex-col justify-between group">
+        <div>
+          <div class="relative w-full aspect-[4/3] rounded-[16px] overflow-hidden bg-nexo-bone mb-3.5 p-3 flex items-center justify-center">
+            <img src="assets/portfolio/pulso-revista-editorial.jpg" alt="Revista PULSO" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
+            <span class="absolute top-2.5 left-2.5 bg-nexo-white/95 backdrop-blur-sm text-nexo-dark font-bold text-[11px] px-2 py-0.5 rounded shadow-sm uppercase">
+              Diseño gráfico
+            </span>
+            <div class="absolute bottom-2.5 right-2.5 w-7 h-7 rounded-md bg-nexo-white flex items-center justify-center text-nexo-dark shadow group-hover:bg-nexo-neon transition-colors">
+              <span class="material-symbols-outlined text-[16px]">north_east</span>
+            </div>
+          </div>
+          <span class="text-[11px] uppercase font-medium text-nexo-gray block">Editorial &amp; Tipografía • 1ª Época</span>
+          <h4 class="font-headline text-base font-bold text-nexo-dark mt-1 line-clamp-2 leading-tight">
+            <a href="#diseno-grafico" class="hover:underline">Revista PULSO: ciudad, diseño y sostenibilidad</a>
+          </h4>
+        </div>
+        <div class="pt-4 mt-3 border-t border-nexo-dark/10">
+          <a href="#diseno-grafico" class="text-xs font-bold text-nexo-dark hover:underline flex items-center gap-1">
+            <span>Ver proyecto</span>
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+  </section>
+
+  <!-- =========================================================================
+       6. FRANJA DE LOGOS DE PROYECTOS REALES (SUBE AQUÍ DESDE ARRIBA)
        ========================================================================= -->
   <section class="w-full bg-nexo-bone py-5 border-y border-nexo-dark/10 overflow-hidden select-none">
     <div class="animate-marquee items-center gap-10 whitespace-nowrap">
@@ -156,11 +418,10 @@
   </section>
 
   <!-- =========================================================================
-       3. SECCIÓN "IMPULSA TU NEGOCIO" & TARJETAS BENTO CON ILUSTRACIONES SVG
+       7. "IMPULSA TU NEGOCIO" (TARJETAS BENTO CON ILUSTRACIONES)
        ========================================================================= -->
   <section class="px-4 sm:px-8 py-20 desktop-container flex flex-col gap-12">
     
-    <!-- Título con "Impulsa" en Amarillo Neón sobre cápsula oscura para contraste impecable (>48px) -->
     <div class="text-center flex flex-col items-center gap-3">
       <h2 class="font-headline text-[clamp(44px,6vw,68px)] tracking-[-0.035em] leading-[0.95] text-nexo-dark">
         <span class="bg-nexo-dark text-nexo-neon px-3.5 py-1 rounded-[20px] inline-block mr-1">Impulsa</span> tu negocio
@@ -170,25 +431,19 @@
       </p>
     </div>
 
-    <!-- Grilla Bento con radio 24px: una tarjeta ancha y una estrecha por fila -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
       
-      <!-- Fila 1 - Tarjeta Ancha (7 cols): WEBSITES ("Webs que trabajan por ti") -->
+      <!-- Bento 1: Websites (7 cols) -->
       <a href="#websites" class="lg:col-span-7 bg-nexo-white rounded-[24px] p-7 sm:p-9 border border-nexo-dark/10 card-nexo flex flex-col justify-between group no-underline min-h-[420px] overflow-hidden relative">
-        <!-- Top: Etiqueta pequeña arriba a la izquierda -->
         <div class="flex items-center justify-between z-10">
           <span class="tag-pill px-3 py-1 text-xs uppercase tracking-wider">Websites</span>
           <span class="w-9 h-9 rounded-full bg-nexo-bone flex items-center justify-center text-nexo-dark group-hover:bg-nexo-neon transition-colors">
             <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
           </span>
         </div>
-
-        <!-- Center: Ilustración SVG propia con remolinos neón -->
         <div class="my-6 flex justify-center items-center z-10">
           <img src="assets/illustrations/websites.svg" alt="Ilustración Websites" class="w-full max-w-[340px] h-auto object-contain group-hover:scale-105 transition-transform duration-300">
         </div>
-
-        <!-- Bottom: Título grande en negrita abajo a la izquierda y descripción breve en gris -->
         <div class="flex flex-col gap-1.5 z-10">
           <h3 class="font-headline text-2xl sm:text-3xl text-nexo-dark font-bold leading-tight group-hover:text-nexo-dark">
             Webs que trabajan por ti
@@ -199,22 +454,17 @@
         </div>
       </a>
 
-      <!-- Fila 1 - Tarjeta Estrecha (5 cols): DISEÑO GRÁFICO ("Una marca que se reconoce") -->
+      <!-- Bento 2: Diseño Gráfico (5 cols) -->
       <a href="#diseno-grafico" class="lg:col-span-5 bg-nexo-white rounded-[24px] p-7 sm:p-9 border border-nexo-dark/10 card-nexo flex flex-col justify-between group no-underline min-h-[420px] overflow-hidden relative">
-        <!-- Top: Etiqueta arriba a la izquierda -->
         <div class="flex items-center justify-between z-10">
           <span class="tag-pill px-3 py-1 text-xs uppercase tracking-wider">Diseño Gráfico</span>
           <span class="w-9 h-9 rounded-full bg-nexo-bone flex items-center justify-center text-nexo-dark group-hover:bg-nexo-neon transition-colors">
             <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
           </span>
         </div>
-
-        <!-- Center: Ilustración SVG propia -->
         <div class="my-6 flex justify-center items-center z-10">
           <img src="assets/illustrations/diseno.svg" alt="Ilustración Diseño Gráfico" class="w-full max-w-[270px] h-auto object-contain group-hover:scale-105 transition-transform duration-300">
         </div>
-
-        <!-- Bottom: Título grande y descripción -->
         <div class="flex flex-col gap-1.5 z-10">
           <h3 class="font-headline text-2xl sm:text-3xl text-nexo-dark font-bold leading-tight">
             Una marca que se reconoce
@@ -225,7 +475,7 @@
         </div>
       </a>
 
-      <!-- Fila 2 - Tarjeta Estrecha (5 cols): MARKETING ("Llega a quien te necesita") -->
+      <!-- Bento 3: Marketing (5 cols) -->
       <a href="#marketing" class="lg:col-span-5 bg-nexo-white rounded-[24px] p-7 sm:p-9 border border-nexo-dark/10 card-nexo flex flex-col justify-between group no-underline min-h-[420px] overflow-hidden relative">
         <div class="flex items-center justify-between z-10">
           <span class="tag-pill px-3 py-1 text-xs uppercase tracking-wider">Marketing</span>
@@ -233,11 +483,9 @@
             <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
           </span>
         </div>
-
         <div class="my-6 flex justify-center items-center z-10">
           <img src="assets/illustrations/marketing.svg" alt="Ilustración Marketing" class="w-full max-w-[270px] h-auto object-contain group-hover:scale-105 transition-transform duration-300">
         </div>
-
         <div class="flex flex-col gap-1.5 z-10">
           <h3 class="font-headline text-2xl sm:text-3xl text-nexo-dark font-bold leading-tight">
             Llega a quien te necesita
@@ -248,40 +496,28 @@
         </div>
       </a>
 
-      <!-- Fila 2 - Tarjeta Ancha (7 cols): ÚLTIMO PROYECTO DESTACADO BENTO (Tech Gamer Madrid) -->
+      <!-- Bento 4: Resumen Disciplina Integral (7 cols) -->
       <div class="lg:col-span-7 bg-nexo-bone rounded-[24px] p-7 sm:p-9 border border-nexo-dark/10 card-nexo flex flex-col justify-between relative overflow-hidden">
-        
         <div class="flex items-center justify-between z-10">
-          <span class="px-3.5 py-1 rounded-full bg-nexo-dark text-nexo-neon text-xs font-bold uppercase tracking-wider">Último Proyecto Real</span>
-          <a href="#websites/tech-gamer-madrid" class="text-xs font-bold text-nexo-dark hover:underline flex items-center gap-1">
-            <span>Ver ficha</span>
+          <span class="px-3.5 py-1 rounded-full bg-nexo-dark text-nexo-neon text-xs font-bold uppercase tracking-wider">Metodología 360°</span>
+          <a href="#contacto" class="text-xs font-bold text-nexo-dark hover:underline flex items-center gap-1">
+            <span>Iniciar propuesta</span>
             <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
           </a>
         </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center my-4 z-10">
-          <a href="#websites/tech-gamer-madrid" class="sm:col-span-6 rounded-2xl overflow-hidden aspect-[16/10] bg-nexo-dark group block">
-            <img src="assets/websites/tech_gamer_hero.jpg" alt="Tech Gamer Madrid" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          </a>
-          <div class="sm:col-span-6 flex flex-col gap-2">
-            <span class="text-xs uppercase font-bold text-nexo-gray">Carabanchel &amp; Madrid · Negocios locales</span>
-            <h4 class="font-headline text-2xl text-nexo-dark font-bold leading-tight">Tech Gamer Madrid</h4>
-            <p class="text-xs sm:text-sm text-nexo-body leading-relaxed">
-              Calculadora interactiva de presupuestos y pedidos automáticos por WhatsApp para reparación de ordenadores a domicilio.
-            </p>
-            <div class="pt-2">
-              <a href="#websites/tech-gamer-madrid" class="btn-nexo-primary px-5 py-2 text-xs">
-                <span>Explorar demo interactiva</span>
-              </a>
-            </div>
+        <div class="flex flex-col gap-3 my-4 z-10">
+          <h4 class="font-headline text-2xl sm:text-3xl text-nexo-dark font-bold leading-tight">
+            Diseño, código y estrategia en un solo equipo
+          </h4>
+          <p class="font-body text-sm text-nexo-body max-w-lg leading-relaxed">
+            Sin intermediarios ni presupuestos inflados. Unificamos la identidad de tu marca, construimos una web rápida con checkout por WhatsApp y gestionamos tu captación en Google.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="tag-pill px-3 py-1 text-xs">Artesanía Digital</span>
+            <span class="tag-pill px-3 py-1 text-xs">Rigor Tipográfico</span>
+            <span class="tag-pill px-3 py-1 text-xs">SEO Técnico</span>
+            <span class="tag-pill px-3 py-1 text-xs">Atención Directa</span>
           </div>
-        </div>
-
-        <!-- Tags del proyecto -->
-        <div class="flex flex-wrap gap-1.5 z-10 border-t border-nexo-dark/10 pt-3">
-          <span class="tag-pill px-2.5 py-0.5 text-xs">Servicios técnicos</span>
-          <span class="tag-pill px-2.5 py-0.5 text-xs">Tecnología</span>
-          <span class="tag-pill px-2.5 py-0.5 text-xs">WhatsApp</span>
         </div>
       </div>
 
@@ -289,113 +525,11 @@
   </section>
 
   <!-- =========================================================================
-       4. PROYECTOS DESTACADOS: LOS 3 PROYECTOS REALES EN TARJETAS BLANCAS 24PX
-       ========================================================================= -->
-  <section class="px-4 sm:px-8 py-16 desktop-container flex flex-col gap-10">
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-      <div class="flex flex-col gap-2">
-        <span class="text-xs uppercase font-bold tracking-widest text-nexo-gray">Portafolio Web</span>
-        <h3 class="font-headline text-3xl sm:text-5xl text-nexo-dark font-bold tracking-tight">Proyectos Destacados</h3>
-      </div>
-      <a href="#websites" class="btn-nexo-secondary px-6 py-2.5 text-sm self-start sm:self-auto">
-        <span>Ver los 3 proyectos</span>
-        <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
-      </a>
-    </div>
-
-    <!-- 3 columnas con radio 24px, etiqueta arriba izquierda y título abajo -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-      <!-- Proyecto 1: Tech Gamer Madrid -->
-      <article class="bg-nexo-white rounded-[24px] p-6 border border-nexo-dark/10 card-nexo flex flex-col justify-between group">
-        <div>
-          <!-- Imagen de captura con etiqueta arriba a la izquierda -->
-          <div class="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-nexo-dark mb-4">
-            <img src="assets/websites/tech_gamer_hero.jpg" alt="Tech Gamer Madrid" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-            <div class="absolute top-3 left-3">
-              <span class="px-3 py-1 rounded-full bg-nexo-dark text-nexo-neon text-[11px] font-bold uppercase tracking-wider shadow-sm">
-                Negocios locales
-              </span>
-            </div>
-          </div>
-          <!-- Info del proyecto -->
-          <span class="text-xs font-semibold text-nexo-gray uppercase tracking-wider block">Madrid · Servicio Técnico</span>
-          <h4 class="font-headline text-2xl text-nexo-dark font-bold mt-1">Tech Gamer Madrid</h4>
-          <p class="text-sm text-nexo-gray mt-2 leading-relaxed">
-            Reparación y montaje de PCs a domicilio con presupuestador interactivo y checkout por WhatsApp.
-          </p>
-        </div>
-        <div class="pt-5 mt-4 border-t border-nexo-dark/10 flex items-center justify-between">
-          <a href="#websites/tech-gamer-madrid" class="text-xs font-bold text-nexo-dark hover:underline flex items-center gap-1">
-            <span>Ver Ficha &amp; Demo</span>
-            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-          </a>
-          <span class="px-2 py-0.5 rounded-full bg-nexo-bone text-nexo-dark text-[11px] font-semibold border border-nexo-dark/10">En vivo</span>
-        </div>
-      </article>
-
-      <!-- Proyecto 2: Dumore Chocolate -->
-      <article class="bg-nexo-white rounded-[24px] p-6 border border-nexo-dark/10 card-nexo flex flex-col justify-between group">
-        <div>
-          <div class="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-nexo-dark mb-4">
-            <img src="assets/websites/dumore_screen.png" alt="Dumore Chocolate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-            <div class="absolute top-3 left-3">
-              <span class="px-3 py-1 rounded-full bg-nexo-dark text-nexo-neon text-[11px] font-bold uppercase tracking-wider shadow-sm">
-                Negocios locales
-              </span>
-            </div>
-          </div>
-          <span class="text-xs font-semibold text-nexo-gray uppercase tracking-wider block">Bogotá · Repostería</span>
-          <h4 class="font-headline text-2xl text-nexo-dark font-bold mt-1">Dumore Chocolate</h4>
-          <p class="text-sm text-nexo-gray mt-2 leading-relaxed">
-            Catálogo digital de repostería artesanal, personalización de pedidos y venta directa por WhatsApp.
-          </p>
-        </div>
-        <div class="pt-5 mt-4 border-t border-nexo-dark/10 flex items-center justify-between">
-          <a href="#websites/dumore-chocolate" class="text-xs font-bold text-nexo-dark hover:underline flex items-center gap-1">
-            <span>Ver Ficha &amp; Demo</span>
-            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-          </a>
-          <span class="px-2 py-0.5 rounded-full bg-nexo-bone text-nexo-dark text-[11px] font-semibold border border-nexo-dark/10">En vivo</span>
-        </div>
-      </article>
-
-      <!-- Proyecto 3: Andrea Rodríguez Diseño Web -->
-      <article class="bg-nexo-white rounded-[24px] p-6 border border-nexo-dark/10 card-nexo flex flex-col justify-between group">
-        <div>
-          <div class="relative w-full aspect-[16/10] rounded-2xl overflow-hidden bg-nexo-dark mb-4">
-            <img src="assets/websites/andrea_business.png" alt="Andrea Rodríguez Diseño Web" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-            <div class="absolute top-3 left-3">
-              <span class="px-3 py-1 rounded-full bg-nexo-dark text-nexo-neon text-[11px] font-bold uppercase tracking-wider shadow-sm">
-                Portafolio personal
-              </span>
-            </div>
-          </div>
-          <span class="text-xs font-semibold text-nexo-gray uppercase tracking-wider block">Personal · Consultoría</span>
-          <h4 class="font-headline text-2xl text-nexo-dark font-bold mt-1">Andrea Rodríguez</h4>
-          <p class="text-sm text-nexo-gray mt-2 leading-relaxed">
-            Web con estética editorial/brutalista para consultoría de diseño web y sitios de eventos con demos en vivo.
-          </p>
-        </div>
-        <div class="pt-5 mt-4 border-t border-nexo-dark/10 flex items-center justify-between">
-          <a href="#websites/andrea-rodriguez-diseno-web" class="text-xs font-bold text-nexo-dark hover:underline flex items-center gap-1">
-            <span>Ver Ficha &amp; Demo</span>
-            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
-          </a>
-          <span class="px-2 py-0.5 rounded-full bg-nexo-bone text-nexo-dark text-[11px] font-semibold border border-nexo-dark/10">En vivo</span>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       5. CREADORES CON RETRATOS SOBRE PICOS AMARILLOS NEÓN
+       8. CREADORES CON RETRATOS SOBRE PICOS AMARILLOS NEÓN
        ========================================================================= -->
   <section class="px-4 sm:px-8 py-16 desktop-container">
     <div class="bg-nexo-bone rounded-[24px] p-8 sm:p-12 border border-nexo-dark/10 relative overflow-hidden">
       
-      <!-- Pico amarillo neón de fondo en la tarjeta -->
       <div class="absolute -right-16 -top-16 w-80 h-80 bg-nexo-neon corner-peak-tr opacity-80 pointer-events-none"></div>
 
       <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
@@ -428,7 +562,7 @@
   </section>
 
   <!-- =========================================================================
-       6. ARTÍCULOS DESTACADOS DEL BLOG (TARJETAS BLANCAS 24PX)
+       9. ARTÍCULOS DESTACADOS DEL BLOG (TARJETAS BLANCAS 24PX)
        ========================================================================= -->
   <section class="px-4 sm:px-8 py-16 desktop-container flex flex-col gap-10">
     <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
@@ -494,12 +628,11 @@
   </section>
 
   <!-- =========================================================================
-       7. CTA FINAL "HABLEMOS" CON TARJETA OSCURA Y BOTÓN NEÓN
+       10. CTA FINAL "HABLEMOS"
        ========================================================================= -->
   <section class="px-4 sm:px-8 py-16 desktop-container">
     <div class="bg-nexo-dark text-nexo-bone rounded-[24px] p-8 sm:p-14 text-center flex flex-col items-center gap-6 relative overflow-hidden shadow-sm">
       
-      <!-- Detalle decorativo angular neón -->
       <div class="absolute -left-12 -bottom-12 w-48 h-48 bg-nexo-neon/20 corner-peak-br pointer-events-none"></div>
 
       <span class="px-3.5 py-1 rounded-full bg-nexo-neon text-nexo-dark text-xs font-headline font-bold uppercase tracking-wider">
@@ -528,3 +661,245 @@
   </section>
 
 </div>
+
+<!-- =========================================================================
+     JAVASCRIPT: CONTROLADOR DEL ABANICO (CAROUSEL / FAN) Y CATEGORÍAS
+     ========================================================================= -->
+<script>
+  // Proyectos reales para el abanico (extraídos de los datos sin inventar nada)
+  const FAN_PROJECTS = [
+    {
+      category: "Websites",
+      meta: "Negocios locales • Servicio técnico",
+      title: "Tech Gamer Madrid: reparación y montaje de PCs a domicilio",
+      link: "#websites/tech-gamer-madrid",
+      image: "assets/websites/tech_gamer_hero.jpg",
+      alt: "Tech Gamer Madrid"
+    },
+    {
+      category: "Websites",
+      meta: "Negocios locales • Repostería",
+      title: "DUMORE Chocolate: fresas con chocolate y regalos personalizados",
+      link: "#websites/dumore-chocolate",
+      image: "assets/websites/dumore_screen.png",
+      alt: "DUMORE Chocolate"
+    },
+    {
+      category: "Websites",
+      meta: "Portafolio personal • Diseño web",
+      title: "Portafolio de diseño web para negocios y celebraciones",
+      link: "#websites/andrea-rodriguez-diseno-web",
+      image: "assets/websites/andrea_business.png",
+      alt: "Andrea Rodríguez"
+    },
+    {
+      category: "Diseño gráfico",
+      meta: "Packaging & Vinos • La Rioja",
+      title: "VORTEX Bodegas & Viñedos: gama de vinos y tríptico",
+      link: "#diseno-grafico",
+      image: "assets/portfolio/vortex-packaging-botellas.jpg",
+      alt: "VORTEX Bodegas"
+    },
+    {
+      category: "Diseño gráfico",
+      meta: "Identidad & Logotipo • Asociación",
+      title: "ASTREO: símbolo hexagonal y manual de identidad",
+      link: "#diseno-grafico",
+      image: "assets/portfolio/astreo-branding-logo.jpg",
+      alt: "ASTREO"
+    },
+    {
+      category: "Diseño gráfico",
+      meta: "Editorial & Tipografía • 1ª Época",
+      title: "Revista PULSO: ciudad, diseño y sostenibilidad",
+      link: "#diseno-grafico",
+      image: "assets/portfolio/pulso-revista-editorial.jpg",
+      alt: "Revista PULSO"
+    }
+  ];
+
+  let fanCenterIndex = 1; // DUMORE Chocolate como centro inicial
+
+  function initFanHero() {
+    renderFanCards();
+    updateCategoryCounters();
+    initFanTouchEvents();
+  }
+
+  function rotateFan(direction) {
+    fanCenterIndex = (fanCenterIndex + direction + FAN_PROJECTS.length) % FAN_PROJECTS.length;
+    renderFanCards();
+  }
+
+  function renderFanCards() {
+    const wrapper = document.getElementById('fan-cards-wrapper');
+    if (!wrapper) return;
+
+    wrapper.innerHTML = '';
+    const total = FAN_PROJECTS.length;
+    const isMobile = window.innerWidth < 768;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Configuración angular para el arco tipo polaroid
+    // Posiciones relativas a la central (-2, -1, 0, +1, +2)
+    const slotConfigs = {
+      '-2': { rot: -22, x: -310, y: 38, scale: 0.86, z: 10, opacity: 0.8 },
+      '-1': { rot: -11, x: -160, y: 14, scale: 0.94, z: 20, opacity: 0.95 },
+      '0':  { rot: 0,   x: 0,    y: 0,  scale: 1.05, z: 30, opacity: 1.0 },
+      '1':  { rot: 10,  x: 160,  y: 14, scale: 0.94, z: 20, opacity: 0.95 },
+      '2':  { rot: 21,  x: 310,  y: 38, scale: 0.86, z: 10, opacity: 0.8 }
+    };
+
+    FAN_PROJECTS.forEach((proj, idx) => {
+      // Calcular distancia modular al centro (-2 a +2)
+      let diff = (idx - fanCenterIndex);
+      while (diff > total / 2) diff -= total;
+      while (diff < -total / 2) diff += total;
+
+      // Fuera de rango de las 5 visibles
+      if (Math.abs(diff) > 2) return;
+
+      const conf = slotConfigs[diff.toString()] || slotConfigs['0'];
+      
+      const card = document.createElement('div');
+      card.className = 'fan-polaroid-card absolute transition-all cursor-pointer';
+      
+      // Ajuste responsive para móvil vs desktop
+      let transformStr = '';
+      if (isMobile) {
+        const mobX = diff * 180;
+        const mobRot = diff * 7;
+        const mobScale = diff === 0 ? 1 : 0.88;
+        transformStr = `translateX(${mobX}px) rotate(${mobRot}deg) scale(${mobScale})`;
+      } else {
+        transformStr = `translateX(${conf.x}px) translateY(${conf.y}px) rotate(${conf.rot}deg) scale(${conf.scale})`;
+      }
+
+      card.style.transform = transformStr;
+      card.style.zIndex = conf.z;
+      card.style.opacity = conf.opacity;
+      card.style.transition = prefersReducedMotion ? 'none' : 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease';
+
+      // Ancho polaroid (≈280px en desktop)
+      card.style.width = isMobile ? '250px' : (diff === 0 ? '280px' : '265px');
+
+      card.innerHTML = `
+        <a href="${proj.link}" class="block p-2 bg-white rounded-[6px] shadow-[0_12px_30px_rgba(18,24,15,0.12)] border border-nexo-dark/10 group no-underline text-nexo-dark">
+          <!-- Imagen arriba con proporción fija -->
+          <div class="relative w-full aspect-[4/3] rounded-[4px] overflow-hidden bg-nexo-dark mb-2.5">
+            <img src="${proj.image}" alt="${proj.alt}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" ${diff === 0 ? '' : 'loading="lazy"'}>
+            <!-- Etiqueta pequeña blanca de 12px arriba a la izquierda -->
+            <span class="absolute top-2 left-2 bg-white/95 backdrop-blur-sm text-nexo-dark font-bold text-[12px] px-2 py-0.5 rounded shadow-sm">
+              ${proj.category}
+            </span>
+            <!-- Cuadrito blanco con flecha ↗ abajo a la derecha -->
+            <div class="absolute bottom-2 right-2 w-7 h-7 rounded bg-white flex items-center justify-center text-nexo-dark shadow-md group-hover:bg-nexo-neon transition-colors">
+              <span class="material-symbols-outlined text-[16px]">north_east</span>
+            </div>
+          </div>
+          <!-- Meta en gris pequeño -->
+          <span class="text-[11px] font-medium text-nexo-gray uppercase tracking-wider block truncate">
+            ${proj.meta}
+          </span>
+          <!-- Título en 2 líneas -->
+          <h3 class="font-headline text-sm font-bold text-nexo-dark mt-0.5 line-clamp-2 leading-tight">
+            ${proj.title}
+          </h3>
+        </a>
+      `;
+
+      // Hover interactivo: la tarjeta se endereza, sube y crece un 5%
+      card.addEventListener('mouseenter', () => {
+        if (!prefersReducedMotion && !isMobile) {
+          card.style.transform = `translateX(${conf.x}px) translateY(${conf.y - 18}px) rotate(0deg) scale(${conf.scale * 1.05})`;
+          card.style.zIndex = '45';
+        }
+      });
+      card.addEventListener('mouseleave', () => {
+        if (!prefersReducedMotion && !isMobile) {
+          card.style.transform = transformStr;
+          card.style.zIndex = conf.z;
+        }
+      });
+
+      // Si se hace click en una lateral, la centramos
+      if (diff !== 0) {
+        card.addEventListener('click', (e) => {
+          // Si no hace click directo en el enlace interno, centrar
+          if (e.target.tagName !== 'A' && e.target.tagName !== 'SPAN') {
+            e.preventDefault();
+            rotateFan(diff > 0 ? 1 : -1);
+          }
+        });
+      }
+
+      wrapper.appendChild(card);
+    });
+  }
+
+  // Swipe / Drag en táctil y desktop
+  let touchStartX = 0;
+  let touchEndX = 0;
+  function initFanTouchEvents() {
+    const stage = document.getElementById('fan-stage-container');
+    if (!stage) return;
+
+    stage.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    stage.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+  }
+
+  function handleSwipe() {
+    const threshold = 40;
+    if (touchEndX < touchStartX - threshold) {
+      rotateFan(1); // Swipe left -> siguiente
+    } else if (touchEndX > touchStartX + threshold) {
+      rotateFan(-1); // Swipe right -> anterior
+    }
+  }
+
+  // Contadores dinámicos calculados desde los datos reales existentes
+  function updateCategoryCounters() {
+    const webs = window.NEXO_WEBSITE_PROJECTS || [];
+    const graphics = window.NEXO_GRAPHIC_PROJECTS || [];
+    const blogs = window.NEXO_BLOG_POSTS || [];
+
+    const countWebs = webs.length;
+    const countGraphics = graphics.length;
+    const countMarketing = 4; // Los 4 pilares/servicios del sistema
+    const countLocales = webs.filter(p => p.category === 'Negocios locales').length;
+    const countPersonal = webs.filter(p => p.category === 'Portafolio personal').length;
+    const countBlog = blogs.length;
+
+    setVal('cat-count-websites', countWebs);
+    setVal('cat-count-diseno', countGraphics);
+    setVal('cat-count-marketing', countMarketing);
+    setVal('cat-count-locales', countLocales);
+    setVal('cat-count-personal', countPersonal);
+    setVal('cat-count-blog', countBlog);
+  }
+
+  function setVal(elementId, val) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+    if (val > 0) {
+      el.textContent = val;
+      el.style.display = 'inline-block';
+    } else {
+      el.style.display = 'none';
+    }
+  }
+
+  // Resize listener para reajustar escala de abanico
+  window.addEventListener('resize', () => {
+    renderFanCards();
+  });
+
+  // Ejecutar al cargar la página
+  initFanHero();
+</script>
