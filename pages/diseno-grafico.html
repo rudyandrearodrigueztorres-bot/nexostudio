@@ -1,0 +1,378 @@
+<div class="flex flex-col w-full">
+  <!-- 01. CABECERA EDITORIAL DE DISEÑO GRÁFICO -->
+  <section class="px-margin-mobile lg:px-margin pb-space-md flex flex-col gap-space-md pt-space-xl desktop-container">
+    <div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-ink-black text-tertiary-fixed self-start shadow-[3px_3px_0px_#12180F]">
+      <span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed animate-pulse"></span>
+      <span class="font-label-sm text-label-sm uppercase tracking-wider font-bold">PORTAFOLIO // DISEÑO GRÁFICO &amp; IDENTIDAD</span>
+    </div>
+
+    <div class="flex flex-col gap-space-xs max-w-3xl">
+      <h1 class="font-headline-lg-mobile lg:font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-ink-black tracking-tight font-bold leading-tight">
+        Identidad Visual, Packaging &amp; Diseño Editorial
+      </h1>
+      <p class="font-body-lg text-body-lg text-secondary leading-relaxed">
+        Colección de trabajos reales desarrollados en el estudio. Cada proyecto responde a un análisis conceptual exhaustivo, cuidando la materialidad, la precisión tipográfica y la autenticidad del relato de marca.
+      </p>
+    </div>
+
+    <!-- Real studio disciplines banner (no fake awards) -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm mt-space-xs">
+      <div class="bg-surface-bone p-space-md rounded-DEFAULT shadow-[2px_2px_0px_#12180F] flex flex-col justify-between">
+        <span class="font-label-sm text-label-sm uppercase text-secondary font-bold">DISCIPLINA</span>
+        <span class="font-headline-sm text-headline-sm text-ink-black font-bold mt-1">Branding</span>
+        <span class="font-body-sm text-[12px] text-secondary mt-0.5">Identidad &amp; Logotipos</span>
+      </div>
+      <div class="bg-surface-bone p-space-md rounded-DEFAULT shadow-[2px_2px_0px_#12180F] flex flex-col justify-between">
+        <span class="font-label-sm text-label-sm uppercase text-secondary font-bold">DISCIPLINA</span>
+        <span class="font-headline-sm text-headline-sm text-ink-black font-bold mt-1">Packaging</span>
+        <span class="font-body-sm text-[12px] text-secondary mt-0.5">Etiquetado de alta gama</span>
+      </div>
+      <div class="bg-surface-bone p-space-md rounded-DEFAULT shadow-[2px_2px_0px_#12180F] flex flex-col justify-between">
+        <span class="font-label-sm text-label-sm uppercase text-secondary font-bold">DISCIPLINA</span>
+        <span class="font-headline-sm text-headline-sm text-ink-black font-bold mt-1">Editorial</span>
+        <span class="font-body-sm text-[12px] text-secondary mt-0.5">Revistas &amp; Trípticos</span>
+      </div>
+      <div class="bg-surface-bone p-space-md rounded-DEFAULT shadow-[2px_2px_0px_#12180F] flex flex-col justify-between">
+        <span class="font-label-sm text-label-sm uppercase text-secondary font-bold">EJECUCIÓN</span>
+        <span class="font-headline-sm text-headline-sm text-ink-black font-bold mt-1">Artesanía</span>
+        <span class="font-body-sm text-[12px] text-secondary mt-0.5">Atención al milímetro</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02. FILTROS TÁCTILES POR TAG REAL -->
+  <section class="py-space-sm px-margin-mobile lg:px-margin desktop-container">
+    <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1" id="portfolio-filter-container">
+      <button class="portfolio-filter-btn shrink-0 px-space-md py-space-xs rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md font-bold uppercase transition-all shadow-[2px_2px_0px_#12180F]" data-tag="all">
+        Todos los Proyectos
+      </button>
+      <button class="portfolio-filter-btn shrink-0 px-space-md py-space-xs rounded-full bg-surface-bone text-ink-black font-label-md text-label-md font-medium uppercase transition-all shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed" data-tag="Branding">
+        Branding
+      </button>
+      <button class="portfolio-filter-btn shrink-0 px-space-md py-space-xs rounded-full bg-surface-bone text-ink-black font-label-md text-label-md font-medium uppercase transition-all shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed" data-tag="Packaging">
+        Packaging
+      </button>
+      <button class="portfolio-filter-btn shrink-0 px-space-md py-space-xs rounded-full bg-surface-bone text-ink-black font-label-md text-label-md font-medium uppercase transition-all shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed" data-tag="Editorial">
+        Editorial
+      </button>
+      <button class="portfolio-filter-btn shrink-0 px-space-md py-space-xs rounded-full bg-surface-bone text-ink-black font-label-md text-label-md font-medium uppercase transition-all shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed" data-tag="Ilustración">
+        Ilustración
+      </button>
+      <button class="portfolio-filter-btn shrink-0 px-space-md py-space-xs rounded-full bg-surface-bone text-ink-black font-label-md text-label-md font-medium uppercase transition-all shadow-[2px_2px_0px_#12180F] hover:bg-tertiary-fixed" data-tag="Logotipo">
+        Logotipos
+      </button>
+    </div>
+  </section>
+
+  <!-- 03. GRID DE PROYECTOS REALES (Astreo, Vortex, Pulso) -->
+  <section class="px-margin-mobile lg:px-margin py-space-md flex flex-col gap-space-lg desktop-container" id="graphic-projects-grid">
+    <!-- Projects will be rendered dynamically by JS from window.NEXO_GRAPHIC_PROJECTS, with fallback static HTML -->
+
+    <!-- Card 1: VORTEX -->
+    <article class="project-item bg-surface-bone rounded-lg overflow-hidden shadow-[4px_4px_0px_#12180F] flex flex-col lg:flex-row gap-space-md p-space-md lg:p-space-lg transition-transform" data-tags="Packaging Branding Editorial">
+      <div class="relative w-full lg:w-1/2 aspect-[16/10] bg-ink-black rounded-lg overflow-hidden shadow-[2px_2px_0px_#12180F] shrink-0">
+        <img src="assets/portfolio/vortex-packaging-botellas.jpg" alt="VORTEX Luxury Vineyards" class="w-full h-full object-cover">
+        <div class="absolute top-2 left-2 bg-ink-black text-tertiary-fixed px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase font-bold">
+          Packaging &amp; Vinos
+        </div>
+      </div>
+      <div class="w-full lg:w-1/2 flex flex-col justify-between gap-space-sm">
+        <div class="flex flex-col gap-space-xs">
+          <div class="flex items-center justify-between text-secondary">
+            <span class="font-label-sm text-label-sm uppercase font-bold text-ink-black">Cliente: VORTEX Bodegas &amp; Viñedos</span>
+            <span class="font-label-sm text-label-sm">Colección 2026</span>
+          </div>
+          <h2 class="font-headline-sm lg:font-headline-md text-headline-sm lg:text-headline-md text-ink-black font-bold leading-tight">
+            VORTEX Bodegas &amp; Viñedos
+          </h2>
+          <p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+            Gama de tres botellas exclusivas (Céfiro blanco, Magma tinto y Aura rosado) y folleto tríptico con filosofía de mínima intervención en La Rioja, España.
+          </p>
+          <div class="flex flex-wrap gap-1.5 pt-space-xs">
+            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold">Packaging</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold">Branding</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold">Editorial</span>
+          </div>
+        </div>
+        <div class="pt-space-xs flex flex-wrap gap-space-sm">
+          <button onclick="openProjectModal('vortex-bodegas')" class="min-h-[44px] px-space-lg py-space-xs rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase font-bold flex items-center gap-2 shadow-[2px_2px_0px_#12180F] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all">
+            <span>Ver Ficha y Detalles</span>
+            <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+          </button>
+          <a href="#contacto" class="min-h-[44px] px-space-lg py-space-xs rounded-full bg-surface-variant text-ink-black font-label-md text-label-md uppercase font-bold flex items-center justify-center hover:bg-tertiary-fixed transition-colors">
+            <span>Cotizar</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 2: ASTREO -->
+    <article class="project-item bg-surface-bone rounded-lg overflow-hidden shadow-[4px_4px_0px_#12180F] flex flex-col lg:flex-row gap-space-md p-space-md lg:p-space-lg transition-transform" data-tags="Branding Identidad Visual Logotipo">
+      <div class="relative w-full lg:w-1/2 aspect-[16/10] bg-surface-variant rounded-lg overflow-hidden shadow-[2px_2px_0px_#12180F] shrink-0 flex items-center justify-center p-space-md">
+        <img src="assets/portfolio/astreo-branding-logo.jpg" alt="Astreo Asociación de Montaña y Naturaleza" class="w-full h-full object-contain">
+        <div class="absolute top-2 left-2 bg-ink-black text-tertiary-fixed px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase font-bold">
+          Branding &amp; Símbolo
+        </div>
+      </div>
+      <div class="w-full lg:w-1/2 flex flex-col justify-between gap-space-sm">
+        <div class="flex flex-col gap-space-xs">
+          <div class="flex items-center justify-between text-secondary">
+            <span class="font-label-sm text-label-sm uppercase font-bold text-ink-black">Cliente: Astreo</span>
+            <span class="font-label-sm text-label-sm">Asociación de Montaña</span>
+          </div>
+          <h2 class="font-headline-sm lg:font-headline-md text-headline-sm lg:text-headline-md text-ink-black font-bold leading-tight">
+            ASTREO — Montaña y Naturaleza
+          </h2>
+          <p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+            Identidad visual institucional en marco hexagonal con siluetas de montaña, sol naciente y manada de lobos. Paleta cromática oficial azul #336699 y naranja #ff9900.
+          </p>
+          <div class="flex flex-wrap gap-1.5 pt-space-xs">
+            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold">Branding</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold">Identidad Visual</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold">Logotipo</span>
+          </div>
+        </div>
+        <div class="pt-space-xs flex flex-wrap gap-space-sm">
+          <button onclick="openProjectModal('astreo-asociacion')" class="min-h-[44px] px-space-lg py-space-xs rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase font-bold flex items-center gap-2 shadow-[2px_2px_0px_#12180F] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all">
+            <span>Ver Ficha y Detalles</span>
+            <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+          </button>
+          <a href="#contacto" class="min-h-[44px] px-space-lg py-space-xs rounded-full bg-surface-variant text-ink-black font-label-md text-label-md uppercase font-bold flex items-center justify-center hover:bg-tertiary-fixed transition-colors">
+            <span>Cotizar</span>
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Card 3: PULSO -->
+    <article class="project-item bg-surface-bone rounded-lg overflow-hidden shadow-[4px_4px_0px_#12180F] flex flex-col lg:flex-row gap-space-md p-space-md lg:p-space-lg transition-transform" data-tags="Editorial Ilustración Sostenibilidad">
+      <div class="relative w-full lg:w-1/2 aspect-[16/10] bg-surface-variant rounded-lg overflow-hidden shadow-[2px_2px_0px_#12180F] shrink-0 flex items-center justify-center">
+        <img src="assets/portfolio/pulso-revista-editorial.jpg" alt="Revista PULSO Ciudad, Diseño y Sostenibilidad" class="h-full object-contain">
+        <div class="absolute top-2 left-2 bg-ink-black text-accent-green px-space-sm py-0.5 rounded-full font-label-sm text-label-sm uppercase font-bold">
+          Diseño Editorial
+        </div>
+      </div>
+      <div class="w-full lg:w-1/2 flex flex-col justify-between gap-space-sm">
+        <div class="flex flex-col gap-space-xs">
+          <div class="flex items-center justify-between text-secondary">
+            <span class="font-label-sm text-label-sm uppercase font-bold text-ink-black">Publicación: Revista PULSO</span>
+            <span class="font-label-sm text-label-sm">1ª Época, Nº 01 (2026)</span>
+          </div>
+          <h2 class="font-headline-sm lg:font-headline-md text-headline-sm lg:text-headline-md text-ink-black font-bold leading-tight">
+            PULSO — Ciudad, Diseño y Sostenibilidad
+          </h2>
+          <p class="font-body-sm text-body-sm text-secondary leading-relaxed">
+            Portada editorial e ilustración vectorial sobre movilidad urbana sostenible: peatones, ciclismo y micromovilidad en diálogo con la ciudad verde.
+          </p>
+          <div class="flex flex-wrap gap-1.5 pt-space-xs">
+            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold">Editorial</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold">Ilustración</span>
+            <span class="px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold">Sostenibilidad</span>
+          </div>
+        </div>
+        <div class="pt-space-xs flex flex-wrap gap-space-sm">
+          <button onclick="openProjectModal('pulso-revista')" class="min-h-[44px] px-space-lg py-space-xs rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase font-bold flex items-center gap-2 shadow-[2px_2px_0px_#12180F] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all">
+            <span>Ver Ficha y Detalles</span>
+            <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+          </button>
+          <a href="#contacto" class="min-h-[44px] px-space-lg py-space-xs rounded-full bg-surface-variant text-ink-black font-label-md text-label-md uppercase font-bold flex items-center justify-center hover:bg-tertiary-fixed transition-colors">
+            <span>Cotizar</span>
+          </a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- 04. MODAL INTERACTIVO DE DETALLE DE PROYECTO -->
+  <div id="project-detail-modal" class="hidden fixed inset-0 z-[100] bg-ink-black/80 backdrop-blur-md flex items-center justify-center p-margin-mobile lg:p-margin overflow-y-auto">
+    <div class="bg-surface-bone w-full max-w-4xl max-h-[90vh] rounded-lg shadow-[5px_5px_0px_#12180F] border border-ink-black flex flex-col overflow-hidden my-auto" onclick="event.stopPropagation()">
+      <!-- Modal Header -->
+      <div class="p-space-md lg:p-space-lg bg-surface-taupe border-b border-ink-black/15 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-tertiary-fixed animate-pulse"></span>
+          <span class="font-label-sm text-label-sm text-ink-black uppercase tracking-widest font-bold" id="modal-project-badge">FICHA TÉCNICA</span>
+        </div>
+        <button onclick="closeProjectModal()" class="w-10 h-10 min-h-[44px] min-w-[44px] rounded-full bg-ink-black text-tertiary-fixed flex items-center justify-center hover:bg-ink-black/80 transition-colors shadow-[2px_2px_0px_#12180F]" aria-label="Cerrar modal">
+          <span class="material-symbols-outlined text-[24px]">close</span>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-space-md lg:p-space-xl overflow-y-auto flex flex-col gap-space-lg">
+        <!-- Title & Subtitle -->
+        <div class="flex flex-col gap-1">
+          <span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider" id="modal-project-client">Cliente</span>
+          <h2 class="font-headline-sm lg:font-headline-md text-headline-sm lg:text-headline-md text-ink-black font-bold tracking-tight" id="modal-project-title">Título del Proyecto</h2>
+          <p class="font-body-md text-body-md text-secondary leading-relaxed mt-1" id="modal-project-desc">Descripción detallada</p>
+          <div class="flex flex-wrap gap-1.5 pt-2" id="modal-project-tags"></div>
+        </div>
+
+        <!-- Images Gallery -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-space-md" id="modal-images-container">
+          <!-- Primary Image -->
+          <div class="rounded-lg overflow-hidden bg-ink-black shadow-[2px_2px_0px_#12180F] flex items-center justify-center">
+            <img id="modal-primary-img" src="" alt="" class="w-full max-h-[380px] object-contain">
+          </div>
+          <!-- Secondary Image (if exists) -->
+          <div id="modal-secondary-img-wrapper" class="rounded-lg overflow-hidden bg-ink-black shadow-[2px_2px_0px_#12180F] flex items-center justify-center">
+            <img id="modal-secondary-img" src="" alt="" class="w-full max-h-[380px] object-contain">
+          </div>
+        </div>
+
+        <!-- Details List -->
+        <div class="flex flex-col gap-space-sm" id="modal-details-list">
+          <!-- Populated by JS -->
+        </div>
+
+        <!-- Modal CTA Footer -->
+        <div class="pt-space-md border-t border-ink-black/15 flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+          <span class="font-body-sm text-body-sm text-secondary">¿Tienes un proyecto similar en mente?</span>
+          <a href="#contacto" onclick="closeProjectModal()" class="min-h-[44px] px-space-xl py-space-xs rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase font-bold tracking-wider flex items-center gap-2 shadow-[2px_2px_0px_#12180F] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all">
+            <span>Iniciar Cotización</span>
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05. BANNER FINAL COTIZA -->
+  <section class="px-margin-mobile lg:px-margin py-space-xl desktop-container">
+    <div class="bg-ink-black text-surface-bone rounded-lg p-space-lg lg:p-space-xl shadow-[4px_4px_0px_#12180F] flex flex-col sm:flex-row items-center justify-between gap-space-md">
+      <div class="flex flex-col gap-1 text-center sm:text-left">
+        <span class="font-label-sm text-label-sm text-tertiary-fixed uppercase font-bold tracking-widest">NUEVOS PROYECTOS DE DISEÑO</span>
+        <h3 class="font-headline-sm text-headline-sm text-surface-bone font-bold">Creemos una identidad con carácter para tu marca</h3>
+      </div>
+      <a href="#contacto" class="min-h-[44px] px-space-xl py-space-sm rounded-full bg-tertiary-fixed text-ink-black font-label-md text-label-md uppercase font-bold tracking-wider flex items-center gap-2 shadow-[2px_2px_0px_#F3F1ED] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all whitespace-nowrap">
+        <span>Cotiza tu Proyecto</span>
+        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </a>
+    </div>
+  </section>
+</div>
+
+<script>
+  // Filter Functionality
+  function initPortfolioFilters() {
+    const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tag = btn.getAttribute('data-tag');
+        filterProjects(tag);
+      });
+    });
+
+    // Check URL parameters for tag or project
+    const hash = window.location.hash;
+    if (hash.includes('?')) {
+      const queryStr = hash.split('?')[1];
+      const params = new URLSearchParams(queryStr);
+      const tagParam = params.get('tag');
+      const projectParam = params.get('project');
+
+      if (tagParam) {
+        filterProjects(tagParam);
+      }
+      if (projectParam) {
+        openProjectModal(projectParam);
+      }
+    }
+  }
+
+  function filterProjects(tag) {
+    const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    filterBtns.forEach(btn => {
+      const btnTag = btn.getAttribute('data-tag');
+      if (btnTag.toLowerCase() === tag.toLowerCase() || (tag === 'all' && btnTag === 'all')) {
+        btn.classList.remove('bg-surface-bone', 'text-ink-black', 'font-medium');
+        btn.classList.add('bg-ink-black', 'text-tertiary-fixed', 'font-bold');
+      } else {
+        btn.classList.remove('bg-ink-black', 'text-tertiary-fixed', 'font-bold');
+        btn.classList.add('bg-surface-bone', 'text-ink-black', 'font-medium');
+      }
+    });
+
+    projectItems.forEach(item => {
+      const itemTags = item.getAttribute('data-tags') || '';
+      if (tag === 'all' || itemTags.toLowerCase().includes(tag.toLowerCase())) {
+        item.style.display = 'flex';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  // Modal Functionality
+  function openProjectModal(projectId) {
+    if (!window.NEXO_GRAPHIC_PROJECTS) return;
+    const project = window.NEXO_GRAPHIC_PROJECTS.find(p => p.id === projectId);
+    if (!project) return;
+
+    document.getElementById('modal-project-badge').textContent = project.category.toUpperCase();
+    document.getElementById('modal-project-client').textContent = project.client + (project.location ? ' · ' + project.location : '');
+    document.getElementById('modal-project-title').textContent = project.name + ' — ' + project.subtitle;
+    document.getElementById('modal-project-desc').textContent = project.description;
+
+    // Tags
+    const tagsContainer = document.getElementById('modal-project-tags');
+    tagsContainer.innerHTML = '';
+    project.tags.forEach(t => {
+      const span = document.createElement('span');
+      span.className = 'px-space-sm py-0.5 rounded-full bg-surface-variant text-ink-black font-label-sm text-label-sm font-semibold';
+      span.textContent = t;
+      tagsContainer.appendChild(span);
+    });
+
+    // Images
+    const primaryImg = document.getElementById('modal-primary-img');
+    primaryImg.src = project.coverImage;
+    primaryImg.alt = project.name;
+
+    const secondaryWrapper = document.getElementById('modal-secondary-img-wrapper');
+    const secondaryImg = document.getElementById('modal-secondary-img');
+    if (project.secondaryImage) {
+      secondaryImg.src = project.secondaryImage;
+      secondaryImg.alt = project.name + ' Detalle';
+      secondaryWrapper.style.display = 'flex';
+    } else {
+      secondaryWrapper.style.display = 'none';
+    }
+
+    // Details List
+    const detailsContainer = document.getElementById('modal-details-list');
+    detailsContainer.innerHTML = '';
+    project.details.forEach(d => {
+      const box = document.createElement('div');
+      box.className = 'bg-surface-taupe/60 p-space-md rounded-DEFAULT flex flex-col gap-1';
+      box.innerHTML = `
+        <span class="font-label-sm text-label-sm uppercase font-bold text-ink-black">\${d.title}</span>
+        <div class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">\${d.content}</div>
+      `;
+      detailsContainer.appendChild(box);
+    });
+
+    const modal = document.getElementById('project-detail-modal');
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeProjectModal() {
+    const modal = document.getElementById('project-detail-modal');
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  // Close on backdrop click
+  document.getElementById('project-detail-modal')?.addEventListener('click', (e) => {
+    if (e.target.id === 'project-detail-modal') {
+      closeProjectModal();
+    }
+  });
+
+  // Run on load
+  initPortfolioFilters();
+</script>

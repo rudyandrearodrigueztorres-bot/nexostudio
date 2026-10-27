@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>NEXO STUDIO — Estudio Creativo & Digital // Andrea Rodríguez & Miguel Gómez</title>
+  <meta name="description" content="NEXO STUDIO: Identidades visuales que trascienden, sitios web de alto rendimiento y estrategias de marketing digital fundadas por Andrea Rodríguez y Miguel Gómez.">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "ink-black": "#12180F",
+            "surface-bone": "#F3F1ED",
+            "surface-variant": "#e4e2de",
+            "tertiary-container": "#1a1e00",
+            "on-error": "#ffffff",
+            "surface-dim": "#dbdad6",
+            "secondary-fixed-dim": "#cdc6b6",
+            "on-primary-container": "#7f8679",
+            "on-tertiary-fixed": "#1a1e00",
+            "secondary": "#635e51",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed": "#1e1b11",
+            "surface-taupe": "#CFC8B8",
+            "outline-variant": "#c5c7bf",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f5f3ef",
+            "inverse-on-surface": "#f2f0ec",
+            "primary-fixed": "#dee5d6",
+            "accent-coral": "#F0605A",
+            "on-primary-fixed": "#171d14",
+            "on-tertiary-fixed-variant": "#434b00",
+            "inverse-surface": "#30312e",
+            "on-primary-fixed-variant": "#42493e",
+            "accent-green": "#3FD05A",
+            "surface": "#fbf9f5",
+            "on-surface-variant": "#454842",
+            "on-tertiary-container": "#7d8b00",
+            "surface-container-lowest": "#ffffff",
+            "secondary-container": "#e9e2d1",
+            "outline": "#757871",
+            "tertiary-fixed": "#E6FF00",
+            "surface-bright": "#fbf9f5",
+            "tertiary-fixed-dim": "#bdd200",
+            "inverse-primary": "#c2c9ba",
+            "surface-container-highest": "#e4e2de",
+            "surface-container-high": "#eae8e4",
+            "primary-container": "#171d14",
+            "accent-pink": "#F08AE0",
+            "primary-fixed-dim": "#c2c9ba",
+            "secondary-fixed": "#e9e2d1",
+            "surface-container": "#f0eeea",
+            "primary": "#000000",
+            "surface-tint": "#5a6054",
+            "background": "#fbf9f5",
+            "tertiary": "#000000",
+            "on-primary": "#ffffff",
+            "accent-blue": "#6AAEFF",
+            "on-surface": "#1b1c1a",
+            "on-background": "#1b1c1a",
+            "on-error-container": "#93000a",
+            "on-secondary-fixed-variant": "#4b473a",
+            "error-container": "#ffdad6",
+            "on-secondary-container": "#696457"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1.25rem",
+            "space-md": "1rem",
+            "space-2xl": "4rem",
+            "space-sm": "0.5rem",
+            "margin": "2.5rem",
+            "gutter-mobile": "1rem"
+          },
+          fontFamily: {
+            "body-md": ["Inter", "sans-serif"],
+            "headline-lg-mobile": ["Space Grotesk", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "display-xl-mobile": ["Space Grotesk", "sans-serif"],
+            "headline-sm": ["Space Grotesk", "sans-serif"],
+            "label-md": ["Space Grotesk", "sans-serif"],
+            "headline-md": ["Space Grotesk", "sans-serif"],
+            "headline-lg": ["Space Grotesk", "sans-serif"],
+            "label-sm": ["Space Grotesk", "sans-serif"],
+            "display-xl": ["Space Grotesk", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    @layer base {
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #CFC8B8;
+      }
+      body {
+        overscroll-behavior-y: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+
+    ::-webkit-scrollbar { display: none; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Page transition */
+    #page-content {
+      animation: fadeIn 0.25s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Desktop layout containment */
+    .desktop-container {
+      max-width: 1360px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+  </style>
+
+  <!-- Datos globales de proyectos reales y blog -->
+  <script src="js/websites-data.js"></script>
+  <script src="js/portfolio-data.js"></script>
+  <script src="js/blog-data.js"></script>
+</head>
+<body class="bg-surface-taupe font-body-md text-on-surface antialiased min-h-screen flex flex-col">
+
+  <!-- =================== HEADER =================== -->
+  <header class="fixed top-0 w-full z-50 shadow-[0_2px_12px_rgba(18,24,15,0.08)]" id="site-header">
+    <!-- Top announcement bar -->
+    <a href="#contacto" class="bg-ink-black text-tertiary-fixed py-1.5 px-margin-mobile flex items-center justify-center gap-2 no-underline hover:bg-ink-black/90 transition-colors">
+      <span class="w-2 h-2 rounded-full bg-tertiary-fixed animate-pulse"></span>
+      <span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary-fixed font-bold">
+        DISPONIBLES PARA NUEVOS PROYECTOS // ANDREA &amp; MIGUEL
+      </span>
+      <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+    </a>
+
+    <!-- Main nav bar -->
+    <div class="h-20 bg-surface-bone/95 backdrop-blur-xl px-margin-mobile lg:px-margin flex items-center justify-between border-b border-ink-black/10">
+      <!-- Logo NEXO STUDIO -> lleva a Home -->
+      <a href="#home" class="flex items-center gap-space-sm no-underline group" aria-label="NEXO STUDIO Home">
+        <div class="w-10 h-10 rounded-full bg-ink-black text-tertiary-fixed flex items-center justify-center font-label-md text-label-md font-bold shadow-[2px_2px_0px_#12180F] group-hover:scale-105 transition-transform">
+          N
+        </div>
+        <div class="flex flex-col">
+          <span class="font-headline-sm text-headline-sm tracking-tighter text-ink-black leading-none font-bold">NEXO STUDIO</span>
+          <span class="font-label-sm text-[11px] text-secondary uppercase leading-none mt-1" id="header-page-label">Home</span>
+        </div>
+      </a>
+
+      <!-- Desktop nav links (8 páginas exactas) -->
+      <nav class="hidden xl:flex items-center gap-1 bg-surface-taupe/40 p-1 rounded-full border border-ink-black/10">
+        <a href="#home" class="nav-item px-3.5 py-1.5 rounded-full font-label-md text-[12px] uppercase tracking-wider text-ink-black font-semibold hover:bg-surface-bone transition-all" data-route="home">Home</a>
+        <a href="#websites" class="nav-item px-3.5 py-1.5 rounded-full font-label-md text-[12px] uppercase tracking-wider text-secondary font-semibold hover:text-ink-black hover:bg-surface-bone transition-all" data-route="websites">Websites</a>
+        <a href="#diseno-grafico" class="nav-item px-3.5 py-1.5 rounded-full font-label-md text-[12px] uppercase tracking-wider text-secondary font-semibold hover:text-ink-black hover:bg-surface-bone transition-all" data-route="diseno-grafico">Diseño Gráfico</a>
+        <a href="#marketing" class="nav-item px-3.5 py-1.5 rounded-full font-label-md text-[12px] uppercase tracking-wider text-secondary font-semibold hover:text-ink-black hover:bg-surface-bone transition-all" data-route="marketing">Marketing</a>
+        <a href="#creadores" class="nav-item px-3.5 py-1.5 rounded-full font-label-md text-[12px] uppercase tracking-wider text-secondary font-semibold hover:text-ink-black hover:bg-surface-bone transition-all" data-route="creadores">Creadores</a>
+        <a href="#blog" class="nav-item px-3.5 py-1.5 rounded-full font-label-md text-[12px] uppercase tracking-wider text-secondary font-semibold hover:text-ink-black hover:bg-surface-bone transition-all" data-route="blog">Blog</a>
+        <a href="#estacion-inspiracion" class="nav-item px-3.5 py-1.5 rounded-full font-label-md text-[12px] uppercase tracking-wider text-secondary font-semibold hover:text-ink-black hover:bg-surface-bone transition-all" data-route="estacion-inspiracion">Inspiración</a>
+        <a href="#contacto" class="nav-item px-3.5 py-1.5 rounded-full font-label-md text-[12px] uppercase tracking-wider text-secondary font-semibold hover:text-ink-black hover:bg-surface-bone transition-all" data-route="contacto">Contacto</a>
+      </nav>
+
+      <!-- Desktop CTA Cotiza & Mobile Menu Trigger -->
+      <div class="flex items-center gap-space-sm">
+        <a href="#contacto" class="min-h-[44px] px-space-lg py-space-xs rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase font-bold flex items-center justify-center gap-1.5 shadow-[3px_3px_0px_#12180F] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[5px_5px_0px_#12180F] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all">
+          <span>Cotiza</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+
+        <!-- Mobile hamburger menu button -->
+        <button aria-label="Abrir menú" class="xl:hidden w-11 h-11 min-h-[44px] min-w-[44px] rounded-full bg-surface-bone border border-ink-black/15 shadow-[2px_2px_0px_#12180F] flex items-center justify-center text-ink-black hover:bg-surface-variant transition-colors" onclick="toggleMobileNav()">
+          <span class="material-symbols-outlined text-[26px]">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =================== MOBILE FULLSCREEN DRAWER =================== -->
+  <div class="hidden fixed inset-0 z-[60] bg-ink-black text-surface-bone p-margin-mobile flex flex-col justify-between overflow-y-auto" id="mobile-fullscreen-nav">
+    <div class="flex items-center justify-between min-h-[48px]">
+      <div class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-full bg-tertiary-fixed text-ink-black flex items-center justify-center font-label-md text-label-md font-bold">N</div>
+        <span class="font-headline-sm text-headline-sm text-tertiary-fixed uppercase font-bold">NEXO STUDIO</span>
+      </div>
+      <button class="w-11 h-11 min-h-[44px] min-w-[44px] flex items-center justify-center text-surface-bone rounded-full hover:bg-white/10" onclick="toggleMobileNav()" aria-label="Cerrar menú">
+        <span class="material-symbols-outlined text-[28px]">close</span>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation List (8 páginas) -->
+    <div class="flex flex-col gap-2 my-space-lg">
+      <a class="mobile-nav-item py-2 px-3 rounded-lg font-headline-md text-headline-md tracking-tight hover:text-tertiary-fixed transition-colors" href="#home" onclick="toggleMobileNav()">01. Home</a>
+      <a class="mobile-nav-item py-2 px-3 rounded-lg font-headline-md text-headline-md tracking-tight hover:text-tertiary-fixed transition-colors" href="#websites" onclick="toggleMobileNav()">02. Websites</a>
+      <a class="mobile-nav-item py-2 px-3 rounded-lg font-headline-md text-headline-md tracking-tight hover:text-tertiary-fixed transition-colors" href="#diseno-grafico" onclick="toggleMobileNav()">03. Diseño Gráfico</a>
+      <a class="mobile-nav-item py-2 px-3 rounded-lg font-headline-md text-headline-md tracking-tight hover:text-tertiary-fixed transition-colors" href="#marketing" onclick="toggleMobileNav()">04. Marketing</a>
+      <a class="mobile-nav-item py-2 px-3 rounded-lg font-headline-md text-headline-md tracking-tight hover:text-tertiary-fixed transition-colors" href="#creadores" onclick="toggleMobileNav()">05. Creadores</a>
+      <a class="mobile-nav-item py-2 px-3 rounded-lg font-headline-md text-headline-md tracking-tight hover:text-tertiary-fixed transition-colors" href="#blog" onclick="toggleMobileNav()">06. Blog</a>
+      <a class="mobile-nav-item py-2 px-3 rounded-lg font-headline-md text-headline-md tracking-tight hover:text-tertiary-fixed transition-colors" href="#estacion-inspiracion" onclick="toggleMobileNav()">07. Estación de Inspiración</a>
+      <a class="mobile-nav-item py-2 px-3 rounded-lg font-headline-md text-headline-md tracking-tight hover:text-tertiary-fixed transition-colors" href="#contacto" onclick="toggleMobileNav()">08. Contacto</a>
+    </div>
+
+    <div class="flex flex-col gap-space-sm pt-space-md border-t border-surface-bone/20">
+      <a class="w-full min-h-[48px] py-space-sm rounded-full bg-tertiary-fixed text-ink-black font-label-md text-headline-sm text-center flex items-center justify-center font-bold shadow-[2px_2px_0px_#F3F1ED]" href="#contacto" onclick="toggleMobileNav()">
+        Iniciar Cotización
+      </a>
+      <span class="font-label-sm text-[11px] text-secondary-fixed-dim text-center uppercase tracking-widest mt-1">
+        ANDREA RODRÍGUEZ &amp; MIGUEL GÓMEZ • 2026
+      </span>
+    </div>
+  </div>
+
+  <!-- =================== MAIN CONTENT AREA =================== -->
+  <main class="flex-1 w-full pt-[calc(4.5rem+1.8rem)] pb-24 lg:pb-12 bg-surface-taupe" id="page-content">
+    <div class="flex flex-col w-full" id="page-inner">
+      <!-- Content loaded dynamically by SPA router -->
+      <div class="flex items-center justify-center min-h-[60vh]">
+        <div class="flex flex-col items-center gap-space-md">
+          <span class="w-8 h-8 rounded-full bg-ink-black animate-pulse"></span>
+          <span class="font-label-md text-label-md text-secondary uppercase tracking-wider">Cargando...</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- =================== FOOTER (SIN NEWSLETTER) =================== -->
+  <footer class="w-full bg-ink-black text-surface-bone pt-space-2xl pb-28 lg:pb-space-2xl px-margin-mobile lg:px-margin" id="site-footer">
+    <div class="flex flex-col gap-space-xl max-w-[1360px] mx-auto">
+      <!-- Top studio statement in footer -->
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between pb-space-lg border-b border-surface-bone/15 gap-space-md">
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-tertiary-fixed text-ink-black flex items-center justify-center font-label-md font-bold">N</div>
+            <span class="font-headline-sm text-headline-sm text-surface-bone font-bold tracking-tight">NEXO STUDIO</span>
+          </div>
+          <p class="font-body-sm text-body-sm text-surface-variant max-w-md mt-2">
+            Estudio independiente fundado por <strong class="text-surface-bone font-semibold">Andrea Rodríguez</strong> y <strong class="text-surface-bone font-semibold">Miguel Gómez</strong>. Identidades visuales, sitios web de alto rendimiento y marketing sin ruido.
+          </p>
+        </div>
+        <a href="#contacto" class="min-h-[44px] px-space-xl py-space-xs rounded-full bg-tertiary-fixed text-ink-black font-label-md text-label-md uppercase font-bold tracking-wider flex items-center gap-2 shadow-[2px_2px_0px_#F3F1ED] hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all whitespace-nowrap">
+          <span>Cotizar Proyecto</span>
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Links Grid (8 páginas ordenadas + Redes) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-space-lg">
+        <!-- Columna 1: Servicios Principales -->
+        <div class="flex flex-col gap-space-xs">
+          <span class="font-label-md text-label-md uppercase text-tertiary-fixed font-bold mb-1">Servicios</span>
+          <a class="font-body-sm text-body-sm text-surface-variant hover:text-surface-bone py-1 transition-colors" href="#websites">Websites &amp; Plataformas</a>
+          <a class="font-body-sm text-body-sm text-surface-variant hover:text-surface-bone py-1 transition-colors" href="#diseno-grafico">Diseño Gráfico &amp; Branding</a>
+          <a class="font-body-sm text-body-sm text-surface-variant hover:text-surface-bone py-1 transition-colors" href="#marketing">Marketing Digital &amp; SEO</a>
+        </div>
+
+        <!-- Columna 2: Estudio -->
+        <div class="flex flex-col gap-space-xs">
+          <span class="font-label-md text-label-md uppercase text-tertiary-fixed font-bold mb-1">Estudio</span>
+          <a class="font-body-sm text-body-sm text-surface-variant hover:text-surface-bone py-1 transition-colors" href="#home">Home</a>
+          <a class="font-body-sm text-body-sm text-surface-variant hover:text-surface-bone py-1 transition-colors" href="#creadores">Creadores &amp; Manifiesto</a>
+          <a class="font-body-sm text-body-sm text-surface-variant hover:text-surface-bone py-1 transition-colors" href="#contacto">Contacto &amp; Cotización</a>
+        </div>
+
+        <!-- Columna 3: Editorial & Recursos -->
+        <div class="flex flex-col gap-space-xs">
+          <span class="font-label-md text-label-md uppercase text-tertiary-fixed font-bold mb-1">Publicaciones</span>
+          <a class="font-body-sm text-body-sm text-surface-variant hover:text-surface-bone py-1 transition-colors" href="#blog">Blog Editorial (7 Artículos)</a>
+          <a class="font-body-sm text-body-sm text-surface-variant hover:text-surface-bone py-1 transition-colors" href="#estacion-inspiracion">Estación de Inspiración</a>
+          <a class="font-body-sm text-body-sm text-surface-variant hover:text-surface-bone py-1 transition-colors" href="mailto:rudyandrearodrigueztorres@gmail.com">Email Andrea</a>
+          <a class="font-body-sm text-body-sm text-surface-variant hover:text-surface-bone py-1 transition-colors" href="mailto:miguelangel160397@gmail.com">Email Miguel</a>
+        </div>
+
+        <!-- Columna 4: Redes Sociales (abren en pestaña nueva) -->
+        <div class="flex flex-col gap-space-xs">
+          <span class="font-label-md text-label-md uppercase text-tertiary-fixed font-bold mb-1">Redes Sociales</span>
+          <a class="font-body-sm text-body-sm text-surface-variant hover:text-surface-bone py-1 transition-colors flex items-center justify-between" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <span>Instagram</span>
+            <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+          </a>
+          <a class="font-body-sm text-body-sm text-surface-variant hover:text-surface-bone py-1 transition-colors flex items-center justify-between" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+            <span>LinkedIn</span>
+            <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+          </a>
+          <a class="font-body-sm text-body-sm text-surface-variant hover:text-surface-bone py-1 transition-colors flex items-center justify-between" href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer">
+            <span>Pinterest</span>
+            <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+          </a>
+          <a class="font-body-sm text-body-sm text-surface-variant hover:text-surface-bone py-1 transition-colors flex items-center justify-between" href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+            <span>TikTok</span>
+            <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom legal bar -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-lg border-t border-surface-bone/15 text-secondary-fixed-dim font-label-sm text-[12px]">
+        <div class="flex items-center gap-2">
+          <span>© 2026 NEXO STUDIO. Todos los derechos reservados.</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <a href="#contacto" class="hover:text-surface-bone transition-colors">Aviso Legal</a>
+          <a href="#contacto" class="hover:text-surface-bone transition-colors">Privacidad</a>
+          <a href="#contacto" class="hover:text-surface-bone transition-colors">Cookies</a>
+          <span class="text-tertiary-fixed font-bold">Madrid &amp; Global</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =================== MOBILE BOTTOM NAV BAR =================== -->
+  <nav class="mobile-bottom-nav fixed bottom-0 w-full z-50 pb-safe bg-surface-bone/95 backdrop-blur-xl border-t border-ink-black/10 xl:hidden" id="bottom-nav">
+    <div class="flex justify-around items-center h-20 px-space-xs">
+      <a class="bottom-tab flex flex-col items-center justify-center min-h-[44px] min-w-[44px] w-14 h-14 text-secondary hover:text-ink-black transition-colors" data-route="home" href="#home">
+        <span class="material-symbols-outlined text-[20px]">space_dashboard</span>
+        <span class="font-label-sm text-[10px] uppercase mt-1">Home</span>
+      </a>
+      <a class="bottom-tab flex flex-col items-center justify-center min-h-[44px] min-w-[44px] w-14 h-14 text-secondary hover:text-ink-black transition-colors" data-route="websites" href="#websites">
+        <span class="material-symbols-outlined text-[20px]">devices</span>
+        <span class="font-label-sm text-[10px] uppercase mt-1">Websites</span>
+      </a>
+      <a class="bottom-tab flex flex-col items-center justify-center min-h-[44px] min-w-[44px] w-14 h-14 text-secondary hover:text-ink-black transition-colors" data-route="diseno-grafico" href="#diseno-grafico">
+        <span class="material-symbols-outlined text-[20px]">palette</span>
+        <span class="font-label-sm text-[10px] uppercase mt-1">Diseño</span>
+      </a>
+      <a class="bottom-tab flex flex-col items-center justify-center min-h-[44px] min-w-[44px] w-14 h-14 text-secondary hover:text-ink-black transition-colors" data-route="blog" href="#blog">
+        <span class="material-symbols-outlined text-[20px]">article</span>
+        <span class="font-label-sm text-[10px] uppercase mt-1">Blog</span>
+      </a>
+      <a class="bottom-tab flex flex-col items-center justify-center min-h-[44px] min-w-[44px] w-14 h-14 text-secondary hover:text-ink-black transition-colors" data-route="contacto" href="#contacto">
+        <span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+        <span class="font-label-sm text-[10px] uppercase mt-1">Contacto</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- =================== SPA ROUTER & NAVIGATION ENGINE =================== -->
+  <script>
+    // Route mappings
+    const routeToFileMap = {
+      'home': 'home.html',
+      'websites': 'websites.html',
+      'diseno-grafico': 'diseno-grafico.html',
+      'marketing': 'marketing.html',
+      'creadores': 'creadores.html',
+      'blog': 'blog.html',
+      'estacion-inspiracion': 'estacion-inspiracion.html',
+      'contacto': 'contacto.html',
+
+      // Backward compatibility & Aliases
+      'servicios': 'marketing.html',
+      'portafolio': 'websites.html',
+      'nosotros': 'creadores.html',
+      'cotizacion': 'contacto.html',
+      'servicios-web': 'websites.html',
+      'servicios-branding': 'diseno-grafico.html',
+      'servicios-marketing': 'marketing.html',
+      'estacion-de-inspiracion': 'estacion-inspiracion.html'
+    };
+
+    const routeTitles = {
+      'home': 'Home',
+      'websites': 'Websites',
+      'diseno-grafico': 'Diseño Gráfico',
+      'marketing': 'Marketing Digital',
+      'creadores': 'Creadores',
+      'blog': 'Blog Editorial',
+      'estacion-inspiracion': 'Inspiración',
+      'contacto': 'Contacto & Cotización'
+    };
+
+    const pageCache = {};
+
+    function toggleMobileNav() {
+      const drawer = document.getElementById('mobile-fullscreen-nav');
+      if (drawer) drawer.classList.toggle('hidden');
+    }
+
+    async function loadPage(rawHash) {
+      // Clean hash and separate route, subroute and query params
+      const cleanHash = rawHash.replace('#', '') || 'home';
+      const [pathPart, queryPart] = cleanHash.split('?');
+      const segments = pathPart.split('/');
+      const baseRoute = segments[0] || 'home';
+
+      const resolvedFile = routeToFileMap[baseRoute] || 'home.html';
+      const canonicalRoute = Object.keys(routeToFileMap).find(k => routeToFileMap[k] === resolvedFile) || 'home';
+
+      const container = document.getElementById('page-inner');
+      const pageContent = document.getElementById('page-content');
+
+      // Update header label
+      const headerLabel = document.getElementById('header-page-label');
+      if (headerLabel) {
+        headerLabel.textContent = routeTitles[canonicalRoute] || 'Home';
+      }
+
+      // Update active nav link on Desktop
+      document.querySelectorAll('.nav-item').forEach(el => {
+        const itemRoute = el.getAttribute('data-route');
+        if (itemRoute === canonicalRoute) {
+          el.classList.remove('text-secondary', 'hover:bg-surface-bone');
+          el.classList.add('bg-ink-black', 'text-tertiary-fixed', 'font-bold', 'shadow-[2px_2px_0px_#12180F]');
+          el.setAttribute('aria-current', 'page');
+        } else {
+          el.classList.remove('bg-ink-black', 'text-tertiary-fixed', 'font-bold', 'shadow-[2px_2px_0px_#12180F]');
+          el.classList.add('text-secondary');
+          el.removeAttribute('aria-current');
+        }
+      });
+
+      // Update active state in Mobile Bottom Nav
+      document.querySelectorAll('.bottom-tab').forEach(tab => {
+        const tabRoute = tab.getAttribute('data-route');
+        if (tabRoute === canonicalRoute) {
+          tab.classList.remove('text-secondary');
+          tab.classList.add('text-ink-black', 'font-bold');
+        } else {
+          tab.classList.remove('text-ink-black', 'font-bold');
+          tab.classList.add('text-secondary');
+        }
+      });
+
+      try {
+        if (!pageCache[resolvedFile]) {
+          const res = await fetch('pages/' + resolvedFile);
+          if (!res.ok) throw new Error('Error al cargar página: ' + resolvedFile);
+          pageCache[resolvedFile] = await res.text();
+        }
+
+        // Animate out
+        pageContent.style.opacity = '0';
+        pageContent.style.transform = 'translateY(6px)';
+
+        setTimeout(() => {
+          container.innerHTML = pageCache[resolvedFile];
+
+          // Re-execute inline scripts
+          const scripts = container.querySelectorAll('script');
+          scripts.forEach(oldScript => {
+            const newScript = document.createElement('script');
+            if (oldScript.src) {
+              newScript.src = oldScript.src;
+            } else {
+              newScript.textContent = oldScript.textContent;
+            }
+            oldScript.parentNode.replaceChild(newScript, oldScript);
+          });
+
+          // Animate in
+          pageContent.style.transition = 'opacity 0.25s ease-out, transform 0.25s ease-out';
+          pageContent.style.opacity = '1';
+          pageContent.style.transform = 'translateY(0)';
+
+          // If blog article subroute, trigger showArticleView
+          if (baseRoute === 'blog' && segments[1] && typeof showArticleView === 'function') {
+            showArticleView(segments[1]);
+          }
+
+          // If websites project subroute, trigger showWebsiteDetail
+          if (baseRoute === 'websites' && segments[1] && typeof showWebsiteDetail === 'function') {
+            showWebsiteDetail(segments[1]);
+          } else if (baseRoute === 'websites' && queryPart && queryPart.includes('filter=') && typeof setWebsiteFilter === 'function') {
+            const filterVal = decodeURIComponent(queryPart.split('filter=')[1]);
+            setWebsiteFilter(filterVal);
+          }
+
+          // Smooth scroll to top if not an internal hash anchor
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+
+          // Wire up any legacy data-path elements
+          wireUpNavLinks();
+        }, 120);
+
+      } catch (err) {
+        console.error(err);
+        container.innerHTML = `
+          <div class="flex items-center justify-center min-h-[60vh] px-margin-mobile">
+            <div class="bg-surface-bone p-space-lg rounded-lg shadow-[4px_4px_0px_#12180F] text-center flex flex-col gap-space-md max-w-md border border-ink-black">
+              <span class="material-symbols-outlined text-[48px] text-accent-coral">error</span>
+              <h2 class="font-headline-sm text-headline-sm text-ink-black font-bold">Página en Preparación</h2>
+              <p class="font-body-sm text-body-sm text-secondary">La ruta solicitada no pudo cargarse en este momento.</p>
+              <a href="#home" class="min-h-[44px] px-space-lg py-space-sm rounded-full bg-ink-black text-tertiary-fixed font-label-md text-label-md uppercase flex items-center justify-center gap-2 shadow-[2px_2px_0px_#12180F]">
+                <span>Volver al Home</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+          </div>
+        `;
+        pageContent.style.opacity = '1';
+        pageContent.style.transform = 'translateY(0)';
+      }
+    }
+
+    // Convert any data-path attributes and prevent empty '#' links
+    function wireUpNavLinks() {
+      document.querySelectorAll('[data-path]').forEach(el => {
+        const path = el.getAttribute('data-path');
+        const target = routeToFileMap[path] ? path : 'home';
+        if (el.tagName === 'A') {
+          el.href = '#' + target;
+        } else {
+          el.onclick = () => { window.location.hash = '#' + target; };
+        }
+      });
+
+      // Catch any anchor with href="#" and route it to #home or #contacto appropriately
+      document.querySelectorAll('a[href="#"]').forEach(a => {
+        const txt = a.textContent.toLowerCase();
+        if (txt.includes('cotiz') || txt.includes('contact')) {
+          a.href = '#contacto';
+        } else if (txt.includes('proyect') || txt.includes('portfolio') || txt.includes('todos')) {
+          a.href = '#diseno-grafico';
+        } else {
+          a.href = '#home';
+        }
+      });
+    }
+
+    // Router events
+    function handleRoute() {
+      const hash = window.location.hash || '#home';
+      loadPage(hash);
+    }
+
+    window.addEventListener('hashchange', handleRoute);
+    window.addEventListener('DOMContentLoaded', handleRoute);
+  </script>
+</body>
+</html>
