@@ -902,18 +902,16 @@
       });
 
       try {
-        if (!pageCache[resolvedFile]) {
-          const res = await fetch('pages/' + resolvedFile);
-          if (!res.ok) throw new Error('Error al cargar página: ' + resolvedFile);
-          pageCache[resolvedFile] = await res.text();
-        }
+        const res = await fetch('pages/' + resolvedFile + '?_t=' + Date.now(), { cache: 'no-store' });
+        if (!res.ok) throw new Error('Error al cargar página: ' + resolvedFile);
+        const freshHtml = await res.text();
 
         // Animate out
         pageContent.style.opacity = '0';
         pageContent.style.transform = 'translateY(4px)';
 
         setTimeout(() => {
-          container.innerHTML = pageCache[resolvedFile];
+          container.innerHTML = freshHtml;
 
           // Re-execute inline scripts
           const scripts = container.querySelectorAll('script');
@@ -1049,7 +1047,7 @@
         title.textContent = 'Escríbele a Andrea';
         subtitle.textContent = 'Co-Fundadora · Web & Marketing';
       } else if (recipient === 'miguel') {
-        avatarBox.innerHTML = '<img src="assets/creadores/miguel_real.jpg" alt="Miguel Gómez" class="w-full h-full object-cover object-top">';
+        avatarBox.innerHTML = '<img src="assets/creadores/miguel_real.jpg?v=2" alt="Miguel Gómez" class="w-full h-full object-cover object-top">';
         badge.textContent = 'EQUIPO FUNDADOR';
         title.textContent = 'Escríbele a Miguel';
         subtitle.textContent = 'Co-Fundador · Diseño Gráfico & Branding';
