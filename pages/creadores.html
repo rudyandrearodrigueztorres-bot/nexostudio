@@ -41,7 +41,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       
       <!-- Creadora 1: Andrea Rodríguez -->
-      <article class="bg-nexo-white rounded-[24px] p-7 sm:p-9 border border-nexo-dark/10 card-nexo flex flex-col justify-between relative overflow-hidden">
+      <article class="bg-nexo-white rounded-[24px] p-7 sm:p-9 border border-nexo-dark/10 card-nexo flex flex-col justify-between relative overflow-hidden cursor-pointer hover:border-nexo-dark/30 transition-all" onclick="openContactModal('andrea', this)">
         
         <!-- Pico amarillo neón de fondo para el retrato -->
         <div class="absolute right-0 top-0 w-64 h-64 bg-nexo-neon corner-peak-tr opacity-80 pointer-events-none"></div>
@@ -51,13 +51,12 @@
           <!-- Retrato recortado sobre pico amarillo -->
           <div class="flex items-center gap-5">
             <div class="relative w-28 h-28 rounded-2xl bg-nexo-bone border-2 border-nexo-dark overflow-hidden flex items-end justify-center shrink-0 shadow-sm">
-              <!-- MARCADOR: Foto recortada de Andrea -->
               <img src="assets/creadores/andrea_cutout.png" alt="Andrea Rodríguez" class="w-full h-full object-cover object-top">
             </div>
             <div class="flex flex-col">
               <span class="font-headline text-2xl sm:text-3xl text-nexo-dark font-bold leading-tight">Andrea Rodríguez</span>
               <span class="text-xs uppercase font-bold text-nexo-gray tracking-wider mt-1">Co-Fundadora · Web &amp; Marketing</span>
-              <div class="flex flex-wrap gap-1.5 mt-2.5">
+              <div class="flex flex-wrap gap-1.5 mt-2.5" onclick="event.stopPropagation()">
                 <span class="tag-pill px-2.5 py-0.5 text-[11px]">Frontend Craft</span>
                 <span class="tag-pill px-2.5 py-0.5 text-[11px]">Growth SEO</span>
               </div>
@@ -75,7 +74,7 @@
           </div>
 
           <!-- Tags de habilidades -->
-          <div class="flex flex-wrap gap-1.5 pt-2">
+          <div class="flex flex-wrap gap-1.5 pt-2" onclick="event.stopPropagation()">
             <span class="tag-pill px-3 py-1 text-xs">HTML / CSS / JS</span>
             <span class="tag-pill px-3 py-1 text-xs">UI/UX Design</span>
             <span class="tag-pill px-3 py-1 text-xs">SEO Local</span>
@@ -86,15 +85,15 @@
 
         <div class="relative z-10 pt-6 mt-6 border-t border-nexo-dark/10 flex items-center justify-between">
           <span class="text-xs text-nexo-gray font-semibold">Webs &amp; Estrategia Digital</span>
-          <a href="#contacto" class="btn-nexo-primary px-5 py-2 text-xs">
+          <button type="button" class="btn-nexo-primary px-5 py-2 text-xs" onclick="event.stopPropagation(); openContactModal('andrea', this)">
             <span>Escribir a Andrea</span>
             <span class="material-symbols-outlined text-[14px] ml-1">arrow_forward</span>
-          </a>
+          </button>
         </div>
       </article>
 
       <!-- Creador 2: Miguel Gómez -->
-      <article class="bg-nexo-white rounded-[24px] p-7 sm:p-9 border border-nexo-dark/10 card-nexo flex flex-col justify-between relative overflow-hidden">
+      <article class="bg-nexo-white rounded-[24px] p-7 sm:p-9 border border-nexo-dark/10 card-nexo flex flex-col justify-between relative overflow-hidden cursor-pointer hover:border-nexo-dark/30 transition-all" onclick="openContactModal('miguel', this)">
         
         <!-- Pico amarillo neón de fondo para el retrato -->
         <div class="absolute right-0 top-0 w-64 h-64 bg-nexo-neon corner-peak-tr opacity-80 pointer-events-none"></div>
@@ -103,9 +102,7 @@
           
           <!-- Retrato recortado sobre pico amarillo -->
           <div class="flex items-center gap-5">
-            <!-- MARCADOR: Sube la foto recortada de Miguel aquí (assets/creadores/miguel_cutout.png) -->
             <div class="relative w-28 h-28 rounded-2xl bg-nexo-bone border-2 border-nexo-dark overflow-hidden flex items-center justify-center shrink-0 shadow-sm">
-              <!-- Placeholder estilizado para Miguel hasta que el usuario suba la foto recortada -->
               <div class="w-full h-full bg-nexo-dark text-nexo-neon flex flex-col items-center justify-center font-headline font-bold">
                 <span class="text-2xl">MG</span>
                 <span class="text-[9px] uppercase tracking-widest text-nexo-bone/70 mt-0.5">FOTO REAL</span>
@@ -114,7 +111,7 @@
             <div class="flex flex-col">
               <span class="font-headline text-2xl sm:text-3xl text-nexo-dark font-bold leading-tight">Miguel Gómez</span>
               <span class="text-xs uppercase font-bold text-nexo-gray tracking-wider mt-1">Co-Fundador · Diseño Gráfico</span>
-              <div class="flex flex-wrap gap-1.5 mt-2.5">
+              <div class="flex flex-wrap gap-1.5 mt-2.5" onclick="event.stopPropagation()">
                 <span class="tag-pill px-2.5 py-0.5 text-[11px]">Brand Identity</span>
                 <span class="tag-pill px-2.5 py-0.5 text-[11px]">Packaging &amp; Editorial</span>
               </div>
@@ -132,7 +129,7 @@
           </div>
 
           <!-- Tags de habilidades -->
-          <div class="flex flex-wrap gap-1.5 pt-2">
+          <div class="flex flex-wrap gap-1.5 pt-2" onclick="event.stopPropagation()">
             <span class="tag-pill px-3 py-1 text-xs">Branding 360°</span>
             <span class="tag-pill px-3 py-1 text-xs">Packaging de Autor</span>
             <span class="tag-pill px-3 py-1 text-xs">Diseño Editorial</span>
@@ -143,10 +140,10 @@
 
         <div class="relative z-10 pt-6 mt-6 border-t border-nexo-dark/10 flex items-center justify-between">
           <span class="text-xs text-nexo-gray font-semibold">Branding &amp; Packaging</span>
-          <a href="#contacto" class="btn-nexo-primary px-5 py-2 text-xs">
+          <button type="button" class="btn-nexo-primary px-5 py-2 text-xs" onclick="event.stopPropagation(); openContactModal('miguel', this)">
             <span>Escribir a Miguel</span>
             <span class="material-symbols-outlined text-[14px] ml-1">arrow_forward</span>
-          </a>
+          </button>
         </div>
       </article>
 

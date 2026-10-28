@@ -532,29 +532,71 @@
       
       <div class="absolute -right-16 -top-16 w-80 h-80 bg-nexo-neon corner-peak-tr opacity-80 pointer-events-none"></div>
 
-      <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div class="relative z-10 flex flex-col gap-8">
         
-        <div class="flex flex-col gap-3 max-w-xl text-center lg:text-left">
-          <span class="tag-pill px-3 py-1 text-xs uppercase tracking-wider self-center lg:self-start">Equipo Creador</span>
-          <h3 class="font-headline text-3xl sm:text-4xl text-nexo-dark font-bold leading-tight">
-            Andrea Rodríguez &amp; Miguel Gómez
-          </h3>
-          <p class="font-body text-base text-nexo-body leading-relaxed">
-            Trato directo, sin ejecutivos de cuentas ni filtros innecesarios. Diseñamos, programamos y optimizamos cada pieza con rigor visual y honestidad profesional.
-          </p>
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-2">
-            <span class="tag-pill px-3 py-1 text-xs">Dirección de Arte</span>
-            <span class="tag-pill px-3 py-1 text-xs">Desarrollo Web</span>
-            <span class="tag-pill px-3 py-1 text-xs">Branding &amp; Packaging</span>
-            <span class="tag-pill px-3 py-1 text-xs">SEO &amp; Conversión</span>
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div class="flex flex-col gap-2 max-w-xl">
+            <span class="tag-pill px-3 py-1 text-xs uppercase tracking-wider self-start">Equipo Creador Directo</span>
+            <h3 class="font-headline text-3xl sm:text-4xl text-nexo-dark font-bold leading-tight">
+              Andrea Rodríguez &amp; Miguel Gómez
+            </h3>
+            <p class="font-body text-sm sm:text-base text-nexo-body leading-relaxed">
+              Trato directo, sin intermediarios ni filtros innecesarios. Diseñamos, programamos y optimizamos cada pieza con rigor visual y honestidad profesional.
+            </p>
           </div>
-        </div>
-
-        <div class="flex items-center gap-4">
-          <a href="#creadores" class="btn-nexo-primary px-7 py-3 text-sm">
-            <span>Conocer a los creadores</span>
+          <a href="#creadores" class="btn-nexo-secondary px-6 py-2.5 text-xs sm:text-sm self-start sm:self-auto shrink-0">
+            <span>Filosofía del estudio</span>
             <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
           </a>
+        </div>
+
+        <!-- Tarjetas destacadas de Andrea y Miguel -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          
+          <!-- Andrea Card -->
+          <div class="bg-nexo-white rounded-[20px] p-6 border border-nexo-dark/10 card-nexo flex flex-col justify-between gap-5 cursor-pointer hover:border-nexo-dark/30 transition-all" onclick="openContactModal('andrea', this)">
+            <div class="flex items-center gap-4">
+              <div class="w-16 h-16 rounded-2xl bg-nexo-bone border-2 border-nexo-dark overflow-hidden flex items-end justify-center shrink-0 shadow-sm">
+                <img src="assets/creadores/andrea_cutout.png" alt="Andrea Rodríguez" class="w-full h-full object-cover object-top">
+              </div>
+              <div class="flex flex-col min-w-0">
+                <span class="text-xs uppercase font-bold text-nexo-gray">Web &amp; Marketing</span>
+                <h4 class="font-headline text-xl text-nexo-dark font-bold leading-tight">Andrea Rodríguez</h4>
+                <span class="text-xs text-nexo-body/75">Co-Fundadora</span>
+              </div>
+            </div>
+            <p class="font-body text-xs text-nexo-body leading-relaxed">
+              Especialista en arquitectura frontend, interfaces de carga instantánea y captación SEO técnica.
+            </p>
+            <button type="button" class="btn-nexo-primary w-full py-2.5 text-xs" onclick="event.stopPropagation(); openContactModal('andrea', this)">
+              <span class="material-symbols-outlined text-[15px] mr-1">mail</span>
+              <span>Escríbele a Andrea</span>
+            </button>
+          </div>
+
+          <!-- Miguel Card -->
+          <div class="bg-nexo-white rounded-[20px] p-6 border border-nexo-dark/10 card-nexo flex flex-col justify-between gap-5 cursor-pointer hover:border-nexo-dark/30 transition-all" onclick="openContactModal('miguel', this)">
+            <div class="flex items-center gap-4">
+              <div class="w-16 h-16 rounded-2xl bg-nexo-bone border-2 border-nexo-dark overflow-hidden flex items-center justify-center shrink-0 shadow-sm">
+                <div class="w-full h-full bg-nexo-dark text-nexo-green flex flex-col items-center justify-center font-headline font-bold">
+                  <span class="text-xl">MG</span>
+                </div>
+              </div>
+              <div class="flex flex-col min-w-0">
+                <span class="text-xs uppercase font-bold text-nexo-gray">Diseño Gráfico &amp; Branding</span>
+                <h4 class="font-headline text-xl text-nexo-dark font-bold leading-tight">Miguel Gómez</h4>
+                <span class="text-xs text-nexo-body/75">Co-Fundador</span>
+              </div>
+            </div>
+            <p class="font-body text-xs text-nexo-body leading-relaxed">
+              Dirección de arte, sistemas de identidad visual, packaging de autor y sensibilidad tipográfica.
+            </p>
+            <button type="button" class="btn-nexo-primary w-full py-2.5 text-xs" onclick="event.stopPropagation(); openContactModal('miguel', this)">
+              <span class="material-symbols-outlined text-[15px] mr-1">mail</span>
+              <span>Escríbele a Miguel</span>
+            </button>
+          </div>
+
         </div>
 
       </div>

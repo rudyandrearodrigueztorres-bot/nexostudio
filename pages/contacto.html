@@ -44,10 +44,10 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       
       <!-- Andrea Card -->
-      <div class="bg-nexo-white rounded-[24px] p-6 sm:p-7 border border-nexo-dark/10 card-nexo flex flex-col justify-between gap-5">
+      <div class="bg-nexo-white rounded-[24px] p-6 sm:p-7 border border-nexo-dark/10 card-nexo flex flex-col justify-between gap-5 cursor-pointer hover:border-nexo-dark/30 transition-all" onclick="openContactModal('andrea', this)">
         <div class="flex items-center gap-4">
-          <div class="w-14 h-14 rounded-2xl bg-nexo-dark text-nexo-neon flex items-center justify-center font-headline text-lg font-bold shadow-sm shrink-0">
-            AR
+          <div class="w-14 h-14 rounded-2xl bg-nexo-dark text-nexo-neon flex items-center justify-center font-headline text-lg font-bold shadow-sm shrink-0 overflow-hidden">
+            <img src="assets/creadores/andrea_cutout.png" alt="Andrea Rodríguez" class="w-full h-full object-cover object-top">
           </div>
           <div class="flex flex-col min-w-0">
             <span class="text-xs uppercase font-bold text-nexo-gray">Web &amp; Marketing</span>
@@ -55,14 +55,14 @@
             <span class="text-xs text-nexo-body/75">Co-Fundadora</span>
           </div>
         </div>
-        <a class="btn-nexo-primary w-full py-2.5 text-xs" href="mailto:rudyandrearodrigueztorres@gmail.com">
+        <button type="button" class="btn-nexo-primary w-full py-2.5 text-xs" onclick="event.stopPropagation(); openContactModal('andrea', this)">
           <span class="material-symbols-outlined text-[16px] mr-1.5">mail</span>
-          <span>rudyandrearodrigueztorres@gmail.com</span>
-        </a>
+          <span>Escríbele a Andrea</span>
+        </button>
       </div>
 
       <!-- Miguel Card -->
-      <div class="bg-nexo-white rounded-[24px] p-6 sm:p-7 border border-nexo-dark/10 card-nexo flex flex-col justify-between gap-5">
+      <div class="bg-nexo-white rounded-[24px] p-6 sm:p-7 border border-nexo-dark/10 card-nexo flex flex-col justify-between gap-5 cursor-pointer hover:border-nexo-dark/30 transition-all" onclick="openContactModal('miguel', this)">
         <div class="flex items-center gap-4">
           <div class="w-14 h-14 rounded-2xl bg-nexo-dark text-nexo-green flex items-center justify-center font-headline text-lg font-bold shadow-sm shrink-0">
             MG
@@ -73,10 +73,10 @@
             <span class="text-xs text-nexo-body/75">Co-Fundador</span>
           </div>
         </div>
-        <a class="btn-nexo-primary w-full py-2.5 text-xs" href="mailto:miguelangel160397@gmail.com">
+        <button type="button" class="btn-nexo-primary w-full py-2.5 text-xs" onclick="event.stopPropagation(); openContactModal('miguel', this)">
           <span class="material-symbols-outlined text-[16px] mr-1.5">mail</span>
-          <span>miguelangel160397@gmail.com</span>
-        </a>
+          <span>Escríbele a Miguel</span>
+        </button>
       </div>
 
     </div>
@@ -132,21 +132,34 @@
       </div>
 
       <!-- Formulario de entrada -->
-      <form class="flex flex-col gap-5" id="quote-form" onsubmit="event.preventDefault(); document.getElementById('form-feedback').classList.remove('hidden'); this.reset();">
+      <form class="flex flex-col gap-5" id="quote-form" onsubmit="handleQuoteFormSubmit(event)" novalidate>
         
+        <!-- Honeypot y timestamp anti-spam -->
+        <input type="text" name="website_url" id="quote-honeypot" tabindex="-1" autocomplete="off" style="position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none;">
+        <input type="hidden" id="quote-loaded-at" value="">
+
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div class="flex flex-col gap-1.5">
             <label class="text-xs uppercase font-bold text-nexo-dark" for="client-name">
               Tu Nombre / Empresa *
             </label>
             <input class="w-full min-h-[46px] px-4 rounded-full bg-nexo-bone text-nexo-dark text-xs sm:text-sm border border-nexo-dark/15 focus:outline-none focus:border-nexo-dark" id="client-name" placeholder="Ej. Carlos Martínez / Bodegas Altas" required="" type="text">
+            <span id="quote-err-name" class="hidden text-[11px] font-semibold text-red-600 pl-3">Por favor, introduce tu nombre o empresa.</span>
           </div>
           <div class="flex flex-col gap-1.5">
             <label class="text-xs uppercase font-bold text-nexo-dark" for="client-email">
               Correo Electrónico *
             </label>
             <input class="w-full min-h-[46px] px-4 rounded-full bg-nexo-bone text-nexo-dark text-xs sm:text-sm border border-nexo-dark/15 focus:outline-none focus:border-nexo-dark" id="client-email" placeholder="carlos@empresa.com" required="" type="email">
+            <span id="quote-err-email" class="hidden text-[11px] font-semibold text-red-600 pl-3">Introduce un correo electrónico válido.</span>
           </div>
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+          <label class="text-xs uppercase font-bold text-nexo-dark" for="client-phone">
+            Teléfono <span class="text-[11px] font-normal text-nexo-gray lowercase">(opcional)</span>
+          </label>
+          <input class="w-full min-h-[46px] px-4 rounded-full bg-nexo-bone text-nexo-dark text-xs sm:text-sm border border-nexo-dark/15 focus:outline-none focus:border-nexo-dark" id="client-phone" placeholder="+34 600 000 000" type="tel">
         </div>
 
         <div class="flex flex-col gap-1.5">
@@ -154,27 +167,44 @@
             Objetivos y Descripción del Proyecto *
           </label>
           <textarea class="w-full p-4 rounded-[20px] bg-nexo-bone text-nexo-dark text-xs sm:text-sm border border-nexo-dark/15 focus:outline-none focus:border-nexo-dark resize-none" id="client-brief" placeholder="Describe qué necesitas desarrollar (sitio web, branding, packaging, SEO...), plazos previstos o enlaces de referencia..." rows="4" required=""></textarea>
+          <span id="quote-err-brief" class="hidden text-[11px] font-semibold text-red-600 pl-3">Por favor, describe los objetivos de tu proyecto.</span>
+        </div>
+
+        <!-- Casilla obligatoria de privacidad -->
+        <div class="flex items-start gap-2.5 pt-1">
+          <input type="checkbox" id="client-privacy" required class="mt-1 h-4 w-4 rounded border-nexo-dark/20 text-nexo-dark focus:ring-nexo-neon accent-nexo-dark cursor-pointer">
+          <label for="client-privacy" class="text-xs text-nexo-body leading-tight select-none cursor-pointer">
+            Acepto la <a href="#contacto" class="text-nexo-dark font-bold underline hover:text-nexo-gray">política de privacidad</a>.
+          </label>
+        </div>
+        <span id="quote-err-privacy" class="hidden text-[11px] font-semibold text-red-600 pl-6 -mt-2">Debes aceptar la política de privacidad.</span>
+
+        <!-- Banner de error -->
+        <div id="quote-error-banner" class="hidden p-4 rounded-[16px] bg-red-50 border border-red-200 text-red-700 text-xs flex items-center gap-2">
+          <span class="material-symbols-outlined text-[18px] text-red-600 shrink-0">error</span>
+          <span id="quote-error-text">Algo salió mal. Inténtalo de nuevo en unos minutos.</span>
         </div>
 
         <div class="flex flex-col gap-2 pt-2">
           <!-- Botón negro con texto amarillo neón -->
-          <button class="btn-nexo-primary w-full py-3.5 text-sm uppercase tracking-wider" type="submit">
-            <span>Enviar Solicitud de Cotización</span>
-            <span class="material-symbols-outlined text-[18px] ml-1.5">arrow_forward</span>
+          <button id="quote-submit-btn" class="btn-nexo-primary w-full py-3.5 text-sm uppercase tracking-wider" type="submit">
+            <span id="quote-btn-text">Enviar Solicitud de Cotización</span>
+            <span id="quote-btn-icon" class="material-symbols-outlined text-[18px] ml-1.5">arrow_forward</span>
+            <span id="quote-btn-spinner" class="hidden animate-spin material-symbols-outlined text-[18px] ml-1.5">progress_activity</span>
           </button>
           <p class="text-[11px] text-nexo-gray text-center mt-1">
             Cero spam. Tratamiento confidencial directo con Andrea y Miguel.
           </p>
         </div>
 
-        <!-- Mensaje de éxito con el tono de voz exacto -->
-        <div class="hidden bg-nexo-dark text-nexo-bone p-5 rounded-[20px] flex items-center gap-3.5 border border-nexo-dark/20" id="form-feedback">
-          <span class="material-symbols-outlined text-nexo-neon text-[28px] shrink-0">check_circle</span>
+        <!-- Mensaje de éxito con el tono de voz exacto e ilustración -->
+        <div class="hidden bg-nexo-dark text-nexo-bone p-6 sm:p-8 rounded-[20px] flex flex-col sm:flex-row items-center gap-5 border border-nexo-dark/20 text-center sm:text-left" id="form-feedback">
+          <img src="assets/illustrations/contacto.svg" alt="Éxito" class="w-16 h-16 object-contain shrink-0">
           <div class="flex flex-col">
-            <span class="font-headline text-base font-bold text-nexo-neon leading-tight">
-              ¡Listo! Recibimos tu mensaje y te respondemos pronto.
+            <span class="font-headline text-lg sm:text-xl font-bold text-nexo-neon leading-tight">
+              ¡Listo! Recibimos tu mensaje y el equipo te responderá pronto.
             </span>
-            <span class="font-body text-xs text-nexo-bone/80 mt-0.5">
+            <span class="font-body text-xs sm:text-sm text-nexo-bone/80 mt-1">
               Andrea y Miguel revisarán tus requerimientos y te enviarán una propuesta sin compromiso en menos de 24 horas.
             </span>
           </div>
@@ -226,6 +256,10 @@
 </div>
 
 <script>
+  // Timestamp para validación anti-spam de 3 segundos
+  const loadedAtEl = document.getElementById('quote-loaded-at');
+  if (loadedAtEl) loadedAtEl.value = Date.now();
+
   const projectPills = document.querySelectorAll('#project-type-selector .project-pill');
   projectPills.forEach(pill => {
     pill.addEventListener('click', () => {
@@ -241,4 +275,117 @@
       pill.classList.add('active');
     });
   });
+
+  async function handleQuoteFormSubmit(e) {
+    e.preventDefault();
+
+    // Reset error states
+    ['name', 'email', 'brief', 'privacy'].forEach(id => {
+      const el = document.getElementById('quote-err-' + id);
+      if (el) el.classList.add('hidden');
+    });
+    const errBanner = document.getElementById('quote-error-banner');
+    if (errBanner) errBanner.classList.add('hidden');
+
+    const name = document.getElementById('client-name').value.trim();
+    const email = document.getElementById('client-email').value.trim();
+    const phone = document.getElementById('client-phone').value.trim();
+    const brief = document.getElementById('client-brief').value.trim();
+    const privacy = document.getElementById('client-privacy').checked;
+    const honeypot = document.getElementById('quote-honeypot').value;
+    const loadedAt = document.getElementById('quote-loaded-at').value;
+
+    const activeProjectPill = document.querySelector('#project-type-selector .project-pill.active');
+    const projectType = activeProjectPill ? activeProjectPill.textContent.trim() : 'Website / General';
+
+    const activeBudgetPill = document.querySelector('#budget-selector .budget-pill.active');
+    const budgetRange = activeBudgetPill ? activeBudgetPill.textContent.trim() : 'A convenir';
+
+    let hasError = false;
+
+    if (!name) {
+      document.getElementById('quote-err-name').classList.remove('hidden');
+      if (!hasError) document.getElementById('client-name').focus();
+      hasError = true;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      document.getElementById('quote-err-email').classList.remove('hidden');
+      if (!hasError) document.getElementById('client-email').focus();
+      hasError = true;
+    }
+
+    if (!brief) {
+      document.getElementById('quote-err-brief').classList.remove('hidden');
+      if (!hasError) document.getElementById('client-brief').focus();
+      hasError = true;
+    }
+
+    if (!privacy) {
+      document.getElementById('quote-err-privacy').classList.remove('hidden');
+      if (!hasError) document.getElementById('client-privacy').focus();
+      hasError = true;
+    }
+
+    if (hasError) return;
+
+    // Loading UI
+    const submitBtn = document.getElementById('quote-submit-btn');
+    const btnText = document.getElementById('quote-btn-text');
+    const btnIcon = document.getElementById('quote-btn-icon');
+    const btnSpinner = document.getElementById('quote-btn-spinner');
+
+    submitBtn.disabled = true;
+    submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
+    btnText.textContent = 'Enviando solicitud...';
+    btnIcon.classList.add('hidden');
+    btnSpinner.classList.remove('hidden');
+
+    try {
+      const fullMessage = `${brief}\n\n[Presupuesto estimado: ${budgetRange}]`;
+      const payload = {
+        recipient: 'general',
+        name,
+        email,
+        phone,
+        service: projectType,
+        message: fullMessage,
+        accepted_privacy: privacy,
+        website_url: honeypot,
+        form_loaded_at: loadedAt,
+        source_page: '#contacto'
+      };
+
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok || data.error) {
+        throw new Error(data.error || 'Algo salió mal. Inténtalo de nuevo en unos minutos.');
+      }
+
+      // Show success feedback
+      const feedback = document.getElementById('form-feedback');
+      if (feedback) feedback.classList.remove('hidden');
+      document.getElementById('quote-form').reset();
+      submitBtn.classList.add('hidden');
+
+    } catch (err) {
+      if (errBanner) {
+        document.getElementById('quote-error-text').textContent = err.message || 'Algo salió mal. Inténtalo de nuevo en unos minutos.';
+        errBanner.classList.remove('hidden');
+      }
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
+      btnText.textContent = 'Enviar Solicitud de Cotización';
+      btnIcon.classList.remove('hidden');
+      btnSpinner.classList.add('hidden');
+    }
+  }
 </script>

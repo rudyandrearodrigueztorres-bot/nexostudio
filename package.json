@@ -1,0 +1,12 @@
+{
+  "name": "nexostudio-site",
+  "version": "1.0.0",
+  "description": "NEXO STUDIO — Sitio web y API de contacto seguro",
+  "main": "api/contact.js",
+  "scripts": {
+    "start": "python3 server.py"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.15"
+  }
+}

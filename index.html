@@ -389,8 +389,18 @@
           <span class="text-xs uppercase text-nexo-neon font-bold tracking-widest mb-1">Publicaciones</span>
           <a class="text-sm text-nexo-bone/70 hover:text-nexo-neon py-1 transition-colors" href="#blog">Blog Editorial (7 Artículos)</a>
           <a class="text-sm text-nexo-bone/70 hover:text-nexo-neon py-1 transition-colors" href="#estacion-inspiracion">Estación de Inspiración</a>
-          <a class="text-sm text-nexo-bone/70 hover:text-nexo-neon py-1 transition-colors" href="mailto:rudyandrearodrigueztorres@gmail.com">rudyandrearodrigueztorres@gmail.com</a>
-          <a class="text-sm text-nexo-bone/70 hover:text-nexo-neon py-1 transition-colors" href="mailto:miguelangel160397@gmail.com">miguelangel160397@gmail.com</a>
+          <button type="button" onclick="openContactModal('andrea', this)" class="text-left text-sm text-nexo-bone/70 hover:text-nexo-neon py-1 transition-colors flex items-center gap-2">
+            <span class="material-symbols-outlined text-[15px] text-nexo-neon">mail</span>
+            <span>Escríbele a Andrea</span>
+          </button>
+          <button type="button" onclick="openContactModal('miguel', this)" class="text-left text-sm text-nexo-bone/70 hover:text-nexo-neon py-1 transition-colors flex items-center gap-2">
+            <span class="material-symbols-outlined text-[15px] text-nexo-green">mail</span>
+            <span>Escríbele a Miguel</span>
+          </button>
+          <button type="button" onclick="openContactModal('general', this)" class="text-left text-sm text-nexo-bone/70 hover:text-nexo-neon py-1 transition-colors flex items-center gap-2">
+            <span class="material-symbols-outlined text-[15px]">send</span>
+            <span>Contacto General</span>
+          </button>
         </div>
 
         <!-- Columna 4: Redes Sociales (target="_blank") -->
@@ -687,6 +697,448 @@
 
     window.addEventListener('hashchange', handleRoute);
     window.addEventListener('DOMContentLoaded', handleRoute);
+
+    /* =========================================================================
+       MODAL DE CONTACTO DIRECTO ACCESIBLE (ANDREA, MIGUEL Y GENERAL)
+       ========================================================================= */
+    let lastActiveTrigger = null;
+
+    window.openContactModal = function(recipient = 'general', triggerEl = null) {
+      lastActiveTrigger = triggerEl || document.activeElement;
+      const modal = document.getElementById('contact-modal');
+      const card = document.getElementById('contact-modal-card');
+      const backdrop = document.getElementById('contact-modal-backdrop');
+      const avatarBox = document.getElementById('contact-modal-avatar-container');
+      const badge = document.getElementById('contact-modal-badge');
+      const title = document.getElementById('contact-modal-title');
+      const subtitle = document.getElementById('contact-modal-subtitle');
+      const form = document.getElementById('contact-modal-form');
+      const successView = document.getElementById('modal-success-view');
+      const errorBanner = document.getElementById('modal-error-banner');
+      const loadedAt = document.getElementById('modal-loaded-at');
+      const recipientInput = document.getElementById('modal-recipient');
+
+      if (!modal) return;
+
+      // Reset views
+      form.reset();
+      form.classList.remove('hidden');
+      successView.classList.add('hidden');
+      errorBanner.classList.add('hidden');
+      resetModalErrors();
+
+      // Set timestamp and recipient
+      loadedAt.value = Date.now();
+      recipientInput.value = recipient;
+
+      // Select default service chip ("Website")
+      selectModalChip('Website');
+
+      // Configure Header based on recipient
+      if (recipient === 'andrea') {
+        avatarBox.innerHTML = '<img src="assets/creadores/andrea_cutout.png" alt="Andrea Rodríguez" class="w-full h-full object-cover object-top">';
+        badge.textContent = 'EQUIPO FUNDADOR';
+        title.textContent = 'Escríbele a Andrea';
+        subtitle.textContent = 'Co-Fundadora · Web & Marketing';
+      } else if (recipient === 'miguel') {
+        avatarBox.innerHTML = '<div class="w-full h-full bg-nexo-dark text-nexo-green flex items-center justify-center font-headline font-bold text-sm">MG</div>';
+        badge.textContent = 'EQUIPO FUNDADOR';
+        title.textContent = 'Escríbele a Miguel';
+        subtitle.textContent = 'Co-Fundador · Diseño Gráfico & Branding';
+      } else {
+        avatarBox.innerHTML = '<div class="w-full h-full bg-nexo-dark text-nexo-neon flex items-center justify-center font-headline font-bold text-xs">NEXO</div>';
+        badge.textContent = 'CONTACTO GENERAL';
+        title.textContent = 'Hablemos de tu Proyecto';
+        subtitle.textContent = 'Atención directa con Andrea y Miguel';
+      }
+
+      // Show modal with animation
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+
+      requestAnimationFrame(() => {
+        backdrop.classList.add('opacity-100');
+        backdrop.classList.remove('opacity-0');
+        card.classList.remove('translate-y-full', 'sm:scale-95');
+        card.classList.add('translate-y-0', 'sm:scale-100');
+      });
+
+      // Focus first input
+      setTimeout(() => {
+        const firstInput = document.getElementById('modal-input-name');
+        if (firstInput) firstInput.focus();
+      }, 80);
+    };
+
+    window.closeContactModal = function() {
+      const modal = document.getElementById('contact-modal');
+      const card = document.getElementById('contact-modal-card');
+      const backdrop = document.getElementById('contact-modal-backdrop');
+
+      if (!modal || modal.classList.contains('hidden')) return;
+
+      backdrop.classList.add('opacity-0');
+      backdrop.classList.remove('opacity-100');
+      card.classList.add('translate-y-full', 'sm:scale-95');
+      card.classList.remove('translate-y-0', 'sm:scale-100');
+
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+        if (lastActiveTrigger && typeof lastActiveTrigger.focus === 'function') {
+          lastActiveTrigger.focus();
+        }
+      }, 250);
+    };
+
+    // Service chips handling
+    window.selectModalChip = function(serviceName) {
+      const chips = document.querySelectorAll('#modal-service-chips .modal-chip');
+      const hiddenInput = document.getElementById('modal-selected-service');
+      if (hiddenInput) hiddenInput.value = serviceName;
+
+      chips.forEach(chip => {
+        if (chip.getAttribute('data-service') === serviceName) {
+          chip.className = 'modal-chip px-3 py-2 rounded-full text-xs font-bold text-center border transition-all cursor-pointer bg-nexo-dark text-nexo-neon border-nexo-dark shadow-sm';
+        } else {
+          chip.className = 'modal-chip px-3 py-2 rounded-full text-xs font-bold text-center border transition-all cursor-pointer bg-nexo-bone text-nexo-dark border-nexo-dark/15 hover:border-nexo-dark/40';
+        }
+      });
+    };
+
+    function resetModalErrors() {
+      ['name', 'email', 'message', 'privacy'].forEach(id => {
+        const el = document.getElementById('modal-err-' + id);
+        if (el) el.classList.add('hidden');
+      });
+      const banner = document.getElementById('modal-error-banner');
+      if (banner) banner.classList.add('hidden');
+    }
+
+    window.handleModalSubmit = async function(e) {
+      e.preventDefault();
+      resetModalErrors();
+
+      const name = document.getElementById('modal-input-name').value.trim();
+      const email = document.getElementById('modal-input-email').value.trim();
+      const phone = document.getElementById('modal-input-phone').value.trim();
+      const service = document.getElementById('modal-selected-service').value;
+      const message = document.getElementById('modal-input-message').value.trim();
+      const privacy = document.getElementById('modal-privacy-check').checked;
+      const honeypot = document.getElementById('modal-honeypot').value;
+      const loadedAt = document.getElementById('modal-loaded-at').value;
+      const recipient = document.getElementById('modal-recipient').value;
+
+      let hasError = false;
+
+      if (!name) {
+        document.getElementById('modal-err-name').classList.remove('hidden');
+        if (!hasError) document.getElementById('modal-input-name').focus();
+        hasError = true;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email || !emailRegex.test(email)) {
+        document.getElementById('modal-err-email').classList.remove('hidden');
+        if (!hasError) document.getElementById('modal-input-email').focus();
+        hasError = true;
+      }
+
+      if (!message) {
+        document.getElementById('modal-err-message').classList.remove('hidden');
+        if (!hasError) document.getElementById('modal-input-message').focus();
+        hasError = true;
+      }
+
+      if (!privacy) {
+        document.getElementById('modal-err-privacy').classList.remove('hidden');
+        if (!hasError) document.getElementById('modal-privacy-check').focus();
+        hasError = true;
+      }
+
+      if (hasError) return;
+
+      // Loading state
+      const submitBtn = document.getElementById('modal-submit-btn');
+      const btnText = document.getElementById('modal-btn-text');
+      const btnIcon = document.getElementById('modal-btn-icon');
+      const btnSpinner = document.getElementById('modal-btn-spinner');
+
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-80', 'cursor-not-allowed');
+      btnText.textContent = 'Enviando mensaje...';
+      btnIcon.classList.add('hidden');
+      btnSpinner.classList.remove('hidden');
+
+      try {
+        const payload = {
+          recipient,
+          name,
+          email,
+          phone,
+          service,
+          message,
+          accepted_privacy: privacy,
+          website_url: honeypot,
+          form_loaded_at: loadedAt,
+          source_page: window.location.hash || '#home'
+        };
+
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json().catch(() => ({}));
+
+        if (!res.ok || data.error) {
+          throw new Error(data.error || 'Algo salió mal. Inténtalo de nuevo en unos minutos.');
+        }
+
+        // Success state inside same modal
+        document.getElementById('contact-modal-form').classList.add('hidden');
+        const successView = document.getElementById('modal-success-view');
+        const successMsg = document.getElementById('modal-success-message');
+        
+        let recipientMsg = 'el equipo';
+        if (recipient === 'andrea') recipientMsg = 'Andrea';
+        else if (recipient === 'miguel') recipientMsg = 'Miguel';
+
+        successMsg.textContent = `¡Listo! Recibimos tu mensaje y ${recipientMsg} te responderá pronto.`;
+        successView.classList.remove('hidden');
+
+      } catch (err) {
+        const banner = document.getElementById('modal-error-banner');
+        const bannerText = document.getElementById('modal-error-text');
+        bannerText.textContent = err.message || 'Algo salió mal. Inténtalo de nuevo en unos minutos.';
+        banner.classList.remove('hidden');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-80', 'cursor-not-allowed');
+        btnText.textContent = 'Enviar mensaje';
+        btnIcon.classList.remove('hidden');
+        btnSpinner.classList.add('hidden');
+      }
+    };
+
+    // Keyboard navigation (ESC + Focus Trap)
+    window.addEventListener('keydown', function(e) {
+      const modal = document.getElementById('contact-modal');
+      if (!modal || modal.classList.contains('hidden')) return;
+
+      if (e.key === 'Escape') {
+        closeContactModal();
+        return;
+      }
+
+      if (e.key === 'Tab') {
+        const card = document.getElementById('contact-modal-card');
+        const focusable = card.querySelectorAll('button:not([disabled]), input:not([disabled]):not([type="hidden"]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])');
+        if (focusable.length === 0) return;
+
+        const firstEl = focusable[0];
+        const lastEl = focusable[focusable.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstEl) {
+            e.preventDefault();
+            lastEl.focus();
+          }
+        } else {
+          if (document.activeElement === lastEl) {
+            e.preventDefault();
+            firstEl.focus();
+          }
+        }
+      }
+    });
   </script>
+
+  <!-- =========================================================================
+       MODAL DE CONTACTO DIRECTO (ANDREA, MIGUEL Y GENERAL)
+       ========================================================================= -->
+  <div id="contact-modal" class="fixed inset-0 z-50 hidden transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+    <!-- Backdrop oscuro con desenfoque suave -->
+    <div id="contact-modal-backdrop" class="fixed inset-0 bg-nexo-dark/70 backdrop-blur-sm opacity-0 transition-opacity duration-300" onclick="closeContactModal()"></div>
+
+    <!-- Contenedor: centrado en desktop/tablet, bottom sheet que sube en móvil -->
+    <div class="fixed inset-0 z-10 overflow-y-auto flex items-end sm:items-center justify-center p-0 sm:p-4 pointer-events-none">
+      
+      <!-- Ventana modal: tarjeta blanca con radio de 24px y sombra suave -->
+      <div id="contact-modal-card" class="pointer-events-auto relative w-full sm:max-w-lg bg-nexo-white rounded-t-[24px] sm:rounded-[24px] shadow-2xl border border-nexo-dark/10 p-6 sm:p-8 max-h-[92vh] sm:max-h-[90vh] overflow-y-auto transform transition-all duration-300 translate-y-full sm:translate-y-0 sm:scale-95" onclick="event.stopPropagation()">
+        
+        <!-- Botón cerrar (X) -->
+        <button type="button" id="contact-modal-close-btn" onclick="closeContactModal()" aria-label="Cerrar modal" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-nexo-bone/70 hover:bg-nexo-bone text-nexo-dark flex items-center justify-center transition-colors">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+
+        <!-- Cabecera del modal: foto circular, título y subtítulo -->
+        <div class="flex items-center gap-3.5 pr-8 pb-5 border-b border-nexo-dark/10">
+          <div id="contact-modal-avatar-container" class="relative w-12 h-12 rounded-full overflow-hidden shrink-0 border-2 border-nexo-dark flex items-center justify-center bg-nexo-dark shadow-sm">
+            <!-- Dynamic avatar injected by JS -->
+          </div>
+          <div class="flex flex-col min-w-0">
+            <span class="text-[11px] uppercase font-bold tracking-wider text-nexo-gray" id="contact-modal-badge">Contacto Directo</span>
+            <h3 class="font-headline text-xl sm:text-2xl text-nexo-dark font-bold leading-tight" id="contact-modal-title">
+              Escríbele a Andrea
+            </h3>
+            <span class="text-xs text-nexo-body/80 truncate" id="contact-modal-subtitle">
+              Co-Fundadora · Web &amp; Marketing
+            </span>
+          </div>
+        </div>
+
+        <!-- Vista 1: Formulario -->
+        <form id="contact-modal-form" class="flex flex-col gap-4 pt-5" onsubmit="handleModalSubmit(event)" novalidate>
+          
+          <!-- Honeypot oculto anti-spam -->
+          <input type="text" name="website_url" id="modal-honeypot" tabindex="-1" autocomplete="off" style="position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none;">
+          <input type="hidden" name="form_loaded_at" id="modal-loaded-at" value="">
+          <input type="hidden" name="recipient" id="modal-recipient" value="andrea">
+
+          <!-- Campo: Nombre -->
+          <div class="flex flex-col gap-1">
+            <label for="modal-input-name" class="text-xs font-bold uppercase tracking-wider text-nexo-dark">
+              Tu Nombre *
+            </label>
+            <input 
+              type="text" 
+              id="modal-input-name" 
+              name="name" 
+              required 
+              maxlength="100"
+              placeholder="Ej. Carmen Navarro / Estudio Sombra" 
+              class="w-full min-h-[44px] px-4 rounded-full bg-nexo-bone text-nexo-dark placeholder:text-nexo-gray/70 text-xs sm:text-sm border border-nexo-dark/15 focus:outline-none focus:border-nexo-dark transition-all"
+            >
+            <span id="modal-err-name" class="hidden text-[11px] font-semibold text-red-600 pl-3">Por favor, escribe tu nombre.</span>
+          </div>
+
+          <!-- Campo: Correo -->
+          <div class="flex flex-col gap-1">
+            <label for="modal-input-email" class="text-xs font-bold uppercase tracking-wider text-nexo-dark">
+              Correo Electrónico *
+            </label>
+            <input 
+              type="email" 
+              id="modal-input-email" 
+              name="email" 
+              required 
+              maxlength="120"
+              placeholder="carmen@estudio.es" 
+              class="w-full min-h-[44px] px-4 rounded-full bg-nexo-bone text-nexo-dark placeholder:text-nexo-gray/70 text-xs sm:text-sm border border-nexo-dark/15 focus:outline-none focus:border-nexo-dark transition-all"
+            >
+            <span id="modal-err-email" class="hidden text-[11px] font-semibold text-red-600 pl-3">Introduce un correo electrónico válido.</span>
+          </div>
+
+          <!-- Campo: Teléfono (opcional) -->
+          <div class="flex flex-col gap-1">
+            <label for="modal-input-phone" class="text-xs font-bold uppercase tracking-wider text-nexo-dark flex items-center justify-between">
+              <span>Teléfono</span>
+              <span class="text-[11px] font-normal text-nexo-gray lowercase">(opcional)</span>
+            </label>
+            <input 
+              type="tel" 
+              id="modal-input-phone" 
+              name="phone" 
+              maxlength="30"
+              placeholder="+34 600 000 000" 
+              class="w-full min-h-[44px] px-4 rounded-full bg-nexo-bone text-nexo-dark placeholder:text-nexo-gray/70 text-xs sm:text-sm border border-nexo-dark/15 focus:outline-none focus:border-nexo-dark transition-all"
+            >
+          </div>
+
+          <!-- Campo: Servicio de interés (chips seleccionables) -->
+          <div class="flex flex-col gap-1.5">
+            <label class="text-xs font-bold uppercase tracking-wider text-nexo-dark">
+              Servicio de Interés
+            </label>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="modal-service-chips">
+              <button type="button" onclick="selectModalChip('Website')" class="modal-chip px-3 py-2 rounded-full text-xs font-bold text-center border transition-all cursor-pointer" data-service="Website">
+                Website
+              </button>
+              <button type="button" onclick="selectModalChip('Diseño gráfico')" class="modal-chip px-3 py-2 rounded-full text-xs font-bold text-center border transition-all cursor-pointer" data-service="Diseño gráfico">
+                Diseño gráfico
+              </button>
+              <button type="button" onclick="selectModalChip('Marketing')" class="modal-chip px-3 py-2 rounded-full text-xs font-bold text-center border transition-all cursor-pointer" data-service="Marketing">
+                Marketing
+              </button>
+              <button type="button" onclick="selectModalChip('Otro')" class="modal-chip px-3 py-2 rounded-full text-xs font-bold text-center border transition-all cursor-pointer" data-service="Otro">
+                Otro
+              </button>
+            </div>
+            <input type="hidden" name="service" id="modal-selected-service" value="Website">
+          </div>
+
+          <!-- Campo: Mensaje -->
+          <div class="flex flex-col gap-1">
+            <label for="modal-input-message" class="text-xs font-bold uppercase tracking-wider text-nexo-dark">
+              Mensaje *
+            </label>
+            <textarea 
+              id="modal-input-message" 
+              name="message" 
+              required 
+              rows="3" 
+              maxlength="2000"
+              placeholder="Cuéntanos brevemente qué necesitas o en qué podemos colaborar..."
+              class="w-full p-3.5 rounded-[18px] bg-nexo-bone text-nexo-dark placeholder:text-nexo-gray/70 text-xs sm:text-sm border border-nexo-dark/15 focus:outline-none focus:border-nexo-dark transition-all resize-none"
+            ></textarea>
+            <span id="modal-err-message" class="hidden text-[11px] font-semibold text-red-600 pl-3">Por favor, escribe un mensaje.</span>
+          </div>
+
+          <!-- Casilla obligatoria: Privacidad -->
+          <div class="flex items-start gap-2.5 pt-1">
+            <input 
+              type="checkbox" 
+              id="modal-privacy-check" 
+              name="privacy" 
+              required 
+              class="mt-1 h-4 w-4 rounded border-nexo-dark/20 text-nexo-dark focus:ring-nexo-neon accent-nexo-dark cursor-pointer"
+            >
+            <label for="modal-privacy-check" class="text-xs text-nexo-body leading-tight select-none cursor-pointer">
+              Acepto la <a href="#contacto" onclick="closeContactModal()" class="text-nexo-dark font-bold underline hover:text-nexo-gray">política de privacidad</a>.
+            </label>
+          </div>
+          <span id="modal-err-privacy" class="hidden text-[11px] font-semibold text-red-600 pl-6 -mt-2">Debes aceptar la política de privacidad.</span>
+
+          <!-- Mensaje de error amable -->
+          <div id="modal-error-banner" class="hidden p-3.5 rounded-[16px] bg-red-50 border border-red-200 text-red-700 text-xs flex items-center gap-2">
+            <span class="material-symbols-outlined text-[18px] text-red-600 shrink-0">error</span>
+            <span id="modal-error-text">Algo salió mal. Inténtalo de nuevo en unos minutos.</span>
+          </div>
+
+          <!-- Botón principal "Enviar mensaje" (píldora negra con texto amarillo neón) -->
+          <button 
+            type="submit" 
+            id="modal-submit-btn" 
+            class="btn-nexo-primary w-full py-3.5 text-xs sm:text-sm uppercase tracking-wider font-bold mt-2 shadow-sm"
+          >
+            <span id="modal-btn-text">Enviar mensaje</span>
+            <span id="modal-btn-icon" class="material-symbols-outlined text-[16px] ml-1.5">arrow_forward</span>
+            <span id="modal-btn-spinner" class="hidden animate-spin material-symbols-outlined text-[18px] ml-1.5">progress_activity</span>
+          </button>
+        </form>
+
+        <!-- Vista 2: Éxito dentro de la misma ventana -->
+        <div id="modal-success-view" class="hidden flex-col items-center justify-center text-center py-8 gap-4">
+          <div class="w-20 h-20 rounded-full bg-nexo-neon/20 border-2 border-nexo-dark flex items-center justify-center shadow-sm">
+            <img src="assets/illustrations/contacto.svg" alt="Éxito" class="w-12 h-12 object-contain">
+          </div>
+          <div class="flex flex-col gap-1.5 max-w-sm">
+            <h4 class="font-headline text-2xl text-nexo-dark font-bold leading-tight">
+              ¡Mensaje enviado!
+            </h4>
+            <p class="font-body text-xs sm:text-sm text-nexo-body leading-relaxed" id="modal-success-message">
+              ¡Listo! Recibimos tu mensaje y te responderemos pronto.
+            </p>
+          </div>
+          <button type="button" onclick="closeContactModal()" class="btn-nexo-primary px-8 py-3 text-xs uppercase tracking-wider mt-2">
+            <span>Cerrar ventana</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </body>
 </html>

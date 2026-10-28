@@ -170,13 +170,19 @@
       </div>
 
       <!-- Author Box Card -->
-      <div class="mt-12 bg-nexo-bone rounded-[24px] p-6 sm:p-8 border border-nexo-dark/10 flex flex-col sm:flex-row items-center gap-5">
-        <img id="art-box-avatar" src="" alt="" class="w-16 h-16 rounded-full object-cover border-2 border-nexo-dark shrink-0">
-        <div class="flex flex-col gap-1 text-center sm:text-left">
-          <span class="text-xs uppercase font-bold text-nexo-gray">Sobre el autor</span>
-          <h3 class="font-headline text-lg text-nexo-dark font-bold" id="art-box-name">Autor</h3>
-          <p class="font-body text-xs sm:text-sm text-nexo-body leading-relaxed" id="art-box-bio">Bio</p>
+      <div id="art-box-container" class="mt-12 bg-nexo-bone rounded-[24px] p-6 sm:p-8 border border-nexo-dark/10 flex flex-col sm:flex-row items-center justify-between gap-5 cursor-pointer hover:border-nexo-dark/30 transition-all">
+        <div class="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
+          <img id="art-box-avatar" src="" alt="" class="w-16 h-16 rounded-full object-cover border-2 border-nexo-dark shrink-0">
+          <div class="flex flex-col gap-1">
+            <span class="text-xs uppercase font-bold text-nexo-gray">Sobre el autor</span>
+            <h3 class="font-headline text-lg text-nexo-dark font-bold" id="art-box-name">Autor</h3>
+            <p class="font-body text-xs sm:text-sm text-nexo-body leading-relaxed" id="art-box-bio">Bio</p>
+          </div>
         </div>
+        <button type="button" id="art-box-contact-btn" class="btn-nexo-primary px-6 py-2.5 text-xs shrink-0 self-center sm:self-auto">
+          <span class="material-symbols-outlined text-[15px] mr-1">mail</span>
+          <span id="art-box-btn-label">Escríbele al autor</span>
+        </button>
       </div>
 
       <!-- CTA Final de Artículo -->
@@ -402,6 +408,27 @@
     boxAvatar.alt = post.author.name;
     document.getElementById('art-box-name').textContent = post.author.name + ' · ' + post.author.role;
     document.getElementById('art-box-bio').textContent = post.author.bio;
+
+    const isAndrea = (post.author.name || '').toLowerCase().includes('andrea');
+    const recipientKey = isAndrea ? 'andrea' : 'miguel';
+    const authorShortName = isAndrea ? 'Andrea' : 'Miguel';
+
+    const boxContainer = document.getElementById('art-box-container');
+    const boxBtn = document.getElementById('art-box-contact-btn');
+    const boxBtnLabel = document.getElementById('art-box-btn-label');
+
+    if (boxBtnLabel) boxBtnLabel.textContent = `Escríbele a ${authorShortName}`;
+    if (boxBtn) {
+      boxBtn.onclick = function(e) {
+        e.stopPropagation();
+        if (typeof openContactModal === 'function') openContactModal(recipientKey, this);
+      };
+    }
+    if (boxContainer) {
+      boxContainer.onclick = function() {
+        if (typeof openContactModal === 'function') openContactModal(recipientKey, this);
+      };
+    }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
