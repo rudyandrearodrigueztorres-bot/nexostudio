@@ -365,7 +365,7 @@
 
       const data = await res.json().catch(() => ({}));
 
-      if (!res.ok || data.error) {
+      if (!res.ok || (data.ok !== true && data.success !== true) || data.error) {
         throw new Error(data.error || 'Algo salió mal. Inténtalo de nuevo en unos minutos.');
       }
 
