@@ -1,0 +1,160 @@
+<div class="flex flex-col w-full bg-nexo-beige overflow-hidden">
+  
+  <!-- =========================================================================
+       1. CABECERA TÉRMINOS BEIGE CON PICO AMARILLO NEÓN
+       ========================================================================= -->
+  <section class="relative px-4 sm:px-8 pt-8 pb-12 overflow-hidden border-b border-nexo-dark/10">
+    <div class="absolute -right-12 top-0 w-80 lg:w-96 h-80 lg:h-96 bg-nexo-neon corner-peak-tr opacity-90 pointer-events-none"></div>
+
+    <div class="desktop-container relative z-10 flex flex-col gap-4 max-w-4xl">
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="tag-pill px-3.5 py-1 text-xs uppercase tracking-wider font-bold">
+          CONDICIONES DEL SERVICIO // NEXO STUDIO
+        </span>
+        <span class="text-xs font-semibold text-nexo-dark bg-nexo-white px-3 py-1 rounded-full border border-nexo-dark/10 shadow-sm">
+          Última actualización: <strong data-legal-field="fecha_actualizacion">28 de octubre de 2026</strong>
+        </span>
+      </div>
+
+      <h1 class="font-headline text-[clamp(34px,5vw,60px)] text-nexo-dark font-extrabold leading-[0.98] tracking-tight">
+        Términos de <span class="bg-nexo-dark text-nexo-neon px-3 py-0.5 rounded-[20px] inline-block">Uso</span>
+      </h1>
+
+      <p class="font-body text-base sm:text-lg text-nexo-body leading-relaxed">
+        Pautas de utilización de este sitio web y principios rectores de los servicios profesionales prestados por NEXO STUDIO.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       2. CONTENIDO EN 2 COLUMNAS (ÍNDICE STICKY DESKTOP + CUERPO)
+       ========================================================================= -->
+  <section class="px-4 sm:px-8 py-12 desktop-container max-w-5xl">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Índice lateral Sticky (Desktop) -->
+      <aside class="hidden lg:flex lg:col-span-4 flex-col gap-4 sticky top-32">
+        <div class="bg-nexo-white rounded-[24px] p-6 border border-nexo-dark/10 shadow-sm flex flex-col gap-3">
+          <span class="text-xs uppercase font-bold text-nexo-dark flex items-center gap-1.5 pb-2 border-b border-nexo-dark/10">
+            <span class="material-symbols-outlined text-[16px]">menu_book</span>
+            <span>Índice de Términos</span>
+          </span>
+          <nav class="flex flex-col gap-2 font-body text-xs text-nexo-gray">
+            <a href="#condiciones-generales" class="hover:text-nexo-dark py-0.5 transition-colors font-medium">1. Condiciones Generales</a>
+            <a href="#descripcion-servicios" class="hover:text-nexo-dark py-0.5 transition-colors font-medium">2. Descripción de Servicios</a>
+            <a href="#regimen-contratacion" class="hover:text-nexo-dark py-0.5 transition-colors font-medium">3. Régimen de Contratación</a>
+            <a href="#propiedad-intelectual" class="hover:text-nexo-dark py-0.5 transition-colors font-medium">4. Propiedad Intelectual</a>
+            <a href="#responsabilidad" class="hover:text-nexo-dark py-0.5 transition-colors font-medium">5. Limitación de Responsabilidad</a>
+            <a href="#contacto-consultas" class="hover:text-nexo-dark py-0.5 transition-colors font-medium">6. Contacto y Consultas</a>
+          </nav>
+        </div>
+
+        <div class="p-5 rounded-[20px] bg-nexo-bone border border-nexo-dark/10 flex flex-col gap-2">
+          <span class="text-xs uppercase font-bold text-nexo-dark">¿Hablamos de un proyecto?</span>
+          <p class="text-xs text-nexo-body">Preparamos una propuesta sin compromiso y a la medida de tus necesidades.</p>
+          <button type="button" onclick="openContactModal('general', this)" class="btn-nexo-primary py-2 px-4 text-xs mt-1 self-start">
+            <span>Pedir propuesta</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Cuerpo principal del documento -->
+      <article class="lg:col-span-8 bg-nexo-white rounded-[24px] p-7 sm:p-12 border border-nexo-dark/10 shadow-sm flex flex-col gap-8 font-body text-sm sm:text-base text-nexo-body leading-relaxed">
+        
+        <!-- Sección 1 -->
+        <section id="condiciones-generales" class="flex flex-col gap-3">
+          <h2 class="font-headline text-2xl text-nexo-dark font-bold leading-tight flex items-center gap-2">
+            <span class="text-nexo-neon bg-nexo-dark w-7 h-7 rounded-full inline-flex items-center justify-center text-xs">1</span>
+            <span>Condiciones Generales de Uso</span>
+          </h2>
+          <p>
+            El presente documento regula el acceso y la utilización del sitio web de <strong>NEXO STUDIO</strong>, accesible a través de su dominio principal y páginas asociadas.
+          </p>
+          <p>
+            El mero acceso al sitio atribuye a quien lo realiza la condición de Usuario, implicando la aceptación sin reservas de los presentes Términos de Uso, del <a href="#aviso-legal" class="text-nexo-dark font-bold underline">Aviso Legal</a> y de la <a href="#politica-de-privacidad" class="text-nexo-dark font-bold underline">Política de Privacidad</a>.
+          </p>
+        </section>
+
+        <!-- Sección 2 -->
+        <section id="descripcion-servicios" class="flex flex-col gap-3 pt-6 border-t border-nexo-dark/10">
+          <h2 class="font-headline text-2xl text-nexo-dark font-bold leading-tight flex items-center gap-2">
+            <span class="text-nexo-neon bg-nexo-dark w-7 h-7 rounded-full inline-flex items-center justify-center text-xs">2</span>
+            <span>Descripción de los Servicios Ofrecidos</span>
+          </h2>
+          <p>
+            NEXO STUDIO es un estudio independiente especializado en:
+          </p>
+          <ul class="list-disc pl-6 space-y-1.5 text-xs sm:text-sm">
+            <li><strong>Desarrollo Web &amp; Plataformas:</strong> Creación de sitios web a medida, arquitectura frontend, catálogos digitales e integración de embudos de venta directos a WhatsApp.</li>
+            <li><strong>Diseño Gráfico &amp; Branding:</strong> Sistemas de identidad visual viva, diseño editorial, etiquetado y packaging de autor, dirección de arte y exploración tipográfica.</li>
+            <li><strong>Marketing Digital &amp; SEO:</strong> Posicionamiento orgánico en buscadores (SEO local y técnico) y estructuración de presencia digital sin intermediarios.</li>
+          </ul>
+        </section>
+
+        <!-- Sección 3: Régimen de Contratación -->
+        <section id="regimen-contratacion" class="flex flex-col gap-3 pt-6 border-t border-nexo-dark/10">
+          <h2 class="font-headline text-2xl text-nexo-dark font-bold leading-tight flex items-center gap-2">
+            <span class="text-nexo-neon bg-nexo-dark w-7 h-7 rounded-full inline-flex items-center justify-center text-xs">3</span>
+            <span>Régimen Jurídico de las Contrataciones</span>
+          </h2>
+          <div class="p-4 rounded-[16px] bg-nexo-bone border-l-4 border-nexo-dark text-xs sm:text-sm">
+            <strong>Acuerdo Individualizado:</strong> La información, ejemplos y rangos de inversión mostrados en este sitio web tienen carácter exclusivamente informativo y divulgativo. Las contrataciones profesionales de servicios <strong>no se perfeccionan a través del sitio web</strong>, sino que se rigen exclusivamente por la propuesta económica, alcance técnico, calendario de entregas y presupuesto formal acordado y firmado por escrito entre NEXO STUDIO y cada cliente.
+          </div>
+          <p>
+            Cualquier solicitud de cotización enviada a través de los formularios del sitio web constituye una petición preliminar de información y en ningún caso vincula a las partes hasta la aceptación expresa del presupuesto definitivo.
+          </p>
+        </section>
+
+        <!-- Sección 4 -->
+        <section id="propiedad-intelectual" class="flex flex-col gap-3 pt-6 border-t border-nexo-dark/10">
+          <h2 class="font-headline text-2xl text-nexo-dark font-bold leading-tight flex items-center gap-2">
+            <span class="text-nexo-neon bg-nexo-dark w-7 h-7 rounded-full inline-flex items-center justify-center text-xs">4</span>
+            <span>Propiedad Intelectual y Derechos de Autor</span>
+          </h2>
+          <p>
+            La totalidad del código fuente, ilustraciones vectoriales originales, maquetaciones visuales y textos editoriales creados por NEXO STUDIO son propiedad intelectual de sus creadores (Andrea Rodríguez y Miguel Gómez).
+          </p>
+          <p>
+            En los proyectos realizados para clientes, la cesión de derechos de explotación sobre los entregables finales (como logotipos aprobados o código web desarrollado) se produce conforme a lo estipulado en el contrato o presupuesto de cada encargo una vez abonada la totalidad de los honorarios pactados.
+          </p>
+        </section>
+
+        <!-- Sección 5 -->
+        <section id="responsabilidad" class="flex flex-col gap-3 pt-6 border-t border-nexo-dark/10">
+          <h2 class="font-headline text-2xl text-nexo-dark font-bold leading-tight flex items-center gap-2">
+            <span class="text-nexo-neon bg-nexo-dark w-7 h-7 rounded-full inline-flex items-center justify-center text-xs">5</span>
+            <span>Limitación de Responsabilidad</span>
+          </h2>
+          <p>
+            El Usuario accede al sitio web bajo su propia responsabilidad. NEXO STUDIO no garantiza la disponibilidad ininterrumpida del sitio ni se responsabiliza de incidencias derivadas de la red de telecomunicaciones o incompatibilidades de navegadores desactualizados.
+          </p>
+        </section>
+
+        <!-- Sección 6 -->
+        <section id="contacto-consultas" class="flex flex-col gap-3 pt-6 border-t border-nexo-dark/10">
+          <h2 class="font-headline text-2xl text-nexo-dark font-bold leading-tight flex items-center gap-2">
+            <span class="text-nexo-neon bg-nexo-dark w-7 h-7 rounded-full inline-flex items-center justify-center text-xs">6</span>
+            <span>Contacto y Dudas sobre estos Términos</span>
+          </h2>
+          <p>
+            Para cualquier consulta relacionada con los presentes Términos de Uso o para solicitar una cotización formal, puedes contactarnos a través de nuestros canales oficiales:
+          </p>
+          <div class="bg-nexo-bone rounded-[18px] p-5 border border-nexo-dark/10 flex flex-col gap-2 text-xs sm:text-sm">
+            <div><strong>Titular:</strong> <span data-legal-field="titular"></span></div>
+            <div><strong>Correo de contacto:</strong> <span data-legal-field="email_derechos"></span></div>
+            <div><strong>Ubicación:</strong> Madrid, España (Atención remota y presencial bajo cita previa)</div>
+          </div>
+        </section>
+
+      </article>
+
+    </div>
+  </section>
+
+</div>
+
+<script>
+  if (typeof window.initLegalFields === 'function') {
+    window.initLegalFields();
+  }
+</script>

@@ -222,8 +222,7 @@ module.exports = async function handler(req, res) {
       socketTimeout: 10000
     });
 
-    // 9. ENVÍO 1: Notificación al equipo (Obligatorio)
-    const teamSubject = `[NEXO STUDIO] Nuevo mensaje para ${recipientDisplayName} – ${service}`;
+    // 9. ENVÍO 1:     const teamSubject = `[NEXO STUDIO] Nuevo mensaje para ${recipientDisplayName} – ${service}`;
     const teamTextBody = `
 NEXO STUDIO — NUEVO CONTACTO
 ==================================================
@@ -236,6 +235,12 @@ DATOS DEL CONTACTO:
 Nombre:       ${name}
 Correo:       ${email}
 Teléfono:     ${phone || 'No especificado'}
+
+REGISTRO DE PRIVACIDAD Y CONSENTIMIENTO (RGPD / LOPDGDD):
+Consentimiento aceptado: Sí
+Fecha y hora:            ${formattedDate}
+Versión de la política:  v1.0 (28 de octubre de 2026)
+Base jurídica:           Consentimiento del interesado (Art. 6.1.a RGPD)
 
 MENSAJE:
 ${message}
@@ -257,8 +262,9 @@ ${message}
     .body-content { padding: 32px; }
     .meta-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
     .meta-table td { padding: 8px 0; border-bottom: 1px solid #F3F1ED; font-size: 14px; }
-    .label { color: #6E6B5E; font-weight: 600; width: 130px; }
+    .label { color: #6E6B5E; font-weight: 600; width: 150px; }
     .value { color: #12180F; font-weight: 600; }
+    .consent-box { background-color: #F3F1ED; border: 1px solid rgba(18,24,15,0.12); border-radius: 12px; padding: 14px 18px; margin-bottom: 24px; font-size: 13px; }
     .message-box { background-color: #F8F7F4; padding: 20px; border-radius: 12px; font-size: 14px; line-height: 1.6; color: #3B4034; white-space: pre-wrap; border-left: 4px solid #E6FF00; }
     .footer { padding: 18px 32px; background-color: #FAFAFA; font-size: 12px; color: #6E6B5E; border-top: 1px solid #EEEEEE; text-align: center; }
   </style>
@@ -278,6 +284,14 @@ ${message}
         <tr><td class="label">Página de origen:</td><td class="value">${sourcePage}</td></tr>
         <tr><td class="label">Fecha y hora:</td><td class="value">${formattedDate}</td></tr>
       </table>
+
+      <div class="consent-box">
+        <div style="font-weight: 700; color: #12180F; margin-bottom: 6px; text-transform: uppercase; font-size: 11px; letter-spacing: 0.05em;">Registro de Consentimiento RGPD / LOPDGDD</div>
+        <div style="color: #3B4034;">• <strong>Consentimiento aceptado:</strong> <span style="color: #2e8b57; font-weight: 700;">Sí</span></div>
+        <div style="color: #3B4034;">• <strong>Fecha y hora:</strong> ${formattedDate}</div>
+        <div style="color: #3B4034;">• <strong>Versión de política:</strong> v1.0 (28 de octubre de 2026)</div>
+        <div style="color: #6E6B5E; font-size: 11px; margin-top: 4px;">Base jurídica: Consentimiento expreso del interesado para atender la consulta.</div>
+      </div>
       <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: #6E6B5E; margin-bottom: 8px;">Mensaje recibido:</div>
       <div class="message-box">${message}</div>
     </div>

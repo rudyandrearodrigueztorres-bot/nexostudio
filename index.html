@@ -15,6 +15,8 @@
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Configuración Central Legal (LSSI-CE, RGPD) -->
+  <script src="js/legal-config.js"></script>
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
@@ -430,10 +432,12 @@
         <div class="flex items-center gap-2">
           <span>© 2026 NEXO STUDIO. Todos los derechos reservados.</span>
         </div>
-        <div class="flex items-center gap-5">
-          <a href="#contacto" class="hover:text-nexo-bone transition-colors">Aviso Legal</a>
-          <a href="#contacto" class="hover:text-nexo-bone transition-colors">Privacidad</a>
-          <a href="#contacto" class="hover:text-nexo-bone transition-colors">Cookies</a>
+        <div class="flex items-center gap-4 sm:gap-5 flex-wrap">
+          <a href="#aviso-legal" class="hover:text-nexo-bone transition-colors">Aviso Legal</a>
+          <a href="#politica-de-privacidad" class="hover:text-nexo-bone transition-colors">Privacidad</a>
+          <a href="#politica-de-cookies" class="hover:text-nexo-bone transition-colors">Cookies</a>
+          <a href="#terminos-de-uso" class="hover:text-nexo-bone transition-colors">Términos de Uso</a>
+          <button type="button" onclick="openCookiePreferences()" class="hover:text-nexo-bone transition-colors underline cursor-pointer text-xs">Configurar cookies</button>
           <span class="text-nexo-neon font-semibold">Madrid &amp; Remoto</span>
         </div>
       </div>
@@ -441,7 +445,7 @@
   </footer>
 
   <!-- =================== MOBILE BOTTOM NAV BAR =================== -->
-  <nav class="mobile-bottom-nav fixed bottom-0 w-full z-50 bg-nexo-bone/95 backdrop-blur-xl border-t border-nexo-dark/10 lg:hidden" id="bottom-nav">
+  <nav class="mobile-bottom-nav fixed bottom-0 w-full z-40 bg-nexo-bone/95 backdrop-blur-xl border-t border-nexo-dark/10 lg:hidden" id="bottom-nav">
     <div class="flex justify-around items-center h-16 px-2">
       <a class="bottom-tab flex flex-col items-center justify-center w-14 h-12 text-nexo-body/70 hover:text-nexo-dark transition-colors" data-route="home" href="#home">
         <span class="material-symbols-outlined text-[20px]">space_dashboard</span>
@@ -466,24 +470,207 @@
     </div>
   </nav>
 
-  <!-- =================== BANNER DE COOKIES RESTYLED =================== -->
-  <div id="cookie-banner" class="fixed bottom-20 lg:bottom-6 right-4 left-4 sm:left-auto sm:max-w-md z-50 bg-nexo-dark text-nexo-bone p-5 rounded-[24px] shadow-2xl border border-nexo-dark/20 flex flex-col gap-3 hidden">
-    <div class="flex items-start justify-between gap-2">
-      <span class="font-headline text-base font-bold text-nexo-neon">Tu privacidad en NEXO</span>
-      <button onclick="dismissCookieBanner()" class="text-nexo-bone/50 hover:text-nexo-bone" aria-label="Cerrar aviso">
+  <!-- =========================================================================
+       SISTEMA DE CONSENTIMIENTO DE COOKIES (RGPD / LSSI-CE / LOPDGDD)
+       ========================================================================= -->
+
+  <!-- 1. POPUP DE PRIMERA VISITA (ESQUINA INFERIOR IZQUIERDA EN DESKTOP / PANEL INFERIOR EN MÓVIL) -->
+  <aside 
+    id="nexo-consent-popup" 
+    class="hidden fixed bottom-20 lg:bottom-6 left-4 right-4 sm:right-auto sm:max-w-md lg:left-6 z-50 bg-nexo-white text-nexo-dark p-6 rounded-[24px] shadow-2xl border border-nexo-dark/15 flex flex-col gap-4 animate-fade-in"
+    role="dialog"
+    aria-modal="false"
+    aria-labelledby="consent-popup-title"
+  >
+    <div class="flex items-start justify-between gap-3">
+      <div class="flex items-center gap-2.5">
+        <span class="w-8 h-8 rounded-full bg-nexo-neon text-nexo-dark flex items-center justify-center shrink-0 font-bold">
+          <span class="material-symbols-outlined text-[18px]">verified_user</span>
+        </span>
+        <h3 id="consent-popup-title" class="font-headline text-base sm:text-lg font-bold text-nexo-dark">
+          Tu privacidad, en tus manos
+        </h3>
+      </div>
+      <button 
+        type="button" 
+        onclick="rejectAllCookies()" 
+        class="w-7 h-7 rounded-full hover:bg-nexo-bone flex items-center justify-center text-nexo-dark/60 hover:text-nexo-dark transition-colors" 
+        aria-label="Cerrar y rechazar cookies no esenciales"
+      >
         <span class="material-symbols-outlined text-[18px]">close</span>
       </button>
     </div>
-    <p class="text-xs text-nexo-bone/75 leading-relaxed">
-      Utilizamos cookies técnicas para garantizar el correcto funcionamiento del sitio. No realizamos seguimiento invasivo ni venta de datos.
+
+    <p class="text-xs text-nexo-body leading-relaxed">
+      Utilizamos almacenamiento y cookies técnicas para garantizar el funcionamiento seguro del sitio. Puedes configurar si aceptas tecnologías adicionales en nuestra <a href="#politica-de-cookies" class="text-nexo-dark font-bold underline hover:text-nexo-gray">Política de cookies</a> y nuestra <a href="#politica-de-privacidad" class="text-nexo-dark font-bold underline hover:text-nexo-gray">Política de privacidad</a>.
     </p>
-    <div class="flex items-center gap-2 pt-1">
-      <button onclick="dismissCookieBanner()" class="flex-1 py-2 px-4 rounded-full bg-nexo-neon text-nexo-dark font-semibold text-xs hover:bg-white transition-all">
-        Entendido
+
+    <!-- 3 Botones del mismo tamaño y peso visual (sin patrones oscuros ni manipulación) -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
+      <button 
+        type="button" 
+        onclick="acceptAllCookies()" 
+        class="w-full py-2.5 px-3 rounded-full text-xs font-bold text-center border-2 border-nexo-dark bg-nexo-dark text-nexo-neon hover:bg-black hover:border-black transition-all flex items-center justify-center cursor-pointer"
+      >
+        Aceptar todo
       </button>
-      <a href="#contacto" class="py-2 px-3 text-xs text-nexo-bone/70 hover:text-nexo-bone">
-        Más info
-      </a>
+      <button 
+        type="button" 
+        onclick="rejectAllCookies()" 
+        class="w-full py-2.5 px-3 rounded-full text-xs font-bold text-center border-2 border-nexo-dark/20 bg-nexo-bone text-nexo-dark hover:border-nexo-dark hover:bg-nexo-beige/60 transition-all flex items-center justify-center cursor-pointer"
+      >
+        Rechazar todo
+      </button>
+      <button 
+        type="button" 
+        onclick="openCookiePreferences()" 
+        class="w-full py-2.5 px-3 rounded-full text-xs font-bold text-center border-2 border-nexo-dark/20 bg-nexo-bone text-nexo-dark hover:border-nexo-dark hover:bg-nexo-beige/60 transition-all flex items-center justify-center cursor-pointer"
+      >
+        Configurar
+      </button>
+    </div>
+  </aside>
+
+  <!-- 2. PANEL MODAL "CONFIGURAR COOKIES" (INTERRUPTORES POR CATEGORÍA AUDITADA) -->
+  <div 
+    id="nexo-cookie-modal" 
+    class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="cookie-modal-title"
+  >
+    <div 
+      id="cookie-modal-backdrop" 
+      class="fixed inset-0 bg-nexo-dark/60 backdrop-blur-sm transition-opacity duration-300 opacity-0" 
+      onclick="closeCookiePreferences()"
+    ></div>
+
+    <div 
+      id="cookie-modal-card" 
+      class="relative w-full sm:max-w-xl max-h-[90vh] bg-nexo-white rounded-t-[28px] sm:rounded-[24px] shadow-2xl border border-nexo-dark/15 flex flex-col overflow-hidden transition-all duration-300 translate-y-full sm:translate-y-0 sm:scale-95"
+    >
+      <!-- Header del panel -->
+      <div class="p-6 border-b border-nexo-dark/10 flex items-center justify-between bg-nexo-bone/50 shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-nexo-dark text-nexo-neon flex items-center justify-center font-bold">
+            <span class="material-symbols-outlined text-[20px]">tune</span>
+          </div>
+          <div>
+            <h3 id="cookie-modal-title" class="font-headline text-lg font-bold text-nexo-dark leading-tight">
+              Preferencias de Cookies
+            </h3>
+            <span class="text-xs text-nexo-gray">Elige qué información compartes</span>
+          </div>
+        </div>
+        <button 
+          type="button" 
+          onclick="closeCookiePreferences()" 
+          class="w-9 h-9 rounded-full bg-nexo-bone hover:bg-nexo-beige flex items-center justify-center text-nexo-dark transition-colors" 
+          aria-label="Cerrar configuración"
+        >
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <!-- Scroll: Categorías de la auditoría real -->
+      <div class="p-6 overflow-y-auto space-y-4 max-h-[60vh] text-xs leading-relaxed text-nexo-body">
+        <p class="text-xs text-nexo-body pb-1">
+          En NEXO STUDIO respetamos tu decisión. Las categorías no esenciales están desactivadas por defecto:
+        </p>
+
+        <!-- Categoría 1: Necesarias (Siempre activas) -->
+        <div class="p-4 rounded-[18px] bg-nexo-bone/60 border border-nexo-dark/10 flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-sm text-nexo-dark font-headline">Cookies Técnicas y Necesarias</span>
+              <span class="px-2 py-0.5 rounded-full bg-nexo-dark text-nexo-neon text-[10px] font-bold uppercase tracking-wider">Siempre activas</span>
+            </div>
+            <input type="checkbox" checked disabled class="h-4 w-4 accent-nexo-dark cursor-not-allowed">
+          </div>
+          <p class="text-nexo-body">
+            Garantizan la navegación segura, prevención de abuso en envíos y almacenan tu decisión de cookies por 12 meses. Sin ellas el sitio web no puede funcionar.
+          </p>
+          <div class="text-[11px] text-nexo-gray pt-1 border-t border-nexo-dark/10">
+            <strong>Claves detectadas:</strong> <code class="bg-white px-1.5 py-0.5 rounded border border-nexo-dark/10 font-mono">nexo_cookie_consent_v1</code> (localStorage, 12 meses, propia).
+          </div>
+        </div>
+
+        <!-- Categoría 2: Preferencias -->
+        <div class="p-4 rounded-[18px] bg-nexo-bone/60 border border-nexo-dark/10 flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <label for="cookie-pref-preferences" class="font-bold text-sm text-nexo-dark font-headline cursor-pointer">
+              Cookies de Preferencias
+            </label>
+            <input type="checkbox" id="cookie-pref-preferences" class="h-4 w-4 rounded accent-nexo-dark cursor-pointer">
+          </div>
+          <p class="text-nexo-body">
+            Permiten recordar el diseño de interfaz elegido, como la vista de proyectos o pestañas de navegación preferidas.
+          </p>
+          <div class="text-[11px] text-nexo-gray pt-1 border-t border-nexo-dark/10">
+            <strong>Claves detectadas:</strong> <code class="bg-white px-1.5 py-0.5 rounded border border-nexo-dark/10 font-mono">nexo_portfolio_view</code> (sessionStorage, propia).
+          </div>
+        </div>
+
+        <!-- Categoría 3: Analítica -->
+        <div class="p-4 rounded-[18px] bg-nexo-bone/60 border border-nexo-dark/10 flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <label for="cookie-pref-analytics" class="font-bold text-sm text-nexo-dark font-headline cursor-pointer">
+              Cookies Analíticas y Métricas
+            </label>
+            <input type="checkbox" id="cookie-pref-analytics" class="h-4 w-4 rounded accent-nexo-dark cursor-pointer">
+          </div>
+          <p class="text-nexo-body">
+            Permiten medir de forma agregada el tráfico del sitio para entender qué servicios interesan más.
+          </p>
+          <div class="text-[11px] text-nexo-gray pt-1 border-t border-nexo-dark/10">
+            <strong>Auditoría actual:</strong> No se carga ningún script analítico externo sin tu autorización expresa en este panel.
+          </div>
+        </div>
+
+        <!-- Categoría 4: Marketing -->
+        <div class="p-4 rounded-[18px] bg-nexo-bone/60 border border-nexo-dark/10 flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <label for="cookie-pref-marketing" class="font-bold text-sm text-nexo-dark font-headline cursor-pointer">
+              Cookies de Marketing y Contenido Externo
+            </label>
+            <input type="checkbox" id="cookie-pref-marketing" class="h-4 w-4 rounded accent-nexo-dark cursor-pointer">
+          </div>
+          <p class="text-nexo-body">
+            Regulan la inserción automática de servicios o iframes alojados en servidores de terceros.
+          </p>
+          <div class="text-[11px] text-nexo-gray pt-1 border-t border-nexo-dark/10">
+            <strong>Auditoría actual:</strong> No existen píxeles de remarketing ni venta de datos.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer de acciones -->
+      <div class="p-5 border-t border-nexo-dark/10 bg-nexo-bone/50 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
+        <button 
+          type="button" 
+          onclick="rejectAllCookies()" 
+          class="w-full sm:w-auto py-2.5 px-4 rounded-full text-xs font-bold text-center border border-nexo-dark/20 text-nexo-dark hover:bg-nexo-beige/60 transition-all cursor-pointer"
+        >
+          Rechazar todo
+        </button>
+        <div class="flex items-center gap-2 w-full sm:w-auto">
+          <button 
+            type="button" 
+            onclick="acceptAllCookies()" 
+            class="flex-1 sm:flex-initial py-2.5 px-4 rounded-full text-xs font-bold text-center border border-nexo-dark/20 text-nexo-dark hover:bg-nexo-beige/60 transition-all cursor-pointer"
+          >
+            Aceptar todo
+          </button>
+          <button 
+            type="button" 
+            onclick="saveCookiePreferences()" 
+            class="flex-1 sm:flex-initial btn-nexo-primary py-2.5 px-5 text-xs font-bold text-center cursor-pointer"
+          >
+            Guardar preferencias
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -498,6 +685,12 @@
       'blog': 'blog.html',
       'estacion-inspiracion': 'estacion-inspiracion.html',
       'contacto': 'contacto.html',
+
+      // Páginas Legales
+      'aviso-legal': 'aviso-legal.html',
+      'politica-de-privacidad': 'politica-de-privacidad.html',
+      'politica-de-cookies': 'politica-de-cookies.html',
+      'terminos-de-uso': 'terminos-de-uso.html',
 
       // Backward compatibility & Aliases
       'servicios': 'marketing.html',
@@ -518,7 +711,11 @@
       'creadores': 'Creadores',
       'blog': 'Blog Editorial',
       'estacion-inspiracion': 'Estación de Inspiración',
-      'contacto': 'Contacto & Cotización'
+      'contacto': 'Contacto & Cotización',
+      'aviso-legal': 'Aviso Legal',
+      'politica-de-privacidad': 'Política de Privacidad',
+      'politica-de-cookies': 'Política de Cookies',
+      'terminos-de-uso': 'Términos de Uso'
     };
 
     const pageCache = {};
@@ -528,17 +725,116 @@
       if (drawer) drawer.classList.toggle('hidden');
     }
 
-    function dismissCookieBanner() {
-      const b = document.getElementById('cookie-banner');
-      if (b) b.classList.add('hidden');
-      localStorage.setItem('nexo_cookies_ack', 'true');
+    /* =========================================================================
+       CONTROLADOR DE CONSENTIMIENTO DE COOKIES (12 MESES & AUDITORÍA)
+       ========================================================================= */
+    const CONSENT_STORAGE_KEY = 'nexo_cookie_consent_v1';
+    const CONSENT_VERSION = '2026-10-28';
+    const CONSENT_MAX_AGE_MS = 365 * 24 * 60 * 60 * 1000; // 12 meses
+
+    function getStoredConsent() {
+      try {
+        const raw = localStorage.getItem(CONSENT_STORAGE_KEY);
+        if (!raw) return null;
+        const data = JSON.parse(raw);
+        if (!data || data.version !== CONSENT_VERSION) return null;
+        if (Date.now() - data.timestamp > CONSENT_MAX_AGE_MS) return null;
+        return data;
+      } catch (e) {
+        return null;
+      }
     }
 
-    if (!localStorage.getItem('nexo_cookies_ack')) {
+    function storeConsent(categories) {
+      const data = {
+        version: CONSENT_VERSION,
+        timestamp: Date.now(),
+        categories: {
+          necessary: true,
+          preferences: !!categories.preferences,
+          analytics: !!categories.analytics,
+          marketing: !!categories.marketing
+        }
+      };
+      try {
+        localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(data));
+      } catch (e) {}
+      hideConsentPopup();
+      closeCookiePreferences();
+    }
+
+    function hideConsentPopup() {
+      const popup = document.getElementById('nexo-consent-popup');
+      if (popup) popup.classList.add('hidden');
+    }
+
+    function showConsentPopup() {
+      const popup = document.getElementById('nexo-consent-popup');
+      if (popup) popup.classList.remove('hidden');
+    }
+
+    function acceptAllCookies() {
+      storeConsent({ preferences: true, analytics: true, marketing: true });
+    }
+
+    function rejectAllCookies() {
+      storeConsent({ preferences: false, analytics: false, marketing: false });
+    }
+
+    function saveCookiePreferences() {
+      const pref = document.getElementById('cookie-pref-preferences');
+      const ana = document.getElementById('cookie-pref-analytics');
+      const mkt = document.getElementById('cookie-pref-marketing');
+      storeConsent({
+        preferences: pref ? pref.checked : false,
+        analytics: ana ? ana.checked : false,
+        marketing: mkt ? mkt.checked : false
+      });
+    }
+
+    function openCookiePreferences() {
+      const modal = document.getElementById('nexo-cookie-modal');
+      const backdrop = document.getElementById('cookie-modal-backdrop');
+      const card = document.getElementById('cookie-modal-card');
+      if (!modal) return;
+
+      const consent = getStoredConsent();
+      const pref = document.getElementById('cookie-pref-preferences');
+      const ana = document.getElementById('cookie-pref-analytics');
+      const mkt = document.getElementById('cookie-pref-marketing');
+      if (pref) pref.checked = consent?.categories?.preferences || false;
+      if (ana) ana.checked = consent?.categories?.analytics || false;
+      if (mkt) mkt.checked = consent?.categories?.marketing || false;
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(() => {
+        backdrop.classList.add('opacity-100');
+        backdrop.classList.remove('opacity-0');
+        card.classList.remove('translate-y-full', 'sm:scale-95');
+        card.classList.add('translate-y-0', 'sm:scale-100');
+      });
+    }
+
+    function closeCookiePreferences() {
+      const modal = document.getElementById('nexo-cookie-modal');
+      const backdrop = document.getElementById('cookie-modal-backdrop');
+      const card = document.getElementById('cookie-modal-card');
+      if (!modal || modal.classList.contains('hidden')) return;
+
+      backdrop.classList.remove('opacity-100');
+      backdrop.classList.add('opacity-0');
+      card.classList.add('translate-y-full', 'sm:scale-95');
+      card.classList.remove('translate-y-0', 'sm:scale-100');
       setTimeout(() => {
-        const b = document.getElementById('cookie-banner');
-        if (b) b.classList.remove('hidden');
-      }, 1500);
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 280);
+    }
+
+    // Inicializar comprobación de cookies en primera visita
+    if (!getStoredConsent()) {
+      setTimeout(showConsentPopup, 1200);
     }
 
     async function loadPage(rawHash) {
@@ -546,6 +842,15 @@
       const [pathPart, queryPart] = cleanHash.split('?');
       const segments = pathPart.split('/');
       const baseRoute = segments[0] || 'home';
+
+      // Soporte para anclas internas en páginas legales y de contenido
+      if (!routeToFileMap[baseRoute]) {
+        const inPageEl = document.getElementById(baseRoute);
+        if (inPageEl) {
+          inPageEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+      }
 
       const resolvedFile = routeToFileMap[baseRoute] || 'home.html';
       const canonicalRoute = Object.keys(routeToFileMap).find(k => routeToFileMap[k] === resolvedFile) || 'home';
@@ -645,6 +950,9 @@
 
           // Wire up any legacy data-path elements
           wireUpNavLinks();
+          if (typeof initLegalFields === 'function') {
+            initLegalFields();
+          }
         }, 100);
 
       } catch (err) {
@@ -750,6 +1058,10 @@
         badge.textContent = 'CONTACTO GENERAL';
         title.textContent = 'Hablemos de tu Proyecto';
         subtitle.textContent = 'Atención directa con Andrea y Miguel';
+      }
+
+      if (typeof initLegalFields === 'function') {
+        initLegalFields();
       }
 
       // Show modal with animation
@@ -1086,7 +1398,17 @@
             <span id="modal-err-message" class="hidden text-[11px] font-semibold text-red-600 pl-3">Por favor, escribe un mensaje.</span>
           </div>
 
-          <!-- Casilla obligatoria: Privacidad -->
+          <!-- Bloque breve de información por capas (RGPD) -->
+          <div class="p-3.5 rounded-[16px] bg-nexo-bone/90 border border-nexo-dark/10 text-[11px] leading-relaxed text-nexo-body flex flex-col gap-1">
+            <div class="font-bold text-nexo-dark text-[11px] uppercase tracking-wider mb-0.5">Información básica sobre protección de datos</div>
+            <div><strong class="text-nexo-dark">Responsable:</strong> <span data-legal-field="name">[COMPLETAR: Nombre o Razón Social del Titular]</span></div>
+            <div><strong class="text-nexo-dark">Finalidad:</strong> Atender tu consulta directa con nuestro equipo.</div>
+            <div><strong class="text-nexo-dark">Legitimación:</strong> Tu consentimiento expreso al enviar el formulario.</div>
+            <div><strong class="text-nexo-dark">Destinatarios:</strong> No se ceden datos salvo obligación legal; el correo y el alojamiento los gestionan proveedores externos.</div>
+            <div><strong class="text-nexo-dark">Derechos:</strong> Acceso, rectificación, supresión y otros derechos (<a href="#politica-de-privacidad" onclick="closeContactModal()" class="text-nexo-dark font-bold underline hover:text-nexo-gray">más información en la Política de Privacidad</a>).</div>
+          </div>
+
+          <!-- Casilla obligatoria desmarcada por defecto -->
           <div class="flex items-start gap-2.5 pt-1">
             <input 
               type="checkbox" 
@@ -1096,10 +1418,10 @@
               class="mt-1 h-4 w-4 rounded border-nexo-dark/20 text-nexo-dark focus:ring-nexo-neon accent-nexo-dark cursor-pointer"
             >
             <label for="modal-privacy-check" class="text-xs text-nexo-body leading-tight select-none cursor-pointer">
-              Acepto la <a href="#contacto" onclick="closeContactModal()" class="text-nexo-dark font-bold underline hover:text-nexo-gray">política de privacidad</a>.
+              He leído y acepto la <a href="#politica-de-privacidad" onclick="closeContactModal()" class="text-nexo-dark font-bold underline hover:text-nexo-gray">política de privacidad</a> y el tratamiento de mis datos para atender mi consulta.
             </label>
           </div>
-          <span id="modal-err-privacy" class="hidden text-[11px] font-semibold text-red-600 pl-6 -mt-2">Debes aceptar la política de privacidad.</span>
+          <span id="modal-err-privacy" class="hidden text-[11px] font-semibold text-red-600 pl-6 -mt-2">Debes marcar la casilla para aceptar la política de privacidad.</span>
 
           <!-- Mensaje de error amable -->
           <div id="modal-error-banner" class="hidden p-3.5 rounded-[16px] bg-red-50 border border-red-200 text-red-700 text-xs flex items-center gap-2">

@@ -208,6 +208,33 @@
               onerror="handleIframeError()"
             ></iframe>
 
+            <!-- Overlay de consentimiento previo para contenido externo (RGPD y Cookies de terceros) -->
+            <div id="iframe-privacy-overlay" class="absolute inset-0 bg-nexo-bone z-10 flex flex-col items-center justify-center p-6 text-center gap-4">
+              <div class="relative w-full max-w-sm h-36 rounded-xl overflow-hidden border border-nexo-dark/15 shadow-sm bg-nexo-beige/40 flex items-center justify-center">
+                <img id="iframe-preview-poster" src="" alt="Vista previa del proyecto" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 bg-nexo-dark/30 backdrop-blur-[2px] flex items-center justify-center">
+                  <span class="w-12 h-12 rounded-full bg-nexo-neon text-nexo-dark flex items-center justify-center shadow-lg">
+                    <span class="material-symbols-outlined text-[24px]">visibility</span>
+                  </span>
+                </div>
+              </div>
+              <div class="flex flex-col gap-1 max-w-md">
+                <h4 class="font-headline text-lg text-nexo-dark font-bold">Vista previa interactiva externa</h4>
+                <p class="text-xs text-nexo-body leading-relaxed">
+                  Este proyecto se aloja en un servidor externo. Para proteger tu privacidad y evitar la carga de cookies o contenido de terceros sin tu autorización, haz clic para cargar la demo interactiva.
+                </p>
+              </div>
+              <div class="flex items-center gap-3 flex-wrap justify-center">
+                <button type="button" onclick="loadInteractivePreview()" class="btn-nexo-primary px-6 py-2.5 text-xs">
+                  <span>Cargar vista previa</span>
+                  <span class="material-symbols-outlined text-[16px] ml-1">play_circle</span>
+                </button>
+                <a id="iframe-direct-link" href="#" target="_blank" rel="noopener noreferrer" class="py-2.5 px-4 text-xs font-semibold text-nexo-dark hover:underline">
+                  Abrir en pestaña nueva ↗
+                </a>
+              </div>
+            </div>
+
             <div id="iframe-fallback-overlay" class="hidden absolute inset-0 bg-nexo-bone flex-col items-center justify-center p-6 text-center gap-3">
               <span class="material-symbols-outlined text-[48px] text-nexo-dark">language</span>
               <h4 class="font-headline text-xl text-nexo-dark font-bold">Vista previa protegida</h4>
@@ -477,13 +504,23 @@
     const fallback = document.getElementById('iframe-fallback-overlay');
     const fallbackBtn = document.getElementById('iframe-fallback-btn');
     const extLink = document.getElementById('iframe-external-link');
+    const privacyOverlay = document.getElementById('iframe-privacy-overlay');
+    const previewPoster = document.getElementById('iframe-preview-poster');
+    const directLink = document.getElementById('iframe-direct-link');
 
-    if (iframe) {
-      iframe.src = project.url;
-      fallback.classList.add('hidden');
-    }
+    window.currentPendingWebUrl = project.url;
+
+    if (previewPoster) previewPoster.src = project.image;
+    if (directLink) directLink.href = project.url;
     if (extLink) extLink.href = project.url;
     if (fallbackBtn) fallbackBtn.href = project.url;
+
+    // Reset iframe src to avoid third-party connection until user requests preview
+    if (iframe) {
+      iframe.src = '';
+    }
+    if (fallback) fallback.classList.add('hidden');
+    if (privacyOverlay) privacyOverlay.classList.remove('hidden');
 
     const prevLink = document.getElementById('web-detail-prev-link');
     const prevTitle = document.getElementById('web-detail-prev-title');
@@ -498,6 +535,17 @@
     setPreviewMode('desktop');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
+
+  window.loadInteractivePreview = function() {
+    const iframe = document.getElementById('web-detail-iframe');
+    const privacyOverlay = document.getElementById('iframe-privacy-overlay');
+    if (iframe && window.currentPendingWebUrl) {
+      iframe.src = window.currentPendingWebUrl;
+    }
+    if (privacyOverlay) {
+      privacyOverlay.classList.add('hidden');
+    }
+  };
 
   function setPreviewMode(mode) {
     const container = document.getElementById('iframe-viewport-container');

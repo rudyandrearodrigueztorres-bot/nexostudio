@@ -170,14 +170,24 @@
           <span id="quote-err-brief" class="hidden text-[11px] font-semibold text-red-600 pl-3">Por favor, describe los objetivos de tu proyecto.</span>
         </div>
 
-        <!-- Casilla obligatoria de privacidad -->
+        <!-- Bloque breve de información por capas (RGPD) -->
+        <div class="p-4 rounded-[18px] bg-nexo-bone/90 border border-nexo-dark/10 text-[11px] leading-relaxed text-nexo-body flex flex-col gap-1.5">
+          <div class="font-bold text-nexo-dark text-[11px] uppercase tracking-wider">Información básica sobre protección de datos</div>
+          <div><strong class="text-nexo-dark">Responsable:</strong> <span data-legal-field="name">[COMPLETAR: Nombre o Razón Social del Titular]</span></div>
+          <div><strong class="text-nexo-dark">Finalidad:</strong> Atender tu consulta y elaborar tu propuesta o presupuesto a medida.</div>
+          <div><strong class="text-nexo-dark">Legitimación:</strong> Tu consentimiento expreso manifestado al enviar este formulario.</div>
+          <div><strong class="text-nexo-dark">Destinatarios:</strong> No se ceden datos salvo obligación legal; el correo y el alojamiento los gestionan proveedores externos.</div>
+          <div><strong class="text-nexo-dark">Derechos:</strong> Acceso, rectificación, supresión y otros derechos explicados con detalle en nuestra <a href="#politica-de-privacidad" class="text-nexo-dark font-bold underline hover:text-nexo-gray">Política de privacidad</a>.</div>
+        </div>
+
+        <!-- Casilla obligatoria desmarcada por defecto -->
         <div class="flex items-start gap-2.5 pt-1">
-          <input type="checkbox" id="client-privacy" required class="mt-1 h-4 w-4 rounded border-nexo-dark/20 text-nexo-dark focus:ring-nexo-neon accent-nexo-dark cursor-pointer">
+          <input type="checkbox" id="client-privacy" name="privacy" required class="mt-1 h-4 w-4 rounded border-nexo-dark/20 text-nexo-dark focus:ring-nexo-neon accent-nexo-dark cursor-pointer">
           <label for="client-privacy" class="text-xs text-nexo-body leading-tight select-none cursor-pointer">
-            Acepto la <a href="#contacto" class="text-nexo-dark font-bold underline hover:text-nexo-gray">política de privacidad</a>.
+            He leído y acepto la <a href="#politica-de-privacidad" class="text-nexo-dark font-bold underline hover:text-nexo-gray">política de privacidad</a> y el tratamiento de mis datos para atender mi consulta.
           </label>
         </div>
-        <span id="quote-err-privacy" class="hidden text-[11px] font-semibold text-red-600 pl-6 -mt-2">Debes aceptar la política de privacidad.</span>
+        <span id="quote-err-privacy" class="hidden text-[11px] font-semibold text-red-600 pl-6 -mt-2">Debes marcar la casilla para aceptar la política de privacidad.</span>
 
         <!-- Banner de error -->
         <div id="quote-error-banner" class="hidden p-4 rounded-[16px] bg-red-50 border border-red-200 text-red-700 text-xs flex items-center gap-2">
