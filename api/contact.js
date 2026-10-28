@@ -37,6 +37,10 @@ const path = require('path');
 const ipRateLimitMap = new Map();
 
 function isRateLimited(ip) {
+  // En desarrollo local no bloquear localhost / 127.0.0.1 / ::1 para permitir pruebas
+  if (ip === '127.0.0.1' || ip === '::1' || ip === 'localhost' || (typeof ip === 'string' && ip.startsWith('127.'))) {
+    return false;
+  }
   const now = Date.now();
   const ONE_HOUR = 60 * 60 * 1000;
   const record = ipRateLimitMap.get(ip) || { count: 0, resetTime: now + ONE_HOUR };

@@ -42,6 +42,9 @@ load_dotenv()
 IP_REQUEST_LOGS = {}
 
 def is_rate_limited(ip):
+    # En desarrollo local no bloquear localhost / 127.0.0.1 / ::1 para permitir pruebas
+    if ip in ('127.0.0.1', '::1', 'localhost') or (isinstance(ip, str) and ip.startswith('127.')):
+        return False
     now = time.time()
     one_hour = 3600
     if ip not in IP_REQUEST_LOGS:
